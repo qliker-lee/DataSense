@@ -38,6 +38,7 @@ logging.getLogger('streamlit.runtime.scriptrunner.script_run_context').setLevel(
 # -------------------------------------------------------------------
 OUTPUT_DIR = PROJECT_ROOT / "DS_Output"
 IMAGE_DIR = PROJECT_ROOT / "images"
+IMAGE_SAMPLE_DIR = PROJECT_ROOT / "images_sample"
 VALUECHAIN_CSV_PATH = OUTPUT_DIR / "DS_ValueChain.csv"
 SYSTEM_CSV_PATH = OUTPUT_DIR / "DS_System.csv"
 FILE_STATS_PATH = OUTPUT_DIR / "FileStats.csv"
@@ -73,7 +74,7 @@ SYSTEM_COLUMNS = [
 def show_sample_image(image_filename, caption):
     """Sample 이미지를 표시합니다."""
     try:
-        sample_path = IMAGE_DIR / image_filename
+        sample_path = IMAGE_SAMPLE_DIR / image_filename
         if sample_path.exists():
             image = Image.open(sample_path)
             st.image(image, caption=caption, width=600)
@@ -567,7 +568,7 @@ def main():
     st.markdown(APP_DESC)
     # st.markdown("##### This is a unified tool to manage Value Chain, System Definition and File Mapping by Industry.")
     
-    show_sample_image("Sample_ValueChain_Licened.jfif", "Value Chain Image")
+    show_sample_image("Sample_ValueChain_Licened.jfif", "Value Chain Image") 
     # --- [Section 1: Industry Selection and Management] ---
     st.markdown("### 1️⃣ Select Industry")
     
