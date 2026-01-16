@@ -53,6 +53,7 @@ set_page_config(APP_NAME)
 
 OUTPUT_DIR = PROJECT_ROOT / "DS_Output"
 IMAGE_DIR = PROJECT_ROOT / "images"
+IMAGE_SAMPLE_DIR = PROJECT_ROOT / "images_sample"
 VC_FILE = OUTPUT_DIR / "DS_ValueChain.csv"
 SYS_FILE = OUTPUT_DIR / "DS_System.csv"
 VC_SYS_FILE = OUTPUT_DIR / "DS_ValueChain_System_File.csv"
@@ -87,7 +88,7 @@ def is_cloud_env() -> bool:
 def show_sample_image(image_filename, caption):
     """Sample 이미지를 표시합니다."""
     try:
-        sample_path = IMAGE_DIR / image_filename
+        sample_path = IMAGE_SAMPLE_DIR / image_filename
         if sample_path.exists():
             image = Image.open(sample_path)
             st.image(image, caption=caption, width='stretch')
