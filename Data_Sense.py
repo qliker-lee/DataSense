@@ -8,16 +8,11 @@ from pathlib import Path
 
 # 1. 경로 설정 및 환경 초기화
 CURRENT_DIR = Path(__file__).resolve()
-# streamlit_app.py가 QDQM 루트에 있으므로 parent를 사용
 PROJECT_ROOT = CURRENT_DIR.parent
 # 여러 가능한 경로 시도 (로컬/Cloud 환경 대응)
-IMAGE_DIR = PROJECT_ROOT /"DataSense" / "DS_Output" / "images"
+IMAGE_DIR = PROJECT_ROOT /"images_sample" 
 
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.append(str(PROJECT_ROOT))
-
-
-from DataSense.util.streamlit_warnings import setup_streamlit_warnings
+from util.streamlit_warnings import setup_streamlit_warnings
 setup_streamlit_warnings()
 
 # 페이지 기본 설정 (와이드 레이아웃 적용)
@@ -162,19 +157,6 @@ def sidebar():
     st.sidebar.markdown("<h4>qliker@kakao.com</h4>", unsafe_allow_html=True)
 
 def main():
-    # if "logged_in" not in st.session_state:
-    #     st.session_state["logged_in"] = False
-
-    # if not st.session_state["logged_in"]:
-    #     # 비로그인 상태: 소개 페이지 + 로그인 폼
-    #     login_section()
-    #     intro_page()
-    # else:
-    #     # 로그인 상태: 분석 대시보드 진입점
-    #     st.sidebar.success("인증된 사용자: qliker")
-    #     if st.sidebar.button("Log Out"):
-    #         st.session_state["logged_in"] = False
-    #         st.rerun()
             
     st.title("🏛️ DataSense 란?")
     sidebar()
