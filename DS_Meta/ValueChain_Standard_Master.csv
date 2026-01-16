@@ -1,0 +1,35 @@
+﻿Industry,Activities_Type,Activity_Seq,Activities,Master
+물류-택배,Primary ,1,Marketing & Sales,채널/캠페인 
+물류-택배,Primary ,1,Marketing & Sales,영업마스터
+물류-택배,Primary ,1,Marketing & Sales,계약
+물류-택배,Primary ,1,Marketing & Sales,프로모션
+물류-택배,Primary ,2,Inbound Logistics,집하점
+물류-택배,Primary ,2,Inbound Logistics,B2C고객
+물류-택배,Primary ,2,Inbound Logistics,B2B고객
+물류-택배,Primary ,2,Inbound Logistics,OneClick고객
+물류-택배,Primary ,2,Inbound Logistics,기사
+물류-택배,Primary ,3,Operations,상품분류
+물류-택배,Primary ,3,Operations,허브
+물류-택배,Primary ,3,Operations,서브
+물류-택배,Primary ,3,Operations,조업
+물류-택배,Primary ,4,Outbound Logistics,B2B배송
+물류-택배,Primary ,4,Outbound Logistics,B2C배송
+물류-택배,Primary ,4,Outbound Logistics,파트너배송
+물류-택배,Primary ,4,Outbound Logistics,기사/차량
+물류-택배,Primary ,5,Services,배송추적
+물류-택배,Primary ,5,Services,CS
+물류-택배,Primary ,5,Services,반품/파손/유실
+물류-택배,Primary ,5,Services,보상
+물류-택배,Support ,6,Finance,Profit Center
+물류-택배,Support ,6,Finance,Coster Center
+물류-택배,Support ,6,Finance,거래처
+물류-택배,Support ,6,Finance,고객
+물류-택배,Support ,7,HR,조직
+물류-택배,Support ,7,HR,인사
+물류-택배,Support ,7,HR,교육 이력 
+물류-택배,Support ,7,HR,급여
+물류-택배,Support ,7,HR,성과
+물류-택배,Support ,8,Infrastructure,구매처 
+물류-택배,Support ,8,Infrastructure,자산 
+물류-택배,Support ,8,Infrastructure,거점
+물류-택배,Support ,8,Infrastructure,간선차량

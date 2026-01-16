@@ -1,0 +1,67 @@
+﻿Industry,Activities_Type,Activity_Seq,Activities,Activities_Kor,Master,Master_Kor,ColumnList,System
+test,Primary,1,MKT,마케팅,Channel,채널,,CRM
+test,Primary,1,MKT,마케팅,Campaign,캠페인,,CRM
+test,Primary,1,MKT,마케팅,Sales Order,영업,,CRM
+test,Primary,1,MKT,마케팅,Contract,계약,,CRM
+test,Primary,1,MKT,마케팅,Promotion,프로모션,,CRM
+test,Primary,2,Sales1,영업_테스트,Orders,수주,,SALES
+test,Primary,2,Sales1,영업_테스트,Sales,판매,,SALES
+test,Primary,3,Services,서비스,Service Request Master,서비스,,SALES
+test,Primary,3,Services,서비스,CRM,고객관리,,SALES
+test,Support,4,재무활동,재무활동설명,Profit Center,Profit Center,,ERP
+test,Support,4,재무활동,재무활동설명,Coster Center,Coster Center,,ERP
+test,Support,4,재무활동,재무활동설명,거래처,거래처,,ERP
+물류-택배,Primary,1,Marketing & Sales,마케팅&영업,채널/캠페인,채널/캠페인,,CRM
+물류-택배,Primary,1,Marketing & Sales,마케팅&영업,영업마스터,영업마스터,,CRM
+물류-택배,Primary,1,Marketing & Sales,마케팅&영업,계약,계약,,CRM
+물류-택배,Primary,1,Marketing & Sales,마케팅&영업,프로모션,프로모션,,CRM
+물류-택배,Primary,2,Inbound Logistics,집하,집하영업소,집하영업소,,TMS
+물류-택배,Primary,2,Inbound Logistics,집하,집하점,집하점,,TMS
+물류-택배,Primary,2,Inbound Logistics,집하,B2C고객,B2C고객,,TMS
+물류-택배,Primary,2,Inbound Logistics,집하,B2B고객,B2B고객,,TMS
+물류-택배,Primary,2,Inbound Logistics,집하,OneClick고객,OneClick고객,,TMS
+물류-택배,Primary,2,Inbound Logistics,집하,기사,기사,,TMS
+물류-택배,Primary,3,Operations,간선,상품분류,상품분류,,WMS
+물류-택배,Primary,3,Operations,간선,허브,허브,,WMS
+물류-택배,Primary,3,Operations,간선,서브,서브,,WMS
+물류-택배,Primary,3,Operations,간선,조업,조업,,WMS
+물류-택배,Primary,4,Outbound Logistics,배송,배송영업소,배송영업소,,PDA/Mobile
+물류-택배,Primary,4,Outbound Logistics,배송,배송점,배송점,,PDA/Mobile
+물류-택배,Primary,4,Outbound Logistics,배송,B2B배송고객,B2B배송고객,,PDA/Mobile
+물류-택배,Primary,4,Outbound Logistics,배송,B2C배송고객,B2C배송고객,,PDA/Mobile
+물류-택배,Primary,4,Outbound Logistics,배송,파트너배송,파트너배송,,PDA/Mobile
+물류-택배,Primary,4,Outbound Logistics,배송,기사/차량,기사/차량,,PDA/Mobile
+물류-택배,Primary,5,Services,사후관리,배송추적,배송추적,,VOC
+물류-택배,Primary,5,Services,사후관리,CS,CS,,VOC
+물류-택배,Primary,5,Services,사후관리,반품/파손/유실,반품/파손/유실,,VOC
+물류-택배,Primary,5,Services,사후관리,보상,보상,,VOC
+물류-택배,Support,6,Finance,재무,Profit Center,Profit Center,,ERP
+물류-택배,Support,6,Finance,재무,Coster Center,Coster Center,,ERP
+물류-택배,Support,6,Finance,재무,거래처,거래처,,ERP
+물류-택배,Support,6,Finance,재무,고객,고객,,ERP
+물류-택배,Support,7,HR,인적자원관리,조직,조직,,HRIS
+물류-택배,Support,7,HR,인적자원관리,인사,인사,,HRIS
+물류-택배,Support,7,HR,인적자원관리,교육이력,교육이력,,HRIS
+물류-택배,Support,7,HR,인적자원관리,급여,급여,,HRIS
+물류-택배,Support,7,HR,인적자원관리,성과,성과,,HRIS
+물류-택배,Support,8,Infrastructure,기업인프라,구매처,구매처,,INFRA
+물류-택배,Support,8,Infrastructure,기업인프라,자산,자산,,INFRA
+물류-택배,Support,8,Infrastructure,기업인프라,거점,거점,,INFRA
+물류-택배,Support,8,Infrastructure,기업인프라,간선차량,간선차량,,INFRA
+Manufacture,Primary,1,Inbound Logistics,자재입고 및 구매물류,Supplier Master,공급업체 마스터,"Supplier_ID,Supplier_Name,Country,Rating,Payment_Terms",SCM
+Manufacture,Primary,1,Inbound Logistics,자재입고 및 구매물류,Material Master,자재 마스터,"Material_ID,Material_Name,Material_Type,Unit,Lead_Time",SCM
+Manufacture,Primary,1,Inbound Logistics,자재입고 및 구매물류,Purchase Order Master,구매주문 마스터,"PO_Number,Supplier_ID,Material_ID,Quantity,Order_Date,Delivery_Date",SCM
+Manufacture,Primary,2,Operations,생산 운영,BOM Master,BOM 마스터,"Parent_Item,Component_Item,Quantity,UOM,Effective_Date",MRP
+Manufacture,Primary,2,Operations,생산 운영,Routing Master,라우팅 마스터,"Routing_ID,Operation_Seq,Work_Center,Machine_ID,Setup_Time,Run_Time",MRP
+Manufacture,Primary,2,Operations,생산 운영,Work Center Master,작업장 마스터,"Work_Center_ID,Description,Plant,Capacity,Shift",MRP
+Manufacture,Primary,2,Operations,생산 운영,Production Order Master,생산지시 마스터,"Order_ID,Material_ID,Quantity,Start_Date,End_Date,Status",MRP
+Manufacture,Primary,3,Outbound Logistics,제품출하 및 물류,Customer Master,고객 마스터,"Customer_ID,Customer_Name,Region,Channel,Credit_Limit",SALES
+Manufacture,Primary,3,Outbound Logistics,제품출하 및 물류,Delivery Master,출하지시 마스터,"Delivery_ID,Sales_Order_ID,Ship_To,Delivery_Date,Carrier",SALES
+Manufacture,Primary,3,Outbound Logistics,제품출하 및 물류,Invoice Master,송장 마스터,"Invoice_ID,Customer_ID,Amount,Tax,Invoice_Date,Due_Date",SALES
+Manufacture,Primary,4,Marketing & Sales,마케팅 및 영업,Product Master,제품 마스터,"Product_ID,Product_Name,Category,Brand,Unit_Price",SFDS
+Manufacture,Primary,4,Marketing & Sales,마케팅 및 영업,Sales Order Master,판매주문 마스터,"SO_Number,Customer_ID,Product_ID,Quantity,Order_Date,Status",SFDS
+Manufacture,Primary,5,Service,서비스 및 A/S,Service Request Master,서비스요청 마스터,"Request_ID,Customer_ID,Product_ID,Request_Date,Status",SALES
+Manufacture,Primary,5,Service,서비스 및 A/S,Customer Feedback Master,고객피드백 마스터,"Feedback_ID,Customer_ID,Feedback_Type,Rating,Comments",SALES
+Manufacture,Support,6,Support,지원 프로세스,Employee Master,사원 마스터,"Employee_ID,Name,Department,Position,Join_Date",ERP
+Manufacture,Support,6,Support,지원 프로세스,Asset Master,자산 마스터,"Asset_ID,Description,Location,Acquisition_Date,Cost",ERP
+Manufacture,Support,6,Support,지원 프로세스,Cost Center Master,코스트센터 마스터,"CostCenter_ID,Department,Budget,Manager",ERP

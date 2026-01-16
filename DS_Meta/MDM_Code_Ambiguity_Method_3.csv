@@ -1,0 +1,37 @@
+﻿구분,No,유형,설명,예시
+자동화 검사 방법 SQL,,A. 코드값 + 코드명 다중매핑 탐지 (1:N),동일 코드값에 다양한 명칭이 존재하면 중의성 의심,"SELECT CODE, COUNT(DISTINCT NAME) AS NAME_VARIANTS
+FROM MASTER_CODE
+GROUP BY CODE
+HAVING COUNT(DISTINCT NAME) > 1;"
+자동화 검사 방법 Python,,코드값 + 코드명 다중매핑 탐지 (1:N),,"import pandas as pd
+
+# 예시 데이터프레임 생성
+data = {
+    'CODE': ['EC001', 'EC001', 'EC001', 'BC001', 'BC001', 'FR001'],
+    'NAME': ['ECONOMY', 'ECONOMY BASIC', 'ECO BASIC', 'BUSINESS', 'BIZ CLASS', 'FIRST']
+}
+df = pd.DataFrame(data)
+
+# 중의성 의심 코드 추출: CODE별 NAME의 고유값 개수 > 1
+ambiguous_codes = df.groupby('CODE')['NAME'].nunique().reset_index()
+ambiguous_codes = ambiguous_codes[ambiguous_codes['NAME'] > 1]
+ambiguous_codes.rename(columns={'NAME': 'NAME_VARIANTS'}, inplace=True)
+
+# 결과 확인
+print(""✅ 중의성 의심 CODE 목록 (1:N 다중 매핑)"")
+print(ambiguous_codes)
+
+# 상세 보기: 어떤 NAME들이 연결되어 있는지
+detailed_view = df[df['CODE'].isin(ambiguous_codes['CODE'])].sort_values(by='CODE')
+print(""\n🔍 상세 매핑 내역:"")
+print(detailed_view)"
+자동화 검사 방법 SQL,,B. 코드명 + 의미 기준 중복코드 탐지 (N:1),한 의미에 여러 코드가 존재하는 경우 → 병합 검토,"SELECT NAME, COUNT(DISTINCT CODE) AS CODE_VARIANTS
+FROM MASTER_CODE
+GROUP BY NAME
+HAVING COUNT(DISTINCT CODE) > 1;"
+자동화 검사 방법 Python,, C. 텍스트 유사도 기반 의미 유사 중복 감지 (AI 기반),"자연어 유사도 점수로 ECO_BASIC, ECONOMY_BASIC, EC_BASIC 유사군 탐지","from fuzzywuzzy import process
+process.extract(""ECONOMY BASIC"", list_of_code_names)"
+자동화 검사 방법 SQL,,D. 의미 사전 (Ontology) 매핑 비교,"내부 코드명 ↔ 외부표준(예: IATA SSR, ISO, UN/LOCODE) 의미맵 비교","SELECT a.CODE, b.STANDARD_MEANING
+FROM MASTER_CODE a
+LEFT JOIN EXTERNAL_MEANING_MAP b ON a.CODE = b.CODE
+WHERE a.MEANING != b.STANDARD_MEANING;"

@@ -1,0 +1,7 @@
+﻿No,MasterType,정의,용도,용어 간 관계,예시,대안명칭
+1,Master,기업 전반(Mega Process 단위)에서 기준이 되는 핵심 마스터 코드.,모든 업무 시스템에서 공통 기준으로 사용됨.,Mega Process의 마스터코드,"PRODUCT_CODE, CUSTOMER_ID, AIRPORT_CODE, FLIGHT_NUMBER","Enterprise Master Code, Core Master Code, Master Reference Code, MDM Code"
+2,Operational,시스템 간 또는 테이블 간의 연계를 위한 실질적인 연결 키 역할의 마스터 코드.,ERD에서 조인 조건으로 사용됨. 시스템 내부 처리 중심.,ERD의 Foreign Key,"DEPT_CODE, PART_NUMBER, EMPLOYEE_ID","Entity Code, System Master Code, Inner Master Code"
+3,Attribute,특정 마스터 데이터의 속성 또는 분류를 위한 코드.,"데이터 상세 분류, 속성 기반 검색, 조건 분기 등",속성 세부 분류,"GENDER_CODE, SIZE_CODE, COMPANY_TYPE","Domain Code, Qualifying Code"
+4,Common,공통코드에 정의된 코드들을 개별코드로 분리한 코드.,"일반적으로 Attribute 와 동일한 성격을 갖는 코드로서 데이터 상세 분류, 속성 기반 검색, 조건 분기 등",속성 하위 세부 분류,"Region. Currency, Service Type, Work Code 등 ","Category Code,  Sub Attribute Code"
+5,Reference,외부 시스템 혹은 국제 기관 등에서 정의한 코드 또는 전사 시스템 간에 공유되는 공통 기준값.,표준화된 코드 체계로서 외부 연계 또는 레퍼런스용으로 사용됨,외부 표준 참조 코드,"ISO, LANGUAGE_CODE, CURRENCY_CODE, IATA Code","Shared Code, Common Master Code"
+6,Validation,데이터 품질을 보장하고 정합성을 진단하기 위해 정의된 기술적 코드 또는 플래그.,"품질 점검, 오류 감지, 등록 제한 조건 적용 등",품질 진단 목적,"IS_VALID_YN, CHECK_RULE_CODE, ERROR_FLAG, Date, ","Data Rule Code, Quality Validation Code"

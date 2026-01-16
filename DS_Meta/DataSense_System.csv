@@ -1,0 +1,13 @@
+﻿Industry,System_Seq,System,System_Kor,System_Detail
+test,1,CRM,고객관계관리,고객관리 시스템
+test,2,구매관리,구매관리 시스템,구매관리 시스템의 상세 정의
+test,3,SALES,,
+test,4,ERP,,
+물류-택배,1,CRM,운송관리시스템,물류관리시스템
+물류-택배,2,TMS,재무관리,재무관리 시스템
+물류-택배,3,WMS,창고관리,
+물류-택배,4,PDA/Mobile,집배송관리,
+물류-택배,5,VOC,고객관리,
+물류-택배,6,ERP,기업자원관리,
+물류-택배,7,HRIS,인사관리,
+물류-택배,8,INFRA,인프라관리,

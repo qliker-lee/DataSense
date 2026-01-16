@@ -1,0 +1,20 @@
+﻿Industry,Activities_Type,Activity_Seq,Activities,Activities_Kor,Masters,Systems,Activity_Detail
+Manufacture,Primary,1,Inbound Logistics,자재입고 및 구매물류,"Supplier, Material, Purchase Order",SCM,자재입고 및 구매물류
+Manufacture,Primary,2,Operations,생산 운영,"BOM, Routing, Work Center, Production Order",MRP,생산 운영
+Manufacture,Primary,3,Outbound Logistics,제품출하 및 물류,"Customer, Delivery, Invoice",SALES,제품출하 및 물류
+Manufacture,Primary,4,Marketing & Sales,마케팅 및 영업,"Product, Sales Order",SFDS,마케팅 및 영업
+Manufacture,Primary,5,Service,서비스 및 A/S,"Service Request, Customer Feedback",SALES,서비스 및 A/S
+Manufacture,Support,6,Support,지원 프로세스,"Employee, Asset, Cost Center",ERP,지원 프로세스
+test,Primary,1,MKT,마케팅,"Channel, Campaign, Sales Order, Contract, Promotion","CRM, SFA",마케팅 활동 영역
+test,Primary,2,Sales1,영업_테스트,"Orders, Sales",SALES,영업활동 정의 상세
+test,Primary,3,Services,서비스,"Service Request, CRM",SALES,서비스 활동 영역 정의
+test,Support,4,재무활동,재무활동설명,"Profit Center, Cost Center, Customer",ERP,재무활동에 대한 상세 정의
+test,Support,5,HR,인사관리,"HR, Organization, Salary",HRMS,인사/급여관리
+물류-택배,Primary,1,Marketing & Sales,마케팅&영업,"Channel/Campaign, Sales Master, Contract, Promotion",CRM,마케팅 활동을 정의합니다.
+물류-택배,Primary,2,Inbound Logistics,집하,"Pick-Up office, Pick-Up point, B2C customer, B2B customer, OneClick customer, Driver",TMS,집하 활동을 정의합니다.
+물류-택배,Primary,3,Operations,간선,"Product Classification, Hub Terminal, Sub Terminal, Operation",WMS,
+물류-택배,Primary,4,Outbound Logistics,배송,"Delivery office, Delivery point, B2B Delivery customer, B2C Delivery customer, Partner delivery, Driver/Vehicle",PDA/Mobile,
+물류-택배,Primary,5,Services,사후관리,"Tracking, CS, Return/Damage/Loss, Compensation",VOC,
+물류-택배,Support,6,Finance,재무,"Profit Center, Cost Center,  Client, Customer",ERP,
+물류-택배,Support,7,HR,인적자원관리,"Organization, Employee, Education History, Salary, Performance",HRIS,
+물류-택배,Support,8,Infrastructure,기업인프라,"Supplier, Assets, Base Point,  Arterial Trunk",INFRA,

@@ -1,0 +1,4 @@
+﻿Industry,Activities_Type,Activity_Seq,Activities,Activities_Kor,Master,Master_Kor,Column
+test,Primary,1,MKT,마케팅,Sales Order,영업,주문번호
+test,Primary,1,MKT,마케팅,Sales Order,영업,고객번호
+test,Primary,1,MKT,마케팅,Sales Order,영업,판매일자

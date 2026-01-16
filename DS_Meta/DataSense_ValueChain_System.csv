@@ -1,0 +1,21 @@
+﻿Industry,Activities_Type,Activity_Seq,Activities,Activities_Kor,System
+Manufacture,Primary,1,Inbound Logistics,자재입고 및 구매물류,SCM
+Manufacture,Primary,2,Operations,생산 운영,MRP
+Manufacture,Primary,3,Outbound Logistics,제품출하 및 물류,SALES
+Manufacture,Primary,4,Marketing & Sales,마케팅 및 영업,SFDS
+Manufacture,Primary,5,Service,서비스 및 A/S,SALES
+Manufacture,Support,6,Support,지원 프로세스,ERP
+test,Primary,1,MKT,마케팅,CRM
+test,Primary,1,MKT,마케팅,SFA
+test,Primary,2,Sales1,영업_테스트,SALES
+test,Primary,3,Services,서비스,SALES
+test,Support,4,재무활동,재무활동설명,ERP
+test,Support,5,HR,인사관리,HRMS
+물류-택배,Primary,1,Marketing & Sales,마케팅&영업,CRM
+물류-택배,Primary,2,Inbound Logistics,집하,TMS
+물류-택배,Primary,3,Operations,간선,WMS
+물류-택배,Primary,4,Outbound Logistics,배송,PDA/Mobile
+물류-택배,Primary,5,Services,사후관리,VOC
+물류-택배,Support,6,Finance,재무,ERP
+물류-택배,Support,7,HR,인적자원관리,HRIS
+물류-택배,Support,8,Infrastructure,기업인프라,INFRA

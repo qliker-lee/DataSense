@@ -1,0 +1,70 @@
+﻿Industry,Activities_Type,Activity_Seq,Activities,Activities_Kor,Master,Master_Kor,ColumnList,System
+Manufacture,Primary,1,Inbound Logistics,자재입고 및 구매물류,Supplier,,,SCM
+Manufacture,Primary,1,Inbound Logistics,자재입고 및 구매물류,Material,,,SCM
+Manufacture,Primary,1,Inbound Logistics,자재입고 및 구매물류,Purchase Order,,,SCM
+Manufacture,Primary,2,Operations,생산 운영,BOM,,,MRP
+Manufacture,Primary,2,Operations,생산 운영,Routing,,,MRP
+Manufacture,Primary,2,Operations,생산 운영,Work Center,,,MRP
+Manufacture,Primary,2,Operations,생산 운영,Production Order,,,MRP
+Manufacture,Primary,3,Outbound Logistics,제품출하 및 물류,Customer,,,SALES
+Manufacture,Primary,3,Outbound Logistics,제품출하 및 물류,Delivery,,,SALES
+Manufacture,Primary,3,Outbound Logistics,제품출하 및 물류,Invoice,,,SALES
+Manufacture,Primary,4,Marketing & Sales,마케팅 및 영업,Product,,,SFDS
+Manufacture,Primary,4,Marketing & Sales,마케팅 및 영업,Sales Order,,,SFDS
+Manufacture,Primary,5,Service,서비스 및 A/S,Service Request,,,SALES
+Manufacture,Primary,5,Service,서비스 및 A/S,Customer Feedback,,,SALES
+Manufacture,Support,6,Support,지원 프로세스,Employee,,,ERP
+Manufacture,Support,6,Support,지원 프로세스,Asset,,,ERP
+Manufacture,Support,6,Support,지원 프로세스,Cost Center,,,ERP
+test,Primary,1,MKT,마케팅,Channel,채널,,CRM
+test,Primary,1,MKT,마케팅,Campaign,캠페인,,CRM
+test,Primary,1,MKT,마케팅,Sales Order,영업,"주문번호, 고객번호, 판매일자",SALES
+test,Primary,1,MKT,마케팅,Contract,계약,,CRM
+test,Primary,1,MKT,마케팅,Promotion,프로모션,,CRM
+test,Primary,2,Sales1,영업_테스트,Orders,수주,,SALES
+test,Primary,2,Sales1,영업_테스트,Sales,판매,,SALES
+test,Primary,3,Services,서비스,Service Request,,,
+test,Primary,3,Services,서비스,CRM,고객관리,,SALES
+test,Support,4,재무활동,재무활동설명,Profit Center,Profit Center,,ERP
+test,Support,4,재무활동,재무활동설명,Cost Center,,,
+test,Support,4,재무활동,재무활동설명,Customer,,,
+test,Support,5,HR,인사관리,HR,,,
+test,Support,5,HR,인사관리,Organization,,,
+test,Support,5,HR,인사관리,Salary,,,
+물류-택배,Primary,1,Marketing & Sales,마케팅&영업,Channel/Campaign,채널,,CRM
+물류-택배,Primary,1,Marketing & Sales,마케팅&영업,Sales Master,,,
+물류-택배,Primary,1,Marketing & Sales,마케팅&영업,Contract,,,
+물류-택배,Primary,1,Marketing & Sales,마케팅&영업,Promotion,,,
+물류-택배,Primary,2,Inbound Logistics,집하,Pick-Up office,,,
+물류-택배,Primary,2,Inbound Logistics,집하,Pick-Up point,,,
+물류-택배,Primary,2,Inbound Logistics,집하,B2C customer,,,
+물류-택배,Primary,2,Inbound Logistics,집하,B2B customer,,,
+물류-택배,Primary,2,Inbound Logistics,집하,OneClick customer,,,
+물류-택배,Primary,2,Inbound Logistics,집하,Driver,,,
+물류-택배,Primary,3,Operations,간선,Product Classification,,,
+물류-택배,Primary,3,Operations,간선,Hub Terminal,,,
+물류-택배,Primary,3,Operations,간선,Sub Terminal,,,
+물류-택배,Primary,3,Operations,간선,Operation,,,
+물류-택배,Primary,4,Outbound Logistics,배송,Delivery office,,,
+물류-택배,Primary,4,Outbound Logistics,배송,Delivery point,,,
+물류-택배,Primary,4,Outbound Logistics,배송,B2B Delivery customer,,,
+물류-택배,Primary,4,Outbound Logistics,배송,B2C Delivery customer,,,
+물류-택배,Primary,4,Outbound Logistics,배송,Partner delivery,,,
+물류-택배,Primary,4,Outbound Logistics,배송,Driver/Vehicle,,,
+물류-택배,Primary,5,Services,사후관리,Tracking,,,
+물류-택배,Primary,5,Services,사후관리,CS,,,VOC
+물류-택배,Primary,5,Services,사후관리,Return/Damage/Loss,,,
+물류-택배,Primary,5,Services,사후관리,Compensation,,,
+물류-택배,Support,6,Finance,재무,Profit Center,,,ERP
+물류-택배,Support,6,Finance,재무,Cost Center,,,
+물류-택배,Support,6,Finance,재무,Client,,,
+물류-택배,Support,6,Finance,재무,Customer,,,
+물류-택배,Support,7,HR,인적자원관리,Organization,,,
+물류-택배,Support,7,HR,인적자원관리,Employee,,,
+물류-택배,Support,7,HR,인적자원관리,Education History,,,
+물류-택배,Support,7,HR,인적자원관리,Salary,,,
+물류-택배,Support,7,HR,인적자원관리,Performance,,,
+물류-택배,Support,8,Infrastructure,기업인프라,Supplier,,,
+물류-택배,Support,8,Infrastructure,기업인프라,Assets,,,
+물류-택배,Support,8,Infrastructure,기업인프라,Base Point,,,
+물류-택배,Support,8,Infrastructure,기업인프라,Arterial Trunk,,,

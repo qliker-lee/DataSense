@@ -1,0 +1,12 @@
+﻿Industry,Activities_Type,Activity_Seq,Activities,Activities_Kor,Activity_Detail,System,KPIs,Activity_Description
+test,Primary,1,MKT,마케팅,마케팅 활동 영역,,,
+test,Primary,2,Sales1,영업_테스트,영업활동 정의,CRM,,
+test,Support,4,test,테스트,,,,
+물류-택배,Primary,1,Marketing & Sales,마케팅&영업,"고객유치, 제휴채널",CRM,고객 유치율,마케팅 활동을 정의합니다.
+물류-택배,Primary,2,Inbound Logistics,집하,"집하, 접수",TMS,수거율,집하 활동을 정의합니다.
+물류-택배,Primary,3,Operations,간선,"간선이동, 허브처리, 자동분류",WMS,자동분류율,
+물류-택배,Primary,4,Outbound Logistics,배송,배송 및 배송완료 처리,PDA/Mobile,배송 완료율,
+물류-택배,Primary,5,Services,사후관리,"CS 대응, 반품, 클레임 처리",VOC,클레임 처리율,
+물류-택배,Support,6,Finance,재무,재무관리,ERP,,
+물류-택배,Support,7,HR,인적자원관리,인적자원관리,HRIS,,
+물류-택배,Support,8,Infrastructure,기업인프라,기업인프라,,,

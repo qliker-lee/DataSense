@@ -1,0 +1,47 @@
+﻿Industry,Activities_Type,Activity_Seq,Activities,Activities_Kor,Master,Systems,KPIs,Activity_Detail
+test,Primary,1.0,MKT,마케팅,채널,MKT System,,마케팅 활동 영역
+test,Primary,1.0,MKT,마케팅,캠페인,MKT System,,마케팅 활동 영역
+test,Primary,1.0,MKT,마케팅,영업,MKT System,,마케팅 활동 영역
+test,Primary,1.0,MKT,마케팅,계약,MKT System,,마케팅 활동 영역
+test,Primary,1.0,MKT,마케팅,프로모션,MKT System,,마케팅 활동 영역
+test,Primary,2.0,Sales1,영업_테스트,수주,CRM,,영업활동 정의
+test,Primary,2.0,Sales1,영업_테스트,판매4,CRM,,영업활동 정의
+test,Primary,3.0,Services,서비스,서비스,SFA,,
+test,Primary,3.0,Services,서비스,서비스5,SFA,,
+물류-택배,Primary,1.0,Marketing & Sales,마케팅&영업,채널/캠페인,CRM,고객 유치율,"고객유치, 제휴채널"
+물류-택배,Primary,1.0,Marketing & Sales,마케팅&영업,영업마스터,CRM,고객 유치율,"고객유치, 제휴채널"
+물류-택배,Primary,1.0,Marketing & Sales,마케팅&영업,계약,CRM,고객 유치율,"고객유치, 제휴채널"
+물류-택배,Primary,1.0,Marketing & Sales,마케팅&영업,프로모션,CRM,고객 유치율,"고객유치, 제휴채널"
+물류-택배,Primary,2.0,Inbound Logistics,집하,집하영업소,TMS,수거율,"집하, 접수"
+물류-택배,Primary,2.0,Inbound Logistics,집하,집하점,TMS,수거율,"집하, 접수"
+물류-택배,Primary,2.0,Inbound Logistics,집하,B2C고객,TMS,수거율,"집하, 접수"
+물류-택배,Primary,2.0,Inbound Logistics,집하,B2B고객,TMS,수거율,"집하, 접수"
+물류-택배,Primary,2.0,Inbound Logistics,집하,OneClick고객,TMS,수거율,"집하, 접수"
+물류-택배,Primary,2.0,Inbound Logistics,집하,기사,TMS,수거율,"집하, 접수"
+물류-택배,Primary,3.0,Operations,간선,상품분류,WMS,자동분류율,"간선이동, 허브처리, 자동분류"
+물류-택배,Primary,3.0,Operations,간선,허브,WMS,자동분류율,"간선이동, 허브처리, 자동분류"
+물류-택배,Primary,3.0,Operations,간선,서브,WMS,자동분류율,"간선이동, 허브처리, 자동분류"
+물류-택배,Primary,3.0,Operations,간선,조업,WMS,자동분류율,"간선이동, 허브처리, 자동분류"
+물류-택배,Primary,4.0,Outbound Logistics,배송,배송영업소,PDA/Mobile,배송 완료율,배송 및 배송완료 처리
+물류-택배,Primary,4.0,Outbound Logistics,배송,배송점,PDA/Mobile,배송 완료율,배송 및 배송완료 처리
+물류-택배,Primary,4.0,Outbound Logistics,배송,B2B배송고객,PDA/Mobile,배송 완료율,배송 및 배송완료 처리
+물류-택배,Primary,4.0,Outbound Logistics,배송,B2C배송고객,PDA/Mobile,배송 완료율,배송 및 배송완료 처리
+물류-택배,Primary,4.0,Outbound Logistics,배송,파트너배송,PDA/Mobile,배송 완료율,배송 및 배송완료 처리
+물류-택배,Primary,4.0,Outbound Logistics,배송,기사/차량,PDA/Mobile,배송 완료율,배송 및 배송완료 처리
+물류-택배,Primary,5.0,Services,사후관리,배송추적,VOC,클레임 처리율,"CS 대응, 반품, 클레임 처리"
+물류-택배,Primary,5.0,Services,사후관리,CS,VOC,클레임 처리율,"CS 대응, 반품, 클레임 처리"
+물류-택배,Primary,5.0,Services,사후관리,반품/파손/유실,VOC,클레임 처리율,"CS 대응, 반품, 클레임 처리"
+물류-택배,Primary,5.0,Services,사후관리,보상,VOC,클레임 처리율,"CS 대응, 반품, 클레임 처리"
+물류-택배,Support,6.0,Finance,재무,Profit Center,ERP,,재무관리
+물류-택배,Support,6.0,Finance,재무,Coster Center,ERP,,재무관리
+물류-택배,Support,6.0,Finance,재무,거래처,ERP,,재무관리
+물류-택배,Support,6.0,Finance,재무,고객,ERP,,재무관리
+물류-택배,Support,7.0,HR,인적자원관리,조직,HRIS,,인적자원관리
+물류-택배,Support,7.0,HR,인적자원관리,인사,HRIS,,인적자원관리
+물류-택배,Support,7.0,HR,인적자원관리,교육이력,HRIS,,인적자원관리
+물류-택배,Support,7.0,HR,인적자원관리,급여,HRIS,,인적자원관리
+물류-택배,Support,7.0,HR,인적자원관리,성과,HRIS,,인적자원관리
+물류-택배,Support,8.0,Infrastructure,기업인프라,구매처,,,기업인프라
+물류-택배,Support,8.0,Infrastructure,기업인프라,자산,,,기업인프라
+물류-택배,Support,8.0,Infrastructure,기업인프라,거점,,,기업인프라
+물류-택배,Support,8.0,Infrastructure,기업인프라,간선차량,,,기업인프라

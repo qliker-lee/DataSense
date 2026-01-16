@@ -1,0 +1,20 @@
+﻿Mig_Case,Mig_Result,Condition_Item,Relation,Record_Status,Column_Status,Result Description,
+1,TRUE,Org_Status == 'O',1:01,일치,일치,"물리적으로 완전 일치함(컬럼명, 순서, 행의갯수, 순서)",
+2,TRUE,Common_Status=='O' & Col_Status=='O'  & Added_Col_Cnt==0 & Deleted_Col_Cnt==0 ,1:01,일치,일치,컬럼명의 갯수가 동일하지만 컬럼 순서가 다름. 행의 순서 및 값은 일치함,
+3,TRUE,Common_Status=='X' & Col_Status=='O'  & Common_Sort_Status == 'O',1:01,일치,일치,행의 순서가 다름. 컬럼명 순서 및 내용은 일치함,
+4,TRUE,Common_Status='O' & Col_Status=='X'  & Common_Sort_Status == 'O' & Added_Col_Cnt > 0 & Deleted_Col_Cnt==0 ,1:01,일치,추가,컬럼 수가 증가했으나. 동일한 컬럼명 기준으로 내용은 일치함,
+5,TRUE,Common_Status='O' & Col_Status=='X'  & Common_Sort_Status == 'O' & Added_Col_Cnt == 0 & Deleted_Col_Cnt>0 ,1:01,일치,삭제,컬럼 수가 감소했으나. 동일한 컬럼명 기준으로 내용은 일치함,
+6,TRUE,Common_Status='O'  &  Common_Sort_Status == 'O' & Added_Col_Cnt > 0 & Deleted_Col_Cnt>0 ,1:01,일치,추가및삭제,1:1 관계로 컬럼은 변경되었으나 공통 컬럼으로 측정값이 일치함,
+7,TRUE,Mig_Status=='O' & Common_Status='X' & Rec_Ins > 0,1:n,증가,틀림,1:n 관계로 지정한 컬럼으로 그룹한 측정값 필드들의 통계값이 일치함,
+8,TRUE,Mig_Status=='O' & Common_Status='X' & Rec_Ins < 0,n:1,감소,틀림,n:1 관계로 지정한 비교 컬럼으로 그룹하여 측정값 필드들의 통계값이 일치함,Case 7의 반대
+9,TRUE,Rel_Status=='O' & Dim_Statuss='O' & Rec_Ins == 0,1:01,일치,틀림,"1:1 관계로 측정값 필드들의 통계값이 틀리지만, 지정한 상대오차범위내에서 일치함",Case 7의 반대
+10,TRUE,Rel_Status=='O' & Dim_Statuss='O' & Rec_Ins != 0,n:1 or 1:n,감소 or 증가,틀림,"1:n 혹은 n:1의 관계로 측정값 필드들의 통계값이 틀리지만, 지정한 상대오차범위내에서 일치함",Case 7의 반대
+11,FALSE,Mig_Status=='X' & Rec_Status=='X'  & Col_Status=='O' & Sum_Status=='O' & Dim_Change_Cnt > 0 ,1:01,일치,일치,1:1 관계로 측정값 전체 합계는 같으며 물리적으로 구조는 일치하지만 차원값이 틀림,
+12,FALSE,Mig_Status=='X' & Rec_Status=='O' & Col_Status=='O' & Sum_Status=='X' & Dim_Change_Cnt==0 & Measure_Change_Cnt > 0,1:01,일치,일치,1:1 관계로 물리적으로 구조는 일치하고 차원값은 일치하지만 측정값 전체 합계가 틀림,
+13,FALSE,Mig_Status=='X' & Rec_Status=='O' & Col_Status=='X' & Sum_Status=='X' & Dim_Change_Cnt>0 & Added_Col_Cnt>0 & Deleted_Col_Cnt==0,1:01,일치,추가,1:1 관계로 차원값이 틀리며 측정값 전체 합계도 틀림,
+14,FALSE,Mig_Status=='X' & Rec_Status=='O' & Col_Status=='X' & Sum_Status=='O' & Dim_Change_Cnt==0 & Added_Col_Cnt==0 & Deleted_Col_Cnt>0,1:01,일치,삭제,1:1 관계로  컬럼이 삭제되었으며 측정값 전체 합계는 같으나 공통 컬럼기준으로 비교시 측정값이 틀림,
+15,FALSE,Mig_Status=='X' & Rec_Status=='O' & Col_Status=='X' & Sum_Status=='X' & Dim_Change_Cnt==0 ,1:01,일치,추가및삭제,1:1 관계로  컬럼이 추가 및 삭제되었으며  측정값 전체 합계가 틀림,
+16,FALSE,Mig_Status=='X' & Rec_Ins > 0 & Sum_Status=='O',1:n,증가,추가혹은삭제,1:n 관계로 사전에 지정한 비교 컬럼으로 그룹하여 전체 합계는 같으나 측정값 필드들의 통계값이 틀림,
+17,FALSE,Mig_Status=='X' & Rec_Ins > 0 & Sum_Status=='X',1:n,증가,추가혹은삭제,1:n 관계로 사전에 지정한 비교 컬럼으로 그룹하여 측정값 필드들의 통계값이 틀림,
+18,FALSE,Mig_Status=='X' & Rec_Ins < 0 & Sum_Status=='O',n:1,감소,추가혹은삭제,n:1 관계로 사전에 지정한 비교 컬럼으로 그룹하여 전체 합계는 같으나 측정값 필드들의 통계값이 틀림,
+19,FALSE,Mig_Status=='X' & Rec_Ins < 0 & Sum_Status=='X',n:1,감소,추가혹은삭제,n:1 관계로 사전에 지정한 비교 컬럼으로 그룹하여 전체 합계가 틀림,

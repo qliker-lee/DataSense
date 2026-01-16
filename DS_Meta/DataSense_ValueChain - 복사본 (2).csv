@@ -1,0 +1,12 @@
+﻿Industry,Activities_Type,Activity_Seq,Activities,Activities_Kor,Masters,Systems,KPIs,Activity_Detail
+test,Primary,1.0,MKT,마케팅,"채널, 캠페인, 영업, 계약, 프로모션",MKT System,,마케팅 활동 영역
+test,Primary,2.0,Sales1,영업_테스트,"수주, 판매4",CRM,,영업활동 정의
+test,Primary,3.0,Services,서비스,"서비스, 서비스3",SFA,,
+물류-택배,Primary,1.0,Marketing & Sales,마케팅&영업,"채널/캠페인, 영업마스터, 계약, 프로모션",CRM,고객 유치율,"고객유치, 제휴채널"
+물류-택배,Primary,2.0,Inbound Logistics,집하,"집하영업소, 집하점, B2C고객, B2B고객, OneClick고객, 기사",TMS,수거율,"집하, 접수"
+물류-택배,Primary,3.0,Operations,간선,"상품분류, 허브, 서브, 조업",WMS,자동분류율,"간선이동, 허브처리, 자동분류"
+물류-택배,Primary,4.0,Outbound Logistics,배송,"배송영업소, 배송점, B2B배송고객, B2C배송고객, 파트너배송, 기사/차량",PDA/Mobile,배송 완료율,배송 및 배송완료 처리
+물류-택배,Primary,5.0,Services,사후관리,"배송추적, CS, 반품/파손/유실, 보상",VOC,클레임 처리율,"CS 대응, 반품, 클레임 처리"
+물류-택배,Support,6.0,Finance,재무,"Profit Center, Coster Center, 거래처, 고객",ERP,,재무관리
+물류-택배,Support,7.0,HR,인적자원관리,"조직, 인사, 교육이력, 급여, 성과",HRIS,,인적자원관리
+물류-택배,Support,8.0,Infrastructure,기업인프라,"구매처, 자산, 거점, 간선차량",,,기업인프라
