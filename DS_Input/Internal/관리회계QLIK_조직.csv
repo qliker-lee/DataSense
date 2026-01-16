@@ -1,0 +1,399 @@
+﻿귀속부서조직코드,귀속부서조직명,조직LEVEL코드,지점코드,지점명,지점LEVEL코드,지부코드,지부명,지부LEVEL코드,본부코드,본부명,본부LEVEL코드,본부명_Org,조직계층단계
+KUMSD,구미지점,2,KUMSD,구미지점,2,KUMSD,구미지점,2,SELDL,물류,1,물류사업본부,3
+SELLE,E&S사업부,2,SELLE,E&S사업부,2,SELLE,E&S사업부,2,SELDL,물류,1,물류사업본부,3
+SJGSL,세종지점,2,SJGSL,세종지점,2,SJGSL,세종지점,2,SELDL,물류,1,물류사업본부,3
+KPOSO,포항구도일주유영업소,3,KPOSO,포항구도일주유영업소,3,KPOSD,영남지점,2,SELDL,물류,1,물류사업본부,4
+SELLW,W&D사업부,2,SELLW,W&D사업부,2,SELLW,W&D사업부,2,SELDL,물류,1,물류사업본부,3
+SELLEE,(구)에너지사업팀,,SELLEE,(구)에너지사업팀,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+CHWKL,창원물류센터,3,CHWKL,창원물류센터,3,PUSSL,부산지점,2,SELDL,물류,1,물류사업본부,4
+PUSSL,부산지점,2,PUSSL,부산지점,2,PUSSL,부산지점,2,SELDL,물류,1,물류사업본부,3
+KANSLS,전남지점 물류영업팀,3,KANSLS,전남지점 물류영업팀,3,KANSL,전남지점,2,SELDL,물류,1,물류사업본부,4
+SELLRS,P&D영업팀,,SELLRS,P&D영업팀,,SELLR,P&D사업부,2,SELDL,물류,1,물류사업본부,4
+GMSSO,김포공항제2주유영업소,3,GMSSO,김포공항제2주유영업소,3,JCNSL,경인지점,2,SELDL,물류,1,물류사업본부,4
+SELLOS,유류영업팀,3,SELLOS,유류영업팀,3,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+CJUSD,제주지점,2,CJUSD,제주지점,2,CJUSD,제주지점,2,SELDL,물류,1,물류사업본부,3
+BUGSLM,부곡지점 정비팀,3,BUGSLM,부곡지점 정비팀,3,BUGSL,부곡지점,2,SELDL,물류,1,물류사업본부,4
+SELLRM,정비사업팀,,SELLRM,정비사업팀,,SELLR,P&D사업부,2,SELDL,물류,1,물류사업본부,4
+PUSSLT,부산지점 물류운송팀,,PUSSLT,부산지점 물류운송팀,,PUSSL,부산지점,2,SELDL,물류,1,물류사업본부,4
+PTKSLT,중부지점 물류운송팀,,PTKSLT,중부지점 물류운송팀,,PTKSL,중부지점,2,SELDL,물류,1,물류사업본부,4
+SELLRA,P&D영업1팀,,SELLRA,P&D영업1팀,,SELLR,P&D사업부,2,SELDL,물류,1,물류사업본부,4
+SELLMOP,한진파이오니어호,,SELLMOP,한진파이오니어호,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+KPOSD,영남지점,2,KPOSD,영남지점,2,KPOSD,영남지점,2,SELDL,물류,1,물류사업본부,3
+SELLOO,운영지원팀,,SELLOO,운영지원팀,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+SELLPO,해외물류사업개발팀,,SELLPO,해외물류사업개발팀,,SELLP,물류기획부,2,SELDL,물류,1,물류사업본부,4
+SELLPY,물류안전팀,,SELLPY,물류안전팀,,SELLP,물류기획부,2,SELDL,물류,1,물류사업본부,4
+JCNTO,인천터미널주유영업소,3,JCNTO,인천터미널주유영업소,3,JCNSL,경인지점,2,SELDL,물류,1,물류사업본부,4
+PTKSL,중부지점,2,PTKSL,중부지점,2,PTKSL,중부지점,2,SELDL,물류,1,물류사업본부,3
+SELLME,에너지사업팀,3,SELLME,에너지사업팀,3,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+SELLWS,W&D영업팀,,SELLWS,W&D영업팀,,SELLW,W&D사업부,2,SELDL,물류,1,물류사업본부,4
+PUSSLS,부산지점 물류영업팀,3,PUSSLS,부산지점 물류영업팀,3,PUSSL,부산지점,2,SELDL,물류,1,물류사업본부,4
+SELLRSG,P&D제안영업그룹,,SELLRSG,P&D제안영업그룹,,SELLR,P&D사업부,2,SELDL,물류,1,물류사업본부,4
+SELLMON,한진청정누리호,,SELLMON,한진청정누리호,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+KANSLT,전남지점 물류운송팀,,KANSLT,전남지점 물류운송팀,,KANSL,전남지점,2,SELDL,물류,1,물류사업본부,4
+SELLPM,물류사업지원팀,,SELLPM,물류사업지원팀,,SELLP,물류기획부,2,SELDL,물류,1,물류사업본부,4
+USNKL,울산물류센터,,USNKL,울산물류센터,,USNSD,울산지점,2,SELDL,물류,1,물류사업본부,4
+SELLMO,해운사업팀,3,SELLMO,해운사업팀,3,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+SELLMOC,해운통제센터,,SELLMOC,해운통제센터,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+JCNSLI,경인지점 싸이로팀,,JCNSLI,경인지점 싸이로팀,,JCNSL,경인지점,2,SELDL,물류,1,물류사업본부,4
+SJGSLS,세종지점 물류영업팀,3,SJGSLS,세종지점 물류영업팀,3,SJGSL,세종지점,2,SELDL,물류,1,물류사업본부,4
+SELLTP,터미널기획운영팀,,SELLTP,터미널기획운영팀,,SELLT,터미널사업부,2,SELDL,물류,1,물류사업본부,4
+CJUKL,제주물류센터,,CJUKL,제주물류센터,,CJUSD,제주지점,2,SELDL,물류,1,물류사업본부,4
+BUGSLT,부곡지점 물류운송팀,,BUGSLT,부곡지점 물류운송팀,,BUGSL,부곡지점,2,SELDL,물류,1,물류사업본부,4
+SELLMS,해운영업팀,,SELLMS,해운영업팀,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+USNSD,울산지점,2,USNSD,울산지점,2,USNSD,울산지점,2,SELDL,물류,1,물류사업본부,3
+SELLTS,터미널영업팀,3,SELLTS,터미널영업팀,3,SELLT,터미널사업부,2,SELDL,물류,1,물류사업본부,4
+BUGSLA,부곡지점 유통물류1팀,,BUGSLA,부곡지점 유통물류1팀,,BUGSL,부곡지점,2,SELDL,물류,1,물류사업본부,4
+PTKKL,평택물류센터,,PTKKL,평택물류센터,,PTKSL,중부지점,2,SELDL,물류,1,물류사업본부,4
+JPYSO,증평IC주유영업소,3,JPYSO,증평IC주유영업소,3,SJGSL,세종지점,2,SELDL,물류,1,물류사업본부,4
+SELLO,유류사업부,,SELLO,유류사업부,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+SELLRB,P&D영업2팀,,SELLRB,P&D영업2팀,,SELLR,P&D사업부,2,SELDL,물류,1,물류사업본부,4
+USNSDS,울산지점 물류영업팀,3,USNSDS,울산지점 물류영업팀,3,USNSD,울산지점,2,SELDL,물류,1,물류사업본부,4
+SELLMOG,한진그린호,,SELLMOG,한진그린호,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+JCNSLT,경인지점 물류운송팀,,JCNSLT,경인지점 물류운송팀,,JCNSL,경인지점,2,SELDL,물류,1,물류사업본부,4
+SJGKL,세종물류센터,,SJGKL,세종물류센터,,SJGSL,세종지점,2,SELDL,물류,1,물류사업본부,4
+JWGSO,정왕주유영업소,3,JWGSO,정왕주유영업소,3,JCNSL,경인지점,2,SELDL,물류,1,물류사업본부,4
+SELLEO,유류사업팀,,SELLEO,유류사업팀,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+GMPSO,김포공항주유영업소,3,GMPSO,김포공항주유영업소,3,JCNSL,경인지점,2,SELDL,물류,1,물류사업본부,4
+SELLPP,물류기획팀,,SELLPP,물류기획팀,,SELLP,물류기획부,2,SELDL,물류,1,물류사업본부,4
+SELLWSG,W&D제안영업그룹,,SELLWSG,W&D제안영업그룹,,SELLW,W&D사업부,2,SELDL,물류,1,물류사업본부,4
+KAN3005,(구)한진3005호,,KAN3005,(구)한진3005호,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+CJUSDS,제주지점 물류영업팀,3,CJUSDS,제주지점 물류영업팀,3,CJUSD,제주지점,2,SELDL,물류,1,물류사업본부,4
+BUGSLD,부곡지점 유통운송팀,,BUGSLD,부곡지점 유통운송팀,,BUGSL,부곡지점,2,SELDL,물류,1,물류사업본부,4
+KANSL,전남지점,2,KANSL,전남지점,2,KANSL,전남지점,2,SELDL,물류,1,물류사업본부,3
+JCNSLM,경인지점 정비팀,3,JCNSLM,경인지점 정비팀,3,JCNSL,경인지점,2,SELDL,물류,1,물류사업본부,4
+SELLMOJ,적대봉호,,SELLMOJ,적대봉호,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+SELLPD,디지털사업팀,,SELLPD,디지털사업팀,,SELLP,물류기획부,2,SELDL,물류,1,물류사업본부,4
+GMNSO,김포스마일주유영업소,3,GMNSO,김포스마일주유영업소,3,JCNSL,경인지점,2,SELDL,물류,1,물류사업본부,4
+JCNSLS,경인지점 물류영업팀,3,JCNSLS,경인지점 물류영업팀,3,JCNSL,경인지점,2,SELDL,물류,1,물류사업본부,4
+KUVSL,전북지점,2,KUVSL,전북지점,2,KUVSL,전북지점,2,SELDL,물류,1,물류사업본부,3
+KANJDB,(구)적대봉호,,KANJDB,(구)적대봉호,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+KPOSDP,영남지점 항만물류팀,,KPOSDP,영남지점 항만물류팀,,KPOSD,영남지점,2,SELDL,물류,1,물류사업본부,4
+KANSLP,전남지점 항만물류팀,,KANSLP,전남지점 항만물류팀,,KANSL,전남지점,2,SELDL,물류,1,물류사업본부,4
+BORKC,신보령물류센터,3,BORKC,신보령물류센터,3,PTKSL,중부지점,2,SELDL,물류,1,물류사업본부,4
+SELLMO8,한진3008호,,SELLMO8,한진3008호,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+KUVSLS,전북지점 물류영업팀,3,KUVSLS,전북지점 물류영업팀,3,KUVSL,전북지점,2,SELDL,물류,1,물류사업본부,4
+SELLP,물류기획부,2,SELLP,물류기획부,2,SELLP,물류기획부,2,SELDL,물류,1,물류사업본부,3
+SELLRT,물류운송팀,,SELLRT,물류운송팀,,SELLR,P&D사업부,2,SELDL,물류,1,물류사업본부,4
+PTKSLS,중부지점 물류영업팀,3,PTKSLS,중부지점 물류영업팀,3,PTKSL,중부지점,2,SELDL,물류,1,물류사업본부,4
+KPOSDS,영남지점 물류영업팀,3,KPOSDS,영남지점 물류영업팀,3,KPOSD,영남지점,2,SELDL,물류,1,물류사업본부,4
+SELLMO7,한진3007호,,SELLMO7,한진3007호,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+SELLMOL,한진리더호,,SELLMOL,한진리더호,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+SELLMO6,한진3006호,,SELLMO6,한진3006호,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+SELLT,터미널사업부,2,SELLT,터미널사업부,2,SELLT,터미널사업부,2,SELDL,물류,1,물류사업본부,3
+KPOSDM,영남지점 정비팀,,KPOSDM,영남지점 정비팀,,KPOSD,영남지점,2,SELDL,물류,1,물류사업본부,4
+DJGSO,대전대정주유영업소,3,DJGSO,대전대정주유영업소,3,SJGSL,세종지점,2,SELDL,물류,1,물류사업본부,4
+SELLTC,컨테이너사업팀,,SELLTC,컨테이너사업팀,,SELLT,터미널사업부,2,SELDL,물류,1,물류사업본부,4
+KAN3006,(구)한진3006호,,KAN3006,(구)한진3006호,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+SELLRP,항만물류팀,,SELLRP,항만물류팀,,SELLR,P&D사업부,2,SELDL,물류,1,물류사업본부,4
+BUGSLS,부곡지점 물류영업팀,3,BUGSLS,부곡지점 물류영업팀,3,BUGSL,부곡지점,2,SELDL,물류,1,물류사업본부,4
+KPOSDR,영남지점 원료하역팀,,KPOSDR,영남지점 원료하역팀,,KPOSD,영남지점,2,SELDL,물류,1,물류사업본부,4
+KUVTKL,군산물류센터,,KUVTKL,군산물류센터,,KUVSL,전북지점,2,SELDL,물류,1,물류사업본부,4
+SELLM,해운에너지사업부,2,SELLM,해운에너지사업부,2,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,3
+USNSDH,울산지점 중량물운영팀,3,USNSDH,울산지점 중량물운영팀,3,USNSD,울산지점,2,SELDL,물류,1,물류사업본부,4
+KANGRN,(구)한진그린호,,KANGRN,(구)한진그린호,,SELLM,해운에너지사업부,2,SELDL,물류,1,물류사업본부,4
+HDGSO,항동주유영업소,3,HDGSO,항동주유영업소,3,JCNSL,경인지점,2,SELDL,물류,1,물류사업본부,4
+SELLR,P&D사업부,2,SELLR,P&D사업부,2,SELLR,P&D사업부,2,SELDL,물류,1,물류사업본부,3
+KUMSDS,구미지점 물류영업팀,3,KUMSDS,구미지점 물류영업팀,3,KUMSD,구미지점,2,SELDL,물류,1,물류사업본부,4
+KPOSDT,영남지점 물류운송팀,,KPOSDT,영남지점 물류운송팀,,KPOSD,영남지점,2,SELDL,물류,1,물류사업본부,4
+SELLWO,W&D운영팀,,SELLWO,W&D운영팀,,SELLW,W&D사업부,2,SELDL,물류,1,물류사업본부,4
+JCNSL,경인지점,2,JCNSL,경인지점,2,JCNSL,경인지점,2,SELDL,물류,1,물류사업본부,3
+BUGSLB,부곡지점 유통물류2팀,,BUGSLB,부곡지점 유통물류2팀,,BUGSL,부곡지점,2,SELDL,물류,1,물류사업본부,4
+BUGSL,부곡지점,2,BUGSL,부곡지점,2,BUGSL,부곡지점,2,SELDL,물류,1,물류사업본부,3
+BORKL,보령물류센터,3,BORKL,보령물류센터,3,PTKSL,중부지점,2,SELDL,물류,1,물류사업본부,4
+PUSSLM,부산지점 정비팀,3,PUSSLM,부산지점 정비팀,3,PUSSL,부산지점,2,SELDL,물류,1,물류사업본부,4
+JPSSO,증평제2주유영업소,3,JPSSO,증평제2주유영업소,3,SJGSL,세종지점,2,SELDL,물류,1,물류사업본부,4
+SELDLO,(구)해외물류사업개발팀,,SELDLO,(구)해외물류사업개발팀,,SELLP,물류기획부,2,SELDL,물류,1,물류사업본부,4
+KUMKL,구미물류센터,,KUMKL,구미물류센터,,KUMSD,구미지점,2,SELDL,물류,1,물류사업본부,4
+SELEOO,택배운영팀,,SELEOO,택배운영팀,,SELEO,인프라사업부,2,SELDE,택배,1,택배사업본부,4
+SELEIA,집배점지원팀,,SELEIA,집배점지원팀,,SELEI,서비스혁신부,2,SELDE,택배,1,택배사업본부,4
+ASNKE,안산택배지점,3,ASNKE,안산택배지점,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+SESSE,(구)수도권남부지점,,SESSE,(구)수도권남부지점,,SELEC,수도권 담당,,SELDE,택배,1,택배사업본부,4
+SYSKE,순천택배지점,3,SYSKE,순천택배지점,3,HONSE,호남지부,2,SELDE,택배,1,택배사업본부,4
+COJKE,청주택배지점,3,COJKE,청주택배지점,3,CHCSE,충청지부,2,SELDE,택배,1,택배사업본부,4
+YAJKE,양주택배지점,3,YAJKE,양주택배지점,3,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,4
+SELEIAD,집배송지원그룹,,SELEIA,집배점지원팀,,SELEI,서비스혁신부,2,SELDE,택배,1,택배사업본부,5
+SELDEMC,건축그룹,,SELDEM,대전 SMART Mega-Hub 운영 T/F,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,5
+SELEIC,상생협력팀,,SELEIC,상생협력팀,,SELEI,서비스혁신부,2,SELDE,택배,1,택배사업본부,4
+KBKKE,강북택배지점,3,KBKKE,강북택배지점,3,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,4
+QDYKE,안동택배지점,3,QDYKE,안동택배지점,3,GBKSE,경북지부,2,SELDE,택배,1,택배사업본부,4
+SELEPM,영업정책팀,,SELEPM,영업정책팀,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,4
+SELEPP,택배기획팀,,SELEPP,택배기획팀,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,4
+SELEPO,(구)해외택배사업개발팀,,SELEPO,(구)해외택배사업개발팀,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,4
+SELEPPO,(구)당일택배그룹,,SELEPP,택배기획팀,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,5
+KAGKE,강릉택배지점,3,KAGKE,강릉택배지점,3,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,4
+SELEOOT,(구)대전택배Hub,,SELEOOT,(구)대전택배Hub,,SELEO,인프라사업부,2,SELDE,택배,1,택배사업본부,4
+SELXTS,NHE T/F,,SELXTS,NHE T/F,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,4
+PUSSE,부경지부,2,PUSSE,부경지부,2,PUSSE,부경지부,2,SELDE,택배,1,택배사업본부,3
+SELECA,수도권 지원팀,,SELECA,수도권 지원팀,,SELEC,수도권 담당,,SELDE,택배,1,택배사업본부,4
+CHWKE,창원택배지점,3,CHWKE,창원택배지점,3,PUSSE,부경지부,2,SELDE,택배,1,택배사업본부,4
+SEWSE,수도권서부지부,2,SEWSE,수도권서부지부,2,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,3
+SEWSET,남부3PL팀,3,SEWSET,남부3PL팀,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+SELEOOL,LMD그룹,,SELEOO,택배운영팀,,SELEO,인프라사업부,2,SELDE,택배,1,택배사업본부,5
+CHCSE,충청지부,2,CHCSE,충청지부,2,CHCSE,충청지부,2,SELDE,택배,1,택배사업본부,3
+DDMKE,동대문택배지점,3,DDMKE,동대문택배지점,3,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,4
+CJUKE,제주택배지점,3,CJUKE,제주택배지점,3,HONSE,호남지부,2,SELDE,택배,1,택배사업본부,4
+SELDEO,(구)해외택배사업개발팀,,SELDEO,(구)해외택배사업개발팀,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,4
+SELEPD,전략개발팀,,SELEPD,전략개발팀,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,4
+SELESAC,(구)C2C그룹,,SELESA,(구)이커머스영업팀,,SELES,택배영업부,2,SELDE,택배,1,택배사업본부,5
+HMYKE,서산당진택배지점,3,HMYKE,서산당진택배지점,3,CHCSE,충청지부,2,SELDE,택배,1,택배사업본부,4
+SELESSF,풀필먼트그룹,,SELESS,택배영업팀,,SELES,택배영업부,2,SELDE,택배,1,택배사업본부,5
+SELESE,이커머스영업팀,,SELESE,이커머스영업팀,,SELES,택배영업부,2,SELDE,택배,1,택배사업본부,4
+ILSKE,일산택배지점,3,ILSKE,일산택배지점,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+SEESE,수도권동부지부,2,SEESE,수도권동부지부,2,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,3
+SELESA,(구)이커머스영업팀,,SELESA,(구)이커머스영업팀,,SELES,택배영업부,2,SELDE,택배,1,택배사업본부,4
+SELDEMF,설비운영그룹,,SELDEM,대전 SMART Mega-Hub 운영 T/F,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,5
+QUNKE,춘천택배지점,3,QUNKE,춘천택배지점,3,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,4
+CHCSEH,대전HUB,,CHCSEH,대전HUB,,SELEO,인프라사업부,2,SELDE,택배,1,택배사업본부,4
+GBKSE,경북지부,2,GBKSE,경북지부,2,GBKSE,경북지부,2,SELDE,택배,1,택배사업본부,3
+SELEOOS,(구)동서울HUB,,SELEOOS,(구)동서울HUB,,SELEO,인프라사업부,2,SELDE,택배,1,택배사업본부,4
+WJUKE,원주택배지점,3,WJUKE,원주택배지점,3,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,4
+SELEIS,고객지원팀,,SELEIS,고객지원팀,,SELEI,서비스혁신부,2,SELDE,택배,1,택배사업본부,4
+JNJKE,전주택배지점,3,JNJKE,전주택배지점,3,HONSE,호남지부,2,SELDE,택배,1,택배사업본부,4
+SELEM,(구)대전 MegaHub T/F,,SELEM,(구)대전 MegaHub T/F,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,4
+SELEPY,(구)택배안전팀,,SELEPY,(구)택배안전팀,,SELEO,인프라사업부,2,SELDE,택배,1,택배사업본부,4
+QTWKE,대전택배지점,3,QTWKE,대전택배지점,3,CHCSE,충청지부,2,SELDE,택배,1,택배사업본부,4
+SELEXL,L.D.P팀,,SELEXL,L.D.P팀,,SELEX,elogi-X 사업부,,SELDE,택배,1,택배사업본부,4
+HINKE,진주택배지점,3,HINKE,진주택배지점,3,PUSSE,부경지부,2,SELDE,택배,1,택배사업본부,4
+BUPKE,부평택배지점,3,BUPKE,부평택배지점,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+GNOKE,강서택배지점,3,GNOKE,강서택배지점,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+JCNKE,인천택배지점,3,JCNKE,인천택배지점,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+SELEMC,(구)건축팀,,SELEM,(구)대전 MegaHub T/F,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,5
+ETAKE,동대구택배지점,3,ETAKE,동대구택배지점,3,GBKSE,경북지부,2,SELDE,택배,1,택배사업본부,4
+HONSE,호남지부,2,HONSE,호남지부,2,HONSE,호남지부,2,SELDE,택배,1,택배사업본부,3
+SENSEH,동서울HUB,,SENSEH,동서울HUB,,SELEO,인프라사업부,2,SELDE,택배,1,택배사업본부,4
+SELESM,(구)영업관리팀,,SELESM,(구)영업관리팀,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,4
+MAPKE,마포택배지점,3,MAPKE,마포택배지점,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+SELEP,택배기획부,2,SELEP,택배기획부,2,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,3
+SELEMCC,(구)건축그룹,,SELEM,(구)대전 MegaHub T/F,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,6
+SELEXF,(구)풀필먼트팀,,SELESB,(구)택배영업팀,,SELES,택배영업부,2,SELDE,택배,1,택배사업본부,5
+SELEISC,고객서비스센터,,SELEIS,고객지원팀,,SELEI,서비스혁신부,2,SELDE,택배,1,택배사업본부,5
+SELESB,(구)택배영업팀,,SELESB,(구)택배영업팀,,SELES,택배영업부,2,SELDE,택배,1,택배사업본부,4
+TAEKE,대구택배지점,3,TAEKE,대구택배지점,3,GBKSE,경북지부,2,SELDE,택배,1,택배사업본부,4
+SENSE,(구)수도권북부지점,,SENSE,(구)수도권북부지점,,SELEC,수도권 담당,,SELDE,택배,1,택배사업본부,4
+ICEKE,이천택배지점,3,ICEKE,이천택배지점,3,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,4
+SELEC,수도권 담당,,SELEC,수도권 담당,,SELEC,수도권 담당,,SELDE,택배,1,택배사업본부,3
+YSNKE,양산택배지점,3,YSNKE,양산택배지점,3,PUSSE,부경지부,2,SELDE,택배,1,택배사업본부,4
+BAESE,백암지점,2,BAESE,백암지점,2,BAESE,백암지점,2,SELDE,택배,1,택배사업본부,3
+KWJKE,광주택배지점,3,KWJKE,광주택배지점,3,HONSE,호남지부,2,SELDE,택배,1,택배사업본부,4
+PIKKE,평택택배지점,3,PIKKE,평택택배지점,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+SELEKK,전략영업팀,,SELEKK,전략영업팀,,SELEK,전략영업부,2,SELDE,택배,1,택배사업본부,4
+BCNKE,부천택배지점,3,BCNKE,부천택배지점,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+PUEKE,동부산택배지점,3,PUEKE,동부산택배지점,3,PUSSE,부경지부,2,SELDE,택배,1,택배사업본부,4
+SELEOSC,(구)고객서비스센터,,SELEOS,(구)고객지원팀,,SELEI,서비스혁신부,2,SELDE,택배,1,택배사업본부,5
+SELEON,(구)네트워크팀,,SELEON,(구)네트워크팀,,SELEI,서비스혁신부,2,SELDE,택배,1,택배사업본부,4
+SELEIAC,집배점계약그룹,,SELEIA,집배점지원팀,,SELEI,서비스혁신부,2,SELDE,택배,1,택배사업본부,5
+SELEPI,(구)업무개선팀,,SELEPI,(구)업무개선팀,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,4
+SELEX,elogi-X 사업부,,SELEX,elogi-X 사업부,,SELEX,elogi-X 사업부,,SELDE,택배,1,택배사업본부,3
+SELDEMO,운영그룹,,SELDEM,대전 SMART Mega-Hub 운영 T/F,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,5
+GUNKE,군포택배지점,3,GUNKE,군포택배지점,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+SELEI,서비스혁신부,2,SELEI,서비스혁신부,2,SELEI,서비스혁신부,2,SELDE,택배,1,택배사업본부,3
+SELEOY,택배안전팀,,SELEOY,택배안전팀,,SELEO,인프라사업부,2,SELDE,택배,1,택배사업본부,4
+SELDED,(구)대전메가허브운영TF팀,,SELDED,(구)대전메가허브운영TF팀,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,4
+SELEXLO,(구)당일택배그룹2,,SELEOO,택배운영팀,,SELEO,인프라사업부,2,SELDE,택배,1,택배사업본부,5
+SELEKKG,GS홈쇼핑그룹,,SELEKK,전략영업팀,,SELEK,전략영업부,2,SELDE,택배,1,택배사업본부,5
+SELESKG,(구)GS홈쇼핑그룹,,SELESK,(구)전략영업팀,,SELEK,전략영업부,2,SELDE,택배,1,택배사업본부,5
+SELEKN,농협SCM팀,,SELEKN,농협SCM팀,,SELEK,전략영업부,2,SELDE,택배,1,택배사업본부,4
+SELEK,전략영업부,2,SELEK,전략영업부,2,SELEK,전략영업부,2,SELDE,택배,1,택배사업본부,3
+HNMKE,하남택배지점,3,HNMKE,하남택배지점,3,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,4
+SELESK,(구)전략영업팀,,SELESK,(구)전략영업팀,,SELEK,전략영업부,2,SELDE,택배,1,택배사업본부,4
+SWUKE,수원택배지점,3,SWUKE,수원택배지점,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+SELES,택배영업부,2,SELES,택배영업부,2,SELES,택배영업부,2,SELDE,택배,1,택배사업본부,3
+USNKE,울산택배지점,3,USNKE,울산택배지점,3,PUSSE,부경지부,2,SELDE,택배,1,택배사업본부,4
+KPOKE,포항택배지점,3,KPOKE,포항택배지점,3,GBKSE,경북지부,2,SELDE,택배,1,택배사업본부,4
+SELDEM,대전 SMART Mega-Hub 운영 T/F,,SELDEM,대전 SMART Mega-Hub 운영 T/F,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,4
+SELEMF,(구)설비운영팀,,SELEM,(구)대전 MegaHub T/F,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,5
+BAEKP,3PL센터,3,BAEKP,3PL센터,3,BAESE,백암지점,2,SELDE,택배,1,택배사업본부,4
+SELEOND,(구)집배송지원그룹,,SELEON,(구)네트워크팀,,SELEI,서비스혁신부,2,SELDE,택배,1,택배사업본부,5
+BAEKE,B2B센터,3,BAEKE,B2B센터,3,BAESE,백암지점,2,SELDE,택배,1,택배사업본부,4
+PUSKE,부산택배지점,3,PUSKE,부산택배지점,3,PUSSE,부경지부,2,SELDE,택배,1,택배사업본부,4
+SELEO,인프라사업부,2,SELEO,인프라사업부,2,SELEO,인프라사업부,2,SELDE,택배,1,택배사업본부,3
+GURKE,구로택배지점,3,GURKE,구로택배지점,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+MPKKE,목포택배지점,3,MPKKE,목포택배지점,3,HONSE,호남지부,2,SELDE,택배,1,택배사업본부,4
+PUNKE,분당택배지점,3,PUNKE,분당택배지점,3,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,4
+SELESBF,(구)풀필먼트그룹,,SELESB,(구)택배영업팀,,SELES,택배영업부,2,SELDE,택배,1,택배사업본부,5
+SENSET,동부3PL팀,3,SENSET,동부3PL팀,3,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,4
+KUMKE,구미택배지점,3,KUMKE,구미택배지점,3,GBKSE,경북지부,2,SELDE,택배,1,택배사업본부,4
+SELESN,(구)농협SCM팀,,SELESN,(구)농협SCM팀,,SELEK,전략영업부,2,SELDE,택배,1,택배사업본부,4
+SELEPC,(구)상생협력팀,,SELEPC,(구)상생협력팀,,SELEI,서비스혁신부,2,SELDE,택배,1,택배사업본부,4
+SONKE,송파택배지점,3,SONKE,송파택배지점,3,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,4
+SELEMFF,(구)설비운영그룹,,SELEM,(구)대전 MegaHub T/F,,SELEP,택배기획부,2,SELDE,택배,1,택배사업본부,6
+YNGKE,용인택배지점,3,YNGKE,용인택배지점,3,SEESE,수도권동부지부,2,SELDE,택배,1,택배사업본부,4
+SELEOOM,설비관리그룹,,SELEOO,택배운영팀,,SELEO,인프라사업부,2,SELDE,택배,1,택배사업본부,5
+CHOKE,천안택배지점,3,CHOKE,천안택배지점,3,CHCSE,충청지부,2,SELDE,택배,1,택배사업본부,4
+ICNSE,인천공항택배영업소,3,ICNSE,인천공항택배영업소,3,SEWSE,수도권서부지부,2,SELDE,택배,1,택배사업본부,4
+SELEOOO,(구)당일택배그룹3,,SELEOO,택배운영팀,,SELEO,인프라사업부,2,SELDE,택배,1,택배사업본부,5
+SELEOS,(구)고객지원팀,,SELEOS,(구)고객지원팀,,SELEI,서비스혁신부,2,SELDE,택배,1,택배사업본부,4
+SELESS,택배영업팀,,SELESS,택배영업팀,,SELES,택배영업부,2,SELDE,택배,1,택배사업본부,4
+SELGES,글로벌이커머스영업팀,,SELGES,글로벌이커머스영업팀,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,4
+JKTSO,자카르타영업소,,JKTCG,인도네시아법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+JKTCG,인도네시아법인,,JKTCG,인도네시아법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+SELGP,글로벌기획부,,SELGP,글로벌기획부,,SELGP,글로벌기획부,,SELDG,글로벌,1,글로벌사업본부,3
+SELGFS,포워딩영업팀,,SELGFS,포워딩영업팀,,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,4
+SELSGS,(구)포워딩영업팀,,SELSGS,(구)포워딩영업팀,,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,4
+SELGDE,(구)국제특송팀,,SELGDE,(구)국제특송팀,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,4
+SELSGP,(구)프로젝트영업팀,,SELSGP,(구)프로젝트영업팀,,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,4
+SELGFO,포워딩운영팀,3,SELGFS,포워딩영업팀,,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+SELGE,이커머스사업부,2,SELGE,이커머스사업부,2,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,3
+ICNSG,인천공항지점,,ICNSG,인천공항지점,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,4
+LAXSLD,미주물류지점 조업팀,,LAXSL,미주물류지점,2,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+SELGDK,(구)글로벌KAM팀,,SELGDK,(구)글로벌KAM팀,,SELGD,(구)국내사업부,,SELDG,글로벌,1,글로벌사업본부,4
+MOWSO,모스크바사무소,,MOWSO,모스크바사무소,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+SELSGT,(구)포워딩운영2팀,,SELGFS,포워딩영업팀,,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+PNHSL,프놈펜지점,,PNHCG,캄보디아법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+SELGFB,포워딩운영2팀,,SELGFS,포워딩영업팀,,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+SZXSL,심천법인,,SZXSL,심천법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+SELGOO,(구)해외법인지원팀,,SELGOO,(구)해외법인지원팀,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+SELGOC,중국팀,,SELGOC,중국팀,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+SHASL,상해법인,,SHASL,상해법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+YNTSO,연태영업소,,TAOGL,청도법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+SELSGO,(구)포워딩운영1팀,,SELGFS,포워딩영업팀,,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+SELGEPC,(구)고객지원그룹,,SELGEP,(구)이커머스기획팀,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+PUSSG,부산국제지점,3,PUSSG,부산국제지점,3,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,4
+VIESL,비엔나지점,,PRGGL,체코법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+SELGPP,글로벌기획팀,,SELGPP,글로벌기획팀,,SELGP,글로벌기획부,,SELDG,글로벌,1,글로벌사업본부,4
+SELGOA,아시아팀,,SELGOA,아시아팀,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+LAXGL,미주법인,,LAXGL,미주법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+ICNSGI,GDC운영팀,3,ICNSG,인천공항지점,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+LAXSL,미주물류지점,2,LAXSL,미주물류지점,2,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+DFWSO,달라스영업소,,LAXSL,미주물류지점,2,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+SELGFP,프로젝트사업팀,3,SELGFP,프로젝트사업팀,3,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,4
+LAXSLE,미주물류지점 특송팀,,LAXSL,미주물류지점,2,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+JCNSGW,(구)창고운영팀,,JCNSG,인천국제지점,,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+SELGEOB,(구)이커머스운영2그룹,,SELGEO,글로벌이커머스운영팀,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+SELGEO,글로벌이커머스운영팀,,SELGEO,글로벌이커머스운영팀,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,4
+DLCGL,대련법인,,DLCGL,대련법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+PDXSO,포틀랜드사무소,,LAXSL,미주물류지점,2,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+HKGSL,홍콩법인,,HKGSL,홍콩법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+TASGL,ELS 합자법인,,TASGL,ELS 합자법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+TAOGL,청도법인,,TAOGL,청도법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+JCNSG,인천국제지점,,JCNSG,인천국제지점,,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,4
+LAXSLI,미주물류지점 국제물류팀,,LAXSL,미주물류지점,2,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+VNMGL,베트남법인,,VNMGL,베트남법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+SELGOW,미주구주팀,,SELGOW,미주구주팀,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+TAOSL,청도지점,,TAOGL,청도법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+ICNSGG,김포공항운영팀,3,ICNSG,인천공항지점,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+NYCSO,뉴욕영업소,,LAXSL,미주물류지점,2,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+SELGO,해외사업부,,SELGO,해외사업부,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,3
+LAXSLT,미주물류지점 트럭킹팀,,LAXSL,미주물류지점,2,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+PNHCG,캄보디아법인,,PNHCG,캄보디아법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+JCNSGI,국제물류팀,3,JCNSG,인천국제지점,,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+PRGGL,체코법인,,PRGGL,체코법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+CANSL,광저우법인,,SZXSL,심천법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+SELGDF,(구)글로벌포워딩팀,,SELGDF,(구)글로벌포워딩팀,,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,4
+SELGD,(구)국내사업부,,SELGD,(구)국내사업부,,SELGD,(구)국내사업부,,SELDG,글로벌,1,글로벌사업본부,3
+SELGEP,(구)이커머스기획팀,,SELGEP,(구)이커머스기획팀,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,4
+ATLANTA,애틀랜타사무소,,LAXSL,미주물류지점,2,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+SELDGY,(구)글로벌안전팀,,SELDGY,(구)글로벌안전팀,,SELGP,글로벌기획부,,SELDG,글로벌,1,글로벌사업본부,4
+ICNSGS,(구)특송영업팀,,ICNSG,인천공항지점,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+RGNSL,미얀마법인,,RGNSL,미얀마법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+SEASO,시애틀영업소,,LAXSL,미주물류지점,2,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+SELGF,포워딩사업부,2,SELGF,포워딩사업부,2,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,3
+SELGPY,글로벌안전팀,,SELGPY,글로벌안전팀,,SELGP,글로벌기획부,,SELDG,글로벌,1,글로벌사업본부,4
+LAXSLG,미주물류지점 관리팀,3,LAXSL,미주물류지점,2,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+HANSO,하노이사무소,,VNMGL,베트남법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+FRASL,프랑크푸르트지점,,PRGGL,체코법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+SELGFA,포워딩운영1팀,,SELGFS,포워딩영업팀,,SELGF,포워딩사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+WEHSO,위해사무소,,SHASL,상해법인,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+SELGEPS,(구)이커머스영업그룹,,SELGEP,(구)이커머스기획팀,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+SELGPS,글로벌지원팀,,SELGPS,글로벌지원팀,,SELGP,글로벌기획부,,SELDG,글로벌,1,글로벌사업본부,4
+SELSG,(구)서울국제지점,,SELSG,(구)서울국제지점,,SELGD,(구)국내사업부,,SELDG,글로벌,1,글로벌사업본부,4
+ICNSGO,(구)특송운영팀,,ICNSG,인천공항지점,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+SELDGP,(구)글로벌기획팀,,SELDGP,(구)글로벌기획팀,,SELGP,글로벌기획부,,SELDG,글로벌,1,글로벌사업본부,4
+SELGEOA,(구)이커머스운영1그룹,,SELGEO,글로벌이커머스운영팀,,SELGE,이커머스사업부,2,SELDG,글로벌,1,글로벌사업본부,5
+CHISO,시카고영업소,,LAXSL,미주물류지점,2,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,5
+BKKSO,태국영업소,,BKKSO,태국영업소,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+TYOSO,도쿄사무소,,TYOSO,도쿄사무소,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+SINSO,싱가포르영업소,,SINSO,싱가포르영업소,,SELGO,해외사업부,,SELDG,글로벌,1,글로벌사업본부,4
+SELAGGA,자산관리그룹,,SELAGA,자산관리팀,,SELAG,총무지원실,,SELDS,,1,지원본부,5
+SELILW,(구)복리후생팀,,SELILW,(구)복리후생팀,,SELIL,노사협력실,,SELDS,,1,지원본부,4
+SELIP,인사전략실,,SELIP,인사전략실,,SELIP,인사전략실,,SELDS,,1,지원본부,3
+SELILE,(구)노사협력팀,,SELILE,(구)노사협력팀,,SELIL,노사협력실,,SELDS,,1,지원본부,4
+SELLG,법무실,,SELLG,법무실,,SELLG,법무실,,SELDS,,1,지원본부,3
+SELIPE,노사협력팀,,SELIPE,노사협력팀,,SELIL,노사협력실,,SELDS,,1,지원본부,4
+SELAG,총무지원실,,SELAG,총무지원실,,SELAG,총무지원실,,SELDS,,1,지원본부,3
+SELIPG,인사관리팀,,SELIPG,인사관리팀,,SELIP,인사전략실,,SELDS,,1,지원본부,4
+SELLGLC,컴플라이언스그룹,,SELLGL,법무팀,,SELLG,법무실,,SELDS,,1,지원본부,5
+SELSP,정책기획담당,,SELSP,정책기획담당,,SELSP,정책기획담당,,SELDS,,1,지원본부,3
+SELIPT,인력개발팀,,SELIPT,인력개발팀,,SELIP,인사전략실,,SELDS,,1,지원본부,4
+SELAGG,총무팀,,SELAGG,총무팀,,SELAG,총무지원실,,SELDS,,1,지원본부,4
+SELLGL,법무팀,,SELLGL,법무팀,,SELLG,법무실,,SELDS,,1,지원본부,4
+SELIPO,글로벌인사팀,,SELIPO,글로벌인사팀,,SELIP,인사전략실,,SELDS,,1,지원본부,4
+SELFSH,(구)HR전략팀,,SELFSH,(구)HR전략팀,,SELIL,노사협력실,,SELDS,,1,지원본부,4
+SELIL,노사협력실,,SELIL,노사협력실,,SELIL,노사협력실,,SELDS,,1,지원본부,3
+SELAGA,자산관리팀,,SELAGA,자산관리팀,,SELAG,총무지원실,,SELDS,,1,지원본부,4
+SELIPP,인사전략팀,,SELIPP,인사전략팀,,SELIL,노사협력실,,SELDS,,1,지원본부,4
+SELOY,안전보안실,,SELOY,안전보안실,,SELOY,안전보안실,,HJH009,본사직할,1,본사직할,3
+SELBIIM,모니터링그룹,,SELBII,감사팀,,SELBI,감사실,,HJH009,본사직할,1,본사직할,5
+SELIW,물류연구원,,SELIW,물류연구원,,SELBP,경영기획실,,HJH009,본사직할,1,본사직할,4
+SELABI,비용심사팀,,SELABI,비용심사팀,,SELAB,재무관리실,,HJH009,본사직할,1,본사직할,4
+SELFSXI,정보보안그룹,,SELOYS,정보보안팀,,SELOY,안전보안실,,HJH009,본사직할,1,본사직할,5
+SELIBB,사업총괄팀,,SELIBB,사업총괄팀,,SELIB,사업총괄부,,HJH009,본사직할,1,본사직할,4
+SELOYCP,예방안전그룹,,SELOYC,안전보건컴플라이언스팀,,SELOY,안전보안실,,HJH009,본사직할,1,본사직할,5
+SELMQP,홍보팀,,SELMQP,홍보팀,,SELMQ,마케팅실,,HJH009,본사직할,1,본사직할,4
+SELBPP,경영기획팀,,SELBPP,경영기획팀,,SELBP,경영기획실,,HJH009,본사직할,1,본사직할,4
+SELFSDC,CCoE그룹,,SELFSDC,CCoE그룹,,SELFS,미래성장전략실,2,HJH009,본사직할,1,본사직할,4
+DIREC,중역실,,DIREC,중역실,,DIREC,중역실,,HJH009,본사직할,1,본사직할,3
+SELOYI,산업안전조사팀,,SELOYI,산업안전조사팀,,SELOY,안전보안실,,HJH009,본사직할,1,본사직할,4
+SELAGF,(구)시설팀,,SELAGF,(구)시설팀,,SELPP,구매시설실,,HJH009,본사직할,1,본사직할,4
+SELXER,ERP TF팀,,SELXER,ERP TF팀,,SELAB,재무관리실,,HJH009,본사직할,1,본사직할,4
+SELOYP,안전보건기획팀,,SELOYP,안전보건기획팀,,SELOY,안전보안실,,HJH009,본사직할,1,본사직할,4
+SELBPI,경영개선팀,,SELBPI,경영개선팀,,SELBP,경영기획실,,HJH009,본사직할,1,본사직할,4
+SELBP,경영기획실,,SELBP,경영기획실,,SELBP,경영기획실,,HJH009,본사직할,1,본사직할,3
+SELFSS,미래전략팀,3,SELFSS,미래전략팀,3,SELFS,미래성장전략실,2,HJH009,본사직할,1,본사직할,4
+SELIBN,신사업개발팀,,SELIBN,신사업개발팀,,SELIB,사업총괄부,,HJH009,본사직할,1,본사직할,4
+SELXWL,IT운영2팀,,SELXWL,IT운영2팀,,SELXW,DT전략실,,HJH009,본사직할,1,본사직할,4
+SELFSO,IT운영팀,,SELFSO,IT운영팀,,SELFS,미래성장전략실,2,HJH009,본사직할,1,본사직할,4
+SELFST,Data팀,,SELFST,Data팀,,SELFS,미래성장전략실,2,HJH009,본사직할,1,본사직할,4
+SELFS,미래성장전략실,2,SELFS,미래성장전략실,2,SELFS,미래성장전략실,2,HJH009,본사직할,1,본사직할,3
+SELXWB,물류/글로벌DT지원팀,,SELXWB,물류/글로벌DT지원팀,,SELXW,DT전략실,,HJH009,본사직할,1,본사직할,4
+SELBI,감사실,,SELBI,감사실,,SELBI,감사실,,HJH009,본사직할,1,본사직할,3
+SELUPA,추정실적 고도화 TF팀,,SELUPA,추정실적 고도화 TF팀,,SELUPA,추정실적 고도화 TF팀,,HJH009,본사직할,1,본사직할,3
+SELXWA,택배/플랫폼DT지원팀,,SELXWA,택배/플랫폼DT지원팀,,SELXW,DT전략실,,HJH009,본사직할,1,본사직할,4
+SELAGY,안전보안팀,,SELAGY,안전보안팀,,SELOY,안전보안실,,HJH009,본사직할,1,본사직할,4
+SELXW,DT전략실,,SELXW,DT전략실,,SELXW,DT전략실,,HJH009,본사직할,1,본사직할,3
+SELABB,관리회계팀,,SELABB,관리회계팀,,SELAB,재무관리실,,HJH009,본사직할,1,본사직할,4
+SELFSD,DX팀,,SELFSD,DX팀,,SELFS,미래성장전략실,2,HJH009,본사직할,1,본사직할,4
+SELOYIP,(구)예방안전그룹,,SELOYI,산업안전조사팀,,SELOY,안전보안실,,HJH009,본사직할,1,본사직할,5
+SELXWE,IT운영1팀,,SELXWE,IT운영1팀,,SELXW,DT전략실,,HJH009,본사직할,1,본사직할,4
+SELBPC,(구)홍보팀,,SELBPC,(구)홍보팀,,SELMQ,마케팅실,,HJH009,본사직할,1,본사직할,4
+HJH010,본사부,,HJH010,본사부,,HJH010,본사부,,HJH009,본사직할,1,본사직할,3
+SELFSI,PI팀,,SELFSI,PI팀,,SELFS,미래성장전략실,2,HJH009,본사직할,1,본사직할,4
+SELPP,구매시설실,,SELPP,구매시설실,,SELPP,구매시설실,,HJH009,본사직할,1,본사직할,3
+SELMQ,마케팅실,,SELMQ,마케팅실,,SELMQ,마케팅실,,HJH009,본사직할,1,본사직할,3
+SELAGP,(구)구매팀,,SELAGP,(구)구매팀,,SELPP,구매시설실,,HJH009,본사직할,1,본사직할,4
+SELFSP,프로젝트팀,3,SELFSP,프로젝트팀,3,SELFS,미래성장전략실,2,HJH009,본사직할,1,본사직할,4
+SELXWC,클라우드운영팀,,SELXWC,클라우드운영팀,,SELXW,DT전략실,,HJH009,본사직할,1,본사직할,4
+SELABM,내부회계관리팀,,SELABM,내부회계관리팀,,SELAB,재무관리실,,HJH009,본사직할,1,본사직할,4
+SELOYC,안전보건컴플라이언스팀,,SELOYC,안전보건컴플라이언스팀,,SELOY,안전보안실,,HJH009,본사직할,1,본사직할,4
+SELXWD,DATA팀,,SELXWD,DATA팀,,SELXW,DT전략실,,HJH009,본사직할,1,본사직할,4
+SELBPMG,녹색환경그룹,,SELBPM,경영관리팀,,SELBP,경영기획실,,HJH009,본사직할,1,본사직할,5
+SELABF,재무팀,,SELABF,재무팀,,SELAB,재무관리실,,HJH009,본사직할,1,본사직할,4
+SELPPP,구매팀,,SELPPP,구매팀,,SELPP,구매시설실,,HJH009,본사직할,1,본사직할,4
+SELPPR,부동산인프라팀,,SELPPR,부동산인프라팀,,SELPP,구매시설실,,HJH009,본사직할,1,본사직할,4
+SELPPF,시설관재팀,,SELPPF,시설관재팀,,SELPP,구매시설실,,HJH009,본사직할,1,본사직할,4
+SELXWCF,클라우드비용통제그룹,,SELXWCF,클라우드비용통제그룹,,SELXW,DT전략실,,HJH009,본사직할,1,본사직할,4
+SELBPM,경영관리팀,,SELBPM,경영관리팀,,SELBP,경영기획실,,HJH009,본사직할,1,본사직할,4
+SELFSX,IT기획팀,,SELFSX,IT기획팀,,SELFS,미래성장전략실,2,HJH009,본사직할,1,본사직할,4
+SELXWX,DT기획팀,,SELXWX,DT기획팀,,SELXW,DT전략실,,HJH009,본사직할,1,본사직할,4
+SELAB,재무관리실,,SELAB,재무관리실,,SELAB,재무관리실,,HJH009,본사직할,1,본사직할,3
+SELOYS,정보보안팀,,SELOYS,정보보안팀,,SELOY,안전보안실,,HJH009,본사직할,1,본사직할,4
+SELIB,사업총괄부,,SELIB,사업총괄부,,SELIB,사업총괄부,,HJH009,본사직할,1,본사직할,3
+SELABR,수입관리팀,,SELABR,수입관리팀,,SELAB,재무관리실,,HJH009,본사직할,1,본사직할,4
+SELMQM,마케팅팀,,SELMQM,마케팅팀,,SELMQ,마케팅실,,HJH009,본사직할,1,본사직할,4
+SELABFI,보험관리그룹,,SELABF,재무팀,,SELAB,재무관리실,,HJH009,본사직할,1,본사직할,5
+SELAGR,(구)부동산인프라팀,,SELAGR,(구)부동산인프라팀,,SELPP,구매시설실,,HJH009,본사직할,1,본사직할,4
+SELXWDF,재무DT지원그룹,,SELXWDF,재무DT지원그룹,,SELXW,DT전략실,,HJH009,본사직할,1,본사직할,4
+SELBII,감사팀,,SELBII,감사팀,,SELBI,감사실,,HJH009,본사직할,1,본사직할,4
+SELABA,회계팀,,SELABA,회계팀,,SELAB,재무관리실,,HJH009,본사직할,1,본사직할,4
+SELMQC,(구)CSV팀,,SELMQC,(구)CSV팀,,SELDPZ,디지털플랫폼사업본부,2,SELDP,디지털플랫폼,1,디지털플랫폼사업본부,4
+SELEXS,(구)셀러솔루션팀,,SELEXS,(구)셀러솔루션팀,,SELDPZ,디지털플랫폼사업본부,2,SELDP,디지털플랫폼,1,디지털플랫폼사업본부,4
+SELGEH,(구)이하넥스팀2,,SELGEH,(구)이하넥스팀2,,SELDPZ,디지털플랫폼사업본부,2,SELDP,디지털플랫폼,1,디지털플랫폼사업본부,4
+SELGDH,(구)이하넥스팀,,SELGDH,(구)이하넥스팀,,SELDPZ,디지털플랫폼사업본부,2,SELDP,디지털플랫폼,1,디지털플랫폼사업본부,4
+SELEPS,(구)셀러솔루션팀2,,SELEPS,(구)셀러솔루션팀2,,SELDPZ,디지털플랫폼사업본부,2,SELDP,디지털플랫폼,1,디지털플랫폼사업본부,4
+SELDPM,중개솔루션팀,3,SELDPM,중개솔루션팀,3,SELDPZ,디지털플랫폼사업본부,2,SELDP,디지털플랫폼,1,디지털플랫폼사업본부,4
+SELDPE,이커머스사업팀,3,SELDPE,이커머스사업팀,3,SELDPZ,디지털플랫폼사업본부,2,SELDP,디지털플랫폼,1,디지털플랫폼사업본부,4
+SELDPZ,디지털플랫폼사업본부,2,SELDPZ,디지털플랫폼사업본부,2,SELDPZ,디지털플랫폼사업본부,2,SELDP,디지털플랫폼,1,디지털플랫폼사업본부,3
+SELDPL,물류솔루션팀,3,SELDPL,물류솔루션팀,3,SELDPZ,디지털플랫폼사업본부,2,SELDP,디지털플랫폼,1,디지털플랫폼사업본부,4
+SELDPK,K-패션솔루션팀,3,SELDPK,K-패션솔루션팀,3,SELDPZ,디지털플랫폼사업본부,2,SELDP,디지털플랫폼,1,디지털플랫폼사업본부,4
+SELKFS,(구)K-패션 해외 진출 지원 솔루션팀,,SELKFS,(구)K-패션 해외 진출 지원 솔루션팀,,SELDPZ,디지털플랫폼사업본부,2,SELDP,디지털플랫폼,1,디지털플랫폼사업본부,4
+#N/A,#N/A,,#N/A,#N/A,,#N/A,#N/A,,#N/A,#N/A,,#N/A,
