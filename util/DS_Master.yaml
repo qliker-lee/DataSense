@@ -1,0 +1,133 @@
+Sampling_Rows: 100000
+Format_Max_Value: 10000
+large_file_threshold_mb: 10
+encoding: utf-8-sig
+
+# Path & Directory 설정
+# ROOT_PATH: 상대 경로 또는 환경에 따라 자동 설정됨
+# ROOT_PATH: (자동 감지)
+
+# 디렉토리 구조
+directories:
+  input: 'DataSense/DS_Input'       # 입력 데이터 디렉토리
+  output: 'DataSense/DS_Output'     # 출력 데이터 디렉토리
+  meta: 'DataSense/DS_Meta'         # 메타 데이터 디렉토리
+  master_target: 'DataSense/@Master'  # 마스터 데이터 기본 디렉토리
+  master_pkl: 'DataSense/@Master/pkl'  # Pickle 형식 마스터 데이터
+  master_csv: 'DataSense/@Master/csv'  # CSV 형식 마스터 데이터
+  master_source: 'DataSense/1_Master_Code/Source'  # 우리기업의 마스터 코드 데이터
+  reference_source_dir: 'DataSense/5_Reference_Code/Source'  # 참조 코드 데이터
+  our_master_source_dir: 'DataSense/1_Master_Code/Source'  # 우리기업의 마스터 코드 데이터
+
+# 파일 설정 
+files:
+  valuechain: DataSense/DS_Meta/DataSense_ValueChain.csv
+  valuechain_master: DataSense/DS_Meta/DataSense_ValueChain_Master.csv
+  valuechain_system: DataSense/DS_Meta/DataSense_ValueChain_System.csv
+  valuechain_master_column: DataSense/DS_Meta/DataSense_ValueChain_Master_Column.csv
+  valuechain_split: DataSense/DS_Meta/DataSense_ValueChain_Split.csv
+  # valuechain: '/DS_Meta/DataSense_ValueChain.csv'  # 물류 가치 사슬 파일명
+  valuechain_our_master: 'DataSense/DS_Meta/DataSense_ValueChain_Our_Master.csv'  # 물류 가치 사슬 & 우리기업의 마스터 파일명
+  # valuechain_standard_master: 'DataSense/DS_Meta/DataSense_ValueChain_Standard_Master.csv'  # 물류 가치 사슬 & 표준 마스터 파일명
+  valuechain_standard_master: 'DataSense/DS_Meta/DataSense_ValueChain_Our_Master.csv'   # 물류 가치 사슬 & 표준 마스터 파일명
+  valuechain_our_master_detail: 'DataSense/DS_Meta/DataSense_ValueChain_Our_Master_Detail.csv'  # 물류 가치 사슬 & 표준 마스터 상세 파일명
+  valuechain_standard_master_detail: 'DataSense/DS_Meta/DataSense_ValueChain_Standard_Master_Detail.csv'  # 물류 가치 사슬 & 표준 마스터 상세 파일명
+  codelist_meta: 'DataSense/DS_Meta/CodeList_Meta.xlsx'  # 코드 리스트 메타 파일명
+  master_meta: 'DataSense/DS_Meta/Master_Meta.xlsx'  # 마스터 메타 파일명
+  recursive_relation_meta: 'DataSense/DS_Meta/Recursive_Relation_Meta.xlsx'  # 재귀 관계 메타 파일명
+  common_s2p_meta: 'DataSense/DS_Meta/Common_s2p_Meta.xlsx'  # 공통 코드 메타 파일명
+  mapping: 'DataSense/DS_Meta/mapping.xlsx'          # 매핑 정의 파일명
+  dq_contract: 'DataSense/util/DQ_Contract.yaml'  # DQ 계약 파일명
+  rule_definition: 'DataSense/DS_Meta/RuleDefinition.csv'  # 마스터 메타 파일명
+  rule_definition_validdata: 'DataSense/DS_Meta/RuleDefinition_ValidData.csv'  # 마스터 메타 파일명
+
+
+  # 출력파일명은 확장자 명을 지정하지 않습니다. (csv 및 pkl 파일을 생성합니다.)
+  datatype: 'DataSense/DS_Output/DataType' # 데이터 타입 파일명
+  filecharacter: 'DataSense/DS_Output/FileCharacter'     # 문자형 통계 파일명
+  fileformat: 'DataSense/DS_Output/FileFormat'     # 파일 형식 파일명
+  codemapping: 'DataSense/DS_Output/CodeMapping'     # 코드 매핑 파일명
+  codemapping_relationship: 'DataSense/DS_Output/CodeMapping_Relationship'     # 코드 매핑 관계 파일명
+  ruldatatype: 'DataSense/DS_Output/RuleDataType'     # 룰 데이터 타입 파일명
+  fileformatmapping: 'DataSense/DS_Output/FileFormatMapping'     # 파일 형식 매핑 파일명
+  filestats: 'DataSense/DS_Output/FileStats'       # 파일 통계 파일명
+  masterformat: 'DataSense/DS_Output/MasterFormat' # 마스터 형식 파일명
+  masterstats: 'DataSense/DS_Output/MasterStats' # 마스터 통계 파일명
+  mastermapping: 'DataSense/DS_Output/MasterMapping' # 마스터 매핑 파일명
+  mastercharacter: 'DataSense/DS_Output/MasterCharacter' # 마스터 문자 파일명
+  rulemapping: 'DataSense/DS_Output/RuleMapping' # 룰 매핑 파일명
+  masterrule: 'DataSense/DS_Output/MasterRule' # 마스터 룰 파일명
+  numericstats: 'DataSense/DS_Output/NumericStats' # 숫자형 통계 파일명
+  filesummary: 'DataSense/DS_Output/FileSummary' # 파일 요약 파일명
+  fieldinfo: 'DataSense/DS_Output/FieldInfo' # 필드 정보 파일명
+  # maaster vs reference 비교파일 
+  referenceformat: 'DataSense/DS_Output/ReferenceFormat' # 참조 형식 파일명
+  referencemapping: 'DataSense/DS_Output/ReferenceMapping' # 참조 매핑 파일명
+  referencecharacter: 'DataSense/DS_Output/ReferenceCharacter' # 참조 문자 파일명
+  referencestats: 'DataSense/DS_Output/ReferenceStats' # 참조 통계 파일명
+  referencesummary: 'DataSense/DS_Output/ReferenceSummary' # 참조 요약 파일명
+  referenceinfo: 'DataSense/DS_Output/ReferenceInfo' # 참조 정보 파일명
+  mastertypedefinition: 'DataSense/DS_Meta/MasterType_Definition' # 마스터 타입 정의 파일명
+
+
+# 처리 설정
+processing:
+  encoding: 'utf-8'          # 기본 인코딩
+  chunk_size: 10000          # 대용량 파일 처리시 청크 크기
+  max_workers: 4             # 멀티프로세싱 워커 수
+
+
+input_dirs:
+  Master:      DataSense/1_Master_Code/Source
+  Operation:   DataSense/2_Operation_Code/Source
+  Attribute:   DataSense/3_Attribute_Code/Source
+  Common:      DataSense/4_Common_Code/Source
+  Reference:   DataSense/5_Reference_Code/Source
+  Validation:  DataSense/6_Validation_Code/Source
+
+prefixes:
+  master: "1_"
+  operation: "2_"
+  attribute: "3_"
+  common: "4_"
+  validation: "5_"
+  reference: "6_"
+
+format:
+  max_value: 100
+  avg_length: 50
+  sampling_rows: 10000
+  chunk_size: 100000
+
+# 마스터 코드 설정
+Master:
+  Prefix: '1_'
+  Dir: 'DataSense/1_Master_Code'
+  Meta: 'Master_Meta.xlsx'
+
+Operation:
+  Prefix: '2_'
+  Dir: 'DataSense/2_Operation_Code'
+  Meta: 'Operation_Meta.xlsx'
+
+Attribute:
+  Prefix: '3_'
+  Dir: 'DataSense/3_Attribute_Code'
+  Meta: 'Attribute_Meta.xlsx'
+
+Common:
+  Prefix: '4_'
+  Dir: 'DataSense/4_Common_Code'
+  Meta: 'Common_s2p_Meta.xlsx'
+
+Reference:
+  Prefix: '5_'
+  Dir: 'DataSense/5_Reference_Code'
+  Meta: 'Reference_Meta.xlsx'
+
+Validation: 
+  Prefix: '6_'
+  Dir: 'DataSense/6_Validation_Code'
+  Meta: 'Validation_Meta.xlsx'
+
+DataSense_Password: 'qlalfqjsgh'

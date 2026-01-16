@@ -1,0 +1,29 @@
+Sampling_Rows: 100000
+Format_Max_Value: 10000
+large_file_threshold_mb: 10
+encoding: utf-8-sig
+chunk_size: 10000
+max_workers: 4
+ROOT_PATH: C:/projects/myproject/QDQM/DataSense
+directories:
+  input: DS_Input
+  output: DS_Output
+  meta: DS_Meta
+  doc: DS_Doc
+  util: util
+  function: function
+  tmp: tmp
+source_directories:
+  master: 1_Master_Code/Source
+  operation: 2_Operation_Code/Source
+  attribute: 3_Attribute_Code/Source
+  common: 4_Common_Code/Source
+  reference: 5_Reference_Code/Source
+  validation: 6_Validation_Code/Source
+source_prefixes:
+  master: '1_'
+  operation: '2_'
+  attribute: '3_'
+  common: '4_'
+  validation: '5_'
+  reference: '6_'

@@ -1,0 +1,52 @@
+# DataSense/util/DQ_Contract.yaml
+data_contract:
+  defaults:
+    severity: medium
+    null:
+      max_pct: 5          # 기본: NULL 5% 이하
+    length: {}            # 전역 기본 없음(필요 컬럼만 지정)
+    pattern: {}           # 전역 기본 없음
+    numeric: {}           # 전역 기본 없음
+    domain: {}            # 전역 기본 없음
+
+  columns:
+    - file: "*"
+      column: "Zip*"
+      severity: high
+      importance: 1.8     # ← 중요도 가중(기본 1.0). 높을수록 동일 결함이라도 가중 패널티 커짐
+      rules:
+        null: { max_pct: 1 }
+        pattern:
+          regex: "^[0-9]{5}$"
+          fixed_length: 5
+          allow_leading_zero: true
+
+    # 2) 이메일: 간단 regex, NULL 2% 이하
+    - file: "*"
+      column: "*Email*"
+      severity: medium
+      rules:
+        null:
+          max_pct: 2
+        pattern:
+          regex: "^[^@\\s]+@[^@\\s]+\\.[^@\\s]{2,}$"
+
+    # 3) 코드성 ID: 길이 6~12
+    - file: "*"
+      column: "*ID"
+      severity: medium
+      rules:
+        length:
+          min: 6
+          max: 12
+
+    # 4) 금액/수치 범위 예
+    - file: "*"
+      column: "*Amount*"
+      severity: medium
+      rules:
+        null:
+          max_pct: 0
+        numeric:
+          min: 0
+          max: 1000000000

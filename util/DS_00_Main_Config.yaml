@@ -1,0 +1,52 @@
+# DataSense Main Config 설정 파일
+Sampling_Rows: 100000
+Format_Max_Value: 10000
+large_file_threshold_mb: 10
+encoding: utf-8-sig
+
+# 디렉토리 구조
+directories:
+  input: 'DS_Input'       # 입력 데이터 디렉토리
+  output: 'DS_Output'     # 출력 데이터 디렉토리
+  meta: 'DS_Meta'         # 메타 데이터 디렉토리
+  reference_source: 'DS_Input/Reference'  # 참조 코드 데이터
+  internal_source: 'DS_Input/Internal'  # 우리기업의 마스터 코드 데이터
+
+# 파일 설정 
+files:
+  valuechain: DS_Meta/DataSense_ValueChain.csv
+  valuechain_master: DS_Meta/DataSense_ValueChain_Master.csv
+  valuechain_system: DS_Meta/DataSense_ValueChain_System.csv
+  valuechain_master_column: DS_Meta/DataSense_ValueChain_Master_Column.csv
+  valuechain_split: DS_Meta/DataSense_ValueChain_Split.csv
+
+
+  # 출력파일명은 확장자 명을 지정하지 않습니다. (csv 및 pkl 파일을 생성합니다.)
+  datatype: 'DS_Output/DataType' # 데이터 타입 파일명
+  filecharacter: 'DS_Output/FileCharacter'     # 문자형 통계 파일명
+  fileformat: 'DS_Output/FileFormat'     # 파일 형식 파일명
+  codemapping: 'DS_Output/CodeMapping'     # 코드 매핑 파일명
+  codemapping_relationship: 'DS_Output/CodeMapping_Relationship'     # 코드 매핑 관계 파일명
+  ruldatatype: 'DS_Output/RuleDataType'     # 룰 데이터 타입 파일명
+  fileformatmapping: 'DS_Output/FileFormatMapping'     # 파일 형식 매핑 파일명
+  filestats: 'DS_Output/FileStats'       # 파일 통계 파일명
+  masterformat: 'DS_Output/MasterFormat' # 마스터 형식 파일명
+  masterstats: 'DS_Output/MasterStats' # 마스터 통계 파일명
+  mastermapping: 'DS_Output/MasterMapping' # 마스터 매핑 파일명
+  mastercharacter: 'DS_Output/MasterCharacter' # 마스터 문자 파일명
+  rulemapping: 'DS_Output/RuleMapping' # 룰 매핑 파일명
+  masterrule: 'DS_Output/MasterRule' # 마스터 룰 파일명
+  numericstats: 'DS_Output/NumericStats' # 숫자형 통계 파일명
+  filesummary: 'DS_Output/FileSummary' # 파일 요약 파일명
+  fieldinfo: 'DS_Output/FieldInfo' # 필드 정보 파일명
+  # maaster vs reference 비교파일 
+  referenceformat: 'DS_Output/ReferenceFormat' # 참조 형식 파일명
+  referencemapping: 'DS_Output/ReferenceMapping' # 참조 매핑 파일명
+  referencecharacter: 'DS_Output/ReferenceCharacter' # 참조 문자 파일명
+  referencestats: 'DS_Output/ReferenceStats' # 참조 통계 파일명
+  referencesummary: 'DS_Output/ReferenceSummary' # 참조 요약 파일명
+  referenceinfo: 'DS_Output/ReferenceInfo' # 참조 정보 파일명
+  mastertypedefinition: 'DS_Meta/MasterType_Definition' # 마스터 타입 정의 파일명
+
+
+DataSense_Password: 'qlalfqjsgh'
