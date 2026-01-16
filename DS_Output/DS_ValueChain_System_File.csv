@@ -1,0 +1,92 @@
+﻿Industry,FileName,Activity,System
+물류-택배,COMPANY.csv,Inbound Logistics,Pickup
+물류-택배,CONTRACT.csv,Marketing & Sales,Pickup
+물류-택배,CUSTOMER.csv,Marketing & Sales,Pickup
+물류-택배,OneClick고객.csv,Marketing & Sales,Pickup
+물류-택배,ORGNIZATION.csv,Outbound Logistics,Delivery
+물류-택배,PRM계약.csv,Marketing & Sales,Pickup
+물류-택배,test.csv,Inbound Logistics,
+물류-택배,test1.csv,,
+물류-택배,test1_sum.csv,,
+물류-택배,test1_sum2.csv,,
+물류-택배,test2.csv,,
+물류-택배,test3.csv,,
+물류-택배,간선사업자.csv,Operations,Operations
+물류-택배,개인고객.csv,Inbound Logistics,Pickup
+물류-택배,계약마스터.csv,Marketing & Sales,Pickup
+물류-택배,고객마스터.csv,Inbound Logistics,Pickup
+물류-택배,관리회계_고객.csv,Finance,Finance
+물류-택배,관리회계_사업.csv,Finance,Finance
+물류-택배,관리회계_조직.csv,Finance,Finance
+물류-택배,기업고객.csv,Marketing & Sales,Pickup
+물류-택배,배송점.csv,Outbound Logistics,Delivery
+물류-택배,사원마스터.csv,HR,HR
+물류-택배,상품분류.csv,Inbound Logistics,Pickup
+물류-택배,서브터미널.csv,Operations,Operations
+물류-택배,수입관리_고객.csv,Outbound Logistics,수입관리
+물류-택배,수입관리점소.csv,Outbound Logistics,수입관리
+물류-택배,영업소.csv,Inbound Logistics,Pickup
+물류-택배,지점코드.csv,Outbound Logistics,Delivery
+물류-택배,집하점.csv,Inbound Logistics,Pickup
+물류-택배,터미널마스터.csv,Operations,Operations
+물류-택배,허브터미널.csv,Operations,Operations
+물류-택배,계정과목코드.csv,Finance,Finance
+물류-택배,계정코드관리.csv,,
+물류-택배,관리회계BI_계정.csv,,
+물류-택배,관리회계BI_사업.csv,,
+물류-택배,관리회계BI_조직.csv,,
+물류-택배,관리회계QLIK_조직.csv,,
+물류-택배,관리회계_계정그룹.csv,,
+물류-택배,관리회계_계정그룹상세.csv,,
+물류-택배,관리회계_공통코드.csv,,
+물류-택배,관리회계_분류공통코드.csv,,
+물류-택배,관리회계_조직_test.csv,,
+물류-택배,관리회계_조직그룹.csv,,
+물류-택배,관리회계_조직그룹상세.csv,,
+물류-택배,관리회계계정.csv,,
+물류-택배,법인정보.csv,,
+물류-택배,사업자등록번호정보.csv,,
+물류-택배,사업코드관리.csv,,
+물류-택배,사용자.csv,HR,HR
+물류-택배,사원기본.csv,HR,HR
+물류-택배,상품코드.csv,Inbound Logistics,Pickup
+물류-택배,선박.csv,,
+물류-택배,선석.csv,,
+물류-택배,원가인명정보.csv,,
+물류-택배,작업코드.csv,,
+물류-택배,작업코드.csv,,
+물류-택배,작업코드.csv,,
+물류-택배,작업코드.csv,,
+물류-택배,조직코드관리.csv,,
+물류-택배,조직코드관리.csv,,
+물류-택배,조직코드관리.csv,,
+물류-택배,조직코드관리.csv,,
+물류-택배,택배BI_조직.csv,,
+물류-택배,택배BI_조직.csv,,
+물류-택배,택배BI_조직.csv,,
+물류-택배,택배BI_조직.csv,,
+물류-택배,택배_고객.csv,,
+물류-택배,택배_조직도.csv,,
+물류-택배,택배관리회계조직매핑.csv,,
+물류-택배,결제조건.csv,,
+물류-택배,고객유형.csv,,
+물류-택배,기업설립형태.csv,,
+물류-택배,미배송사유코드.csv,,
+물류-택배,불량등급.csv,,
+물류-택배,사업구분.csv,,
+물류-택배,신용공여기간.csv,,
+물류-택배,신용등급.csv,,
+물류-택배,작업코드.csv,,
+물류-택배,작업코드.csv,,
+물류-택배,작업코드.csv,,
+물류-택배,작업코드.csv,,
+물류-택배,조직_수입관리.csv,Inbound Logistics,수입관리
+물류-택배,조직코드관리.csv,,
+물류-택배,조직코드관리.csv,,
+물류-택배,조직코드관리.csv,,
+물류-택배,조직코드관리.csv,,
+물류-택배,조직터미널마스터.csv,,
+물류-택배,택배BI_조직.csv,,
+물류-택배,택배BI_조직.csv,,
+물류-택배,택배BI_조직.csv,,
+물류-택배,택배BI_조직.csv,,
