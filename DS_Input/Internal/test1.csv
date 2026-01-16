@@ -1,0 +1,13 @@
+﻿CompanyCode,ID,Name,Dept,City,Qty,Amt
+A,1,이우석,Sales,서울,3,240
+A,2,팍순신,Sales,부산,4,310
+A,3,김유신,Service,대구,12,231
+A,4,강감찬,Service,서울,5,345
+A,5,총정희,Service,광주,7,620
+A,6,이우석,Service,울산,10,550
+B,1,김대중,Service,서울,5,240
+B,2,노무현,Service,대전,3,711
+B,3,김영삼,Sales,강릉,2,900
+B,4,문재인,Sales,서울,11,350
+B,5,문재인,Sales,인천,34,500
+B,6,윤석열,Sales,울산,20,250
