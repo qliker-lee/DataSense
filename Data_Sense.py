@@ -8,9 +8,14 @@ from pathlib import Path
 
 # 1. 경로 설정 및 환경 초기화
 CURRENT_DIR = Path(__file__).resolve()
+# streamlit_app.py가 QDQM 루트에 있으므로 parent를 사용
 PROJECT_ROOT = CURRENT_DIR.parent
 # 여러 가능한 경로 시도 (로컬/Cloud 환경 대응)
-IMAGE_DIR = PROJECT_ROOT /"images_sample" 
+IMAGE_SAMPLE_DIR = PROJECT_ROOT / "images_sample"
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
+
 
 from util.streamlit_warnings import setup_streamlit_warnings
 setup_streamlit_warnings()
@@ -119,29 +124,42 @@ def intro_page():
 
 def download_solution_pdf():
     """소개자료를 다운로드 합니다."""
-    pdf_paths = [  # 여러 가능한 경로를 순차적으로 시도
-        IMAGE_DIR / "DataSense_Solution_Overview.pdf",
-    ]
-    
-    pdf_found = None
-    for pdf_path in pdf_paths:
-        if pdf_path.exists():
-            pdf_found = pdf_path
-            break
-        else:
-            st.write(f"소개자료 파일을 찾을 수 없습니다: {pdf_path}")
-    
-    if pdf_found:
-        with open(pdf_found, "rb") as pdf_file:
-            pdf_bytes = pdf_file.read()
-            st.download_button(
-                label="📄 DataSense Solution Overview Download (PDF)",
-                data=pdf_bytes,
-                file_name="DataSense_Solution_Overview.pdf",
-                mime="application/pdf",
-                type="primary"
-            )
+    SOLUTION_OVERVIEW_FILE = "DataSense_Solution_Overview.pdf"
+    SOLUTION_WHITEPAPER_FILE = "DataSense WhitePaper_202601.pdf"
 
+    st.divider()
+    st.markdown("##### 📄 자세한 내용은 소개자료를 다운로드하여 확인하세요.")
+
+    overview_path = IMAGE_SAMPLE_DIR / SOLUTION_OVERVIEW_FILE
+    whitepaper_path = IMAGE_SAMPLE_DIR / SOLUTION_WHITEPAPER_FILE
+
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        if overview_path.exists():
+            with open(overview_path, "rb") as pdf_file:
+                pdf_bytes = pdf_file.read()
+                st.download_button(
+                    label="📄 DataSense Solution Overview ",
+                    data=pdf_bytes,
+                    file_name="DataSense_Solution_Overview.pdf",
+                    mime="application/pdf",
+                    type="primary"
+                )
+        else:
+            st.write(f"소개자료 파일을 찾을 수 없습니다: {overview_path}")
+    with col2:
+        if whitepaper_path.exists():
+            with open(whitepaper_path, "rb") as pdf_file:
+                pdf_bytes = pdf_file.read()
+                st.download_button(
+                    label="📄 DataSense WhitePaper",
+                    data=pdf_bytes,
+                    file_name="DataSense_WhitePaper.pdf",
+                    mime="application/pdf",
+                    type="primary"
+                )
+        else:
+            st.write(f"소개자료 파일을 찾을 수 없습니다: {whitepaper_path}")
 
 def sidebar():
     st.sidebar.markdown("""
@@ -157,6 +175,19 @@ def sidebar():
     st.sidebar.markdown("<h4>qliker@kakao.com</h4>", unsafe_allow_html=True)
 
 def main():
+    # if "logged_in" not in st.session_state:
+    #     st.session_state["logged_in"] = False
+
+    # if not st.session_state["logged_in"]:
+    #     # 비로그인 상태: 소개 페이지 + 로그인 폼
+    #     login_section()
+    #     intro_page()
+    # else:
+    #     # 로그인 상태: 분석 대시보드 진입점
+    #     st.sidebar.success("인증된 사용자: qliker")
+    #     if st.sidebar.button("Log Out"):
+    #         st.session_state["logged_in"] = False
+    #         st.rerun()
             
     st.title("🏛️ DataSense 란?")
     sidebar()
