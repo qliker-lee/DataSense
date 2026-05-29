@@ -1,18 +1,21 @@
+# -*- coding: utf-8 -*-
+# Copyright (c) 2026, qliker. All rights reserved.
+# 2026.05.04 
+"""데이터 품질 검증: 날짜·주소·연락처·코드 등. 참조 CSV는 init_reference_globals 로 적재."""
 
 from __future__ import annotations
 import os
 import re
 import unicodedata
 from datetime import datetime
-from typing import Iterable, Set, Dict, Tuple, Optional, Any
+from typing import Iterable, Set, Dict, Tuple
 import pandas as pd
 import phonenumbers
 from phonenumbers import PhoneNumberType
 from pathlib import Path
 import sys
-import yaml
 
-from typing import Optional, Tuple
+DEBUG = False
 
 ROOT_PATH = Path(__file__).resolve().parents[1]
 if str(ROOT_PATH) not in sys.path:
@@ -32,7 +35,6 @@ DEFAULT_ROAD_CSV   = r"DS_Input/Reference/도로명코드.csv"
 DEFAULT_UNIT_CSV = r"DS_Input/Reference/단위코드.csv"
 DEFAULT_OLD_ZIP_CSV = r"DS_Input/Reference/우편번호구3.csv"
 DEFAULT_ZIP_CSV = r"DS_Input/Reference/우편번호.csv"
-DEFAULT_ACCOUNT_NAME_CSV = r"DS_Input/Reference/계정과목.csv"
 DEFAULT_BIZ_NAME_CSV = r"DS_Input/Reference/사업자명5.csv"
 BIZ_NAME_PREFIX_LEN = 5
 
@@ -52,7 +54,7 @@ ZIP_PREFIX_SET: Set[str] = set()
 ZIP_CODE_SET: Set[str] = set()
 OLD_ZIP_CODE_SET: Set[str] = set()
 BIZ_NAME_SET: Set[str] = set()
-ACCOUNT_NAME_SET: Set[str] = set()
+
 DEFAULT_ENCODINGS: Tuple[str, ...] = ("utf-8-sig", "cp949", "utf-8")
 _SIDO_SIGUNGU_OPTIONAL = {"세종특별자치시"}
 
@@ -74,28 +76,8 @@ _SIDO_ALIASES = {
 }
 
 _SIDO_SUFFIX_RE = re.compile(r'(특별자치)?(광역)?(특별)?(자치)?(시|도)$')
-DEBUG = False
 
-#-----------------------------------------------------------------------
-# 패턴 관련 함수 
-#-----------------------------------------------------------------------
-# def get_pattern(value):
-#     """기존 get_pattern 로직 (n:숫자, K:한글, a:영문 등)"""
-#     p = ""
-#     for char in value:
-#         if '0' <= char <= '9': p += 'n'
-#         elif '가' <= char <= '힣': p += 'K'
-#         elif 'a' <= char <= 'z': p += 'a'
-#         elif 'A' <= char <= 'Z': p += 'A'
-#         elif ' ' == char:  p += ' '
-#         elif char in r"""-.:/\ """: p += char
-#         elif char in r"""!@#$%^&*()-_=+[{]}\|;:'",.<>/?`~ """: p += 'S'
-#         else: p += 'U'
-#     return p
-    
-#-----------------------------------------------------------------------
-# set 관련 함수
-#-----------------------------------------------------------------------
+
 def safe_int(x, default=0):
     try:
         if pd.isna(x) or x == '':
@@ -130,17 +112,17 @@ def _normalize_sido_token(tok: str) -> str:
     tok = _norm(tok)
     return _SIDO_ALIASES.get(tok, tok)
 
-# def _sido_base(s: str) -> str:
-#     """경상북도→경북, 전라남도→전남, 강원특별자치도→강원 등 축약 베이스"""
-#     t = _norm(s)
-#     t = _SIDO_SUFFIX_RE.sub('', t)
-#     t = (t.replace('경상북', '경북')
-#            .replace('경상남', '경남')
-#            .replace('전라북', '전북')
-#            .replace('전라남', '전남')
-#            .replace('충청북', '충북')
-#            .replace('충청남', '충남'))
-#     return t
+def _sido_base(s: str) -> str:
+    """경상북도→경북, 전라남도→전남, 강원특별자치도→강원 등 축약 베이스"""
+    t = _norm(s)
+    t = _SIDO_SUFFIX_RE.sub('', t)
+    t = (t.replace('경상북', '경북')
+           .replace('경상남', '경남')
+           .replace('전라북', '전북')
+           .replace('전라남', '전남')
+           .replace('충청북', '충북')
+           .replace('충청남', '충남'))
+    return t
 
 def _read_csv_with_encodings(path: str, encs: Iterable[str]) -> pd.DataFrame:
     last = None
@@ -296,32 +278,6 @@ def load_biz_name_set(csv_path: str) -> Set[str]:
         out.add(clean[:BIZ_NAME_PREFIX_LEN])
     return out
 
-def load_account_name_set(csv_path: str) -> Set[str]:
-    """계정과목 CSV → `validate_account_name`용 키 세트.
-
-    - 숫자만 있는/혼합 코드 행은 숫자 앞 8자리 키로 추가
-    - 한글·혼합 과목명은 정규화 후 앞 8자(검증 시 `value[:8]`과 동일 계열) 추가
-    """
-    if not csv_path or not os.path.exists(csv_path):
-        return set()
-    df = _read_csv_with_encodings(csv_path, DEFAULT_ENCODINGS)
-    if df.empty:
-        return set()
-    df.columns = [str(c).strip().lstrip("\ufeff") for c in df.columns]
-    target_col = "계정과목" if "계정과목" in df.columns else df.columns[0]
-    out: Set[str] = set()
-    for raw in df[target_col].dropna().astype(str):
-        s = _norm(raw).strip().strip('"').strip("'")
-        if not s:
-            continue
-        digits = re.sub(r"\D", "", s)[:8]
-        if digits:
-            out.add(digits)
-        prefix = s[:8]
-        if prefix:
-            out.add(prefix)
-    return out
-
 def init_reference_globals(root_path: str | os.PathLike, *, strict_columns: bool = True, verbose: bool = False) -> None:
     """root_path 기준 참조 CSV 로드 → 전역 세트 채움. 지정 경로에 파일이 없으면 FileNotFoundError."""
     root = str(root_path)
@@ -331,11 +287,10 @@ def init_reference_globals(root_path: str | os.PathLike, *, strict_columns: bool
     kor_csv     = os.path.join(root, DEFAULT_KORNAME_CSV)
     iso3_csv    = os.path.join(root, DEFAULT_COUNTRY_ISO3)
     biz_name_csv    = os.path.join(root, DEFAULT_BIZ_NAME_CSV)
-    account_name_csv    = os.path.join(root, DEFAULT_ACCOUNT_NAME_CSV)
 
     global SIDO_SET, SIGUNGU_SET, SIDO_TO_SIGUNGU, KOR_NAME_SET, COUNTRY_ISO3_SET
     global B_DONG_SET, H_DONG_SET, ROAD_CODE_SET, UNIT_CODE_SET, OLD_ZIP_PREFIX_SET
-    global BIZ_NAME_SET, ACCOUNT_NAME_SET
+    global BIZ_NAME_SET
 
     if DEBUG or verbose:
         print(
@@ -345,7 +300,6 @@ def init_reference_globals(root_path: str | os.PathLike, *, strict_columns: bool
             f"  - korname: {kor_csv} (exists={os.path.exists(kor_csv)})\n"
             f"  - iso3   : {iso3_csv} (exists={os.path.exists(iso3_csv)})"
             f"  - biz_name: {biz_name_csv} (exists={os.path.exists(biz_name_csv)})"
-            f"  - account_name: {account_name_csv} (exists={os.path.exists(account_name_csv)})"
         )
 
     _require_reference_csv(sido_csv)
@@ -371,17 +325,10 @@ def init_reference_globals(root_path: str | os.PathLike, *, strict_columns: bool
     _require_reference_csv(h_dong_p)
     _require_reference_csv(road_p)
     _require_reference_csv(unit_p)
-    _require_reference_csv(account_name_csv)
     B_DONG_SET = load_code_set(b_dong_p, "법정동코드")
     H_DONG_SET = load_code_set(h_dong_p, "행정동코드")
     ROAD_CODE_SET = load_code_set(road_p, "도로명코드")
     UNIT_CODE_SET = load_unit_code_set(unit_p)
-    ACCOUNT_NAME_SET = load_account_name_set(account_name_csv)
-    if not ACCOUNT_NAME_SET:
-        print(
-            f"[WARN] ACCOUNT_NAME_SET is empty after load (check CSV): {account_name_csv}",
-            file=sys.stderr,
-        )
 
     if DEBUG or verbose:
         print(
@@ -389,18 +336,10 @@ def init_reference_globals(root_path: str | os.PathLike, *, strict_columns: bool
             f"/ BIZ_NAME_PREFIX:{len(BIZ_NAME_SET)} / KOR_NAME:{len(KOR_NAME_SET)} "
             f"/ ISO3:{len(COUNTRY_ISO3_SET)} "
             f"/ B_DONG:{len(B_DONG_SET)} / H_DONG:{len(H_DONG_SET)} "
-            f"/ ROAD_CODE:{len(ROAD_CODE_SET)} / UNIT_CODE:{len(UNIT_CODE_SET)} "
-            f"/ ACCOUNT_NAME:{len(ACCOUNT_NAME_SET)}"
+            f"/ ROAD_CODE:{len(ROAD_CODE_SET)} / UNIT_CODE:{len(UNIT_CODE_SET)}"
         )
 
-      
-_MODULE_DIR = Path(__file__).resolve().parent
-_DEFAULT_RULES_PATH = _MODULE_DIR / "dq_validate_rules.yaml"
-
-#-----------------------------------------------------------------------
-# 검증 함수
-#-----------------------------------------------------------------------
-        
+         
 def validate_date(value) -> bool:
     """
     YYYYMMDD 유효성:
@@ -647,173 +586,101 @@ def validate_korean_number_enhanced(phone_input):
 
     return "유효하지 않은 번호입니다."
 
-
-
-# --- 주민등록번호 / 외국인등록번호 ---
-_RRN_MASK_TAIL = r"[\*#xX]{6}"
-_RRN_WEIGHTS = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5]
-_RRN_DOMESTIC_GENDERS = frozenset({0, 1, 2, 3, 4, 9})
-_RRN_FOREIGN_GENDERS = frozenset({5, 6, 7, 8})
-
-
-def _rrn_parse_birth_century(gender_code: int) -> Optional[str]:
-    if gender_code in (1, 2, 5, 6):
-        return "19"
-    if gender_code in (3, 4, 7, 8):
-        return "20"
-    if gender_code in (9, 0):
-        return "18"
-    return None
-
-
-def _rrn_validate_date(birth_6digit: str, gender_code: int) -> bool:
-    year_prefix = _rrn_parse_birth_century(gender_code)
-    if not year_prefix:
+def validate_rrn(rrn):
+    # 1. 형식 체크 (숫자 6자리 - 숫자 7자리)
+    pattern = re.compile(r'^(\d{6})-?([1-8]\d{6})$')
+    match = pattern.match(rrn)
+    if not match:
         return False
+    
+    first_part, second_part = match.groups()
+    full_number = first_part + second_part
+    
+    # 2. 날짜 유효성 체크
+    # 성별 코드로 태어난 세기 판별
+    gender_code = int(second_part[0])
+    if gender_code in [1, 2, 5, 6]:
+        year_prefix = "19"
+    elif gender_code in [3, 4, 7, 8]:
+        year_prefix = "20"
+    else:
+        year_prefix = "18"
+        
+    birth_date_str = year_prefix + first_part
     try:
-        datetime.strptime(year_prefix + birth_6digit, "%Y%m%d")
-        return True
+        datetime.strptime(birth_date_str, "%Y%m%d")
+    except ValueError:
+        return False # 잘못된 날짜 (예: 991332)
+
+    # 3. 체크섬(Checksum) 공식 검증
+    # 각 자리에 곱해지는 가중치: 2,3,4,5,6,7, 8,9,2,3,4,5
+    weights = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5]
+    total = 0
+    for i in range(12):
+        total += int(full_number[i]) * weights[i]
+    
+    # 공식: (11 - (총합 % 11)) % 10
+    check_digit = (11 - (total % 11)) % 10
+    
+    return check_digit == int(full_number[12])
+
+
+def validate_foreign_rn(alrn):
+    """외국인등록번호 유효성 검증 (6자리-7자리)"""
+    # 1. 형식 체크
+    pattern = re.compile(r'^(\d{6})-?([5-8]\d{6})$') # 외국인은 성별코드가 5, 6, 7, 8로 시작
+    match = pattern.match(alrn)
+    if not match:
+        return False
+    
+    first, second = match.groups()
+    full = first + second
+    
+    # 2. 날짜 유효성 (주민번호 로직과 동일)
+    year_prefix = "19" if second[0] in "56" else "20"
+    try:
+        datetime.strptime(year_prefix + first, "%Y%m%d")
     except ValueError:
         return False
 
-
-def _rrn_extract_clean_format(rrn: str) -> Optional[Tuple[str, str, int]]:
-    clean_rrn = re.sub(r"[^0-9]", "", rrn)
-    if len(clean_rrn) != 13:
-        return None
-    return clean_rrn[:6], clean_rrn[6:], int(clean_rrn[6])
-
-
-def _rrn_checksum_ok(full_number: str, gender_digit: int) -> bool:
-    total = sum(int(full_number[i]) * _RRN_WEIGHTS[i] for i in range(12))
-    remainder = total % 11
-    if gender_digit in _RRN_FOREIGN_GENDERS:
-        expected = (13 - remainder) % 10
-    else:
-        expected = (11 - remainder) % 10
-    return expected == int(full_number[12])
-
-
-def _validate_registration_number(
-    rrn,
-    *,
-    strict_checksum: bool = False,
-    foreign_only: Optional[bool] = None,
-) -> bool:
-    """주민·외국인등록번호 통합 검증. foreign_only: False=내국인, True=외국인, None=구분 없음."""
-    if rrn is None:
-        return False
-    val = str(rrn).strip()
-    if not val:
-        return False
-
-    parsed = _rrn_extract_clean_format(val)
-    if not parsed:
-        return False
-
-    first_part, second_part, gender_digit = parsed
-
-    if foreign_only is True and gender_digit not in _RRN_FOREIGN_GENDERS:
-        return False
-    if foreign_only is False and gender_digit not in _RRN_DOMESTIC_GENDERS:
-        return False
-
-    if not _rrn_validate_date(first_part, gender_digit):
-        return False
-
-    if strict_checksum:
-        return _rrn_checksum_ok(first_part + second_part, gender_digit)
-    return True
-
-
-def validate_rrn(rrn) -> bool:
-    """내국인 주민등록번호 (생년월일 + 체크섬)."""
-    return _validate_registration_number(
-        rrn, strict_checksum=True, foreign_only=False
-    )
-
-
-def validate_foreign_rn(value) -> bool:
-    """외국인등록번호 (생년월일 + 외국인 체크섬)."""
-    return _validate_registration_number(
-        value, strict_checksum=True, foreign_only=True
-    )
-
-
-def validate_rrn_format(rrn) -> bool:
-    """주민·외국인등록번호 형식·생년월일만 검증 (체크섬 제외)."""
-    return _validate_registration_number(
-        rrn, strict_checksum=False, foreign_only=None
-    )
-
-
-def validate_rrn_masking(rrn) -> bool:
-    """
-    마스킹된 주민등록번호 형식 검증.
-    예: 010123-7******, 8503121******, 850312-*******
-    """
-    if rrn is None:
-        return False
-    val = str(rrn).strip()
-    if not val:
-        return False
-
-    match_partial = re.match(rf"^(\d{{6}})-?([0-9])({_RRN_MASK_TAIL})$", val)
-    if match_partial:
-        return _rrn_validate_date(match_partial.group(1), int(match_partial.group(2)))
-
-    match_full = re.match(r"^(\d{6})-?[\*#xX]{7}$", val)
-    if match_full:
-        first_part = match_full.group(1)
-        return any(_rrn_validate_date(first_part, g) for g in range(10))
-
-    return _validate_registration_number(
-        val, strict_checksum=False, foreign_only=None
-    )
+    # 3. 외국인 전용 체크섬 공식
+    # 가중치: 2,3,4,5,6,7, 8,9,2,3,4,5
+    weights = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5]
+    total = sum(int(full[i]) * weights[i] for i in range(12))
+    
+    # 공식: (13 - (total % 11)) % 10
+    check_digit = (13 - (total % 11)) % 10
+    
+    return check_digit == int(full[12])
 
 
 def validate_driver_license(dln):
-    """운전면허번호 형식 검증 (숫자형 및 한글 지역명 혼용 대응)"""
-    if not dln:
-        return False
-
-    # 1. 한글 지역명을 표준 숫자 코드로 변환하는 매핑 테이블
-    region_map = {
-        '서울': '11', '부산': '12', '경기': '13', '강원': '14', '충북': '15',
-        '충남': '16', '전북': '17', '전남': '18', '경북': '19', '경남': '20',
-        '제주': '21', '대구': '22', '인천': '23', '광주': '24', '대전': '25',
-        '울산': '26', '세종': '28'
-    }
+    """운전면허번호 형식 검증 (지역번호-연도-일련번호-체크섬)"""
+    # 하이픈 제거 후 12자리 숫자
+    clean_dln = re.sub(r'[^0-9]', '', dln)
     
-    # 2. 한글로 시작하는 경우 숫자로 치환
-    processed_dln = dln.strip()
-    for region_name, region_code in region_map.items():
-        if processed_dln.startswith(region_name):
-            processed_dln = processed_dln.replace(region_name, region_code, 1)
-            break
-
-    # 3. 특수문자(하이픈, 공백 등) 제거 후 순수 숫자만 추출
-    clean_dln = re.sub(r'[^0-9]', '', processed_dln)
-    
-    # 4. 국내 운전면허번호는 최종적으로 무조건 12자리 숫자여야 함
     if len(clean_dln) != 12:
         return False
     
-    # 5. 숫자 코드(11~28) 및 한글 지역명(서울~세종)을 모두 허용하는 정규식
-    pattern = re.compile(r'^(11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|28|서울|부산|경기|강원|충북|충남|전북|전남|경북|경남|제주|대구|인천|광주|대전|울산|세종)-?\d{2}-?\d{6}-?\d{2}$')
+    # 패턴 설명: 지역(11~28)-연도(00~99)-일련번호(6자리)-체크섬(2자리)
+    # (실제 업무에서는 지역 코드가 텍스트인 경우 숫자로 변환하는 로직이 선행되어야 함)
+    pattern = re.compile(r'^(11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|28)\d{10}$')
     return bool(pattern.match(clean_dln))
 
-def validate_passport(value: str) -> bool:
-    """여권번호 형식 검증 (공백 제거·대문자 통일 후 구권/신권 패턴)."""
-    s = str(value).strip().upper()
-    if not s:
-        return False
+def validate_passport(passport):
+    """여권번호 형식 검증"""
     # M: 일반여권, S: 거주여권, R: 거주여권 등
+    # 차세대 여권은 숫자와 문자가 혼합된 형태(예: M123A4567)일 수 있음
+    passport = passport.upper().replace("-", "").strip()
+    
     # 1. 구권: 영문 1자리 + 숫자 8자리
-    old_pattern = re.compile(r"^[MSGRD][0-9]{8}$")
+    old_pattern = re.compile(r'^[MSGRD][0-9]{8}$')
     # 2. 신권(차세대): 영문 1자리 + 숫자 3자리 + 영문 1자리 + 숫자 4자리
-    new_pattern = re.compile(r"^[MSGRD][0-9]{3}[A-Z][0-9]{4}$")
-    return bool(old_pattern.match(s) or new_pattern.match(s))
+    new_pattern = re.compile(r'^[MSGRD][0-9]{3}[A-Z][0-9]{4}$')
+    
+    if old_pattern.match(passport) or new_pattern.match(passport):
+        return True
+    return False
 
 def validate_account_info(value, info_type="ID"):
     """
@@ -883,48 +750,14 @@ def validate_finance_info(value, info_type="CARD"):
                 n *= 2
                 if n > 9: n -= 9
             total += n
-        # return total % 10 == 0
-        return True
+        print(total, total % 10)
+        return total % 10 == 0
 
     elif info_type == "BANK_ACCOUNT":
-        # 1. 기본 길이 체크
-        if not (10 <= len(val_str) <= 15): return False
-
-        # 2. [추가] 고정 접두어 기반 필터링 (가장 강력함)
-        # 10000으로 시작하는 10자리 숫자가 반복된다면 이는 일련번호일 확률이 높음
-        # 한국 주요 은행 중 10000으로만 시작하는 계좌는 드뭅니다.
-        if val_str.startswith("10000") and len(val_str) == 10:
-            return False
-
-        # 3. [추가] 엔트로피(Entropy) 체크 - 숫자의 다양성
-        # 계좌번호는 보통 무작위 숫자가 섞여 있습니다. 
-        # 사용된 숫자의 종류가 너무 적으면(예: 1, 0만 사용) 차단합니다.
-        unique_digits = set(val_str)
-        if len(unique_digits) < 4:  # 10자리 중 사용된 숫자가 3종류 이하이면 의심
-            return False
-
-        # 4. [추가] 패턴 기반 검증 (화이트리스트)
-        # 주요 은행의 앞자리(Prefix)와 매칭되는지 확인
-        # 신한(110, 100..), 우리(1002..), 국민(숫자 다양함), 기업(010..폰번호) 등
-        valid_prefixes = (
-            '110', '100', '140', '1002', '1005', '1006', 
-            '301', '302', '351', '352', '356', # 농협
-            # '010', '011' # 기업은행 폰번호 계좌는 제외함 
-        )
-        
-        # 만약 10000... 형태라면, 우리은행(1002)이나 신한(100)과 유사해 보이지만 
-        # 10000은 보통 관리 번호인 경우가 많으므로 정밀 정규식이 필요합니다.
-        
-        # 대시(-)가 있으면 계좌번호일 확률이 비약적으로 상승함
-        if "-" in val_str:
-            parts = val_str.split("-")
-            # nnn-nnnn-nnnn... 형태인지 확인
-            if len(parts) >= 2: return True
-
-        # 5. 최종 필터: 너무 단순한 숫자 나열 (1234567890 등)
-        if val_str in "01234567890123456789": return False
-
-    return True # 위 조건들을 모두 피하면 계좌번호 후보로 인정
+        # 한국 주요 은행 계좌번호 패턴 (10~14자리 숫자)
+        return bool(re.match(r'^\d{10,14}$', val_str))
+    
+    return False
 
 def validate_car_number(value):
     """한국 자동차 번호판 형식을 검증합니다."""
@@ -1061,7 +894,7 @@ def validate_biz_no(biz_no):
     
     return check_digit == int(biz_no[9])
 
-def validate_corporate_number(corp_no):
+def validate_corp_no(corp_no):
     # 숫자만 추출
     corp_no = "".join(filter(str.isdigit, corp_no))
     if len(corp_no) != 13:
@@ -1212,14 +1045,6 @@ def validate_kor_name(value: str) -> bool:
     return str(value)[0] in KOR_NAME_SET
 
 
-def is_kor_name(value: str) -> bool:
-    """YAML `NAME_KOR` 규칙용 — 한글 이름 완화 패턴."""
-    s = str(value).strip()
-    if len(s) < 2 or len(s) > 20:
-        return False
-    return bool(re.match(r"^[가-힣·]+$", s))
-
-
 def validate_country_code(value: str) -> bool:
     """ISO 3166-1 alpha-3 전용. 세트가 있으면 membership, 없으면 3대문자 형식만 체크."""
     s = str(value).strip().upper()
@@ -1227,82 +1052,53 @@ def validate_country_code(value: str) -> bool:
         return False
     return (s in COUNTRY_ISO3_SET) if COUNTRY_ISO3_SET else True
 
-def validate_sido(value: str) -> bool:
-    """`value`를 `_norm` 후 첫 토큰으로 `SIDO_SET`과 매칭(포함 관계 양방향).
-
-    `_normalize_sido_token`으로 `_SIDO_ALIASES`를 적용해 `경북`→`경상북도`처럼
-    원문만으로는 세트와 겹치지 않는 축약도 판별합니다.
-    주소 한 줄 전체를 넣어도 되고, 시도명만 넣어도 됩니다. `SIDO_SET`이 비어 있으면 False.
-    """
-    if not SIDO_SET:
-        return False
-    s = _norm(value).strip() if value is not None else ""
-    if not s:
-        return False
-    parts = s.split()
-    input_sido = parts[0]
-    if len(input_sido) < 1:
-        return False
-
-    def _matches_sido_set(candidate: str) -> bool:
-        if len(candidate) < 1:
-            return False
-        return any(
-            candidate in ref or ref in candidate
-            for ref in SIDO_SET
-            if len(ref) >= 2
-        )
-
-    resolved = _normalize_sido_token(input_sido)
-    for cand in (input_sido, resolved) if resolved != input_sido else (input_sido,):
-        if _matches_sido_set(cand):
-            return True
-    return False
-
-
-def validate_sigungu(value: str) -> bool:
-    """`value`를 `_norm`·공백 분리한 뒤 `parts[1]`·`parts[2]`가 `SIGUNGU_SET`에 있는지.
-
-    주소 한 줄 전체를 넣는 용도. 단어가 2개 미만이거나 `SIGUNGU_SET`이 비어 있으면 False.
-    """
-    if not SIGUNGU_SET:
-        return False
-    s = _norm(value).strip() if value is not None else ""
-    if not s:
-        return False
-    parts = s.split()
-    if len(parts) < 2:
-        return False
-    max_index_exclusive = 3
-    for i in range(1, min(len(parts), max_index_exclusive)):
-        target = parts[i].replace(" ", "")
-        if any(target == g.replace(" ", "") for g in SIGUNGU_SET):
-            return True
-    return False
-
-
 def validate_address(value: str) -> bool:
     if not SIDO_SET or not SIGUNGU_SET:
-        return False  # 데이터 로드 확인 필요
+        return False # 데이터 로드 확인 필요
 
-    if str(value).count(" ") < 2 or str(value).count(" ") > 8:
-        return False
     try:
         s = _norm(value)
-        if not s:
-            return False
+        if not s: return False
         parts = s.split()
-        if len(parts) < 2:
+        if len(parts) < 2: return False
+
+        # ---------------------------------------------------------
+        # 1단계: 시도(SIDO) 확인
+        # ---------------------------------------------------------
+        input_sido = parts[0]
+        # '서울특별시' vs '서울' 등 양방향 포함 관계 확인
+        is_valid_sido = any(
+            input_sido in s or s in input_sido 
+            for s in SIDO_SET if len(s) >= 2
+        )
+        
+        if not is_valid_sido:
             return False
 
-        if not validate_sido(s):
-            return False
-
-        if validate_sigungu(s):
+        # ---------------------------------------------------------
+        # 2단계: 시군구(SIGUNGU) 확인 (단어별 개별 매칭)
+        # ---------------------------------------------------------
+        # parts[1] (성남시) 혹은 parts[2] (분당구) 중 하나라도 셋에 있는지 확인
+        # '시군구명.csv'에 단어 단위로 저장된 데이터에 최적화
+        is_valid_sigungu = False
+        
+        # 주소의 2번째, 3번째 단어를 검사
+        for i in range(1, min(len(parts), 3)):
+            target = parts[i].replace(" ", "")
+            # 시군구 셋에 정확히 일치하거나 포함되는 명칭이 있는지 확인
+            if any(target == g.replace(" ", "") for g in SIGUNGU_SET):
+                is_valid_sigungu = True
+                break
+        
+        # ---------------------------------------------------------
+        # 3단계: 최종 판정 및 보조 확인
+        # ---------------------------------------------------------
+        if is_valid_sido and is_valid_sigungu:
             return True
 
         # 시도는 맞는데 시군구명이 특이한 경우 (예: 도로명 주소 특이 케이스)
-        if len(parts) >= 2:
+        if is_valid_sido and len(parts) >= 2:
+            # 두 번째 혹은 세 번째 단어가 '동/로/길/구/시'로 끝나면 주소로 간주
             for i in range(1, min(len(parts), 3)):
                 if any(parts[i].endswith(suffix) for suffix in ("시", "군", "구", "로", "길", "동")):
                     return True
@@ -1323,11 +1119,7 @@ def _clean_company_name(text: str) -> str:
 
 def validate_company_name(value: str) -> bool:
     if not value: return False
-
-    # str 에 공백의 갯수가 2 이상 있으면 false
-    if str(value).count(" ") >= 2:
-        return False
-
+    
     raw_val = str(value)
     clean_val = _clean_company_name(raw_val)
     if not clean_val: return False
@@ -1351,25 +1143,7 @@ def validate_company_name(value: str) -> bool:
         pass
 
     return False
-
-
-def validate_account_name(value: str) -> bool:
-    if not value: return False
-
-    # str 에 공백의 갯수가 2 이상 있으면 false
-    if str(value).count(" ") >= 2:
-        return False
-
-    raw_val = _norm(str(value))
-
-    # 전략 1: 참조 데이터셋(Set)에 존재하는지 확인 (로드 시와 동일하게 정규화 후 앞 8자)
-    key = raw_val[:8]
-    if key and key in ACCOUNT_NAME_SET:
-        return True
-
-    return False
-
-
+    
 def validate_gender(val: str) -> bool:
     return str(val) in ["남", "여"]
 
@@ -1392,15 +1166,12 @@ def validate_car_number(val: str) -> bool:
     return bool(re.fullmatch(pattern_kor, val) or re.fullmatch(pattern_kor2, val))
 
 def validate_time(val: str) -> bool:
-    if not isinstance(val, str):
+    pattern_1 = r"^\d{2}:\d{2}:\d{2}$"
+    pattern_2 = r"^\d{2}:\d{2}.\d{1}$"
+
+    if not re.fullmatch(pattern_1, str(val)) and not re.fullmatch(pattern_2, str(val)):
         return False
-
-    val = val.strip()
-
-    if len(val) != 8:
-        return False
-
-    return bool(re.fullmatch(r"^\d{2}:\d{2}:\d{2}$", val) or re.fullmatch(r"^\d{2}:\d{2}.\d{1}$", val))
+    return True
 
 def validate_timestamp(val: str) -> bool:
     """날짜+시각 문자열 (pandas 파싱)."""
@@ -1420,166 +1191,432 @@ def validate_timestamp(val: str) -> bool:
     except Exception:
         return False
 
+def _strip_decimal_zero(value):
+    text = str(value).strip()
+    if text.endswith('.0'):
+        return text[:-2]
+    return text
 
-class DataSenseValidator:
-    def __init__(self, yaml_path=None):
-        p = Path(yaml_path) if yaml_path is not None else _DEFAULT_RULES_PATH
-        if not p.is_absolute():
-            p = _MODULE_DIR / p
-        self.rules = self._load_rules(p)
 
-    def _load_rules(self, path: Path):
-        with open(path, encoding="utf-8") as f:
-            return yaml.safe_load(f)["VALIDATOR_CONFIG"]
+def get_pattern(value):
+    try:
+        text = _strip_decimal_zero(value)[:20]
+        p = []
+        for ch in text:
+            if ch.isdigit(): p.append('n')
+            elif '가' <= ch <= '힣': p.append('K')
+            elif ch.isupper(): p.append('A')
+            elif ch.islower(): p.append('a')
+            elif ch in '(){}[]-=. :@/*': p.append(ch)
+            else: p.append('s')
+        return "".join(p)
+    except Exception:
+        return ""
 
-    def find_attribute(self, value):
-        """값 하나에 대해 모든 규칙을 검사하여 최적의 라벨 반환"""
-        if pd.isna(value) or str(value).strip() == "":
-            return "NULL", 0, []
 
-        val_str = str(value).strip()
-        pattern = self._get_pattern(val_str) # 기존 패턴 추출 함수 활용
-        
-        matched_results = []
+def _get_clean_pattern(pattern):
+    return re.sub(r'[^nKAask]', '', pattern)
 
-        for label, config in self.rules.items():
-            if self._check_rule(label, config, val_str, pattern):
-                matched_results.append((label, config['priority']))
 
-        if not matched_results:
-            return None, 0, []
+def is_timestamp(value, pattern):
+    clean_p = _get_clean_pattern(pattern)
+    if 10 <= len(clean_p) <= 20 and clean_p.startswith('nnnn'):
+        return validate_timestamp(value)
+    return False
 
-        # 우선순위 높은 순으로 정렬
-        matched_results.sort(key=lambda x: -x[1])
-        return matched_results[0][0], matched_results[0][1], matched_results
 
-    def _check_rule(self, label, config, value, pattern):
-        """YAML 설정에 따른 동적 검증 실행"""
-        
-        # 1. 화이트리스트: patterns 가 있으면 추상 패턴이 목록에 있어야 함
-        if "patterns" in config and pattern not in config["patterns"]:
-            return False
+def is_timestamp_old(value, pattern):
+    if pattern not in ['nnnn-nn-nn nn:nn:nn', 'nnnn-nn-nn nn:nn:nn.nnnnnn', 
+            'nnnn-nn-nn nn:nn:nn.', 'nnnn-nn-nn nn:nn', 'nnnn-nn-nn n:nn', 'nnnn-nn-nn nn:nn AA', 'nnnn-n-nn nn:nn AA']:
+        return False
+    return validate_timestamp(value)
 
-        # 2. 블랙리스트: BANK_ACCOUNT 등 — 전화번호 형태(nnn-nnnn-nnnn 등)는 계좌 규칙에서 제외
-        excl = config.get("exclude_patterns")
-        if isinstance(excl, (list, tuple)) and pattern in excl:
-            return False
+def is_time(value, pattern):
+    clean_p = _get_clean_pattern(pattern)
+    # nnnn(4자, 12:30) ~ nnnnnn(6자, 12:30:59)
+    if len(clean_p) in [4, 5, 6] and not pattern.startswith('nnnn'):
+        return validate_time(value)
+    return False
 
-        # 3. 길이 제약 (추상 패턴 문자열 길이 기준, YAML min_len/max_len)
-        if 'min_len' in config and len(pattern) < config['min_len']: return False
-        if 'max_len' in config and len(pattern) > config['max_len']: return False
+def is_time_old(value, pattern):
+    if pattern not in ['nn:nn.n', 'nn:nn:nn', 'nn:nn:nn.nnnnnn', 'nn:nn:nn.']:
+        return False
+    if DEBUG:
+        print("is_time", value, pattern)
+    return validate_time(value)
 
-        # 4. 금지 문자 검사
-        if 'forbidden_chars' in config:
-            if any(c in pattern for c in config['forbidden_chars']):
-                return False
+def is_yymmdd(value, pattern):
+    """YYMMDD: 숫자 6자리 골격이거나 구분자 포함 패턴 모두 수용."""
+    # clean_p = _get_clean_pattern(pattern)
+    # if clean_p == "nnnnnn":
+    #     return validate_YYMMDD(value)
+    if pattern in ("nnnnnn", "nn-nn-nn", "nn/nn/nn", "nn.nn.nn"):
+        return validate_YYMMDD(value)
+    return False
 
-        # 5. 검증 함수 동적 호출
-        validator_name = config.get('validator')
-        if not validator_name: return False
+def is_yearmonth(value, pattern):
+    if pattern not in ['nnnnnn', 'nnnn-nn', 'nnnn/nn', 'nnnn.nn', 'nnnnKnnK']:
+        return False
+    return validate_yearmonth(value)
 
-        # 이 모듈 내에 정의된 함수를 가져옴
-        func = globals().get(validator_name)
-        if callable(func):
-            if 'sub_type' in config:
-                return func(value, config['sub_type'])
-            return func(value)
-        
+def is_year(value, pattern):
+    if pattern not in ['nnnn', 'nnnnK']:
+        return False
+    return validate_year(value)
+    
+def is_datechar(value, pattern):
+    if pattern not in ['nnnnnnnn', 'nnnn-nn-nn', 'nnnn/nn/nn', 'nnnnKnnKnnK', 'nnnn.nn.nn', 'nnnn. n. nn.']:
+        return False
+    return validate_date(value)
+def is_biz_no(value, pattern):
+    if _get_clean_pattern(pattern) == 'nnnnnnnnnn':
+        return validate_biz_no(value)
+    return False
+
+def is_corp_no(value, pattern):
+    if _get_clean_pattern(pattern) == 'nnnnnnnnnnnnn':
+        return validate_corp_no(value)
+    return False
+
+def is_rrn(value, pattern):
+    if _get_clean_pattern(pattern) == 'nnnnnnnnnnnnn':
+        return validate_rrn(value)
+    return False
+
+def is_zip_code(value, pattern):
+    if pattern not in ['nnnnn']:
+        return False
+    return validate_zip_code(value)
+
+def is_old_zip_code(value, pattern):
+    if pattern not in ['nnnnnn', 'nnn-nnn']:
+        return False
+    return validate_zip_code_old(value)
+def is_road_name_code(value, pattern):
+    if pattern not in ['nnnnnnnnnn']:
+        return False
+    return validate_road_name_code(value)
+
+def is_b_dong_code(value, pattern):
+    if pattern not in ['nnnnnnnnnn']:
+        return False
+    return validate_b_dong_code(value)
+
+def is_h_dong_code(value, pattern):
+    if pattern not in ['nnnnnnnnnn']:
+        return False
+    return validate_h_dong_code(value)
+
+def is_tel(value, pattern):
+    clean_p = _get_clean_pattern(pattern)
+    # 기호 없이 숫자만 8개인 경우('nnnnnnnn')는 TEL에서 제외하거나 점수를 낮춤
+    if pattern == 'nnnnnnnn': 
+        return False # 날짜와 경합 방지를 위해 숫자만 8자리는 TEL로 보지 않음
+    if len(clean_p) in [7, 8, 9, 10, 11]:
+        return validate_tel(value)
+    return False
+
+def is_cellphone(value, pattern):
+    clean_p = _get_clean_pattern(pattern)
+    if clean_p == 'nnnnnnnnnnn' or clean_p == 'nnnnnnnnnn':
+        return validate_cellphone(value)
+    return False
+
+def is_car_number(value, pattern):
+    if pattern not in ['KKnnKnnnn', 'nnKnnnn', 'nnnKnnnn']:
+        return False
+    return validate_car_number(value)
+
+def is_kor_name(value, pattern):
+    if len(str(value)) > 4:
+        return False
+    if pattern  in ['KKK', 'KKKK', 'K KK', 'KK KK']:
+        return str(value)[0] in KOR_NAME_SET
+    return False
+    # return validate_kor_name(value)
+
+def is_kor_name_marked(value, pattern):
+    if pattern not in ['KK*', 'K*K']:
+        return False
+    return str(value)[0] in KOR_NAME_SET
+    # return validate_kor_name(value)
+
+def is_address_old(value, pattern) -> bool:
+    if len(pattern) < 8 or pattern.count("K") < 6 or pattern.count(" ") < 3:
+        return False
+    return validate_address(value)
+
+def is_address(value, pattern):
+    if not SIDO_SET or not SIGUNGU_SET:
+        # 데이터가 로드되지 않았을 경우 로그 출력 (실제 운영시 삭제 가능)
+        print("Reference Data not loaded.")
         return False
 
-    def _strip_decimal_zero(self, val):
-        """숫자형 문자열의 .0 제거 (사용자 DQUtils 로직)"""
-        s = str(val)
-        if s.endswith('.0'): return s[:-2]
-        return s
+    val_str = str(value).strip()
+    parts = val_str.split()
+    if len(parts) < 2:
+        return False
 
-    def _get_pattern_new(self, value):
-        """기존 get_pattern 로직 (n:숫자, K:한글, a:영문 등)"""
-        p = ""
-        for char in value:
-            if '0' <= char <= '9': p += 'n'
-            elif '가' <= char <= '힣': p += 'K'
-            elif 'a' <= char <= 'z': p += 'a'
-            elif 'A' <= char <= 'Z': p += 'A'
-            else: p += char
-        return p
+    # ---------------------------------------------------------
+    # 1. 시도(SIDO) 확인: '서울' in '서울특별시' or '서울특별시' in '서울'
+    # ---------------------------------------------------------
+    sido_input = parts[0]
+    is_valid_sido = any(
+        sido_input in s or s in sido_input 
+        for s in SIDO_SET if len(s) >= 2
+    )
 
-    def _get_pattern(self, s):
-        """사용자 작성 get_pattern 로직 (n, K, A, a 등 변환). str 또는 Series."""
-        def transform(value):
-            try:
-                text = self._strip_decimal_zero(value)[:20]
-                p = []
-                for ch in text:
-                    if ch.isdigit(): p.append('n')
-                    elif '가' <= ch <= '힣': p.append('K')
-                    elif ch.isupper(): p.append('A')
-                    elif ch.islower(): p.append('a')
-                    elif ch in '(){}[]-=. :@/': p.append(ch)
-                    else: p.append('s')
-                return "".join(p)
-            except: return ""
+    if not is_valid_sido:
+        return False
 
-        if isinstance(s, str):
-            return transform(s)
-        if hasattr(s, "apply"):
-            return s.apply(transform)
-        return transform(s)
+    # ---------------------------------------------------------
+    # 2. 시군구(SIGUNGU) 및 주소 키워드 확인 (단어별 루프)
+    # ---------------------------------------------------------
+    # parts[1] (예: 강남구), parts[2] (예: 논현로) 등을 순회하며 검사
+    for i in range(1, len(parts)):
+        word = parts[i].replace(" ", "")
+        if not word: continue
 
-# --- PII Analyzer / DS_Find_Attribute 호환 API (기존 dq_validate 모듈 수준) ---
+        # (1) 시군구 DB에 정확히 있는지 확인 (예: '분당구'가 CSV에 있는 경우)
+        if any(word == g.replace(" ", "") for g in SIGUNGU_SET):
+            return True
+
+        # (2) 도로명/지번 키워드 접미사 확인 (예: '황새울로', '가산동')
+        # DB에 해당 단어가 없더라도 주소 형식이 확실하면 True
+        if any(word.endswith(sx) for sx in ("시", "군", "구", "로", "길", "동", "가")):
+            # 단, '로', '길'의 경우 숫자와 조합된 경우도 고려 (예: 마장로512번길)
+            return True
+
+    # 3. 복합 단어 확인 (예: '성남시' + '분당구' 조합이 DB에 한 줄로 있는 경우 대비)
+    if len(parts) >= 3:
+        combined = (parts[1] + parts[2]).replace(" ", "")
+        if any(combined == g.replace(" ", "") for g in SIGUNGU_SET):
+            return True
+
+    return False
+
+def is_company_name(value, pattern):
+    # value 에 공백이 있으면 False 리턴 
+    if " " in str(value):
+        return False
+    # 패턴에 유니코드 기호가 포함되어 있거나 (주) 형식이 보일 때
+    # 'S'는 특수문자를 의미한다고 가정 (시스템에 따라 다를 수 있음)
+    if "(" in pattern or ")" in pattern or "S" in pattern:
+        return validate_company_name(value)
+    
+    # 한글과 영문이 섞인 긴 이름인 경우도 검사
+    if "K" in pattern and len(pattern) >= 3:
+        return validate_company_name(value)
+        
+    return False
+
+def is_foreign_rn(value, pattern):
+    if pattern not in ['nnnnnn-nnnnnnnn', 'nnnnnnnnnnnnnnnn']:
+        return False
+    return validate_foreign_rn(value)
+
+def is_driver_license(value, pattern):
+    if pattern not in ['nnnnnnnnnnnn', 'nn-nn-nnnnnn-nn']:
+        return False
+    return validate_driver_license(value)
+
+# 구권 : M12984732, 신권 : M115R7062 M882W1459
+def is_passport(value, pattern):
+    if pattern not in ['Annnnnnnn', 'AnnnAnnnn']:
+        return False
+    return validate_passport(value)
+
+def is_adid(value, pattern):
+    if pattern not in ['nnnnnnnn-nnnnnnnn']:
+        return False
+    return validate_advertising_id(value)
+
+def is_cookie_format(value, pattern):
+    return _cookie_format_matches(value)
+
+# 예: 4111-1111-1111-1111(16), Amex 15자리 nnnn-nnnnnn-nnnn, 19자리는 validate_finance_info에서만 허용
+def is_card_number(value, pattern):
+    if pattern not in ['nnnn-nnnn-nnnn-nnnn', 'nnnn-nnnnnn-nnnnn' , 'nnnn nnnn nnnn nnnn', 'nnnn nnnnnn nnnnn']:
+        return False
+    n_in_pattern = pattern.count("n")
+    # 허용 패턴은 15·16자리 표기만 포함. (validate_finance_info 는 14·19자리도 허용하나 대응 패턴 템플릿 없음)
+    if n_in_pattern not in (15, 16) or pattern.count(" ") > 3 or (
+        pattern.count("-") > 3 or pattern.count("K") > 0 or pattern.count("a") > 0  or pattern.count(":") > 0 or pattern.count(".") > 0
+    ):
+        return False
+
+    return validate_finance_info(value, 'CARD')
+
+def is_account_info(value, pattern):
+    if len(pattern) < 14 or len(pattern) > 17 or pattern.count("n") > 15: 
+        return False
+    if (pattern.count(" ") > 3 or pattern.count(":") > 0 or pattern.count(".") > 0 or
+        pattern.count("-") > 3 or pattern.count("K") > 0 or pattern.count("a") > 0):
+        return False
+    return validate_finance_info(value, 'BANK_ACCOUNT')
+
+def is_network_identifier(value, pattern):
+    if len(pattern) < 8 or len(pattern) > 20 or pattern.count(" ") > 3 or pattern.count("K") > 1:
+        return False
+    return validate_network_identifier(value)
+
+def is_email(value, pattern):
+    if '@' in pattern:
+        return validate_email(value)
+    return False
+
+def is_url(value, pattern):
+    if '://' in pattern or 'www' in value.lower():
+        return validate_url(value)
+    return False
+
+def is_latitude(value, pattern):
+    if pattern not in ['nn.nnnn','nn.nnnnn','nn.nnnnnn','nn.nnnnnnn','nn.nnnnnnnn']:
+        return False
+    return validate_latitude(value)
+
+def is_country_code(value, pattern):
+    if pattern not in ['[A-Z]{3}', '[a-z]{3}']:
+        return False
+    return validate_country_code(value)
+
+def is_tel_old(value, pattern):
+    if pattern not in ['nnn-nnn-nnnn','nn-nnnn-nnnn','nn-nnn-nnnn','nnn-nnnn','nnnn-nnnn','nnnnnnn','nnnnnnnn','nnnnnnnnnn']:
+        return False
+    return validate_tel(value)
+
+def is_cellphone_old(value, pattern):
+    if pattern not in ['nnn-nnnn-nnnn','nnnnnnnnnnn']:
+        return False
+    return validate_cellphone(value)
+
+#------------------------------------------------------------------------
+#   실제로 매핑을 수행하는 함수 
+#------------------------------------------------------------------------
+# 검증기별 기본 우선순위 설정 (점수가 높을수록 우선순위가 높음)
+# 체크섬이 있거나 패턴이 복잡한 항목에 높은 점수를 부여합니다.
+VALIDATORS = [
+    (is_timestamp, 'TIMESTAMP'),
+    (is_time, 'TIME'),
+    (is_yymmdd, 'YYMMDD'),
+    (is_datechar, 'DATECHAR'),
+    (is_yearmonth, 'YEARMONTH'),
+    (is_year, 'YEAR'),
+    (is_rrn, 'RRN'),
+    (is_biz_no, 'BIZ_NO'),
+    (is_corp_no, 'CORP_NO'),
+    (is_road_name_code, 'ROAD_CODE'),
+    (is_b_dong_code, 'B_DONG_CODE'),
+    (is_h_dong_code, 'H_DONG_CODE'),
+    (is_zip_code, 'ZIP_CODE'),
+    (is_old_zip_code, 'ZIP_CODE_OLD'),
+    (is_tel, 'TEL'),
+    (is_cellphone, 'CELLPHONE'),
+    (is_car_number, 'CAR_NUMBER'),
+    (is_email, 'EMAIL'),
+    (is_url, 'URL'),
+    (is_kor_name, 'NAME_KOR'),
+    (is_kor_name_marked, 'NAME_KOR_MARKED'),
+    (is_address, 'ADDRESS'),
+    (is_company_name, 'COMPANY_NAME'),
+    (is_foreign_rn, 'FOREIGN_RN'),
+    (is_driver_license, 'DRIVER_LICENSE'),
+    (is_passport, 'PASSPORT'),
+    (is_adid, 'ADID'),
+    (is_cookie_format, 'COOKIE_FORMAT'),
+    (is_network_identifier, 'NETWORK_IDENTIFIER'),
+    (is_card_number, 'CARD_NUMBER'),
+    (is_account_info, 'BANK_ACCOUNT'),
+]
+
+# 속성별 우선순위(priority)·매칭 허용 비율(tolerance). find_label·컬럼 집계 동률 시 priority로 결정.
 DEFAULT_TOLERANCE = 0.8
-_cached_validator_config: dict | None = None
-_validator_singleton: DataSenseValidator | None = None
-
-
-def _validator_config_dict() -> dict:
-    global _cached_validator_config
-    if _cached_validator_config is None:
-        with open(_DEFAULT_RULES_PATH, encoding="utf-8") as f:
-            root = yaml.safe_load(f) or {}
-        _cached_validator_config = root.get("VALIDATOR_CONFIG", {})
-    return _cached_validator_config
-
-
-def _get_validator() -> DataSenseValidator:
-    global _validator_singleton
-    if _validator_singleton is None:
-        _validator_singleton = DataSenseValidator(_DEFAULT_RULES_PATH)
-    return _validator_singleton
+VALIDATOR_CONFIG: Dict[str, Dict[str, float]] = {
+    "NULL": {"priority": 100, "tolerance": 1.0},
+    "RRN": {"priority": 100, "tolerance": 0.6},
+    "BIZ_NO": {"priority": 100, "tolerance": 0.7},
+    "CORP_NO": {"priority": 100, "tolerance": 0.7},
+    "EMAIL": {"priority": 90, "tolerance": 0.8},
+    "URL": {"priority": 90, "tolerance": 0.8},
+    "DATECHAR": {"priority": 88, "tolerance": 0.9},
+    "YYMMDD": {"priority": 88, "tolerance": 0.9},
+    "YEARMONTH": {"priority": 88, "tolerance": 0.9},
+    "TIMESTAMP": {"priority": 60, "tolerance": 0.9},
+    "ZIP_CODE": {"priority": 45, "tolerance": 0.8},
+    "ZIP_CODE_OLD": {"priority": 40, "tolerance": 0.8},
+    "ROAD_CODE": {"priority": 30, "tolerance": 0.8},
+    "B_DONG_CODE": {"priority": 30, "tolerance": 0.8},
+    "H_DONG_CODE": {"priority": 30, "tolerance": 0.8},
+    "YEAR": {"priority": 20, "tolerance": 0.9},
+    "TIME": {"priority": 20, "tolerance": 0.9},
+    "NAME_KOR": {"priority": 65, "tolerance": 0.8},
+    "NAME_KOR_MARKED": {"priority": 65, "tolerance": 0.8},
+    "COMPANY_NAME": {"priority": 65, "tolerance": 0.5},
+    "ADDRESS": {"priority": 70, "tolerance": 0.5},
+    "TEL": {"priority": 80, "tolerance": 0.9},
+    "CELLPHONE": {"priority": 85, "tolerance": 0.8},
+    "CAR_NUMBER": {"priority": 85, "tolerance": 0.8},
+    "CARD_NUMBER": {"priority": 85, "tolerance": 0.8},
+    "BANK_ACCOUNT": {"priority": 85, "tolerance": 0.8},
+    "NETWORK_IDENTIFIER": {"priority": 85, "tolerance": 0.8},
+    "ADID": {"priority": 85, "tolerance": 0.8},
+    "COOKIE_FORMAT": {"priority": 85, "tolerance": 0.8},
+    "PASSPORT": {"priority": 85, "tolerance": 0.8},
+    "DRIVER_LICENSE": {"priority": 85, "tolerance": 0.8},
+    "FOREIGN_RN": {"priority": 85, "tolerance": 0.8},
+}
 
 
 def validator_priority(label: str) -> int:
-    cfg = _validator_config_dict().get(label)
+    cfg = VALIDATOR_CONFIG.get(label)
     if isinstance(cfg, dict):
         return int(cfg.get("priority", 10))
     return 10
 
 
 def validator_tolerance(label: str) -> float:
-    cfg = _validator_config_dict().get(label)
+    cfg = VALIDATOR_CONFIG.get(label)
     if isinstance(cfg, dict) and "tolerance" in cfg:
         return float(cfg["tolerance"])
     return DEFAULT_TOLERANCE
 
-
 def find_label(value):
-    """값 하나에 대해 규칙을 검사해 (best_label, best_score, candidates) 반환. NULL은 구버전과 동일하게 처리."""
-    try:
-        if pd.isna(value):
-            return "NULL", 100, [("NULL", 100)]
-    except (TypeError, ValueError):
-        pass
+    """
+    모든 검증기를 테스트하여 매칭된 결과를 스코어 기반 내림차순으로 리턴합니다.
+    리턴 형식: (best_label, best_score, all_candidates)
+    """
     text = str(value).strip()
-    if text.endswith(".0"):
+    if text.endswith('.0'):
         text = text[:-2]
-    if not text or text.lower() in ("nan", "null", "none"):
-        return "NULL", 100, [("NULL", 100)]
-    return _get_validator().find_attribute(value)
+    
+    # 1. Null/Empty 처리
+    if not text or text.lower() in ['nan', 'null', 'none']:
+        return 'NULL', 100, [('NULL', 100)]
 
+    # 2. 패턴 생성 (1회)
+    pattern = get_pattern(text)
+    
+    matched_list = [] # (label, score)를 담을 리스트
 
-def find_attribute(value):
-    """find_label 과 동일 (레거시 import 호환)."""
-    return find_label(value)
+    # 3. 모든 검증기 전수 조사 (Exhaustive Search)
+    for validator_func, label in VALIDATORS:
+        try:
+            if validator_func(value, pattern):
+                score = validator_priority(label)
+                matched_list.append((label, score))
+        except Exception:
+            continue
+
+    # 4. 결과 분석
+    if not matched_list:
+        return None, 0, []
+
+    # 5. VALIDATOR_CONFIG priority 내림차순, 동률이면 라벨명으로 안정 정렬
+    matched_list.sort(key=lambda x: (-x[1], x[0]))
+    
+    best_label, best_score = matched_list[0]
+    
+    return best_label, best_score, matched_list
 
 
 def column_label_trust_decision(
@@ -1588,7 +1625,13 @@ def column_label_trust_decision(
     match_rate: float,
     sample_size: int,
 ) -> tuple[bool, float]:
-    """컬럼 단위 Top-N 집계 후 대표 라벨 신뢰 여부."""
+    """
+    Top-N 등 컬럼 단위로 집계한 뒤, 대표 라벨을 출력해도 될지 판단합니다.
+    VALIDATOR_CONFIG 의 tolerance 와 동일 규칙을 사용합니다.
+
+    Returns:
+        (is_trusted, target_tolerance)
+    """
     target_tolerance = validator_tolerance(label) if label else DEFAULT_TOLERANCE
     if sample_size <= 0:
         return False, target_tolerance
@@ -1598,13 +1641,8 @@ def column_label_trust_decision(
     return is_trusted, target_tolerance
 
 
-def reference_globals_loaded() -> tuple[bool, int, int]:
-    """시도·시군구 참조 세트가 비어 있지 않은지 (로드 여부 점검용)."""
-    return (bool(SIDO_SET) and bool(SIGUNGU_SET), len(SIDO_SET), len(SIGUNGU_SET))
-
-
 def _bootstrap_reference_globals() -> None:
-    """import 시 1회 참조 CSV 로드. `QDQM_SKIP_REF_INIT=1` 이면 생략."""
+    """import 시 1회 참조 CSV 로드. 비활성: QDQM_SKIP_REF_INIT=1."""
     flag = os.environ.get("QDQM_SKIP_REF_INIT", "").strip().lower()
     if flag in ("1", "true", "yes", "on"):
         return
@@ -1612,7 +1650,8 @@ def _bootstrap_reference_globals() -> None:
         init_reference_globals(ROOT_PATH, strict_columns=False, verbose=DEBUG)
     except Exception as e:
         if DEBUG:
-            print(f"[WARN] init_reference_globals 실패: {e}")
+            print(f"[WARN] init_reference_globals 자동 호출 실패: {e}")
 
 
 _bootstrap_reference_globals()
+

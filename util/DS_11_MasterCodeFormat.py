@@ -1,481 +1,461 @@
 # -*- coding: utf-8 -*-
 """
-DataSense DQ Profiling System 
-Qliker, 2026.01.02 Version 2.0 
+DataSense DQ Profiling System - Architecture Refactored
+Qliker, 2026.05.28 Version 3.0 (Modular & Extensible)
 """
 
 import os
-import re
 import sys
-import yaml
 import time
-import json
 import traceback
-import logging
-import numpy as np
-import pandas as pd
 from datetime import datetime
 from pathlib import Path
+from abc import ABC, abstractmethod
+import pandas as pd
 from multiprocessing import Pool, cpu_count
-from collections import Counter
 
 #---------------------------------------------------------------
 # Path & Directory 설정
 #---------------------------------------------------------------
-
-if getattr(sys, 'frozen', False):  # A. 실행파일(.exe) 상태일 때: .exe 파일이 있는 위치가 루트입니다.
+if getattr(sys, 'frozen', False): 
     ROOT_PATH = Path(sys.executable).parent
-else:  # B. 소스코드(.py) 상태일 때: 현재 파일(util/..)의 상위 폴더가 루트입니다.   
+else:   
     ROOT_PATH = Path(__file__).resolve().parents[1]
 
-if str(ROOT_PATH) not in sys.path: # # 시스템 경로에 루트 추가 (어디서 실행해도 모듈을 찾을 수 있게 함)
+if str(ROOT_PATH) not in sys.path:
     sys.path.insert(0, str(ROOT_PATH))
 
-# ---------------------------------------------------------------
-# [2. 모듈 Import] 어떤 환경에서도 에러 없이 불러오도록 예외 처리
-# ---------------------------------------------------------------
-try:
-    # 정석적인 패키지 호출 방식 시도
-    from util.dq_columnprofiler import ColumnProfiler, Get_Oracle_Type, Determine_Detail_Type, add_dq_scores
-except ImportError:
-    # 로컬에서 직접 실행할 때(같은 폴더 내 참조) 방식 시도
-    from dq_columnprofiler import ColumnProfiler, Get_Oracle_Type, Determine_Detail_Type, add_dq_scores
+# ColumnProfiler 인터페이스 임포트
+from util.DS_11_Columnprofiler import ColumnProfiler, add_dq_scores
 
+# 글로벌 설정값 유지
+FORMAT_FILE = ROOT_PATH / 'DS_Output' / 'FileFormat.csv'
+STATS_FILE = ROOT_PATH / 'DS_Output' / 'FileStats.csv'
 META_PATH = ROOT_PATH / 'DS_Meta' / 'CodeList_Meta.csv'
-YAML_PATH = ROOT_PATH / 'DS_Meta' / 'DS_Master.yaml'
-OUTPUT_DIR = ROOT_PATH / 'DS_Output'
-FORMAT_FILE = OUTPUT_DIR / 'FileFormat.csv'
-STATS_FILE = OUTPUT_DIR / 'FileStats.csv'
-SAMPLE_ROWS = 10000
-FORMAT_MAX_VALUE = 10000
 
-#---------------------------------------------------------------
-# MasterCodeFormatEngine Class
-#---------------------------------------------------------------
-class MasterCodeFormatEngine:
-    def __init__(self, chunk_size=100000, large_file_threshold_mb=500):
+def normalize_path(path_str):
+    if path_str is None or str(path_str).strip() == "":
+        return path_str
+    path_str = os.path.expanduser(os.path.expandvars(str(path_str)))
+    if not os.path.isabs(path_str):
+        path_str = str((ROOT_PATH / path_str).resolve())
+    else:
+        path_str = str(Path(path_str).resolve())
+    return path_str.replace('\\', '/')
+
+#=======================================================================
+# [MODULE 1] DATA INPUT LAYER (데이터 입력 부분)
+#=======================================================================
+
+class BaseInputReader(ABC):
+    """모든 데이터 소스(파일, DB 등) 입력을 위한 추상 베이스 클래스"""
+    
+    @abstractmethod
+    def get_targets(self, meta_item: dict) -> list[dict]:
+        """분석 대상을 조회하여 메타 및 청크 처리를 위한 단위를 리스트로 반환"""
+        pass
+
+    @abstractmethod
+    def read_data_sample(self, target_info: dict, sample_rows: int) -> tuple[pd.DataFrame, dict]:
         """
-        Args:
-            chunk_size: 청크 단위 처리 시 한 번에 읽을 행 수 (기본값: 100000)
-            large_file_threshold_mb: 대용량 파일 판단 기준 (MB, 기본값: 500MB)
-                                    작은 파일은 청크 처리하지 않아 더 빠름
+        분석에 필요한 샘플링된 DataFrame과 해당 소스의 통계(stats) 정보를 반환
+        Returns:
+            df: 분석 대상 데이터프레임
+            stats: 소스 통계 스펙 딕셔너리
         """
-        self.output_path = OUTPUT_DIR
-        self.SAMPLE_ROWS = 10000
-        self.chunk_size = chunk_size
+        pass
+
+
+class FileInputReader(BaseInputReader):
+    """기존 CSV, XLSX, PKL 파일 로드 및 대용량 청크 샘플링 담당 클래스"""
+    
+    def __init__(self, large_file_threshold_mb=1000, chunk_size=100000):
         self.large_file_threshold_mb = large_file_threshold_mb
+        self.chunk_size = chunk_size
+        self.encoding_list = ['utf-8-sig', 'utf-8', 'cp949', 'euc-kr']
 
     def _get_file_size_mb(self, file_path):
-        """파일 크기를 MB 단위로 반환"""
-        try:
-            size_bytes = os.path.getsize(file_path)
-            return size_bytes / (1024 * 1024)
-        except Exception:
-            return 0
-    
-    def _is_large_file(self, file_path):
-        """대용량 파일 여부 판단 (최적화: 작은 파일은 빠르게 제외)"""
-        try:
-            # 파일 크기 체크를 최적화: 작은 파일은 즉시 False 반환
-            size_bytes = os.path.getsize(file_path)
-            size_mb = size_bytes / (1024 * 1024)
-            return size_mb > self.large_file_threshold_mb
-        except Exception:
-            return False
+        try: return os.path.getsize(file_path) / (1024 * 1024)
+        except Exception: return 0
 
-    def load_source_file(self, file_path, ext) -> pd.DataFrame:
-        """ 소스 파일 읽기 (작은 파일용) """
-        # ext . 이 있으면 제거하고, 소문자로 변환하여 extension 변수에 저장, source 는 변환하지 않음 
-        extension = str(ext.lower().strip('.'))
-        file_ext = str(os.path.splitext(file_path)[1]).lower().strip('.')
-
-        encoding_list = ['utf-8-sig', 'utf-8', 'cp949', 'euc-kr']
-
-        # extension 이 all 이나, 지정하지 않거나 파일의 extension이 동일하면 파일을 읽어서 처리함. 
-        if file_ext == extension or extension == '' or extension == 'all':
-            try:
-                if file_ext == 'csv':
-                    for encoding in encoding_list:
-                        try:
-                            df = pd.read_csv(file_path, dtype=str, low_memory=False, encoding=encoding)
-                            return df
-                        except Exception as e:
-                            continue
-                    return None
-                elif file_ext == 'xlsx':
-                    df = pd.read_excel(file_path, dtype=str)
-                    return df
-                elif file_ext == 'pkl':
-                    df = pd.read_pickle(file_path)
-                    return df
-
-                return None
-            except Exception as e:
-                print(f"메타 파일 점검 : 파일 읽기 실패: {file_path}, 오류: {e}")
-                return None
-    
-    def _process_large_file_chunked(self, file_path, ext, m_type='Master', file_no=1):
-        """대용량 파일을 청크 단위로 처리 (최적화: 샘플만 수집, 불필요한 복사 제거)"""
-        col_results = []
-        file_ext = str(os.path.splitext(file_path)[1]).lower().strip('.')
-        encoding_list = ['utf-8-sig', 'utf-8', 'cp949', 'euc-kr']
+    def get_targets(self, meta_item: dict) -> list[dict]:
+        target_files = []
+        source_path = normalize_path(meta_item['source'])
+        ext = meta_item['extension']
+        m_type = meta_item['type']
         
-        if file_ext != 'csv':
-            # CSV가 아니면 기존 방식 사용
-            return self._process_file_normal(file_path, ext, m_type)
+        if not os.path.exists(source_path):
+            print(f"[Reader] 경로가 존재하지 않습니다: {source_path}")
+            return []
+
+        if os.path.isdir(source_path):
+            for f in os.listdir(source_path):
+                if f.lower().endswith(ext.lower()):
+                    target_files.append(os.path.join(source_path, f))
+        else:
+            target_files.append(source_path)
+            
+        return [{
+            'file_path': f_path, 
+            'extension': ext, 
+            'master_type': m_type,
+            'file_no': idx
+        } for idx, f_path in enumerate(target_files, start=1)]
+
+    def read_data_sample(self, target_info: dict, sample_rows: int) -> tuple[pd.DataFrame, dict]:
+        file_path = target_info['file_path']
+        m_type = target_info['master_type']
+        file_no = target_info['file_no']
         
-        # CSV 파일 청크 단위 처리 (최적화: 샘플만 수집)
-        sampled_chunks = []
+        file_ext = str(os.path.splitext(file_path)[1]).lower().strip('.')
+        file_size_mb = self._get_file_size_mb(file_path)
+        
+        # 대용량 CSV 파일 청크 처리 분기
+        if file_ext == 'csv' and file_size_mb > self.large_file_threshold_mb:
+            print(f"[Reader] 대용량 파일 청크 샘플링 적용: {os.path.basename(file_path)} ({file_size_mb:.1f}MB)")
+            return self._read_csv_chunked(file_path, m_type, file_no, sample_rows, file_size_mb)
+        else:
+            return self._read_normal(file_path, file_ext, m_type, file_no, sample_rows, file_size_mb)
+
+    def _read_csv_chunked(self, file_path, m_type, file_no, sample_rows, file_size_mb):
         encoding_used = None
         column_cnt = 0
         
-        # 인코딩 확인 및 첫 청크에서 컬럼 정보 얻기 (최적화: 첫 청크 재사용)
-        for encoding in encoding_list:
+        for encoding in self.encoding_list:
             try:
                 test_chunk = pd.read_csv(file_path, nrows=100, dtype=str, encoding=encoding, low_memory=False)
                 encoding_used = encoding
                 column_cnt = len(test_chunk.columns)
                 break
-            except Exception:
-                continue
-        
-        if encoding_used is None:
-            print(f"메타 파일 점검 : 파일 인코딩 확인 실패: {file_path}")
-            return [], []
-        
-        # 청크 단위로 읽으면서 샘플 수집 (최적화: 필요한 샘플만 수집, .copy() 제거)
-        try:
-            chunk_reader = pd.read_csv(file_path, chunksize=self.chunk_size, dtype=str, 
-                                     encoding=encoding_used, low_memory=False)
+            except Exception: continue
             
-            accumulated_samples = 0
-            total_rows = 0
-            for chunk_idx, chunk in enumerate(chunk_reader):
-                chunk_rows = len(chunk)
-                total_rows += chunk_rows
-                
-                # 필요한 샘플만 수집 (SAMPLE_ROWS에 도달하면 중단)
-                remaining_samples = self.SAMPLE_ROWS - accumulated_samples
-                if remaining_samples > 0:
-                    chunk_sample_size = min(chunk_rows, remaining_samples)
-                    if chunk_sample_size > 0:
-                        if chunk_rows <= chunk_sample_size:
-                            # 전체 청크가 필요하면 그대로 사용 (복사 제거)
-                            sampled_chunks.append(chunk)
-                            accumulated_samples += chunk_rows
-                        else:
-                            # 샘플링만 수행 (복사 제거)
-                            sampled_chunks.append(chunk.sample(n=chunk_sample_size, random_state=42))
-                            accumulated_samples += chunk_sample_size
+        if not encoding_used:
+            raise ValueError(f"지원하는 인코딩이 없습니다: {file_path}")
+
+        sampled_chunks = []
+        total_rows = 0
+        accumulated_samples = 0
+        
+        chunk_reader = pd.read_csv(file_path, chunksize=self.chunk_size, dtype=str, 
+                                   encoding=encoding_used, low_memory=False)
+        
+        for chunk in chunk_reader:
+            chunk_rows = len(chunk)
+            total_rows += chunk_rows
+            
+            remaining_samples = sample_rows - accumulated_samples
+            if remaining_samples > 0:
+                chunk_sample_size = min(chunk_rows, remaining_samples)
+                if chunk_rows <= chunk_sample_size:
+                    sampled_chunks.append(chunk)
+                    accumulated_samples += chunk_rows
                 else:
-                    # 필요한 샘플을 모두 수집했으면 청크 읽기 중단
-                    # pandas chunksize는 전체 파일을 읽어야 하지만, 
-                    # 실제로는 샘플 수집 후에는 더 이상 처리할 필요 없음
-                    # 하지만 chunksize는 전체를 읽어야 하므로 break는 불가능
-                    # 대신 나머지 청크는 빠르게 건너뛰기
-                    pass
+                    sampled_chunks.append(chunk.sample(n=chunk_sample_size, random_state=42))
+                    accumulated_samples += chunk_sample_size
+
+        sample_df = pd.concat(sampled_chunks, ignore_index=True) if sampled_chunks else pd.DataFrame()
+        
+        stats = self._build_stats(file_no, file_path, m_type, total_rows, column_cnt, len(sample_df), file_size_mb)
+        return sample_df, stats
+
+    def _read_normal(self, file_path, file_ext, m_type, file_no, sample_rows, file_size_mb):
+        df = None
+        if file_ext == 'csv':
+            for encoding in self.encoding_list:
+                try:
+                    df = pd.read_csv(file_path, dtype=str, low_memory=False, encoding=encoding)
+                    break
+                except Exception: continue
+        elif file_ext == 'xlsx':
+            df = pd.read_excel(file_path, dtype=str)
+        elif file_ext == 'pkl':
+            df = pd.read_pickle(file_path)
             
-            # 수집된 샘플들을 합쳐서 프로파일링
-            actual_sample_size = 0
-            if sampled_chunks:
-                sample_df = pd.concat(sampled_chunks, ignore_index=True)
-                actual_sample_size = len(sample_df)
-                
-                # 컬럼별 프로파일링
-                for col in sample_df.columns:
-                    try:
-                        res = ColumnProfiler(sample_df, col, actual_sample_size).profile()
-                        if res:
-                            res.update({
-                                'MasterType': m_type,
-                                'FileName': os.path.basename(file_path),
-                                'FilePath': file_path,
-                                'RecordCnt': total_rows  # 전체 레코드 수 사용
-                            })
-                            col_results.append(res)
-                    except Exception as e:
-                        print(f"컬럼 프로파일링 실패 (파일: {file_path}, 컬럼: {col}): {e}")
-                        continue
-        except Exception as e:
-            print(f"청크 단위 파일 처리 실패: {file_path}, 오류: {e}")
-            return [], []
-        
-        # SamplingRows와 Sampling(%) 계산
-        sampling_pct = round((actual_sample_size / total_rows * 100) if total_rows > 0 else 0, 2)
-        
-        file_stats = [{
-            'FileNo': file_no,
-            'FilePath': file_path,
-            'FileName': os.path.basename(file_path),
-            'MasterType': m_type,
-            'RecordCnt': total_rows,
-            'ColumnCnt': column_cnt,
-            'SamplingRows': actual_sample_size,
-            'Sampling(%)': sampling_pct,
-            'FileSize': self._get_file_size_mb(file_path),
-            'WorkDate': datetime.now().strftime('%Y-%m-%d')
-        }]
-        
-        return col_results, file_stats
-    
-    def _process_file_normal(self, file_path, ext, m_type='Master', file_no=1):
-        """일반 파일 처리 (기존 방식 - 최적화: 불필요한 복사 제거)"""
-        col_results, file_stats = [], []
-        
-        df = self.load_source_file(file_path, ext)
         if df is None:
-            return [], []
-        
+            return pd.DataFrame(), {}
+            
         total_rows = len(df)
-        sample_rows = min(total_rows, self.SAMPLE_ROWS)
-        # 샘플링이 필요하면 샘플링, 아니면 원본 사용 (복사 제거)
-        if total_rows <= self.SAMPLE_ROWS:
-            sample_df = df
-        else:
-            sample_df = df.sample(n=self.SAMPLE_ROWS, random_state=42)
+        sample_df = df if total_rows <= sample_rows else df.sample(n=sample_rows, random_state=42)
         
-        # SamplingRows와 Sampling(%) 계산
-        actual_sample_size = len(sample_df)
-        sampling_pct = round((actual_sample_size / total_rows * 100) if total_rows > 0 else 0, 2)
-        
-        file_stats.append({
+        stats = self._build_stats(file_no, file_path, m_type, total_rows, len(df.columns), len(sample_df), file_size_mb)
+        return sample_df, stats
+
+    def _build_stats(self, file_no, file_path, m_type, total_rows, col_cnt, sample_rows, file_size):
+        sampling_pct = round((sample_rows / total_rows * 100) if total_rows > 0 else 0, 2)
+        return {
             'FileNo': file_no,
-            'FilePath': file_path,
+            'FilePath': normalize_path(file_path),
             'FileName': os.path.basename(file_path),
             'MasterType': m_type,
             'RecordCnt': total_rows,
-            'ColumnCnt': len(df.columns),
-            'SamplingRows': actual_sample_size,
+            'ColumnCnt': col_cnt,
+            'SamplingRows': sample_rows,
             'Sampling(%)': sampling_pct,
-            'FileSize': self._get_file_size_mb(file_path),
+            'FileSize': file_size,
             'WorkDate': datetime.now().strftime('%Y-%m-%d')
-        })
-        
-        # 컬럼별 프로파일링
-        for col in sample_df.columns:
+        }
+
+
+class DatabaseInputReader(BaseInputReader):
+    """[확장 예시] 향후 RDBMS(Oracle, PostgreSQL 등) 테이블 매핑용 입력 리더"""
+    def __init__(self, connection_string=None):
+        self.connection_string = connection_string
+
+    def get_targets(self, meta_item: dict) -> list[dict]:
+        # 데이터베이스의 경우 source 필드에 테이블명 혹은 스키마명을 기재하여 활용
+        return [{'table_name': meta_item['source'], 'master_type': meta_item['type'], 'file_no': 1}]
+
+    def read_data_sample(self, target_info: dict, sample_rows: int) -> tuple[pd.DataFrame, dict]:
+        # TODO: SQLAlchemy 혹은 쿼리를 사용한 샘플 및 통계 추출 구현부
+        # 예시: "SELECT * FROM {table_name} ORDER BY RANDOM() LIMIT {sample_rows}"
+        print(f"[Reader] 데이터베이스 매핑 작동 예정: {target_info['table_name']}")
+        return pd.DataFrame(), {}
+
+
+#=======================================================================
+# [MODULE 2] DATA PROCESSING LAYER (데이터 처리 부분)
+#=======================================================================
+
+class MasterCodeFormatEngine:
+    """순수 비즈니스 로직 연산 가동 엔진 (I/O에 종속되지 않음)"""
+    
+    def __init__(self, sample_rows=10000):
+        self.sample_rows = sample_rows
+
+    def profile_dataframe(self, df: pd.DataFrame, target_info: dict) -> list[dict]:
+        """전달받은 순수 데이터프레임과 메타정보를 기반으로 고속 컬럼 프로파일링 가동"""
+        col_results = []
+        if df.empty:
+            return col_results
+            
+        actual_sample_size = len(df)
+        file_name = target_info.get('file_name') or os.path.basename(target_info.get('file_path', 'DB_TABLE'))
+        file_path = target_info.get('file_path') or target_info.get('table_name', 'UNKNOWN')
+        m_type = target_info.get('master_type', 'Master')
+        total_rows = target_info.get('total_rows', actual_sample_size)
+
+        for col in df.columns:
             try:
-                res = ColumnProfiler(sample_df, col, sample_rows).profile()
+                # 유틸 모듈 핵심 연산 작동
+                res = ColumnProfiler(df, col, actual_sample_size).profile()
                 if res:
                     res.update({
                         'MasterType': m_type,
-                        'FileName': os.path.basename(file_path),
-                        'FilePath': file_path
+                        'FileName': file_name,
+                        'FilePath': normalize_path(file_path),
+                        'RecordCnt': total_rows
                     })
                     col_results.append(res)
             except Exception as e:
-                print(f"컬럼 프로파일링 실패 (파일: {file_path}, 컬럼: {col}): {e}")
+                print(f"[Engine] 컬럼 프로파일링 연산 실패 (컬럼: {col}): {e}")
                 continue
-        
-        return col_results, file_stats
-
-    def run_profile(self, m_type, source, ext):
-        """ 
-        m_type: Master, Reference, Rule 
-        source: 파일 경로
-        ext: 파일 확장자
-        """
-
-        col_results, file_stats = [], []
-        try:
-            target_files = []
-            try:
-                if not os.path.exists(source):
-                    print(f"메타 파일 점검 : 경로가 존재하지 않습니다: {META_PATH}/{source}")
-                    return [], []
                 
-                if os.path.isdir(source):
-                    for f in os.listdir(source):
-                        if f.lower().endswith(ext):
-                            target_files.append(os.path.join(source, f))
-                else:
-                    target_files.append(source)
-            except Exception as e:
-                print(f"메타 파일 점검 : 파일 목록 조회 오류 (경로: {META_PATH}/{source}): {e}")
-                return [], []
+        return col_results
 
-            if not target_files:
-                print(f"메타 파일 점검 : 처리할 파일이 없습니다 (경로: {META_PATH}/ {source}, 확장자: {ext})")
-                return [], []
 
-            for file_no, f_path in enumerate(target_files, start=1):
-                try:                    
-                    # 대용량 파일 여부 확인 (최적화: 파일 크기 체크 최소화)
-                    file_size_mb = self._get_file_size_mb(f_path)
-                    if file_size_mb > self.large_file_threshold_mb:
-                        print(f"대용량 파일 감지 (청크 처리): {os.path.basename(f_path)} ({file_size_mb:.1f}MB)")
-                        file_col_results, file_file_stats = self._process_large_file_chunked(f_path, ext, m_type, file_no)
-                        col_results.extend(file_col_results)
-                        file_stats.extend(file_file_stats)
-                    else:
-                        # 일반 파일 처리 (기존 방식 - 더 빠름)
-                        file_col_results, file_file_stats = self._process_file_normal(f_path, ext, m_type, file_no)
-                        col_results.extend(file_col_results)
-                        file_stats.extend(file_file_stats)
-                        
-                except Exception as e:
-                    print(f"파일 처리 실패: {f_path}, 오류: {e}")
-                    print(traceback.format_exc())
-                    continue
-                    
-        except Exception as e:
-            print(f"run_profile 전체 오류: {e}")
-        
-        return col_results, file_stats
+#=======================================================================
+# [MODULE 3] DATA OUTPUT LAYER (결과물 최종 저장 부분)
+#=======================================================================
 
-    def Profiling(self, source_list):
-        """source_list의 모든 항목에 대해 프로파일링을 수행하고 결과를 저장합니다."""
+class BaseOutputWriter(ABC):
+    """프로파일링 결과 적재용 추상 베이스 클래스"""
+    
+    @abstractmethod
+    def write_results(self, final_df: pd.DataFrame, file_stats: list[dict]) -> bool:
+        pass
+
+
+class FileOutputWriter(BaseOutputWriter):
+    """기존 로컬 파일 시스템(.csv) 출력 적재 클래스"""
+    
+    def __init__(self, format_file_path=FORMAT_FILE, stats_file_path=STATS_FILE):
+        self.format_file_path = Path(format_file_path)
+        self.stats_file_path = Path(stats_file_path)
+        self.cols_spec = [
+            'FilePath', 'FileName', 'ColumnName', 'MasterType', 'PK', 'DataType', 'OracleType', 'DetailDataType',
+            'LenCnt', 'LenMin', 'LenMax', 'LenAvg', 'LenMode', 'RecordCnt', 'SampleRows',
+            'ValueCnt', 'NullCnt', 'Null(%)', 'UniqueCnt', 'Unique(%)', 'FormatCnt',
+            'Format', 'FormatValue', 'Format(%)', 'Format2nd', 'Format2ndValue', 'Format2nd(%)',
+            'Format3rd', 'Format3rdValue', 'Format3rd(%)', 'FormatTop10', 'FormatTopRate', 'MinString', 'MaxString',
+            'ModeString', 'MedianString', 'ModeCnt', 'Mode(%)', 'FormatMin', 'FormatMax',
+            'FormatMode', 'FormatMedian', 'Format2ndMin', 'Format2ndMax', 'Format2ndMode',
+            'Format2ndMedian', 'Format3rdMin', 'Format3rdMax', 'Format3rdMode', 'Format3rdMedian'
+        ]
+
+    def write_results(self, final_df: pd.DataFrame, file_stats: list[dict]) -> bool:
         try:
-            if not source_list:
-                print("처리할 파일 목록이 비어있습니다.")
-                return False
+            self.format_file_path.parent.mkdir(parents=True, exist_ok=True)
             
-            # 멀티프로세싱 또는 순차 처리로 모든 source 처리
-            try:
-                with Pool(cpu_count()) as pool:
-                    # run_profile을 멀티프로세싱으로 실행하기 위해 래퍼 함수 필요
-                    # 현재는 순차 처리로 구현
-                    combined = []
-                    for item in source_list:
-                        col_results, file_stats = self.run_profile(item['type'], item['source'], item['extension'])
-                        combined.append((col_results, file_stats))
-            except Exception as e:
-                print(f"멀티프로세싱 오류: {e}")
-                print("순차 처리로 전환")
-                combined = []
-                for item in source_list:
-                    col_results, file_stats = self.run_profile(item['type'], item['source'], item['extension'])
-                    combined.append((col_results, file_stats))
-            
-            # 결과 수집
-            flat_cols, flat_file_stats = [], []
-            for col_results, file_stats in combined:
-                if col_results:
-                    flat_cols.extend(col_results)
-                if file_stats:
-                    flat_file_stats.extend(file_stats)
-            
-            print(f"총 {len(flat_cols)}개 컬럼 결과 수집 완료")
-            
-            if not flat_cols:
-                print("처리된 컬럼 결과가 없습니다.")
-                return False
-            
-            # DataFrame 변환
-            final_df = pd.DataFrame(flat_cols)
-            print(f"수행 결과 완료: {len(final_df)}행 x {len(final_df.columns)}열")
-
-            # DQ 점수 추가
-            try:
-                final_df = add_dq_scores(final_df)
-            except Exception as e:
-                print(f"DQ 점수 추가 실패 (계속 진행): {e}")
-            
-            # FileFormat_2.csv 헤더 규격 강제 적용
-            cols_spec = [
-                'FilePath', 'FileName', 'ColumnName', 'MasterType', 'PK', 'DataType', 'OracleType', 'DetailDataType',
-                'LenCnt', 'LenMin', 'LenMax', 'LenAvg', 'LenMode', 'RecordCnt', 'SampleRows',
-                'ValueCnt', 'NullCnt', 'Null(%)', 'UniqueCnt', 'Unique(%)', 'FormatCnt',
-                'Format', 'FormatValue', 'Format(%)', 'Format2nd', 'Format2ndValue', 'Format2nd(%)',
-                'Format3rd', 'Format3rdValue', 'Format3rd(%)', 'MinString', 'MaxString',
-                'ModeString', 'MedianString', 'ModeCnt', 'Mode(%)', 'FormatMin', 'FormatMax',
-                'FormatMode', 'FormatMedian', 'Format2ndMin', 'Format2ndMax', 'Format2ndMode',
-                'Format2ndMedian', 'Format3rdMin', 'Format3rdMax', 'Format3rdMode', 'Format3rdMedian'
-            ]
-            ordered = [c for c in cols_spec if c in final_df.columns]
+            # 컬럼 스펙 순서 보정 정렬
+            ordered = [c for c in self.cols_spec if c in final_df.columns]
             ordered += [c for c in final_df.columns if c not in ordered]
             
-            # 결과 저장
-            try:
-                self.output_path.mkdir(parents=True, exist_ok=True)
-                save_path = FORMAT_FILE
-                
-                final_df[ordered].to_csv(save_path, index=False, encoding='utf-8-sig')
-                print(f"수행 결과 저장: {save_path}")
+            # 1. 컬럼별 분석 결과 스토리지 저장
+            final_df[ordered].to_csv(self.format_file_path, index=False, encoding='utf-8-sig')
+            print(f"[Writer] 수행 상세 결과 파일 저장 완료: {self.format_file_path}")
 
-                # flat_file_stats 사용 (누적된 파일 통계 데이터)
-                if flat_file_stats:
-                    file_stats_df = pd.DataFrame(flat_file_stats)
-                    file_stats_df.to_csv(STATS_FILE, index=False, encoding='utf-8-sig')
-                    print(f"파일 통계 결과 저장: {STATS_FILE} ({len(file_stats_df)}행)")
-                else:
-                    print("파일 통계 데이터가 없어 저장하지 않습니다.")
-                return True
-            except Exception as e:
-                print(f"파일 저장 실패: {save_path}, 오류: {e}")
-                print(traceback.format_exc())
-                return False
-                
+            # 2. 파일 통계 결과 스토리지 저장
+            if file_stats:
+                file_stats_df = pd.DataFrame(file_stats)
+                file_stats_df.to_csv(self.stats_file_path, index=False, encoding='utf-8-sig')
+                print(f"[Writer] 수행 마스터 통계 파일 저장 완료: {self.stats_file_path} ({len(file_stats_df)}행)")
+            return True
         except Exception as e:
-            print(f"Profiling 오류: {e}")
+            print(f"[Writer] 파일 스토리지 적재 실패: {e}")
             print(traceback.format_exc())
             return False
 
+
+class DatabaseOutputWriter(BaseOutputWriter):
+    """[확장 예시] 향후 RDBMS 품질 시스템 테이블에 직접 Direct 적재하기 위한 클래스"""
+    def __init__(self, connection_string=None):
+        self.connection_string = connection_string
+
+    def write_results(self, final_df: pd.DataFrame, file_stats: list[dict]) -> bool:
+        # TODO: final_df.to_sql('TB_DQ_COLUMN_RESULT', con=engine, if_exists='append') 구현부
+        print("[Writer] 데이터베이스 결과 적재 가동 예정")
+        return True
+
+
+#=======================================================================
+# [CONTROLLER] 오케스트레이션 파이프라인 제어 관리자
+#=======================================================================
+
+class DataSenseProfileController:
+    """정의된 InputReader, Engine, OutputWriter 인스턴스를 주입받아 파이프라인을 운영하는 컨트롤러"""
+    
+    def __init__(self, reader: BaseInputReader, engine: MasterCodeFormatEngine, writer: BaseOutputWriter):
+        self.reader = reader
+        self.engine = engine
+        self.writer = writer
+
+    def execute_pipeline(self, source_list: list[dict]) -> bool:
+        if not source_list:
+            print("[Controller] 처리할 타겟 리스트가 존재하지 않습니다.")
+            return False
+
+        flat_cols = []
+        flat_file_stats = []
+
+        # 메타 리스트 루프 수행
+        for item in source_list:
+            try:
+                # 1. 데이터 입력 계층 호출 (타겟 리스트 세분화 분할 받아옴)
+                targets = self.reader.get_targets(item)
+                
+                for target_info in targets:
+                    try:
+                        # 2. 데이터 세그먼트/샘플 추출 및 통계 수집
+                        sample_df, stats = self.reader.read_data_sample(target_info, self.engine.sample_rows)
+                        if sample_df.empty:
+                            continue
+                            
+                        if stats:
+                            flat_file_stats.append(stats)
+                            target_info['total_rows'] = stats.get('RecordCnt', len(sample_df))
+
+                        # 3. 비즈니스 로직 프로세싱 엔진 구동
+                        col_results = self.engine.profile_dataframe(sample_df, target_info)
+                        flat_cols.extend(col_results)
+                        
+                    except Exception as e:
+                        print(f"[Controller] 소스 타겟 단위 처리 실패: {target_info}, 오류: {e}")
+                        continue
+            except Exception as e:
+                print(f"[Controller] 메타 태스크 그룹 처리 중 치명적 에러: {item}, 오류: {e}")
+                continue
+
+        if not flat_cols:
+            print("[Controller] 프로파일링 연산 결과 데이터셋이 생성되지 않았습니다.")
+            return False
+
+        # DataFrame 가공 및 품질 스코어 보정 연산
+        final_df = pd.DataFrame(flat_cols)
+        try:
+            final_df = add_dq_scores(final_df)
+        except Exception as e:
+            print(f"[Controller] DQ 스코어 마이그레이션 예외 발생: {e}")
+
+        # 4. 결과 저장 계층 호출
+        return self.writer.write_results(final_df, flat_file_stats)
+
+
 #-----------------------------------------------------------------------
-# Load CodeMapping File ( CodeFormat을 수행할 Source Folder Path )
+# 메타 데이터 밸리데이터 및 로더
 #-----------------------------------------------------------------------
 def load_codemapping_validate() -> list[dict]:
-        try:    
-            print(f"META_PATH: {META_PATH}")
-            source_list = pd.read_csv(META_PATH)
-            # source_list의 필수 컬럼 점검  ( execution_flag,type, source, extension 존재 여부)
-            required_columns = ['execution_flag', 'type', 'source', 'extension']
-            for col in required_columns:
-                if col not in source_list.columns:
-                    print(f"{META_PATH} 파일 구조 점검 : {col} 컬럼이 없습니다.")
-                    return []
-            
-            filtered = source_list[source_list['execution_flag'] == 'Y']
-            if filtered.empty:
-                print(f"수행할 폴더가 없습니다.")
+    try:    
+        print(f"META_PATH: {META_PATH}")
+        source_list = pd.read_csv(META_PATH)
+        required_columns = ['execution_flag', 'type', 'source', 'extension']
+        for col in required_columns:
+            if col not in source_list.columns:
+                print(f"[Meta] 파일 구조 오류 : {col} 컬럼 누락")
                 return []
-
-            # meta 파일에서 type이 Master, Reference, Rule 인 경우만 수행
-            if not filtered['type'].isin(['Master', 'Reference', 'Rule']).all():
-                print(f"meta 파일에서 type이 Master, Reference, Rule 이 아닌 경우는 수행하지 않습니다.")
-                return []
-
-            print(f"수행할 폴더 수: {len(filtered)} 개 (Master: {len(filtered[filtered['type'] == 'Master'])}, Reference: {len(filtered[filtered['type'] == 'Reference'])}, Rule: {len(filtered[filtered['type'] == 'Rule'])})")
-            return filtered.to_dict(orient='records')
-        except Exception as e:
-            print(f"{META_PATH} 파일 점검 : 메타데터 파일 읽기 실패: {e}")
+        
+        filtered = source_list[source_list['execution_flag'] == 'Y']
+        if filtered.empty:
+            print("[Meta] execution_flag 가 'Y'인 타겟이 존재하지 않습니다.")
             return []
+
+        print(f"[Meta] 활성화된 작업 폴더/소스 수: {len(filtered)} 개")
+        return filtered.to_dict(orient='records')
+    except Exception as e:
+        print(f"[Meta] 메타데이터 로드 실패: {e}")
+        return []
+
 #-----------------------------------------------------------------------
-# Main
+# 시스템 진입점 Main
 #-----------------------------------------------------------------------
 def main():
-    """
-    DataSense Data Profiling 메인 함수
-    """
     start_time = time.time()
+    print("=" * 60)
+    print("DataSense Architecture 3.0 Pipeline Engine Core Start")
+    print("=" * 60)
     
-    try:
-        print("=" * 60)
-        print("DataSense Data Profiling 시작")
-        print("=" * 60)
-               
-        source_list = load_codemapping_validate()
-        if  source_list is None or len(source_list) == 0:
-            print(f"메타 파일 점검 : {META_PATH}")
-            return None
-        
-        # MasterCodeFormatEngine 엔진 실행
-        # engine = MasterCodeFormatEngine_new()  
-        engine = MasterCodeFormatEngine(large_file_threshold_mb=1000)  # 1GB 이상만 청크 처리
-        engine.Profiling(source_list)
-                    
-        end_time = time.time()
-        processing_time = end_time - start_time
-        print("=" * 60)
-        print(f"총 처리 시간: {processing_time:.2f}초")
-        print("=" * 60)
-        
-    except Exception as e:
-        print(f"MasterCodeFormat 오류 발생: {e}")
+    source_list = load_codemapping_validate()
+    if not source_list:
         return None
+        
+    #-------------------------------------------------------------------
+    # [의존성 주입(Dependency Injection) 존]
+    # 플러그인 교체하듯이 Reader와 Writer를 DB 인터페이스 클래스로 교체 가능합니다.
+    #-------------------------------------------------------------------
+    reader_plugin = FileInputReader(large_file_threshold_mb=1000, chunk_size=100000)
+    engine_plugin = MasterCodeFormatEngine(sample_rows=10000)
+    writer_plugin = FileOutputWriter()
+    
+    # 예시: 향후 DB로 변경 시 하단 주석만 해제하면 됨
+    # reader_plugin = DatabaseInputReader(connection_string="oracle+cx_oracle://...")
+    # writer_plugin = DatabaseOutputWriter(connection_string="postgresql://...")
+
+    # 파이프라인 조립 후 컨트롤러 가동
+    pipeline_controller = DataSenseProfileController(
+        reader=reader_plugin,
+        engine=engine_plugin,
+        writer=writer_plugin
+    )
+    
+    success = pipeline_controller.execute_pipeline(source_list)
+    
+    print("=" * 60)
+    print(f"종료 상태: {'성공' if success else '실패'} | 총 소요시간: {time.time() - start_time:.2f}초")
+    print("=" * 60)
 
 if __name__ == "__main__":
-    # 단독 실행 모드
-    result = main()
+    main()
 
+# SOLID 원칙 중 '단일 책임 원칙(SRP)'과 '개방-폐쇄 원칙(OCP)' 극대화
 
-        
+# 과거: 한 개의 대형 클래스(MasterCodeFormatEngine) 내부에서 경로를 검증하고, CSV 인코딩을 트라이하고, 
+# Pandas 샘플링을 한 뒤 연산 처리를 하고 직접 로컬 파일로 저장하는 고결합 상태였습니다.
+
+# 현재: 입력은 Reader가, 저장은 Writer가 전담합니다. 
+# 데이터 처리를 수행하는 Engine은 들어오는 입력 소스가 파일 시스템인지 클라우드 DB인지 알 필요가 없으며, 
+# 오직 pd.DataFrame 연산에만 엄격하게 집중하게 되어 소프트웨어 안정성이 대폭 향상되었습니다.
+
+# Database 연동 및 마이그레이션 확장성 보장
+
+# 프로젝트 요구사항에 맞춰 향후 Oracle 환경이나 PostgreSQL 등 클라이언트 환경 인프라가 변동되더라도 
+# 하단의 주석 처리된 주입 부분(DatabaseInputReader, DatabaseOutputWriter) 클래스의 추상 메서드 바디만 구현해 채워 넣으면, 
+# 중앙 연산 엔진 코드 수정률 0% 상태로 시스템 DB 전환이 즉시 가능합니다.

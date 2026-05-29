@@ -2,6 +2,7 @@
 import os
 import re
 import sys
+import unicodedata
 import yaml
 import time
 import json
@@ -72,7 +73,38 @@ _SIDO_ALIASES = {
     "경북": "경상북도", "경남": "경상남도",
 }
 
+# CSV 미로드 시 시도 인정 범위 (_SIDO_ALIASES 의 정식 명칭)
+_CANONICAL_SIDO_FROM_ALIASES: frozenset[str] = frozenset(_SIDO_ALIASES.values())
+
 _SIDO_SUFFIX_RE = re.compile(r'(특별자치)?(광역)?(특별)?(자치)?(시|도)$')
+
+# 주소 검증용 (DS_Columnprofiler.py / dq_validate 와 동일)
+def _norm(s: str) -> str:
+    s = unicodedata.normalize("NFC", str(s))
+    s = s.replace("\u3000", " ")
+    return " ".join(s.split())
+
+
+def _normalize_sido_token(tok: str) -> str:
+    tok = _norm(tok)
+    return _SIDO_ALIASES.get(tok, tok)
+
+
+def _sido_base(s: str) -> str:
+    t = _norm(s)
+    t = _SIDO_SUFFIX_RE.sub("", t)
+    t = (
+        t.replace("경상북", "경북")
+        .replace("경상남", "경남")
+        .replace("전라북", "전북")
+        .replace("전라남", "전남")
+        .replace("충청북", "충북")
+        .replace("충청남", "충남")
+    )
+    return t
+
+# '123.0' 형태만 정수부로 줄이기 (모듈 레벨; DQUtils._FLOAT_ZERO_RE 와 동일 패턴)
+_FLOAT_ZERO_RE = re.compile(r"^[+-]?\d+\.0+$")
 
 #---------------------------------------------------------------
 # Logging 설정
@@ -407,8 +439,6 @@ def validate_tel_old(val: str) -> bool:
         return len(local) in (7, 8) and local and local[0] not in {"0", "1"}
     return False
 
-import re
-
 def validate_tel(val: str) -> bool:
     """한국 전화번호 유효성 검사 (지역번호/휴대폰 포함)"""
     if not isinstance(val, str):
@@ -491,62 +521,94 @@ def validate_country_code(value: str) -> bool:
         return False
     return (s in COUNTRY_ISO3_SET) if COUNTRY_ISO3_SET else True
 
+
+def _looks_sigungu_token(x: str) -> bool:
+    x = _norm(x)
+    return bool(x) and x.endswith(("시", "군", "구", "자치구", "특별자치시"))
+
+
+def _validate_address_fallback_aliases(parts: list[str]) -> bool:
+    """시도/시군구 CSV 가 없을 때: _SIDO_ALIASES 정식명 + 시군구 접미사 완화 검증."""
+    tok = _normalize_sido_token(parts[0])
+    if tok in _CANONICAL_SIDO_FROM_ALIASES:
+        sido = tok
+    else:
+        base = _sido_base(tok)
+        cand = [sd for sd in _CANONICAL_SIDO_FROM_ALIASES if _sido_base(sd) == base]
+        if not cand:
+            return False
+        sido = cand[0]
+
+    if sido in _SIDO_SIGUNGU_OPTIONAL:
+        return len(parts) >= 2
+
+    candidates: list[str] = []
+    if len(parts) >= 2:
+        candidates.append(_norm(parts[1]))
+    if len(parts) >= 3:
+        candidates.append(_norm(parts[1] + " " + parts[2]))
+        candidates.append(_norm(parts[1] + parts[2]))
+        candidates.append(_norm(parts[2]))
+    candidates = [x for x in candidates if _looks_sigungu_token(x)]
+    return bool(candidates)
+
+
+def _validate_address_with_reference_csv(parts: list[str]) -> bool:
+    """시도·시군구 참조 CSV 가 로드된 경우 정밀 검증."""
+    tok = _normalize_sido_token(parts[0])
+    if tok not in SIDO_SET:
+        base = _sido_base(tok)
+        cand_sido = [sd for sd in SIDO_SET if _sido_base(sd) == base]
+        if not cand_sido:
+            return False
+        sido = cand_sido[0]
+    else:
+        sido = tok
+
+    if sido in _SIDO_SIGUNGU_OPTIONAL:
+        return len(parts) >= 2
+
+    candidates: list[str] = []
+    if len(parts) >= 2:
+        candidates.append(_norm(parts[1]))
+    if len(parts) >= 3:
+        candidates.append(_norm(parts[1] + " " + parts[2]))
+        candidates.append(_norm(parts[1] + parts[2]))
+        candidates.append(_norm(parts[2]))
+
+    candidates = [x for x in candidates if _looks_sigungu_token(x)]
+    if not candidates:
+        return False
+
+    if SIDO_TO_SIGUNGU:
+        valid_gus = SIDO_TO_SIGUNGU.get(sido, set())
+        if valid_gus:
+            nospace = {g.replace(" ", "") for g in valid_gus}
+            return any(x in valid_gus or x.replace(" ", "") in nospace for x in candidates)
+    nospace_all = {g.replace(" ", "") for g in SIGUNGU_SET}
+    return any(x in SIGUNGU_SET or x.replace(" ", "") in nospace_all for x in candidates)
+
+
 def validate_address(value: str) -> bool:
     """
-    주소(ADDRESS) 유효성 강화:
-      - 시도 토큰은 약칭/축약(경북/전남/강원특자 등)까지 허용
-      - 시군구 후보: 두번째 토큰, (2+3)결합(공백/무공백), 세번째 단독까지
-      - 접미사(시/군/구/자치구/특별자치시)로 노이즈 감소
-      - SIDO→SIGUNGU 매핑이 있으면 우선, 없으면 전역 시군구 셋으로 완화
+    주소(ADDRESS) 유효성:
+      - 시도·시군구 CSV(SIDO_SET + SIGUNGU_SET 또는 SIDO_TO_SIGUNGU)가 있으면 목록 기반 정밀 검증
+      - 없으면 _SIDO_ALIASES 정식 시도명 + 시군구 접미사로 완화 검증
     """
-    if not SIDO_SET or (not SIGUNGU_SET and not SIDO_TO_SIGUNGU):
-        return True  # 참조 세트 미초기화 시 파이프라인 유지
-
     try:
         s = _norm(value)
-        if not s: return False
+        if not s:
+            return False
         parts = s.split()
-        if not parts: return False
-
-        tok = _normalize_sido_token(parts[0])
-        if tok not in SIDO_SET:
-            base = _sido_base(tok)
-            cand_sido = [sd for sd in SIDO_SET if _sido_base(sd) == base]
-            if not cand_sido:
-                return False
-            sido = cand_sido[0]
-        else:
-            sido = tok
-
-        if sido in _SIDO_SIGUNGU_OPTIONAL:
-            return len(parts) >= 2
-
-        # 시군구 후보 생성
-        candidates = []
-        if len(parts) >= 2:
-            candidates.append(_norm(parts[1]))                      # '성남시'
-        if len(parts) >= 3:
-            candidates.append(_norm(parts[1] + " " + parts[2]))     # '성남시 분당구'
-            candidates.append(_norm(parts[1] + parts[2]))           # '성남시분당구'
-            candidates.append(_norm(parts[2]))                       # '분당구'
-
-        def looks_sigungu(x: str) -> bool:
-            return x.endswith(("시","군","구","자치구","특별자치시"))
-
-        candidates = [x for x in candidates if looks_sigungu(x)]
-        if not candidates:
+        if len(parts) < 2:
             return False
 
-        if SIDO_TO_SIGUNGU:
-            valid_gus = SIDO_TO_SIGUNGU.get(sido, set())
-            if valid_gus:
-                nospace = {g.replace(" ", "") for g in valid_gus}
-                return any(x in valid_gus or x.replace(" ", "") in nospace for x in candidates)
-        nospace_all = {g.replace(" ", "") for g in SIGUNGU_SET}
-        return any(x in SIGUNGU_SET or x.replace(" ", "") in nospace_all for x in candidates)
-
+        use_csv = bool(SIDO_SET) and (bool(SIGUNGU_SET) or bool(SIDO_TO_SIGUNGU))
+        if use_csv:
+            return _validate_address_with_reference_csv(parts)
+        return _validate_address_fallback_aliases(parts)
     except Exception:
-        return True
+        return False
 
 
 def validate_gender(val: str) -> bool:
@@ -684,9 +746,40 @@ def is_email(pattern):
 def is_url(pattern):
     return '://' in pattern and pattern.count('.') >= 1
 
-def is_address(pattern, format_stats):
-    return (len(pattern) >= 8 and pattern.count('K') >= 6 and pattern.count(' ') >= 2
-            and validate_address(format_stats['FormatMedian']))
+def is_address(pattern: str, top10_json, top_n: int = 10) -> bool:
+    """
+    Top10(JSON 문자열 또는 리스트) 상위 값들이 validate_address 로 대부분 통과하면 ADDRESS.
+    """
+    if not (
+        len(pattern) >= 8
+        and pattern.count("K") >= 6
+        and pattern.count(" ") >= 2
+    ):
+        return False
+
+    if not top10_json:
+        return False
+
+    if isinstance(top10_json, (list, tuple, set)):
+        values = [str(v) for v in top10_json]
+    else:
+        s = str(top10_json).strip()
+        if not s:
+            return False
+        try:
+            values = json.loads(s)
+        except Exception:
+            return False
+
+    top_values = [str(v) for v in values if v != "__OTHER__"][:top_n]
+    if not top_values:
+        return False
+
+    if not validate_address(top_values[0]):
+        return False
+
+    valid_cnt = sum(1 for v in top_values if validate_address(v))
+    return (valid_cnt / len(top_values)) >= 0.5
 
 def is_flag(pattern, format_stats, total_stats):
     if (format_stats['most_common_pattern'] == 'A' and
@@ -762,7 +855,8 @@ def Determine_Detail_Type(pattern, pattern_type_cnt, format_stats, total_stats,
 
     # 7) 주소/텍스트/한글명 기반
     if pattern_type_cnt > 0 and pattern[:1] == 'K': # 한글 패턴 체크
-        if is_address(pattern, format_stats):       return 'ADDRESS'
+        if top10 and is_address(pattern, top10, 10):
+            return "ADDRESS"
         # if is_kor_name(pattern, format_stats):      return 'KOR_NAME'
         if is_text(pattern, max_length, format_stats): return 'Text'
 
@@ -775,6 +869,24 @@ def Determine_Detail_Type(pattern, pattern_type_cnt, format_stats, total_stats,
         if non_null_count > 0 and non_null_count == unique_count: return 'UNIQUE'
 
     return detail_type
+
+
+def is_jumin(pattern) -> bool:
+    """주민번호 패턴 감지 — 스텁(미사용/미구현 시 False)."""
+    return False
+
+
+def check_code_score(unique_count, non_null_count, pattern_type_cnt) -> float:
+    return 0.0
+
+
+def check_text_score(max_length, pattern_type_cnt) -> float:
+    return 0.0
+
+
+def check_flag_score(unique_count, top10) -> float:
+    return 0.0
+
 
 def Determine_Detail_Type_new(pattern, pattern_type_cnt, format_stats, total_stats,
                           max_length, unique_count, non_null_count, top10):

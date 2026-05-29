@@ -97,7 +97,7 @@ def load_yaml_datasense_old():
     
     # Streamlit Cloud 호환: 상대 경로 사용
     # 프로젝트 루트 기준으로 상대 경로 구성
-    # project_root = Path(CURRENT_DIR_PATH)  
+    project_root = Path(CURRENT_DIR_PATH)
     yaml_path = PROJECT_ROOT / "DataSense" / "util"
     yaml_file_name = 'DS_Master.yaml'
     
@@ -120,7 +120,7 @@ def load_yaml_datasense_old():
         return None
 # 기본 페이지 설정
 def set_page_config(yaml_file):
-    POWERED_BY = "Powered by QLIKER"
+    POWERED_BY = "Powered by qliker"
     EMAIL = "qliker@kakao.com"
     APP_NAME = "Data Sense"
     APP_KOR_NAME = "데이터 센스"
@@ -133,19 +133,34 @@ def set_page_config(yaml_file):
         initial_sidebar_state="expanded",
     )
 
-    st.sidebar.header(APP_NAME)
+    st.sidebar.markdown(
+        "<h1>Data <span style='color: #cc3300;'>S</span>ense</h1>",
+        unsafe_allow_html=True,
+    )
     st.sidebar.markdown("""
-        <div style='background-color: #F0F8FF; padding: 10px; border-radius: 10px; margin: 10px 0;'>
-        <p style='font-size: 20px; color: #333; line-height: 1.6;'>
+        <div style='padding: 10px; border-radius: 10px; margin: 10px 0;'>
+        <p style='font-size: 20px; line-height: 1.6;'>
             Data has <span style='font-size: 20px; color: #cc3300; font-weight: bold;'> a value.</span><br>
             Data is<span style='font-size: 20px; color: #cc3300; font-weight: bold;'> an asset.</span><br>
             Data shapes <span style='color: #cc3300; font-weight: bold;'> our future.</span>
         </p>
     </div>
     """, unsafe_allow_html=True)
+    # st.sidebar.markdown("""
+    #     <div style='background-color: #F0F8FF; padding: 10px; border-radius: 10px; margin: 10px 0;'>
+    #     <p style='font-size: 20px; color: #333; line-height: 1.6;'>
+    #         Data has <span style='font-size: 20px; color: #cc3300; font-weight: bold;'> a value.</span><br>
+    #         Data is<span style='font-size: 20px; color: #cc3300; font-weight: bold;'> an asset.</span><br>
+    #         Data shapes <span style='color: #cc3300; font-weight: bold;'> our future.</span>
+    #     </p>
+    # </div>
+    # """, unsafe_allow_html=True)
     st.sidebar.markdown("")
     # st.sidebar.markdown(f"<h4>{POWERED_BY}</h4>", unsafe_allow_html=True)
-    st.sidebar.markdown(f"<h4>{EMAIL}</h4>", unsafe_allow_html=True)
+    st.sidebar.markdown(
+        f"<h4><a href='mailto:{EMAIL}' style='color: inherit; text-decoration: none;'>{EMAIL}</a></h4>",
+        unsafe_allow_html=True,
+    )
 
     return None
 

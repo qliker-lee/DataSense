@@ -1,0 +1,224 @@
+# DataSense Validation Rules Meta Data
+VALIDATOR_CONFIG:
+  # --- 1. 패턴이 엄격하고 체크섬이 있는 항목 (고순위) ---
+  RRN:
+    patterns: ["nnnnnn-nnnnnnn", "nnnnnnnnnnnnn"]
+    validator: "validate_rrn"
+    priority: 91
+    tolerance: 0.5
+
+  FOREIGN_RN:
+    patterns: ["nnnnnn-nnnnnnn", "nnnnnnnnnnnnn"]
+    validator: "validate_foreign_rn"
+    priority: 90
+    tolerance: 0.5
+
+  RRN_FORMAT:
+    patterns: ["nnnnnn-nnnnnnn", "nnnnnnnnnnnnn"]
+    validator: "validate_rrn_format"
+    priority: 80
+    tolerance: 0.9
+
+  RRN_MASKING:
+    patterns: ["nnnnnn-nssssss", "nnnnnnnnnssssss", "nnnnnn-n******", "nnnnnnnnn******"]
+    validator: "validate_rrn_masking"
+    priority: 80
+    tolerance: 0.8
+
+  PASSPORT:
+    # `_get_pattern`은 영문을 소문자 `a`로만보냄 (대문자 A와 불일치 시 검증 함수까지 도달하지 않음)
+    patterns: ["annnnnnnn", "annnannnn", "Annnnnnnn", "AnnnAnnnn"]
+    validator: "validate_passport"
+    priority: 80
+    tolerance: 0.8
+
+  BIZ_NO:
+    patterns: ["nnn-nn-nnnnn", "nnnnnnnnnn"]
+    validator: "validate_biz_no"
+    priority: 100
+    tolerance: 0.9
+
+  DRIVER_LICENSE:  #  "광주-26-882145-90", "인천-26-115706-22"
+    patterns: ["nnnnnnnnnnnn", "nn-nn-nnnnnn-nn", "KK-nn-nnnnnn-nn"]
+    validator: "validate_driver_license"
+    priority: 90
+    tolerance: 0.9
+
+  BANK_ACCOUNT:
+    exclude_patterns: ["nnn-nnn-nnnn",  "nnn-nnnn-nnnn", "nn-nnnn-nnnn", "nn-nnn-nnnn", "nnnnnn-nnnnnnn", "nnn-nn-nnnnn"]
+    min_len: 11
+    max_len: 14
+    forbidden_chars: [".", ":", ";", "!", "?", "~", "`", "|", "@", "(",")"]
+    validator: "validate_finance_info"
+    sub_type: "BANK_ACCOUNT"  
+    priority: 60
+    tolerance: 0.7
+
+  # --- 2. 특정 기호/형태 기반 항목 ---
+  EMAIL:
+    # patterns를 제외하여 다양한 길이에 대응 (함수 내 정규식 활용)
+    validator: "validate_email"
+    priority: 90
+    tolerance: 0.7
+
+  CARD_NUMBER:
+    patterns: 
+      - "nnnn-nnnn-nnnn-nnnn"
+      - "nnnn-nnnnnn-nnnnn"
+      - "nnnn nnnnnn nnnnn"
+      - "nnnn nnnn nnnn nnnn"
+    validator: "validate_finance_info"
+    sub_type: "CARD"
+    priority: 95
+    tolerance: 0.8
+
+  TEL:
+    patterns: ["nnnn-nnnn", "nnn-nnnn","nnnn nnnn", "nnn nnnn", "nnnnnnnnnn", "nnnnnnnnnn","nnn-nnn-nnnn", "nn-nnn-nnnn", "nn-nnnn-nnnn"]
+    validator: "validate_tel"
+    priority: 80
+    tolerance: 0.7
+
+  CELLPHONE:
+    patterns: ["nnnnnnnnnn", "nnnnnnnnnnn", "nnnnnnnnnn","nnn-nnnn-nnnn","nnn.nnnn.nnnn","nnn nnnn nnnn"]
+    validator: "validate_cellphone"
+    priority: 85
+    tolerance: 0.7
+
+  # --- 3. 날짜 및 시간 ---
+  YYYYMMDD:
+    patterns: ["nnnnnnnn", "nnnn-nn-nn", "nnnn.nn.nn", "nnnn/nn/nn", "nnnnKnnKnnK"]
+    validator: "validate_date"
+    priority: 88
+    tolerance: 0.9
+
+  YYMMDD:
+    patterns: ["nnnn-nn-nn", "nnnn.nn.nn", "nnnn/nn/nn", "nnnnKnnKnnK"]
+    validator: "validate_YYMMDD"
+    priority: 88
+    tolerance: 0.9
+
+  YEAR:
+    patterns: ["nnnn", "nnnnK"]
+    validator: "validate_year"
+    priority: 88
+    tolerance: 0.9
+
+  YEAR_MONTH:
+    patterns: ["nnnnnn", "nnnn-nn", "nnnn nn", "nnnn/nn"]
+    validator: "validate_yearmonth"
+    priority: 88
+    tolerance: 0.9
+
+  # --- 4. 참조 데이터 기반 (비정형) ---
+  COMPANY_NAME:
+    min_len: 2
+    max_len: 10
+    validator: "validate_company_name"
+    priority: 85
+    tolerance: 0.4
+
+  ACCOUNT_NAME:
+    min_len: 2
+    max_len: 15
+    validator: "validate_account_name"
+    priority: 60
+    tolerance: 0.5
+
+  CAR_NUMBER:
+    min_len: 7
+    max_len: 11
+    validator: "validate_car_number"
+    priority: 85
+    tolerance: 0.5
+
+  ADDRESS:
+    # 시도/시군구 로직에 위임
+    validator: "validate_address"
+    min_len: 8
+    max_len: 20
+    priority: 70
+    tolerance: 0.5
+
+  SIDO:
+    forbidden_chars: [" ", "-", ".", ":", ";", "!", "?", "~", "`", "|", "@", "(",")"]
+    min_len: 2
+    max_len: 10
+    validator: "validate_sido"
+    priority: 70
+    tolerance: 0.7
+
+  SIGUNGU:
+    forbidden_chars: [" ", "-", ".", ":", ";", "!", "?", "~", "`", "|", "@", "(",")"]
+    min_len: 2
+    max_len: 10
+    validator: "validate_sigungu"
+    priority: 70
+    tolerance: 0.5
+
+  COUNTRY_CODE:
+    patterns: ["AAA", "aaa"]
+    min_len: 3
+    max_len: 3
+    validator: "validate_country_code"
+    priority: 70
+    tolerance: 0.5
+
+  LANGUAGE_CODE:
+    min_len: 3
+    max_len: 3
+    validator: "validate_language_code"
+    priority: 70
+    tolerance: 0.5
+
+  NAME_KOR:
+    patterns: ["KKK", "K KK"]
+    validator: "is_kor_name"
+    min_len: 3
+    max_len: 3
+    priority: 65
+    tolerance: 0.7
+
+  # --- 5. 코드성 데이터 ---
+  ROAD_CODE:
+    patterns: ["nnnnnnnnnnnn"]
+    validator: "validate_road_name_code"
+    priority: 60
+    tolerance: 0.9
+
+  CORPORATE_NUMBER:
+    patterns: ["nnnnnnnnnnnnn", "nnnnnn-nnnnnnn"]
+    validator: "validate_corporate_number"
+    priority: 80
+    tolerance: 0.6
+
+  ZIP_CODE:
+    patterns: ["nnnnn"]
+    validator: "validate_zip_code"
+    priority: 60
+    tolerance: 0.8
+
+  ZIP_CODE_OLD:
+    patterns: ["nnn-nnn", "nnnnnn"]
+    validator: "validate_zip_code_old"
+    priority: 60
+    tolerance: 0.8  
+
+
+  TIME:
+    patterns: ["nn:nn", "nn:nn:nn", "nn:nn:nn:nn"]
+    validator: "validate_time"
+    priority: 60
+    tolerance: 0.9
+
+  DATE_TIME:
+    patterns: ["nnnn-nn-nn nn:nn:nn", "nnnn-nn-nn nn:nn:nn:nn"]
+    validator: "validate_date"
+    priority: 60
+    tolerance: 0.9  
+
+  TIME_STAMP:
+    min_len: 10
+    max_len: 20
+    validator: "validate_timestamp"
+    priority: 60
+    tolerance: 0.9  

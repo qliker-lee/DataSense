@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 DataSense DQ Profiling System 
-Qliker, 2026.01.02 Version 2.0 
+Qliker, 2026.01.19 Version 2.0 
 """
 
 import os
@@ -46,29 +46,27 @@ RULE_DEFINITION_VALIDDATA_FILE = ROOT_PATH / 'DS_Meta' / 'RuleDefinition_ValidDa
 SAMPLE_ROWS = 10000
 FORMAT_MAX_VALUE = 10000
 
+def normalize_path(path_str):
+    """경로를 정규화하여 일치시킴"""
+    if pd.isna(path_str) or str(path_str).strip() == '':
+        return path_str
+    path_str = os.path.expanduser(os.path.expandvars(str(path_str)))
+    if not os.path.isabs(path_str):
+        path_str = str((ROOT_PATH / path_str).resolve())
+    else:
+        path_str = str(Path(path_str).resolve())
+    return path_str.replace('\\', '/')
+
 #---------------------------------------------------------------
 # Debug 설정
 #---------------------------------------------------------------
 DEBUG_MODE = False  # True로 설정하면 상세한 디버그 로그 출력
 DEBUG_MAX_COLUMNS = 10  # 디버그할 최대 컬럼 수 (0이면 모두 디버그)
 
-# ---------------- 유효성 함수(없으면 더미 대체) ----------------
-try:
-    from util.dq_validate import (
-        validate_date, validate_yearmonth, validate_latitude, validate_longitude,
-        validate_YYMMDD, validate_tel, validate_cellphone, validate_address, validate_gender, validate_gender_en
-    )
-except ImportError:
-    try:
-        from dq_validate import (
-            validate_date, validate_yearmonth, validate_latitude, validate_longitude,
-            validate_YYMMDD, validate_tel, validate_cellphone, validate_address, validate_gender, validate_gender_en
-        )
-    except Exception:
-        def _false(*a, **k): return False
-        validate_date = validate_yearmonth = validate_latitude = validate_longitude = _false
-        validate_YYMMDD = validate_tel = validate_cellphone = validate_address = _false
-        validate_gender = validate_gender_en = _false
+from util.dq_validate import (
+    validate_date, validate_yearmonth, validate_latitude, validate_longitude, validate_YYYYMMDD, 
+    validate_YYMMDD, validate_tel, validate_cellphone, validate_address, validate_gender, validate_gender_en
+)
 
 # ... (상단 Import 및 경로 설정 부분은 유지) ...
 def validate_rule(row, rule_row, valid_data_dict):
@@ -130,13 +128,12 @@ def eval_rule_string(row, rule_str):
         # row의 데이터를 로컬 변수로 변환하여 eval이 계산할 수 있게 함
         Format = row.get('Format', '')
         FormatCnt = row.get('FormatCnt', 0)
-        # 선배님의 RuleDefinition에 있는 "Format == 'AAA'" 등을 실제 비교
-        # 따옴표 처리 등을 보정하여 실행
+        # RuleDefinition에 있는 "Format == 'AAA'" 등을 실제 비교 따옴표 처리 등을 보정하여 실행
         safe_rule = rule_str.replace('""', '"')
         return eval(safe_rule, {"Format": Format, "FormatCnt": FormatCnt})
-    except:
+    except Exception as e:
+        print(f"Error in {row.get('ColumnName')}: {e}")
         return False
-
 
 # ---------------- IO ----------------
 def read_csv_any(path) -> pd.DataFrame:
@@ -166,8 +163,7 @@ def parse_jsonish_list(x):
     s = str(x).strip()
     if not s or s.lower() in {"nan", "null", "none", "{}", "[]"}: return []
     
-    # 파이썬 딕셔너리 문자열을 JSON으로 변환 (홑따옴표 -> 쌍따옴표)
-    # { '이': 50 } -> { "이": 50 }
+    # 파이썬 딕셔너리 문자열을 JSON으로 변환 (홑따옴표 -> 쌍따옴표) { '이': 50 } -> { "이": 50 }
     json_str = s.replace("'", '"')
     
     # JSON 형식 시도
@@ -225,7 +221,7 @@ def _safe_to_numeric(series):
     except Exception:
         return pd.Series([], dtype=float)
 
-def Get_Oracle_Type(series, column_name: str | None = None):
+def Get_Oracle_Type_old(series, column_name: str | None = None):
     s_all = series.dropna().astype(str).str.strip()
     if s_all.empty:
         return "NULL"
@@ -259,6 +255,70 @@ def Get_Oracle_Type(series, column_name: str | None = None):
     maxlen = int(s_all.str.len().max())
     return f"VARCHAR2({maxlen})" if maxlen <= 4000 else "CLOB"
 
+
+# ======================================================================
+# Oracle Type Inference (name/digits heuristics)
+# ======================================================================   
+CODEY_NAME_HINT    = re.compile(r"(zip|postal|우편|code|코드|id|식별|번호)$", re.IGNORECASE)
+_FLOAT_ZERO_RE = re.compile(r'^[+-]?\d+\.0+$')
+
+def _strip_decimal_zero_if_numeric_str(x: object) -> str:
+    s = str(x)
+    return s.split('.', 1)[0] if _FLOAT_ZERO_RE.fullmatch(s) else s
+
+def Get_Oracle_Type(series, column_name: str | None = None):
+    def _safe_to_numeric(s: pd.Series) -> pd.Series:
+        return pd.to_numeric(s, errors='coerce')
+
+    s = series.copy()
+    # 전부 결측이면 즉시 NULL
+    if s.isna().all():
+        return "NULL"
+    # 문자열 형태의 NULL 처리 (object 타입만)
+    if s.dtype == object:
+        s = s.replace({r'^\s*(nan|null|none)\s*$': pd.NA}, regex=True)
+    s_all = s.dropna().astype(str).str.strip()
+    # 빈값/널 문자열 제거
+    s_all = s_all[s_all != ""]
+    s_all = s_all[~s_all.str.lower().isin({"nan", "null", "none"})]
+    s_all = s_all.map(_strip_decimal_zero_if_numeric_str)
+    if s_all.empty:
+        return "NULL"
+
+    name_is_codey = bool(column_name and CODEY_NAME_HINT.search(str(column_name)))
+
+    date_like = s_all.str.fullmatch(
+        r"\d{4}[-/.]?\d{2}[-/.]?\d{2}([ T]\d{2}:\d{2}(:\d{2}(\.\d{1,6})?)?)?"
+    ).mean()
+    if date_like >= 0.98:
+        return "DATE"
+
+    num_like = s_all.str.fullmatch(r"[+-]?\d+(?:\.\d+)?").mean()
+    has_leading_zero = s_all.str.match(r"^0\d+$").any()
+    fixed_length     = s_all.str.len().nunique(dropna=True) == 1
+
+    if num_like >= 0.98 and not name_is_codey and not has_leading_zero and not fixed_length:
+        nums = _safe_to_numeric(s_all)
+        if nums.empty:
+            maxlen = int(s_all.str.len().max())
+            return f"VARCHAR2({min(maxlen, 4000)})"
+        if (nums % 1 == 0).all():
+            max_digits = nums.abs().astype("Int64").astype(str).str.len().max()
+            return f"NUMBER({int(max_digits)})"
+        else:
+            parts = nums.abs().astype(str).str.split(".")
+            int_digits  = parts.str[0].str.len().astype(int).max()
+            frac_digits = parts.str[1].str.len().fillna(0).astype(int).max()
+            return f"NUMBER({int(int_digits + frac_digits)},{int(frac_digits)})"
+
+    maxlen = int(s_all.str.len().max())
+    if maxlen <= 0:
+        return "NULL"
+    elif maxlen <= 4000:
+        return f"VARCHAR2({maxlen})"
+    elif maxlen > 4000:
+        return "CLOB"
+
 # ======================================================================
 # 파일별 컬럼 분석
 # ======================================================================
@@ -284,9 +344,12 @@ def create_datatype_df(filepath, code_type, extension):
             oracle_type = Get_Oracle_Type(df[col], col)
         except Exception as e:
             oracle_type = f"ERROR({e})"
+        # 완전 결측인 경우 안전하게 NULL 처리
+        if oracle_type is None or str(oracle_type).strip().lower() in {"", "nan", "null", "none"}:
+            oracle_type = "NULL"
 
         summary.append({
-            "FilePath": str(filepath).replace('\\', '/'),
+            "FilePath": normalize_path(filepath),
             "FileName": os.path.basename(filepath),
             "MasterType": code_type,
             "ColumnName": col,
@@ -332,11 +395,6 @@ def DataType_Analysis(source_dir_list) -> pd.DataFrame:
         return None
 
     return pd.DataFrame(datatype_df)
-    # result_path = datatype_file
-    # result_df.to_csv(result_path, index=False, encoding="utf-8-sig")
-
-    # print(f"결과 저장 완료: {result_path}")
-    # return 0
 # ---------------- ValidData ----------------
 def _read_valid_file(path: str, colname: str, strict_column: bool = True) -> list[str]:
     if not path: return []
@@ -410,9 +468,41 @@ def is_yearmonth(pattern, median):
     return (pattern in ['nnnnnn','nnnn-nn','nnnn/nn','nnnn.nn','nnnnKnnK']
             and validate_yearmonth(str(median)))
 
-def is_yymmdd(pattern, median):
-    return (pattern in ['nnnnnn','nn-nn-nn','nn/nn/nn','nn.nn.nn','nn.nn.nn.']
-            and validate_YYMMDD(str(median)))
+def is_yymmdd(pattern, top10, top_n: int = 10) -> bool:
+    def _ensure_list(x):
+        if isinstance(x, (list, tuple, set)):
+            return [str(v) for v in x]
+        return parse_jsonish_list(x)
+
+    if pattern not in ['nnnnnn','nn-nn-nn','nn/nn/nn','nn.nn.nn','nn.nn.nn.']:
+        return False
+
+    values = _ensure_list(top10)
+    top_values = [v for v in values if v != "__OTHER__"][:top_n]
+    if not top_values:
+        return False
+
+    # 상위 값 중 YYMMDD로 판정되는 비율이 90% 이상이면 YYMMDD
+    valid_cnt = sum(1 for v in top_values if validate_YYMMDD(str(v)))
+    return (valid_cnt / len(top_values)) >= 0.9
+
+def is_yyyymmdd(pattern, top10, top_n: int = 10) -> bool:
+    def _ensure_list(x):
+        if isinstance(x, (list, tuple, set)):
+            return [str(v) for v in x]
+        return parse_jsonish_list(x)
+
+    if pattern not in ['nnnnnnnn','nnnn-nn-nn','nnnn/nn/nn','nnnn.nn.nn','nnnn.nn.nn.']:
+        return False
+
+    values = _ensure_list(top10)
+    top_values = [v for v in values if v != "__OTHER__"][:top_n]
+    if not top_values:
+        return False
+
+    # 상위 값 중 YYMMDD로 판정되는 비율이 90% 이상이면 YYMMDD
+    valid_cnt = sum(1 for v in top_values if validate_YYYYMMDD(str(v)))
+    return (valid_cnt / len(top_values)) >= 0.7
 
 def is_year(pattern, median, mode_string):
     if pattern == 'nnnn' and median:
@@ -459,7 +549,31 @@ def is_car_number(pattern, pattern_cnt): return pattern in ['KKnnKnnnn','nnKnnnn
 def is_company(pattern, pattern_cnt):    return (pattern in ['(K)KKKK','(K)KKKKK','(K)KKKKKK'] and int(pattern_cnt) > 5)
 def is_email(pattern): return ('@' in pattern and 1 <= pattern.count('.') <= 2)
 def is_url(pattern):   return ('://' in pattern and pattern.count('.') >= 1)
-def is_address(pattern, median): return (len(pattern) >= 8 and pattern.count('K') >= 6 and pattern.count(' ') >= 2 and validate_address(median))
+def is_address(pattern: str, top10, top_n: int = 10) -> bool:
+    """Top10(문자열/리스트) 상위 값이 validate_address 로 대부분 통과하면 ADDRESS."""
+
+    def _ensure_list(x):
+        if isinstance(x, (list, tuple, set)):
+            return [str(v) for v in x]
+        return parse_jsonish_list(x)
+
+    if not (
+        len(pattern) >= 8
+        and pattern.count("K") >= 6
+        and pattern.count(" ") >= 2
+    ):
+        return False
+    if not top10:
+        return False
+
+    values = _ensure_list(top10)
+    top_values = [v for v in values if v != "__OTHER__"][:top_n]
+    if not top_values:
+        return False
+    if not validate_address(top_values[0]):
+        return False
+    valid_cnt = sum(1 for v in top_values if validate_address(v))
+    return (valid_cnt / len(top_values)) >= 0.8
 
 def is_flag(pattern, pattern_cnt, median, min_string, max_string):
     if (pattern == 'A' and min_string == 'N' and max_string == 'Y' and int(pattern_cnt) == 1): return 'YN_Flag'
@@ -509,13 +623,15 @@ def Determine_Rule_Type(r: pd.Series) -> str:
         has_kor     = safe_int(r.get('HasKor',0), 0)
         has_special = safe_int(r.get('HasSpecial',0), 0)
         unique_percent = float(r.get('Unique(%)',0))
+        oracle_type = str(r.get('OracleType','') or '')
 
         if max_length > FORMAT_MAX_VALUE: return 'CLOB'
         if len(pattern) == 0:            return 'NULL'
 
         if is_timestamp(pattern, pattern_cnt):      return 'TIMESTAMP'
         if is_time(pattern, pattern_cnt):           return 'TIME'
-        if is_yymmdd(pattern, median):              return 'YYMMDD'
+        if is_yymmdd(pattern, top10, 10):           return 'YYMMDD'
+        if is_yyyymmdd(pattern, top10, 10):         return 'YYYYMMDD'
         if is_datechar(pattern, median):            return 'DATECHAR'
         if is_yearmonth(pattern, median):           return 'YEARMONTH'
         if is_year(pattern, median, mode_string):   return 'YEAR'
@@ -523,7 +639,7 @@ def Determine_Rule_Type(r: pd.Series) -> str:
         if is_latitude(pattern, median):            return 'LATITUDE'
         if is_longitude(pattern, median):           return 'LONGITUDE'
 
-        if is_tel(pattern, top10, 10) and unique_percent != 100 and has_alpha == 0 and has_kor == 0: return 'TEL'
+        if is_tel(pattern, top10, 10) and unique_percent != 100 and has_alpha == 0 and has_kor == 0 and oracle_type != 'DATE': return 'TEL'
         if is_cellphone(pattern, median) and has_alpha == 0 and has_kor == 0: return 'CELLPHONE'
         if is_car_number(pattern, pattern_cnt):     return 'CAR_NUMBER'
         if is_company(pattern, pattern_cnt):        return 'COMPANY'
@@ -532,7 +648,8 @@ def Determine_Rule_Type(r: pd.Series) -> str:
         if is_url(pattern):   return 'URL'
 
         if pattern_cnt > 0 and pattern[:1] == 'K':
-            if is_address(pattern, median):         return 'ADDRESS'
+            if top10 and is_address(pattern, top10, 10):
+                return "ADDRESS"
             if is_text(pattern, max_length, pattern_cnt): return 'Text'
 
         if pattern_cnt > 0:
@@ -605,7 +722,7 @@ def build_env(row: pd.Series, valid_map: dict, *, rule_type_auto: str = "") -> d
 ALLOWED_NODES = (
     ast.Expression, ast.BoolOp, ast.BinOp, ast.UnaryOp,
     ast.And, ast.Or, ast.BitAnd, ast.BitOr, ast.Not, ast.Invert,
-    ast.Compare, ast.Name, ast.Load, ast.Constant, ast.Num,
+    ast.Compare, ast.Name, ast.Load, ast.Constant,
     ast.Eq, ast.NotEq, ast.Lt, ast.LtE, ast.Gt, ast.GtE,
     ast.In, ast.NotIn, ast.USub, ast.UAdd, ast.Add, ast.Sub,
     ast.Mult, ast.Div, ast.FloorDiv, ast.Mod,
@@ -848,7 +965,7 @@ def apply_rules_and_type(dt: pd.DataFrame, ff: pd.DataFrame, rd: pd.DataFrame, v
     FUNC = {
         "is_datechar":  lambda fmt, med: is_datechar(str(fmt), str(med)),
         "is_yearmonth": lambda fmt, med: is_yearmonth(str(fmt), str(med)),
-        "is_yymmdd":    lambda fmt, med: is_yymmdd(str(fmt), str(med)),
+        "is_yymmdd":    lambda fmt, top10, top_n=10: is_yymmdd(str(fmt), top10, int(top_n)),
         "is_year":      lambda fmt, med, mode="": is_year(str(fmt), str(med), str(mode)),
         "is_latitude":  lambda fmt, med: is_latitude(str(fmt), str(med)),
         "is_longitude": lambda fmt, med: is_longitude(str(fmt), str(med)),
@@ -862,7 +979,7 @@ def apply_rules_and_type(dt: pd.DataFrame, ff: pd.DataFrame, rd: pd.DataFrame, v
         "is_company":   lambda fmt, cnt=0: is_company(str(fmt), to_float(cnt,0)),
         "is_email":     lambda fmt: is_email(str(fmt)),
         "is_url":       lambda fmt: is_url(str(fmt)),
-        "is_address":   lambda fmt, med: is_address(str(fmt), str(med)),
+        "is_address":   lambda fmt, top10, top_n=10: is_address(str(fmt), top10, int(top_n)),
         # 대안: TypeIs("DATECHAR") 는 SafeEval 안에서 처리
     }
 
@@ -888,20 +1005,6 @@ def apply_rules_and_type(dt: pd.DataFrame, ff: pd.DataFrame, rd: pd.DataFrame, v
         print(f"FileFormat 컬럼: {list(ff.columns)}")
     
     # FilePath 정규화: 경로 구분자를 통일하고 절대 경로로 변환
-    def normalize_path(path_str):
-        """경로를 정규화하여 일치시킴"""
-        if pd.isna(path_str) or path_str == '':
-            return path_str
-        path_str = str(path_str)
-        # 백슬래시를 슬래시로 변환
-        path_str = path_str.replace('\\', '/')
-        # 상대 경로인 경우 절대 경로로 변환 시도
-        if not os.path.isabs(path_str):
-            # ROOT_PATH 기준으로 절대 경로 생성
-            abs_path = (ROOT_PATH / path_str).resolve()
-            return str(abs_path).replace('\\', '/')
-        return path_str
-    
     # FilePath 정규화
     dt_normalized = dt.copy()
     ff_normalized = ff.copy()
@@ -934,6 +1037,24 @@ def apply_rules_and_type(dt: pd.DataFrame, ff: pd.DataFrame, rd: pd.DataFrame, v
     elif 'MasterType_ff' in out.columns:
         out['MasterType'] = out['MasterType_ff']
         out = out.drop(columns=['MasterType_ff'])
+
+    # DataType/OracleType 통합 (dt 우선, 없으면 ff)
+    if 'DataType_dt' in out.columns or 'DataType_ff' in out.columns:
+        out['DataType'] = out.get('DataType_dt')
+        if 'DataType_ff' in out.columns:
+            out['DataType'] = out['DataType'].fillna(out['DataType_ff'])
+        out = out.drop(columns=[c for c in ['DataType_dt', 'DataType_ff'] if c in out.columns])
+    if 'OracleType_dt' in out.columns or 'OracleType_ff' in out.columns:
+        out['OracleType'] = out.get('OracleType_dt')
+        if 'OracleType_ff' in out.columns:
+            out['OracleType'] = out['OracleType'].fillna(out['OracleType_ff'])
+        out = out.drop(columns=[c for c in ['OracleType_dt', 'OracleType_ff'] if c in out.columns])
+
+    # 결측/빈 문자열 방어
+    for col in ('DataType', 'OracleType'):
+        if col in out.columns:
+            out[col] = out[col].replace({r'^\s*(nan|null|none)?\s*$': "NULL"}, regex=True)
+            out[col] = out[col].fillna("NULL")
     
     # print(f"병합 후 - out: {len(out)}행")
     
