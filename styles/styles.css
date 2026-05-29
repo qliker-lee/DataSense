@@ -1,0 +1,24 @@
+html, body, [class*="css"]  { 
+    font-size: 14px; 
+}
+
+.stApp h1 {
+    font-size: 30px !important;
+    color: hsl(197, 85%, 57%) !important; /* skyblue */
+}
+
+.stApp h2 {
+    font-size: 20px !important;
+    color: hsl(338, 83%, 77%) !important;  /* light pink */
+}
+
+.stApp h3 {
+    font-size: 18px !important;
+    color: lab(72.26% 30.17 77.23) !important; /* amber */
+    
+}
+
+.stApp h4 {
+    font-size: 18px !important;
+    color: hsl(143, 68%, 78%) !important;  /* light pink */
+}
