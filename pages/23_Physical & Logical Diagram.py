@@ -25,6 +25,7 @@ from datetime import datetime
 from collections import defaultdict
 import streamlit as st
 import pandas as pd
+import altair as alt
 import graphviz
 from graphviz import Digraph
 import streamlit.components.v1 as components
@@ -40,9 +41,22 @@ from util.ds_generate_ERD import show_example_erd_images
 # -------------------------------------------------
 # 4. App Config (절대 상수임. 변경하지 마세요)
 # -------------------------------------------------
+# -------------------------------------------------------------------
+# 폰트 크기 조정 및 색상 변경 (신규추가)
+# -------------------------------------------------------------------
+st.markdown("""<style> html, body, [class*="css"]  { font-size: 14px; } </style> """, unsafe_allow_html=True)
+def load_css(file_name):
+    path = Path(file_name)
+    if not path.is_absolute():
+        path = PROJECT_ROOT / file_name
+    with open(path, encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+load_css("styles/styles.css")
+# -------------------------------------------------------------------
 APP_NAME = "Physical & Logical Diagram"
 APP_TITLE = "Physical & Logical Data Relationship Diagram"
-APP_DESCRIPTION = "데이터 값 매핑 기반 물리적 & 논리적 Data Relationship Diagram을 생성합니다."
+APP_DESC = "#### 데이터 값 매핑 기반 물리적 & 논리적 Data Relationship Diagram을 생성합니다."
 
 OUTPUT_DIR = PROJECT_ROOT /  'DS_Output'
 IMAGE_DIR = PROJECT_ROOT / 'images'
@@ -208,7 +222,9 @@ def _extract_and_load_erd_data_impl(df_raw: pd.DataFrame):
                 'Parent_Table': str(info['Parent_Table']).strip(),
                 'Level_Relationship_Internal': row['Level_Relationship_Internal'],
                 'Level_Depth_Internal': int(row['Level_Depth_Internal']),
-                'FilePath': row['FilePath']
+                'FilePath': row['FilePath'],
+                'System': row.get('System', ''),
+                'System_Color': row.get('System_Color', '')
             })
     
     if not erd_data_list:
@@ -249,7 +265,12 @@ def _extract_and_load_erd_data_impl(df_raw: pd.DataFrame):
     return pk_map, df_erd_relationships, df_erd_attributes
 
 try:
-    from streamlit.runtime.scriptrunner.script_run_context import get_script_run_ctx
+    try:
+        from streamlit.runtime.scriptrunner_utils.script_run_context import get_script_run_ctx
+    except ImportError:
+        from streamlit.runtime.scriptrunner.script_run_context import (  # type: ignore[import-not-found]
+            get_script_run_ctx,
+        )
     if get_script_run_ctx(suppress_warning=True) is not None:
         extract_and_load_erd_data = st.cache_data(_extract_and_load_erd_data_impl)
     else:
@@ -270,17 +291,6 @@ def load_data_all(files_to_load):
         df = pd.read_csv(path, encoding='utf-8-sig')
         loaded_data[name] = df
     return loaded_data
-
-# def create_pk_fk_from_mapping(df_cr):
-#     """데이터 통합 & find pk & fk"""
-#     # 1. 데이터 추출 및 로드
-#     pk_map, fk_map, it_df = _extract_and_load_erd_data_impl(df_cr)
-    
-#     if pk_map is None or fk_map is None or it_df is None:
-#         st.error("ERD 데이터를 생성할 수 없습니다. 입력 파일의 데이터를 확인해주세요.")
-#         return None, None, None
-
-#     return pk_map, fk_map, it_df
 
 # -------------------------------------------------
 # 3. 관계 추출 함수 (Relationship Extraction)
@@ -606,10 +616,20 @@ def generate_logical_erd_image(selected_files: list, all_tables: set, pk_map: di
         connected_columns[to_file].add(to_col)
     
     # === 3. 각 테이블별로 표시할 컬럼 결정 ===
+    def _unique_preserve_order(items):
+        seen = set()
+        unique_items = []
+        for item in items:
+            if item in seen:
+                continue
+            seen.add(item)
+            unique_items.append(item)
+        return unique_items
+
     display_columns = {}
     for table_name in all_tables:
         is_selected = table_name in selected_files
-        pk_cols_ordered = pk_map.get(table_name, [])
+        pk_cols_ordered = _unique_preserve_order(pk_map.get(table_name, []))
         pk_cols_set = set(pk_cols_ordered)
         connected_cols = connected_columns.get(table_name, set())
         
@@ -621,16 +641,29 @@ def generate_logical_erd_image(selected_files: list, all_tables: set, pk_map: di
             pk_to_display = [col for col in pk_cols_ordered if col in all_cols_set]
             # 나머지 컬럼은 정렬
             other_to_display = sorted(list(all_cols_set - pk_cols_set))
-            display_columns[table_name] = pk_to_display + other_to_display
+            display_columns[table_name] = _unique_preserve_order(pk_to_display + other_to_display)
         else:
             # 요약 모드 또는 선택되지 않은 테이블: 연결된 컬럼만 표시
             pk_to_display = [col for col in pk_cols_ordered if col in connected_cols]
             other_to_display = sorted(list(connected_cols - pk_cols_set))
-            display_columns[table_name] = pk_to_display + other_to_display
+            display_columns[table_name] = _unique_preserve_order(pk_to_display + other_to_display)
 
     # === 4. 테이블 노드 생성 (물리적 ERD와 동일한 스타일) ===
     def escape_html(text):
         return text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
+    def _normalize_hex_color(value: str) -> str:
+        value = value.strip().lower()
+        if not value:
+            return ''
+        if not value.startswith('#'):
+            return ''
+        if len(value) not in (4, 7):
+            return ''
+        hex_part = value[1:]
+        if not all(c in '0123456789abcdef' for c in hex_part):
+            return ''
+        return value
     
     # OracleType 정보 수집 (있는 경우)
     oracle_types = {}
@@ -648,6 +681,18 @@ def generate_logical_erd_image(selected_files: list, all_tables: set, pk_map: di
     for from_file, from_col, to_file, to_col in relationships_list:
         fk_columns.add((from_file, from_col))
         fk_columns.add((to_file, to_col))
+
+    table_system_map = {}
+    table_system_color_map = {}
+    if 'System' in it_df.columns or 'System_Color' in it_df.columns:
+        for _, row in it_df.iterrows():
+            table = str(row['FileName']).strip()
+            system = str(row.get('System', '')).strip()
+            color = _normalize_hex_color(str(row.get('System_Color', '')))
+            if system and table not in table_system_map:
+                table_system_map[table] = system
+            if color and table not in table_system_color_map:
+                table_system_color_map[table] = color
     
     for table_name in sorted(all_tables):
         pk_cols_ordered = pk_map.get(table_name, [])
@@ -655,7 +700,7 @@ def generate_logical_erd_image(selected_files: list, all_tables: set, pk_map: di
         table_cols = display_columns.get(table_name, [])
         
         # selected_files에 table_name이 있으면 오렌지색 아니면 연한 파랑색 (물리적 ERD와 동일)
-        header_color = '#FFA500' if table_name in selected_files else '#BBDEFB'
+        header_color = '#FFA500' if table_name in selected_files else table_system_color_map.get(table_name, '#BBDEFB')
         font_color = 'black'
         is_sel = table_name in selected_files
         
@@ -716,6 +761,8 @@ def generate_logical_erd_image(selected_files: list, all_tables: set, pk_map: di
         'display_columns': display_columns,
         'show_all_columns': show_all_columns,
         'selected_files': selected_files,
+        'table_system_map': table_system_map,
+        'table_system_color_map': table_system_color_map,
         'mode': 'Logical'
     }
     
@@ -800,33 +847,6 @@ def create_erd_result_dataframe(selected_files: list, all_tables: set, pk_map: d
         })
     
     return pd.DataFrame(result_data)
-
-# #----------------------------------------------------------------------------------------
-# # 데이터 추출 및 로드
-# #-----------------------------------------------------------------------------------------
-# def load_data_all(files_to_load):
-#     """  데이터 추출 및 로드    """
-#     loaded_data = {}
-
-#     for name, path in files_to_load.items():
-#         if not path.exists():
-#             st.error(f"{path.name} 파일이 없습니다")
-#             return None
-#         df = pd.read_csv(path, encoding='utf-8-sig')
-#         loaded_data[name] = df
-#     return loaded_data
-
-# def create_pk_fk_from_mapping(df_cr):
-#     """     2nd Step: 데이터 통합 & find pk & fk    """
-
-#     # 1. 데이터 추출 및 로드
-#     pk_map, fk_map, it_df = _extract_and_load_erd_data_impl(df_cr)
-    
-#     if pk_map is None or fk_map is None or it_df is None:
-#         st.error("ERD 데이터를 생성할 수 없습니다. 입력 파일의 데이터를 확인해주세요.")
-#         return None, None, None
-
-#     return pk_map, fk_map, it_df
 
 def render_column_control_tab(df_cm):
     """
@@ -961,25 +981,13 @@ def render_column_control_tab(df_cm):
     if blacklist:
         st.caption(f"현재 제외된 컬럼 수: {len(blacklist)}개")
     
-    # 데이터 모델 일관성 분석 실행 (별도 프로그램에서 활용할 예정)
-    # render_consistency_checks_inline(df_cm_master)
-
 # -------------------------------------------------
 # 7. 파일 선택 관련 함수 (File Selection)
 # -------------------------------------------------
 def prepare_file_selection_data(df_cr, df_cm=None, df_ex=None):
     """
     파일 선택을 위한 데이터 준비 함수
-    
-    Args:
-        df_cr: 논리적 정보를 추출할 데이터프레임 (CodeMapping_erd.csv 또는 CodeMapping.csv)
-        df_ex: ERD_exclusive.csv (제외할 컬럼 정보)
-    
-    Returns:
-        tuple: (total_df, df_cm) - 준비된 데이터프레임과 원본 df_cm
-        None: 필수 컬럼이 없거나 오류 발생 시
     """
-    # df_cm이 제공되지 않으면 df_input 사용
     if df_cm is None:
         df_cm = df_cr
 
@@ -1053,6 +1061,27 @@ def prepare_file_selection_data(df_cr, df_cm=None, df_ex=None):
     
     return total_df, df_cm
 
+def Display_DataQuality_KPIs(df):
+    """
+    데이터 품질 지표 표시
+    """
+    st.subheader("Files Statistics")
+    # 전체 파일수, 물리관계가없는파일수, 논리관계가없는파일수, 물리관계와 논리관계가 모두 없는파일수
+    total_files = len(df['FileName'].unique())
+    no_physical_files = len(df[df['Total_Related'] == 0]['FileName'].unique())
+    no_logical_files = len(df[df['Rel Table #'] == 0]['FileName'].unique())
+    no_physical_and_logical_files = len(df[(df['Total_Related'] == 0) & (df['Rel Table #'] == 0)]['FileName'].unique())
+
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.metric(label="전체 파일수", value=total_files)
+    with col2:
+        st.metric(label="물리관계가없는파일수", value=no_physical_files)
+    with col3:
+        st.metric(label="논리관계가없는파일수", value=no_logical_files)
+    with col4:
+        st.metric(label="물리&논리관계가없는파일수", value=no_physical_and_logical_files)
+
 def select_files(df_cr, df_cm=None, df_ex=None) -> list:
     """
     2nd Step: File Information
@@ -1061,66 +1090,226 @@ def select_files(df_cr, df_cm=None, df_ex=None) -> list:
     df_cr: 논리적 정보를 추출할 데이터프레임 (CodeMapping_erd.csv 또는 CodeMapping.csv)
     df_ex: ERD_exclusive.csv (제외할 컬럼 정보)
     """
-    st.subheader("File Information & Select File")
+    
     
     # 데이터 준비
-    total_df, df_cm = prepare_file_selection_data(df_cr, df_cm, df_ex)
-    if total_df is None:
+    df, df_cm = prepare_file_selection_data(df_cr, df_cm, df_ex)
+
+    if df is None:
         return None
 
-    tab1, tab2, tab3, tab4 = st.tabs(["분석 파일 선택", "물리적 연결관계 정보", "논리적 연결관계 정보", "컬럼 제어 설정"])
+    Display_DataQuality_KPIs(df)
+    
+    if 'selected_files' not in st.session_state:
+        st.session_state['selected_files'] = []
+    if 'selected_files_source' not in st.session_state:
+        st.session_state['selected_files_source'] = None
+    for tab_key in ("tab1", "tab2", "tab3", "tab4"):
+        state_key = f"selected_files_{tab_key}"
+        if state_key not in st.session_state:
+            st.session_state[state_key] = []
+
+    def _update_selected_files(new_selection, source_key: str):
+        state_key = f"selected_files_{source_key}"
+        current_selection = list(new_selection) if new_selection is not None else []
+        prev_selection = st.session_state.get(state_key, [])
+        if current_selection != prev_selection:
+            st.session_state[state_key] = current_selection
+            st.session_state['selected_files'] = current_selection
+            st.session_state['selected_files_source'] = source_key
+            # st.write(f"Debug : 선택된 FileName({source_key}) {current_selection}")
+
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(["물리적 연결관계", "논리적 연결관계", 
+                                    "물리적, 논리적 연결관계", "연결관계 상세", 
+                                    "컬럼 제어 설정"])
     with tab1:
+        st.subheader("물리적 연결관계 정보 요약")
+        logic_cols = ['FileName', 'Total_Related',]
+        logic_df = df[df['Total_Related'] > 0][logic_cols].copy()
+        # 총 연결 파일 수 기준 정렬
+        logic_df = logic_df.sort_values(by='Total_Related', ascending=False)
+        # Total_Related 순으로 막대 그래프 출력 
+        logic_order = logic_df['FileName'].tolist()
+        logic_select = alt.selection_point(
+            fields=['FileName'],
+            on='click',
+            empty='none',
+            name='logic_select'
+        )
+        logic_chart = (
+            alt.Chart(logic_df)
+            .mark_bar(color='#87CEEB') # 파란색
+            .encode(
+                x=alt.X('FileName:N', sort=logic_order, title='FileName'),
+                y=alt.Y('Total_Related:Q', title='물리적연결')
+            )
+            .properties(width=1200, height=500)
+            .add_params(logic_select)
+        )
+        logic_selected = st.altair_chart(
+            logic_chart,
+            width='stretch',
+            on_select="rerun"
+        )
+        def _extract_selected_filenames(payload):
+            results = []
+            if isinstance(payload, dict):
+                if 'FileName' in payload:
+                    value = payload.get('FileName')
+                    if isinstance(value, list):
+                        results.extend(value)
+                    elif value:
+                        results.append(value)
+                for value in payload.values():
+                    results.extend(_extract_selected_filenames(value))
+            elif isinstance(payload, list):
+                for item in payload:
+                    results.extend(_extract_selected_filenames(item))
+            return results
+
+        selected_logic_files = []
+        if isinstance(logic_selected, dict):
+            selection_payload = logic_selected.get('selection') or logic_selected
+            selected_logic_files = _extract_selected_filenames(selection_payload)
+            selected_logic_files = [name for name in selected_logic_files if name]
+        _update_selected_files(selected_logic_files, "tab1")
+        if not selected_logic_files and not st.session_state['selected_files']:
+            st.info("차트에서 파일을 선택하세요.")
+        elif not selected_logic_files:
+            st.info("차트에서 파일을 선택하세요.")
+
+    with tab2:
+        st.subheader("논리적 연결관계 정보 요약")
+        physical_cols = ['FileName', 'Rel Table #',]
+        physical_df = df[df['Rel Table #'] > 0][physical_cols].copy()
+        physical_df = physical_df.sort_values(by='Rel Table #', ascending=False)
+        # Total_Related 순으로 막대 그래프 출력 
+        physical_order = physical_df['FileName'].tolist()
+        physical_select = alt.selection_point(
+            fields=['FileName'],
+            on='click',
+            empty='none',
+            name='physical_select'
+        )
+        physical_chart = (
+            alt.Chart(physical_df)
+            .mark_bar(color='#FFA500') # 주황색
+            .encode(
+                x=alt.X('FileName:N', sort=physical_order, title='FileName'),
+                y=alt.Y('Rel Table #:Q', title='논리적연결')
+            )
+            .properties(width=1200, height=500)
+            .add_params(physical_select)
+        )
+        physical_selected = st.altair_chart(
+            physical_chart,
+            width='stretch',
+            on_select="rerun"
+        )
+        selected_physical_files = []
+        if isinstance(physical_selected, dict):
+            selection_payload = physical_selected.get('selection') or physical_selected
+            selected_physical_files = _extract_selected_filenames(selection_payload)
+            selected_physical_files = [name for name in selected_physical_files if name]
+        _update_selected_files(selected_physical_files, "tab2")
+        if not selected_physical_files and not st.session_state['selected_files']:
+            st.info("차트에서 파일을 선택하세요.")
+
+    with tab3:     # combine chart
+        st.subheader("물리적, 논리적 연결관계 정보 요약")
+        combined_cols = ['FileName', 'Total_Related', 'Rel Table #',]
+        combined_df = df[(df['Total_Related'] != 0) | (df['Rel Table #'] != 0)][combined_cols].copy()
+        combined_df = combined_df.sort_values(by='Total_Related', ascending=False) # Total_Related 기준 정렬
+        combined_order = combined_df['FileName'].tolist()
+        combined_long_df = combined_df.melt(
+            id_vars=['FileName'],
+            value_vars=['Total_Related', 'Rel Table #'],
+            var_name='범례',
+            value_name='Value'
+        )
+        combined_long_df['범례'] = combined_long_df['범례'].replace({
+            'Total_Related': '물리관계',
+            'Rel Table #': '논리관계'
+        })
+        combined_select = alt.selection_point(
+            fields=['FileName'],
+            on='click',
+            empty='none',
+            name='combined_select'
+        )
+        combined_chart = (
+            alt.Chart(combined_long_df)
+            .mark_bar()
+            .encode(
+                x=alt.X('FileName:N', sort=combined_order, title='FileName'),
+                y=alt.Y('Value:Q', title='연결관계'),
+                xOffset=alt.XOffset('범례:N'),
+                color=alt.Color('범례:N', title='범례',
+                                scale=alt.Scale(range=['#FFA500', '#87CEEB']))
+            )
+            .properties(width=600, height=500)
+            .add_params(combined_select)
+        )
+        combined_selected = st.altair_chart(
+            combined_chart,
+            width='stretch',
+            on_select="rerun"
+        )
+        
+        selected_combined_files = []
+        if isinstance(combined_selected, dict):
+            selection_payload = combined_selected.get('selection') or combined_selected
+            selected_combined_files = _extract_selected_filenames(selection_payload)
+            selected_combined_files = [name for name in selected_combined_files if name]
+        _update_selected_files(selected_combined_files, "tab3")
+        if not selected_combined_files and not st.session_state['selected_files']:
+            st.info("차트에서 파일을 선택하세요.")
+
+    with tab4:
         st.write("파일별 물리적, 논리적 연결관계 정보 요약입니다. (컬럼헤드에 마우스를 위치하면 설명이 있습니다)")
-        cols = ['선택', 'FileName', 'PK Columns', 'Column #', 'Level1_Cnt', 'Level2_Cnt', 'Level3_Cnt', 'Total_Related', 'Rel Table #', 'Max_Level']
-        select_df = total_df[cols].copy()
-        select_df = st.data_editor(select_df, hide_index=True, width=1600, height=500, column_config={
+        detail_cols = ['선택', 'FileName', 'PK Columns', 'Column #', 'Total_Related', 'Rel Table #']
+        detail_df = df[detail_cols].copy()
+        # ProgressColumn 최대값(표시 데이터 기준)
+        _column_max = max(int(pd.to_numeric(detail_df.get('Column #'), errors='coerce').fillna(0).max() or 0), 1)
+        _total_related_max = max(int(pd.to_numeric(detail_df.get('Total_Related'), errors='coerce').fillna(0).max() or 0), 1)
+        _rel_table_max = max(int(pd.to_numeric(detail_df.get('Rel Table #'), errors='coerce').fillna(0).max() or 0), 1)
+        edited_df = st.data_editor(detail_df, hide_index=True, width=1600, height=500, column_config={
             '선택': st.column_config.CheckboxColumn('선택', width=80),
             'FileName': st.column_config.TextColumn(help='파일 이름', width=150),
             'PK Columns': st.column_config.TextColumn('PK컬럼', help='PK 컬럼', width=100),
-            'Column #': st.column_config.NumberColumn('컬럼수', help='컬럼 수', width=50),
-            'Level1_Cnt': st.column_config.NumberColumn('1관계', help='물리적 1단계 연결 파일 수', width=50),
-            'Level2_Cnt': st.column_config.NumberColumn('2관계', help='물리적 2단계 연결 파일 수', width=50),
-            'Level3_Cnt': st.column_config.NumberColumn('3관계', help='물리적 3단계 연결 파일 수', width=50),
-            'Total_Related': st.column_config.NumberColumn('물리관계', help='물리적 총 연결 파일 수', width=80),
-            'Rel Table #': st.column_config.NumberColumn('논리관계', help='논리적 파일 연결 그룹 개수', width=80),
+            'Column #': st.column_config.ProgressColumn('컬럼수', help='컬럼 수', min_value=0, max_value=_column_max, format="%d", width=50),
+            'Total_Related': st.column_config.ProgressColumn('물리관계', help='물리적 총 연결 파일 수', min_value=0, max_value=_total_related_max, format="%d", width=80),
+            'Rel Table #': st.column_config.ProgressColumn('논리관계', help='논리적 파일 연결 그룹 개수', min_value=0, max_value=_rel_table_max, format="%d", width=80),
         })
 
-    with tab2:
-        cols = ['FileName', 'PK Columns', 'Column #', 'Level1_Cnt', 'Level2_Cnt', 'Level3_Cnt', 'Total_Related', 'Related_List', 'FilePath']
-        display_df = total_df[cols].copy()
-        st.write("파일별 물리적 연결관계 정보 요약입니다. (컬럼헤드에 마우스를 위치하면 설명이 있습니다)")
-        st.dataframe(display_df, hide_index=True, width=1200, height=500, column_config={
-            'FileName': st.column_config.TextColumn(help='파일 이름', width=150),
-            'PK Columns': st.column_config.TextColumn('PK컬럼', help='PK 컬럼', width=100),
-            'Column #': st.column_config.NumberColumn('컬럼수', help='컬럼 수', width=50),
-            'Level1_Cnt': st.column_config.NumberColumn('1관계', help='물리적 1단계 연결 파일 수', width=50),
-            'Level2_Cnt': st.column_config.NumberColumn('2관계', help='물리적 2단계 연결 파일 수', width=50),
-            'Level3_Cnt': st.column_config.NumberColumn('3관계', help='물리적 3단계 연결 파일 수', width=50),
-            'Total_Related': st.column_config.NumberColumn('물리관계', help='물리적 총 연결 파일 수', width=50),
-            'Related_List': st.column_config.TextColumn('물리관계파일', help='물리적 연결된 파일 목록', width=150),
-        })
-    with tab3:
-        cols = ['FileName', 'PK Columns', 'Column #', 'Max_Level', 'Rel Table #', 'Related_List']
-        display_df = total_df[cols].copy()
-        st.write("파일별 논리적 연결관계 정보 요약입니다. (컬럼헤드에 마우스를 위치하면 설명이 있습니다)")
-        st.dataframe(display_df, hide_index=True, width=1200, height=500, column_config={
-            'FileName': st.column_config.TextColumn(help='파일 이름', width=150),
-            'PK Columns': st.column_config.TextColumn('PK컬럼', help='PK 컬럼', width=100),
-            'Column #': st.column_config.NumberColumn('컬럼수', help='컬럼 수', width=50),
-            'Max_Level': st.column_config.NumberColumn('논리레벨', help='논리적 최대 레벨', width=50),
-            'Rel Table #': st.column_config.NumberColumn('논리관계', help='논리적 파일 연결 그룹 개수', width=50),
-            'Related_List': st.column_config.TextColumn('논리관계파일', help='논리적 연결된 파일 목록', width=150),
-        })
-    
-    with tab4:
-        # 컬럼 제어 설정 탭 렌더링
-        render_column_control_tab(df_cm)
+        selected_detail_files = edited_df[edited_df['선택'] == True]['FileName'].tolist()
 
-    # 8. 선택된 테이블 추출
-    selected_files = select_df[select_df['선택'] == True]['FileName'].tolist()
+        _update_selected_files(selected_detail_files, "tab4")
+
+        if not st.session_state['selected_files']:
+            st.info("차트에서 파일을 선택하세요.")
+
+    with tab5:
+        render_column_control_tab(df_cm) # 컬럼 제어 설정 탭 렌더링
+
+    selected_files = st.session_state.get('selected_files', [])
+    selected_source = st.session_state.get('selected_files_source')
+    if selected_source == 'tab1':
+        source_name = '물리적 연결관계'
+    elif selected_source == 'tab2':
+        source_name = '논리적 연결관계'
+    elif selected_source == 'tab3':
+        source_name = '물리적, 논리적 연결관계'
+    elif selected_source == 'tab4':
+        source_name = '연결관계 상세'
+    else: 
+        source_name = selected_source
+
     
-    if not selected_files:
-        st.info(f"파일을 선택하세요. 관계수가 많은면 다이어그램 생성에 시간이 오래 걸릴 수 있습니다.")
+    if selected_files:
+        st.info(f"[{source_name}] 탭에서 {selected_files} 파일이 선택되어 있습니다.")
+    else:
+        # st.info(f"파일을 선택하세요. 관계수가 많으면 다이어그램 생성에 시간이 오래 걸릴 수 있습니다.")
         return None
 
     return selected_files
@@ -1161,12 +1350,16 @@ def generate_logical_erd(selected_files, pk_map, it_df, show_all_columns:bool):
                 related_list = list(related_tables) if hasattr(related_tables, '__iter__') else [related_tables]
             
             # ERD 생성
-            dot, edge_count, erd_info = generate_logical_erd_image(selected_files, set(related_list), pk_map, it_df, show_all_columns)
+            if len(related_list) == 1:
+                st.error(f"연결된 테이블이 없습니다.")
+                return False
+            else:
+                dot, edge_count, erd_info = generate_logical_erd_image(selected_files, set(related_list), pk_map, it_df, show_all_columns)
             
             if dot:
                 suffix = f"Logical_{anchor_table}"
                 display_erd_with_download(dot, suffix, edge_count)
-                st.success(f"✅ 분석 완료: 총 {len(related_list)}개 테이블 연결됨")
+                # st.success(f"✅ 분석 완료: 총 {len(related_list)}개 테이블 연결됨")
     except Exception as e:
         st.error(f"❌ ERD 생성 중 오류가 발생했습니다: {str(e)}")
         import traceback
@@ -1288,30 +1481,26 @@ def get_physical_n_level_tables(codemapping_df, start_table, level, df_ex:pd.Dat
                 blacklist_columns = set(excluded_df['ColumnName'].astype(str).str.strip().unique())
     
     # 3. 고속 탐색을 위한 데이터 구조 빌드
-    # table_to_cols: { 테이블명: { 컬럼명: PK여부 } }
-    # col_to_tables: { 컬럼명: { 테이블명1, 테이블명2 } }
-    table_to_cols = defaultdict(dict)
-    col_to_tables = defaultdict(set)
+    table_to_cols = defaultdict(dict) # table_to_cols: { 테이블명: { 컬럼명: PK여부 } }
+    col_to_tables = defaultdict(set) # col_to_tables: { 컬럼명: { 테이블명1, 테이블명2 } }
     
     for _, row in codemapping_df.iterrows():
         f_name = str(row['FileName']).strip()
         c_name = str(row['ColumnName']).strip()
         is_pk = str(row['PK']).upper() in ['1', '1.0', 'Y', 'TRUE']
-        
-        # 제외 조건 필터링 (블랙리스트만)
-        if c_name in blacklist_columns:
+          
+        if c_name in blacklist_columns:  # 제외 조건 필터링 (블랙리스트만)
             continue
             
         table_to_cols[f_name][c_name] = is_pk
         col_to_tables[c_name].add(f_name)
 
     # 3. N-Level 탐색 (BFS) - 레벨 정보 추적
-    visited_tables = {start_table}
+    visited_tables = {start_table} # 방문한 테이블 셋
     table_levels = {start_table: 0}  # 각 테이블의 레벨 정보
-    current_layer = {start_table}
+    current_layer = {start_table} # 현재 레이어 셋
     
-    # 지정된 level만큼 반복 탐색
-    for i in range(level):
+    for i in range(level): # 지정된 level만큼 반복 탐색
         next_layer = set()
         
         for table in current_layer:
@@ -1326,8 +1515,7 @@ def get_physical_n_level_tables(codemapping_df, start_table, level, df_ex:pd.Dat
                     if neighbor in visited_tables:
                         continue
                     
-                    # [핵심] 물리적 관계 성립 조건: 
-                    # 내 컬럼이 PK거나, 상대방의 동일한 컬럼이 PK여야 함
+                    # [핵심] 물리적 관계 성립 조건:  내 컬럼이 PK거나, 상대방의 동일한 컬럼이 PK여야 함
                     neighbor_is_pk = table_to_cols[neighbor].get(col_name, False)
                     
                     if my_is_pk or neighbor_is_pk:
@@ -1335,8 +1523,7 @@ def get_physical_n_level_tables(codemapping_df, start_table, level, df_ex:pd.Dat
                         visited_tables.add(neighbor)
                         table_levels[neighbor] = i + 1  # 레벨 정보 저장
         
-        # 다음 레이어가 없으면 중단
-        if not next_layer:
+        if not next_layer:  # 다음 레이어가 없으면 중단
             break
         current_layer = next_layer
         
@@ -1347,6 +1534,7 @@ def get_physical_n_level_tables(codemapping_df, start_table, level, df_ex:pd.Dat
 # -------------------------------------------------
 def get_optimal_dpi(table_count: int) -> str:
     """테이블 수에 따라 가독성이 가장 좋은 DPI 반환"""
+    if table_count <= 3:  return '50'   # 적은 테이블은 너무 크지 않게
     if table_count <= 10: return '100'   # 적은 테이블은 너무 크지 않게
     if table_count <= 20: return '200'  # 중간 규모
     if table_count <= 50: return '300'  # 고해상도 필요
@@ -1355,10 +1543,19 @@ def get_optimal_dpi(table_count: int) -> str:
 def display_erd_with_download(dot, suffix: str, table_count: int):
     """ERD 표시 및 고해상도 다운로드 공통 처리"""
     # st.subheader(f"📊 {suffix} 다이어그램")
-    st.write(f"🔍 분석 완료: 총 {table_count}개 테이블이 다이어그램에 포함되었습니다.")
+    if table_count <= 1:
+        st.info(f"연결된 테이블이 없습니다.")
+        return
+
+    # st.write(f"🔍 분석 완료: 총 {table_count}개 테이블이 다이어그램에 포함되었습니다.")
     
     # 1. 화면 표시용 (Streamlit 기본 렌더링)
-    st.graphviz_chart(dot, width='stretch')
+    if table_count <= 2:
+        st.graphviz_chart(dot, width=400)
+    elif table_count <= 5:
+        st.graphviz_chart(dot, width=500)
+    else:
+        st.graphviz_chart(dot, width='stretch')
     
     # 2. 고해상도 파일 저장 및 다운로드 버튼
     file_time = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -1371,21 +1568,20 @@ def display_erd_with_download(dot, suffix: str, table_count: int):
     
     try:
         IMAGE_DIR.mkdir(parents=True, exist_ok=True)
-        output_path_no_ext = IMAGE_DIR / filename
+        output_path = IMAGE_DIR / f"{filename}.png"
         
-        # 파일 저장
-        rendered_path = dot.render(str(output_path_no_ext), format='png', cleanup=True)
-        actual_path = Path(rendered_path)
+        # 파일 저장 (pipe로 생성해 재귀 오류 회피)
+        png_bytes = dot.pipe(format='png')
+        with open(output_path, "wb") as f:
+            f.write(png_bytes)
         
-        if actual_path.exists():
-            with open(actual_path, "rb") as f:
-                st.download_button(
-                    label=f"💾 PNG 다운로드 ",
-                    data=f.read(),
-                    file_name=actual_path.name,
-                    mime="image/png",
-                    key=f"dl_{filename}"
-                )
+        st.download_button(
+            label=f"💾 PNG 다운로드 ",
+            data=png_bytes,
+            file_name=output_path.name,
+            mime="image/png",
+            key=f"dl_{filename}"
+        )
     except Exception as e:
         st.warning(f"⚠️ 파일 저장 중 오류가 발생했으나 차트는 표시되었습니다: {e}")
 
@@ -1414,14 +1610,35 @@ def generate_physical_erd_image(codemapping_df, df_ex, selected_files, related_t
     # 2. 데이터 인덱싱 (성능 최적화)
     table_info = defaultdict(dict)
     col_to_tables = defaultdict(set)
+    table_color_map = {}
+    table_system_map = {}
     
+    def _normalize_hex_color(value: str) -> str:
+        value = value.strip().lower()
+        if not value:
+            return ''
+        if not value.startswith('#'):
+            return ''
+        if len(value) not in (4, 7):
+            return ''
+        hex_part = value[1:]
+        if not all(c in '0123456789abcdef' for c in hex_part):
+            return ''
+        return value
+
     for _, row in codemapping_df.iterrows():
         f = str(row['FileName']).strip()
         c = str(row['ColumnName']).strip()
+        color = _normalize_hex_color(str(row.get('System_Color', '')))
         is_pk = str(row.get('PK', '')).upper() in ['1', '1.0', 'Y', 'TRUE']
         o_type = str(row.get('OracleType', '')).strip().upper()
         
+        system = str(row.get('System', '')).strip()
         table_info[f][c] = {'is_pk': is_pk, 'o_type': o_type}
+        if color and f not in table_color_map:
+            table_color_map[f] = color
+        if system and f not in table_system_map:
+            table_system_map[f] = system
         if c not in ex_cols:
             col_to_tables[c].add(f)
 
@@ -1480,7 +1697,7 @@ def generate_physical_erd_image(codemapping_df, df_ex, selected_files, related_t
 
     for table_name in sorted(related_tables_set):
         is_anchor = table_name in selected_files
-        header_bg = '#FFA500' if is_anchor else '#BBDEFB'
+        header_bg = '#FFA500' if is_anchor else table_color_map.get(table_name, '#BBDEFB')
         
         label = f'<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="title">'
         label += f'<TR><TD BGCOLOR="{header_bg}"><B>{table_name}</B></TD></TR>'
@@ -1512,6 +1729,8 @@ def generate_physical_erd_image(codemapping_df, df_ex, selected_files, related_t
                                     for table in related_tables_set},
         'show_all_columns': show_all_columns,
         'selected_files': selected_files,
+        'table_system_map': table_system_map,
+        'table_system_color_map': table_color_map,
         'mode': 'Physical'  # 모드 정보 추가
     }
     
@@ -1520,9 +1739,9 @@ def generate_physical_erd_image(codemapping_df, df_ex, selected_files, related_t
 def generate_combined_erd_image(codemapping_df, df_ex, df_cr, selected_files, related_tables, table_levels, pk_map, it_df, show_all_columns=False):
     """
     Physical & Logical 통합 ERD 생성 (색상으로 구분)
-    - Physical 연결만: 파란색 (#0000FF)
-    - Logical 연결만: 빨간색 (#FF0000)
-    - 두 개 모두 연결: 보라색 (#800080)
+    - Physical 연결: 파란색 (#0000FF)
+    - Logical 연결: 빨간색 (#FF0000)
+    - 두 개 모두 연결: 연두색 (#00FF00)
     """
     related_tables_set = set(related_tables)
     
@@ -1534,14 +1753,24 @@ def generate_combined_erd_image(codemapping_df, df_ex, df_cr, selected_files, re
     # 2. 데이터 인덱싱
     table_info = defaultdict(dict)
     col_to_tables = defaultdict(set)
+    table_system_map = {}
+    table_system_color_map = {}
     
     for _, row in codemapping_df.iterrows():
         f = str(row['FileName']).strip()
         c = str(row['ColumnName']).strip()
+        system = str(row.get('System', '')).strip()
+        color = str(row.get('System_Color', '')).strip().lower()
+        if color and not (color.startswith('#') and len(color) in (4, 7) and all(ch in '0123456789abcdef' for ch in color[1:])):
+            color = ''
         is_pk = str(row.get('PK', '')).upper() in ['1', '1.0', 'Y', 'TRUE']
         o_type = str(row.get('OracleType', '')).strip().upper()
         
         table_info[f][c] = {'is_pk': is_pk, 'o_type': o_type}
+        if system and f not in table_system_map:
+            table_system_map[f] = system
+        if color and f not in table_system_color_map:
+            table_system_color_map[f] = color
         if c not in ex_cols:
             col_to_tables[c].add(f)
 
@@ -1619,7 +1848,7 @@ def generate_combined_erd_image(codemapping_df, df_ex, df_cr, selected_files, re
     # 7. 노드 생성
     for table_name in sorted(related_tables_set):
         is_anchor = table_name in selected_files
-        header_bg = '#FFA500' if is_anchor else '#BBDEFB'
+        header_bg = '#FFA500' if is_anchor else table_system_color_map.get(table_name, '#BBDEFB')
         
         label = f'<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="title">'
         label += f'<TR><TD BGCOLOR="{header_bg}"><B>{table_name}</B></TD></TR>'
@@ -1659,13 +1888,13 @@ def generate_combined_erd_image(codemapping_df, df_ex, df_cr, selected_files, re
         
         if edge_type == 'physical':
             edge_color = '#0000FF'  # 파란색
-            penwidth = '1.5'
+            penwidth = '1.0'
         elif edge_type == 'logical':
             edge_color = '#FF0000'  # 빨간색
-            penwidth = '1.5'
+            penwidth = '1.0'
         else:  # 'both'
-            edge_color = '#800080'  # 보라색
-            penwidth = '2.0'
+            edge_color = '#00FF00'  # 연두색
+            penwidth = '1.0'
         
         dot.edge(f'{from_table}:{col}', f'{to_table}:{col}', 
                  dir='both', arrowhead='none', arrowtail='crow', 
@@ -1712,13 +1941,57 @@ def generate_combined_erd_image(codemapping_df, df_ex, df_cr, selected_files, re
         'involved_cols_by_table': involved_cols_by_table,
         'show_all_columns': show_all_columns,
         'selected_files': selected_files,
+        'table_system_map': table_system_map,
+        'table_system_color_map': table_system_color_map,
         'mode': 'Physical & Logical'
     }
     
     return dot, len(related_tables_set), erd_info
 
 # -------------------------------------------------
-# 10. ERD 정보/데이터프레임 생성 함수 (ERD Info DataFrame)
+# 10. System Color Legend
+# -------------------------------------------------
+def render_system_color_legend(erd_info: dict):
+    """System 별 색상 범례 표시"""
+    if not erd_info:
+        return
+
+    table_system_map = erd_info.get('table_system_map', {})
+    table_system_color_map = erd_info.get('table_system_color_map', {})
+    selected_files = erd_info.get('selected_files', [])
+    if (not table_system_map or not table_system_color_map) and not selected_files:
+        return
+
+    system_color_map = {}
+    if table_system_map and table_system_color_map:
+        for table, system in table_system_map.items():
+            color = table_system_color_map.get(table)
+            if system and color and system not in system_color_map:
+                system_color_map[system] = color
+
+    if not system_color_map and not selected_files:
+        return
+
+    st.markdown("##### 노드 색상 범례 (System 별 색상)")
+    chips = []
+    if selected_files:
+        chips.append(
+            '<span style="display:inline-flex;align-items:center;margin-right:12px;margin-bottom:6px;">'
+            '<span style="display:inline-block;width:12px;height:12px;background:#FFA500;'
+            'border:1px solid #666;margin-right:6px;"></span>선택 테이블</span>'
+        )
+    for system, color in sorted(system_color_map.items()):
+        chips.append(
+            f'<span style="display:inline-flex;align-items:center;margin-right:12px;margin-bottom:6px;">'
+            f'<span style="display:inline-block;width:12px;height:12px;background:{color};'
+            f'border:1px solid #666;margin-right:6px;"></span>{system}</span>'
+        )
+
+    legend_html = '<div style="display:flex;flex-wrap:wrap;gap:6px 12px;">' + "".join(chips) + '</div>'
+    st.markdown(legend_html, unsafe_allow_html=True)
+
+# -------------------------------------------------
+# 11. ERD 정보/데이터프레임 생성 함수 (ERD Info DataFrame)
 # -------------------------------------------------
 def create_erd_info_dataframe(erd_info: dict) -> pd.DataFrame:
     """
@@ -1966,8 +2239,19 @@ def create_erd_info_dataframe(erd_info: dict) -> pd.DataFrame:
                             'Is_Anchor': 'Y' if is_anchor else 'N'
                         })
     
+    # # row 에서 중복 
+    # tmp_df = pd.DataFrame(rows)
+    # tmp_df = tmp_df.drop_duplicates(subset=['FileName', 'ColumnName', 'Related_Table', 'Related_Column'], keep='first')
+    # st.dataframe(tmp_df, width='stretch', hide_index=True, height=500)
     if not rows:
         return pd.DataFrame()
+
+    table_system_map = erd_info.get('table_system_map', {})
+    table_system_color_map = erd_info.get('table_system_color_map', {})
+    for row in rows:
+        table_name = row.get('FileName', '')
+        row['System'] = table_system_map.get(table_name, '')
+        row['System_Color'] = table_system_color_map.get(table_name, '')
     
     df = pd.DataFrame(rows)
     
@@ -2011,154 +2295,143 @@ def run_erd_generation_wrapper(df_cm, df_ex, df_cr=None):
     if not selected_files:
         return
     
-    st.subheader("연결관계 정보 설정")
+    st.subheader(f"연결관계 정보 설정 : {selected_files}")
     col1, col2, col3     = st.columns([1, 1, 1])
 
     with col1:
-        erd_mode = st.radio("연결관계 모드 선택", ["Physical", "Logical", "Physical & Logical"])
+        erd_mode = st.radio("연결관계 모드 선택", ["물리적 연결관계", "논리적 연결관계", "물리 & 논리적 연결관계"])
 
     with col2:
-        if erd_mode == "Physical":
+        if erd_mode == "물리적 연결관계":
             depth = st.slider("탐색 깊이 (Level)", 1, 4, 2, key="depth_slider_physical")
-        elif erd_mode == "Physical & Logical":
+        elif erd_mode == "물리 & 논리적 연결관계":
             depth = st.slider("탐색 깊이 (Level)", 1, 4, 2, key="depth_slider_combined")
 
     with col3:
         show_all = st.checkbox("전체 컬럼 표시", value=False)
 
 
-    if st.button(f"🚀 {erd_mode} ERD 생성 및 분석 시작", type="primary"):
-        # Cloud 환경에서는 예제 이미지만 표시하고, ERD는 생성하지 않지만 결과는 보여줌
+    if st.button(f"🚀 {erd_mode} 생성 및 분석 시작", type="primary"):
         cloud_mode = is_cloud_env()
         # cloud_mode = True # 테스트용
-        if cloud_mode:
+        if cloud_mode:  # Cloud 환경에서는 예제 이미지만 표시
             show_example_erd_images()
 
-        with st.spinner("N-Level 관계 탐색 및 레이아웃 계산 중..."):
-            if erd_mode == "Physical":
-                # Physical 모드: depth를 사용하여 N-Level 탐색
-                # 선택된 모든 테이블에 대해 각각 depth 레벨까지 직접 연결된 테이블만 찾기
-                all_related_tables = set(selected_files)  # 선택된 테이블 포함
-                all_table_levels = {}  # 모든 테이블의 레벨 정보 통합
+        if erd_mode == "물리적 연결관계":
+            # Physical 모드: depth를 사용하여 N-Level 탐색 선택된 모든 테이블에 대해 각각 depth 레벨까지 직접 연결된 테이블만 찾기
+            all_related_tables = set(selected_files)  # 선택된 테이블 포함
+            all_table_levels = {}  # 모든 테이블의 레벨 정보 통합   
+            for table in selected_files:
+                table_str = str(table) if isinstance(table, str) else str(table)
+                all_table_levels[table_str] = 0
+            
+            for anchor_table in selected_files:
+                anchor_table_str = str(anchor_table) if isinstance(anchor_table, str) else str(anchor_table)
+                # 각 선택된 테이블에 대해 depth 레벨까지 직접 연결된 테이블만 찾기
+                related_for_this, levels_for_this = get_physical_n_level_tables(df_cm, anchor_table_str, depth, df_ex)
+                all_related_tables.update(related_for_this)
+                # 레벨 정보 병합 (이미 있는 경우 더 낮은 레벨 유지)
+                for table, level in levels_for_this.items():
+                    if table not in all_table_levels or all_table_levels[table] > level:
+                        all_table_levels[table] = level
+            
+            related_list = list(all_related_tables)
+            
+            if not related_list or len(related_list) <= 1:
+                st.info(f"⚠️ 선택된 테이블과 연결된 테이블이 없습니다. Data Relationship Diagram을 생성할 수 없습니다.")
+            else:
+                dot, count, erd_info = generate_physical_erd_image(df_cm, df_ex, selected_files, related_list, show_all, all_table_levels)
                 
-                # 선택된 테이블은 모두 레벨 0
-                for table in selected_files:
-                    table_str = str(table) if isinstance(table, str) else str(table)
-                    all_table_levels[table_str] = 0
-                
-                for anchor_table in selected_files:
-                    anchor_table_str = str(anchor_table) if isinstance(anchor_table, str) else str(anchor_table)
-                    # 각 선택된 테이블에 대해 depth 레벨까지 직접 연결된 테이블만 찾기
-                    related_for_this, levels_for_this = get_physical_n_level_tables(df_cm, anchor_table_str, depth, df_ex)
-                    all_related_tables.update(related_for_this)
-                    # 레벨 정보 병합 (이미 있는 경우 더 낮은 레벨 유지)
-                    for table, level in levels_for_this.items():
-                        if table not in all_table_levels or all_table_levels[table] > level:
-                            all_table_levels[table] = level
-                
-                related_list = list(all_related_tables)
-                
-                if not related_list or len(related_list) == 0:
-                    st.warning(f"⚠️ 선택된 테이블과 연결된 테이블을 찾을 수 없습니다.")
-                else:
-                    # ERD 생성 (depth 제한된 테이블 목록과 레벨 정보 전달)
-                    dot, count, erd_info = generate_physical_erd_image(df_cm, df_ex, selected_files, related_list, show_all, all_table_levels)
-                    
-                    if dot and not cloud_mode:
-                        suffix = f"L{depth}_{len(selected_files)}tables"
-                        display_erd_with_download(dot, suffix, count)
-                        st.success(f"✅ 분석 완료: 선택된 {len(selected_files)}개 테이블 기준 {depth}레벨까지 직접 연결된 총 {len(related_list)}개 테이블 표시")
+                if dot and not cloud_mode:
+                    suffix = f"L{depth}_{len(selected_files)}tables"
+                    display_erd_with_download(dot, suffix, count)
+                    render_system_color_legend(erd_info)
 
-                    # ERD 정보 데이터프레임 표시
-                    st.subheader("📊 ERD 생성 정보 (컬럼 단위)")
-                    erd_df = create_erd_info_dataframe(erd_info)
-                    st.dataframe(erd_df, width='stretch', hide_index=True)
+                st.divider()
+                st.subheader("📊 연결관계 상세 정보 (컬럼 단위)")
+                erd_df = create_erd_info_dataframe(erd_info)
+                st.dataframe(erd_df, width='stretch', hide_index=True, height=500)
 
-            elif erd_mode == "Logical":
-                # PK 맵과 it_df 생성
-                pk_map, fk_map, it_df = _extract_and_load_erd_data_impl(df_cr)
+        elif erd_mode == "논리적 연결관계":
+            pk_map, fk_map, it_df = _extract_and_load_erd_data_impl(df_cr) # PK 맵과 it_df 생성
+            
+            related_tables = get_related_tables(selected_files, it_df)
+            related_table_count = len(related_tables)
+            
+            if related_table_count > MAX_RELATED_TABLE_COUNT:
+                st.error(f"연결된 테이블 수가 {MAX_RELATED_TABLE_COUNT}개를 초과했습니다.")
+            elif not related_tables or len(related_tables) <= 0:
+                st.info(f"⚠️ 선택된 테이블과 연결된 테이블이 없습니다. Data Relationship Diagram을 생성할 수 없습니다.")
+            else:
+                dot, edge_count, erd_info = generate_logical_erd_image(
+                    selected_files, 
+                    set(related_tables), 
+                    pk_map, 
+                    it_df, 
+                    show_all
+                )
                 
-                related_tables = get_related_tables(selected_files, it_df)
-                related_table_count = len(related_tables)
-                
-                if related_table_count > MAX_RELATED_TABLE_COUNT:
-                    st.error(f"연결된 테이블 수가 {MAX_RELATED_TABLE_COUNT}개를 초과했습니다.")
-                elif not related_tables or len(related_tables) == 0:
-                    st.warning(f"⚠️ 선택된 테이블과 연결된 테이블을 찾을 수 없습니다.")
-                else:
-                    dot, edge_count, erd_info = generate_logical_erd_image(
-                        selected_files, 
-                        set(related_tables), 
-                        pk_map, 
-                        it_df, 
-                        show_all
-                    )
-                    
-                    if dot and not cloud_mode:
-                        suffix = f"{erd_mode}_{selected_files[0]}"
-                        display_erd_with_download(dot, suffix, edge_count)
-                        st.success(f"✅ 분석 완료: 총 {len(related_tables)}개 테이블 연결됨")
+                if dot and not cloud_mode:
+                    suffix = f"{erd_mode}_{selected_files[0]}"
+                    display_erd_with_download(dot, suffix, edge_count)
+                    render_system_color_legend(erd_info)
 
-                    # ERD 정보 데이터프레임 표시
-                    st.subheader("📊 ERD 생성 정보 (컬럼 단위)")
-                    erd_df = create_erd_info_dataframe(erd_info)
-                    st.dataframe(erd_df, width='stretch', hide_index=True)
+                st.divider()
+                st.subheader("📊 연결관계 상세 정보 (컬럼 단위)")
+                erd_df = create_erd_info_dataframe(erd_info)
+                st.dataframe(erd_df, width='stretch', hide_index=True, height=500)
 
-            elif erd_mode == "Physical & Logical":
-                # Physical & Logical 통합 모드
-                # PK 맵과 it_df 생성
-                pk_map, fk_map, it_df = _extract_and_load_erd_data_impl(df_cr)
+        elif erd_mode == "물리 & 논리적 연결관계": # Physical & Logical 통합 모드
+            pk_map, fk_map, it_df = _extract_and_load_erd_data_impl(df_cr) # PK 맵과 it_df 생성
+            
+            all_related_tables = set(selected_files) # Physical 관계 탐색
+            all_table_levels = {}
+            
+            for table in selected_files:
+                table_str = str(table) if isinstance(table, str) else str(table)
+                all_table_levels[table_str] = 0
+            
+            for anchor_table in selected_files:
+                anchor_table_str = str(anchor_table) if isinstance(anchor_table, str) else str(anchor_table)
+                related_for_this, levels_for_this = get_physical_n_level_tables(df_cm, anchor_table_str, depth, df_ex)
+                all_related_tables.update(related_for_this)
+                for table, level in levels_for_this.items():
+                    if table not in all_table_levels or all_table_levels[table] > level:
+                        all_table_levels[table] = level
+            
+            # Logical 관계 탐색 (22번 파일과 동일한 로직)
+            logical_related_tables = get_related_tables(selected_files, it_df)
+            logical_related_table_count = len(logical_related_tables)
+            
+            # Physical과 Logical 관계를 통합
+            all_related_tables.update(logical_related_tables)
+            related_list = list(all_related_tables)
+            
+            if not related_list or len(related_list) <= 1:
+                st.info(f"⚠️ 선택된 테이블과 연결된 테이블이 없습니다. Data Relationship Diagram을 생성할 수 없습니다.")
+            else:
+                dot, count, erd_info = generate_combined_erd_image(
+                    df_cm, df_ex, df_cr, selected_files, related_list, 
+                    all_table_levels, pk_map, it_df, show_all
+                )
                 
-                # Physical 관계 탐색
-                all_related_tables = set(selected_files)
-                all_table_levels = {}
-                
-                for table in selected_files:
-                    table_str = str(table) if isinstance(table, str) else str(table)
-                    all_table_levels[table_str] = 0
-                
-                for anchor_table in selected_files:
-                    anchor_table_str = str(anchor_table) if isinstance(anchor_table, str) else str(anchor_table)
-                    related_for_this, levels_for_this = get_physical_n_level_tables(df_cm, anchor_table_str, depth, df_ex)
-                    all_related_tables.update(related_for_this)
-                    for table, level in levels_for_this.items():
-                        if table not in all_table_levels or all_table_levels[table] > level:
-                            all_table_levels[table] = level
-                
-                # Logical 관계 탐색 (22번 파일과 동일한 로직)
-                logical_related_tables = get_related_tables(selected_files, it_df)
-                logical_related_table_count = len(logical_related_tables)
-                
-                # Physical과 Logical 관계를 통합
-                all_related_tables.update(logical_related_tables)
-                related_list = list(all_related_tables)
-                
-                if not related_list or len(related_list) == 0:
-                    st.warning(f"⚠️ 선택된 테이블과 연결된 테이블을 찾을 수 없습니다.")
-                else:
-                    # 통합 ERD 생성
-                    dot, count, erd_info = generate_combined_erd_image(
-                        df_cm, df_ex, df_cr, selected_files, related_list, 
-                        all_table_levels, pk_map, it_df, show_all
-                    )
-                    
-                    if dot and not cloud_mode:
-                        suffix = f"Combined_L{depth}_{len(selected_files)}tables"
-                        display_erd_with_download(dot, suffix, count)
-                        st.success(f"✅ 통합 분석 완료: Physical & Logical 관계를 색상으로 구분하여 표시 (총 {count}개 테이블)")
-                        st.info("🔵 파란색: Physical 연결만 | 🔴 빨간색: Logical 연결만 | 🟣 보라색: 두 연결 모두")
+                if dot and not cloud_mode:
+                    suffix = f"Combined_L{depth}_{len(selected_files)}tables"
+                    display_erd_with_download(dot, suffix, count)
+                    render_system_color_legend(erd_info)
+                    st.info("관계 색상 범례 ( 🔵 파란색: 물리적 연결  🔴 빨간색: 논리적 연결  🟢 연두색: 물리 & 논리적 연결 )")
 
-                    # ERD 정보 데이터프레임 표시 (Cloud 환경에서도 표시)
-                    st.subheader("📊 ERD 생성 정보 (컬럼 단위)")
-                    erd_df = create_erd_info_dataframe(erd_info)
-                    st.dataframe(erd_df, width='stretch', hide_index=True)
+                st.divider()
+                st.subheader("📊 연결관계 상세 정보 (컬럼 단위)")
+                erd_df = create_erd_info_dataframe(erd_info)
+                st.dataframe(erd_df, width='stretch', hide_index=True, height=500)
 
 # -------------------------------------------------
 # 13. 메인 함수 (Main)
 # -------------------------------------------------
 def main():
     st.title(APP_TITLE)
-    st.caption(APP_DESCRIPTION)
+    st.markdown(APP_DESC)
 
     try:
         # 1. 데이터 로드
@@ -2167,7 +2440,9 @@ def main():
             'codemapping_erd': path / "CodeMapping_erd.csv", 
             'codemapping': path / "CodeMapping.csv",
             'filestats': path / "FileStats.csv", 
-            'exclusive': path / "ERD_exclusive.csv"
+            'exclusive': path / "ERD_exclusive.csv",
+            'system_file': path / "DS_ValueChain_System_File.csv",
+            'system': path / "DS_System.csv"
         }
 
         loaded_data = load_data_all(files_to_load)
@@ -2178,13 +2453,20 @@ def main():
         else:
             df_cr = loaded_data['codemapping_erd']
             df_cm = loaded_data['codemapping']
-            df_fs = loaded_data['filestats']
+            # df_fs = loaded_data['filestats'] # 사용하지 안음 
             df_ex = loaded_data['exclusive']
+
+        # Value Chain & System 정보를 로드하여 df_cm에 추가 (developing 기준)
+        df_sys_file = loaded_data['system_file']
+        df_system = loaded_data['system']
+        df_sys_file = pd.merge(df_sys_file, df_system, on=['Industry', 'System'], how='left')
+        df_cm = pd.merge(df_cm, df_sys_file, on=['FileName'], how='left')
+        df_cr = pd.merge(df_cr, df_sys_file, on=['FileName'], how='left')
 
         run_erd_generation_wrapper(df_cm, df_ex, df_cr)
         
     except Exception as e:
-        st.error(f"Data Relationship Diagram 생성 중 치명적인 오류가 발생했습니다: {e}")
+        st.error(f"연결관계 생성 중 치명적인 오류가 발생했습니다: {e}")
         return
 
 if __name__ == '__main__':

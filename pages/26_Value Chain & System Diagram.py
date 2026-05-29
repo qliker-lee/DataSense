@@ -33,35 +33,52 @@ import os
 from pathlib import Path
 import logging
 import platform
+import re
 import shutil
 from graphviz import Digraph
 from PIL import Image
+import plotly.express as px
 
 # Streamlit 경고 억제
 logging.getLogger('streamlit.runtime.scriptrunner.script_run_context').setLevel(logging.ERROR)
 
-SOLUTION_NAME = "Value Chain & System Analysis"
-SOLUTION_KOR_NAME = "Value Chain & System Diagram"
-APP_NAME = "Value Chain & System Diagram"
-APP_DESC = "###### Value Chain & System를 기반으로 Value Chain Diagram과 System Architecture Diagram을 생성합니다.  "
+# -------------------------------------------------------------------
+# 폰트 크기 조정 및 색상 변경 (신규추가)
+# -------------------------------------------------------------------
+st.markdown("""<style> html, body, [class*="css"]  { font-size: 14px; } </style> """, unsafe_allow_html=True)
+def load_css(file_name):
+    path = Path(file_name)
+    if not path.is_absolute():
+        path = PROJECT_ROOT / file_name
+    with open(path, encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-from util.Files_FunctionV20 import load_yaml_datasense, set_page_config
+load_css("styles/styles.css")
+# -------------------------------------------------------------------
+# App Config
+# -------------------------------------------------------------------
+APP_NAME = "Value Chain & System Diagram"
+APP_DESC = "#### Value Chain & System를 기반으로 Value Chain Diagram과 System Architecture Diagram을 생성합니다."
+
+from util.Files_FunctionV20 import set_page_config
 set_page_config(APP_NAME)
 # -------------------------------------------------------------------
 # 4. 경로 설정
 # -------------------------------------------------------------------
 
-OUTPUT_DIR = PROJECT_ROOT / "DS_Output"
-IMAGE_DIR = PROJECT_ROOT / "images"
+OUTPUT_DIR      = PROJECT_ROOT / "DS_Output"
+IMAGE_DIR       = PROJECT_ROOT / "images"
 IMAGE_SAMPLE_DIR = PROJECT_ROOT / "images_sample"
-VC_FILE = OUTPUT_DIR / "DS_ValueChain.csv"
-SYS_FILE = OUTPUT_DIR / "DS_System.csv"
-VC_SYS_FILE = OUTPUT_DIR / "DS_ValueChain_System_File.csv"
-MAPPING_FILE = OUTPUT_DIR / "CodeMapping.csv"
+VC_FILE         = OUTPUT_DIR / "DS_ValueChain.csv"
+SYS_FILE        = OUTPUT_DIR / "DS_System.csv"
+VC_SYS_FILE     = OUTPUT_DIR / "DS_ValueChain_System_File.csv"
+MAPPING_FILE    = OUTPUT_DIR / "CodeMapping.csv"
 
 # 디렉토리가 없으면 생성
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 IMAGE_DIR.mkdir(parents=True, exist_ok=True)
+# Graphviz PNG DPI: 300은 대형 다이어그램에서 렌더가 매우 길어질 수 있음. 고해상도는 QDQM_GRAPHVIZ_DPI=300 등으로 지정.
+GRAPHVIZ_RENDER_DPI = os.environ.get("QDQM_GRAPHVIZ_DPI", "150")
 # -------------------------------------------------
 # Value Chain & System Diagram Color Code
 # -------------------------------------------------
@@ -74,6 +91,48 @@ SYSTEM_FILLCOLOR =  '#E8F5E9'
 SYSTEM_COLOR =      '#43A047'
 FILE_FILLCOLOR =    '#F3E5F5'
 FILE_COLOR =        '#9C27B0'
+_GRAPHVIZ_HEX_COLOR = re.compile(r"^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$")
+
+def _first_valid_color_in_column(df_slice: pd.DataFrame, column_name: str) -> str | None:
+    """df_slice에서 column_name의 첫 유효 색(hex·Graphviz 색 이름) 또는 None."""
+    if df_slice.empty or column_name not in df_slice.columns:
+        return None
+    for val in df_slice[column_name].dropna():
+        s = str(val).strip()
+        if not s or s.lower() == "nan":
+            continue
+        if _GRAPHVIZ_HEX_COLOR.match(s):
+            return s
+        if re.match(r"^[a-zA-Z][a-zA-Z0-9]*$", s):
+            return s
+    return None
+
+def _resolve_colors_from_column(
+    df_slice: pd.DataFrame,
+    column_name: str,
+    default_fill: str,
+    default_pen: str,
+) -> tuple[str, str]:
+    """column_name 값이 유효한 색이면 fillcolor·테두리에 사용, 아니면 기본값."""
+    found = _first_valid_color_in_column(df_slice, column_name)
+    if found is not None:
+        return found, found
+    return default_fill, default_pen
+
+def _resolve_system_node_colors(sys_info: pd.DataFrame) -> tuple[str, str]:
+    """System_Color가 유효하면 fillcolor·테두리에 사용, 없으면 SYSTEM_FILLCOLOR / SYSTEM_COLOR."""
+    return _resolve_colors_from_column(sys_info, "System_Color", SYSTEM_FILLCOLOR, SYSTEM_COLOR)
+
+def _system_arch_link_edge_color(sys_info: pd.DataFrame) -> str:
+    """Activity→System 연결선: System_Color가 있으면 동일 색, 없으면 SYSTEM_COLOR."""
+    c = _first_valid_color_in_column(sys_info, "System_Color")
+    return c if c is not None else SYSTEM_COLOR
+# Value Chain Diagram PNG 여백 (인치, Graphviz margin: left, top, right, bottom)
+# LEFT: rankdir=LR 기준 첫 노드(시작) 앞 여백 / BOTTOM: Support 행 아래 여백
+VC_DIAGRAM_MARGIN_LEFT = 0.5
+VC_DIAGRAM_MARGIN_TOP = 0.15
+VC_DIAGRAM_MARGIN_RIGHT = 0.15
+VC_DIAGRAM_MARGIN_BOTTOM = 0.55
 # ============================================================================
 # 공통 유틸리티 함수
 # ============================================================================
@@ -158,14 +217,6 @@ def load_data_validation():
 
     return df_vc, df_sys, df_vc_sys, df_mapping
 
-# def load_valuechain_data():
-#     """Value Chain 데이터를 로드합니다."""
-#     df = load_data(VALUECHAIN_CSV_PATH)
-#     if df.empty:
-#         st.error(f"❌ '{VALUECHAIN_CSV_PATH.name}' 파일이 존재하지 않거나 비어있습니다.")
-#         st.info("먼저 'Value Chain & System Management' 페이지에서 Value Chain을 정의해주세요.")
-#     return df
-
 def get_all_industries(df):
     """모든 Industry 목록을 반환합니다."""
     if df is None or df.empty:
@@ -176,7 +227,7 @@ def get_all_industries(df):
 
 def select_industry(df_vc, df_sys, df_vc_sys):
     
-    col_sel1, col_sel2 = st.columns([1, 1])
+    col_sel1, col_sel2,  col3 = st.columns([1, 2, 1])
     with col_sel1:
         st.header("🏢 Industry Selection")
 
@@ -194,6 +245,8 @@ def select_industry(df_vc, df_sys, df_vc_sys):
             "File #": len(df_ind['FileName'].unique())
         }
 
+        st.divider()
+        st.subheader("🏢 Value Chain & System Summary")
         # 각 메트릭에 대한 색상 정의
         metric_colors = {
             "Activity #": "#1f77b4",
@@ -225,15 +278,26 @@ def create_valuechain_diagram(df, industry):
     # rankdir='LR': 왼쪽에서 오른쪽으로 흐름
     # nodesep: 상하 노드 간격 (좁게 설정하여 두 그룹을 붙임 : Defalut : 1.5)
     # ranksep: 좌우 노드 간격 (활동 간의 거리)
-    graph.attr(rankdir='LR', size='20,20', nodesep='1.5', ranksep='0.6')
+    # margin: 캔버스 여백(인치) left, top, right, bottom — 시작(좌)·하단을 넉넉히
+    graph.attr(
+        rankdir='LR',
+        size='20,20',
+        nodesep='1.5',
+        ranksep='0.6',
+        bgcolor='black',
+        margin=(
+            f'{VC_DIAGRAM_MARGIN_LEFT},{VC_DIAGRAM_MARGIN_TOP},'
+            f'{VC_DIAGRAM_MARGIN_RIGHT},{VC_DIAGRAM_MARGIN_BOTTOM}'
+        ),
+    )
     
     # 폰트 설정
     font_name = 'Malgun Gothic' if platform.system() == 'Windows' else 'NanumGothic'
 
     # 모든 노드의 규격을 통일 (정렬의 핵심)
     graph.attr('node', shape='box', style='rounded,filled', fontname=font_name,
-               fontsize='16', width='2.8', height='0.9', fixedsize='true')
-    graph.attr('edge', fontname=font_name)
+               fontsize='16', width='2.8', height='0.9', fixedsize='true', bgcolor='black', color='white')
+    graph.attr('edge', fontname=font_name, color='white')
     
     primary_activities = df_ind[df_ind["Activity_Type"] == "Primary"].reset_index(drop=True)
     support_activities = df_ind[df_ind["Activity_Type"] == "Support"].reset_index(drop=True)
@@ -303,7 +367,7 @@ def create_system_architecture_diagram(df_ind,  df_mapping, industry, mode="Summ
     
     # 상세 모드일 때는 노드 내부 텍스트가 길어지므로 간격을 조정합니다.
     rank_sep = '3.5' if mode == "Summary" else '2.5'
-    dot.attr(rankdir='TB', size='40,30', nodesep='0.3', ranksep=rank_sep)
+    dot.attr(rankdir='TB', size='40,30', nodesep='0.3', ranksep=rank_sep, bgcolor='black', color='white')
     
     font_name = 'Malgun Gothic' if platform.system() == 'Windows' else 'NanumGothic'
 
@@ -340,13 +404,14 @@ def create_system_architecture_diagram(df_ind,  df_mapping, industry, mode="Summ
                 if not sys_id: continue
                 sys_info = df_ind[(df_ind["Industry"] == industry) & (df_ind["System"] == sys_id)]
                 sys_kor = sys_info.iloc[0]["System_Kor"] if not sys_info.empty else sys_id
+                sys_fill, sys_pen = _resolve_system_node_colors(sys_info)
                 
                 node_id = f"sys_{sys_id}"
                 
                 if mode == "Summary":
                     # 요약 모드: 기존 컴포넌트 형태
                     ss.node(node_id, label=f"{sys_kor}\\n({sys_id})", shape='component', 
-                           style='filled', fillcolor=SYSTEM_FILLCOLOR, color=SYSTEM_COLOR, 
+                           style='filled', fillcolor=sys_fill, color=sys_pen, 
                            fontname=font_name, width='2.0', height='1.1')
                 else:
                     # 상세 모드: 시스템명 아래에 파일 목록을 줄바꿈하여 포함
@@ -357,7 +422,7 @@ def create_system_architecture_diagram(df_ind,  df_mapping, industry, mode="Summ
                     detail_label = f"{{ {sys_kor} ({sys_id}) | {file_list_str} }}"
                     
                     ss.node(node_id, label=detail_label, shape='record', # record 쉐이프 사용
-                           style='filled', fillcolor=SYSTEM_FILLCOLOR, color=SYSTEM_COLOR, 
+                           style='filled', fillcolor=sys_fill, color=sys_pen, 
                            fontname=font_name, penwidth='1.5')
                 
                 system_node_ids[sys_id] = node_id
@@ -366,8 +431,16 @@ def create_system_architecture_diagram(df_ind,  df_mapping, industry, mode="Summ
     unique_links = df_ind[["Activity", "System"]].drop_duplicates()
     for _, row in unique_links.iterrows():
         if f"act_{row['Activity']}" in activity_node_ids and row['System'] in system_node_ids:
-            dot.edge(f"act_{row['Activity']}", system_node_ids[row['System']], 
-                     color=SYSTEM_COLOR, arrowhead='vee', penwidth='2.5')
+            sys_name = row["System"]
+            sys_info = df_ind[(df_ind["Industry"] == industry) & (df_ind["System"] == sys_name)]
+            edge_color = _system_arch_link_edge_color(sys_info)
+            dot.edge(
+                f"act_{row['Activity']}",
+                system_node_ids[sys_name],
+                color=edge_color,
+                arrowhead="vee",
+                penwidth="2.5",
+            )
 
     return dot
 
@@ -388,7 +461,7 @@ def create_valuechain_file_diagram(df_ind, industry):
     
     dot = Digraph(name=f"ValueChain_File_{industry}", format='png', engine='dot')
     # 파일 목록이 포함되므로 간격을 넓게 설정
-    dot.attr(rankdir='TB', size='40,30', nodesep='0.5', ranksep='2.5')
+    dot.attr(rankdir='TB', size='40,30', nodesep='0.5', ranksep='2.5', bgcolor='black', color='white')
     
     font_name = 'Malgun Gothic' if platform.system() == 'Windows' else 'NanumGothic'
 
@@ -416,6 +489,7 @@ def create_valuechain_file_diagram(df_ind, industry):
 
     # --- 2. 하단 레이어: Activity별 FileName 박스 ---
     file_box_node_ids = {}
+    file_box_edge_color = {}
     
     with dot.subgraph() as fs:
         fs.attr(rank='same')
@@ -424,7 +498,8 @@ def create_valuechain_file_diagram(df_ind, industry):
             act_id = f"act_{activity}"
             
             # 해당 Activity에 연결된 FileName들 가져오기
-            files = df_ind[df_ind["Activity"] == activity]["FileName"].dropna().unique()
+            act_rows = df_ind[df_ind["Activity"] == activity]
+            files = act_rows["FileName"].dropna().unique()
             
             if len(files) > 0:
                 # 파일 목록을 줄바꿈으로 표시
@@ -434,20 +509,25 @@ def create_valuechain_file_diagram(df_ind, industry):
                 display_name = row['Activity_Kor'] if pd.notna(row.get('Activity_Kor')) else activity
                 detail_label = f"{{ {display_name} ({activity}) | {file_list_str} }}"
                 
+                file_fill, file_pen = _resolve_colors_from_column(
+                    act_rows, "System_Color", FILE_FILLCOLOR, FILE_COLOR
+                )
                 # 각 Activity별 File 박스 노드 생성
                 file_box_id = f"filebox_{activity}"
                 fs.node(file_box_id, label=detail_label, shape='record',
-                       style='filled', fillcolor=FILE_FILLCOLOR, color=FILE_COLOR,
+                       style='filled', fillcolor=file_fill, color=file_pen,
                        fontname=font_name, penwidth='1.5')
                 
                 file_box_node_ids[activity] = file_box_id
+                file_box_edge_color[activity] = file_pen
 
     # --- 3. 연결선 (Activity -> FileName 박스) ---
     for activity in file_box_node_ids.keys():
         act_id = f"act_{activity}"
         if act_id in activity_node_ids and activity in file_box_node_ids:
+            edge_col = file_box_edge_color.get(activity, '#9E9E9E')
             dot.edge(act_id, file_box_node_ids[activity],
-                     color='#9E9E9E', arrowhead='vee', penwidth='1.5')
+                     color=edge_col, arrowhead='vee', penwidth='1.5')
 
     return dot
 
@@ -461,11 +541,11 @@ def value_chain_tab(df_vc, selected_industry):
     
     df_ind = df_vc[df_vc["Industry"] == selected_industry].copy()
 
-    # 데이터 미리보기
-    with st.expander("📋 Value Chain Data Preview", expanded=False):
-        display_df = df_ind[["Activity_Seq", "Activity_Type", "Activity", "Activity_Kor", "Activity_Description"]].copy()
-        display_df.columns = ["Seq", "Type", "Activity (EN)", "Activity (KR)", "Description"]
-        st.dataframe(display_df, width='stretch', hide_index=True)
+    # # 데이터 미리보기
+    # with st.expander("📋 Value Chain Data Preview", expanded=False):
+    #     display_df = df_ind[["Activity_Seq", "Activity_Type", "Activity", "Activity_Kor", "Activity_Description"]].copy()
+    #     display_df.columns = ["Seq", "Type", "Activity (EN)", "Activity (KR)", "Description"]
+    #     st.dataframe(display_df, width='stretch', hide_index=True)
     
     # Cloud 환경 체크
     if is_cloud_env():
@@ -486,8 +566,9 @@ def value_chain_tab(df_vc, selected_industry):
         png_filepath = IMAGE_DIR / png_filename
         
         try:
-            graph.attr(dpi='300')
-            graph.render(str(png_filepath.with_suffix('')), format='png', cleanup=True)
+            graph.attr(dpi=GRAPHVIZ_RENDER_DPI)
+            with st.spinner("Graphviz로 PNG를 생성하는 중입니다. 다이어그램이 크면 수십 초 이상 걸릴 수 있습니다."):
+                graph.render(str(png_filepath.with_suffix('')), format='png', cleanup=True)
             actual_png_filepath = IMAGE_DIR / f"{png_filepath.stem}.png"
             
             if actual_png_filepath.exists():
@@ -534,12 +615,23 @@ def system_architecture_tab(df_vc, df_sys, df_ind, df_mapping, selected_industry
         st.markdown(f"### 🔍 System Architecture (Detail): **{selected_industry}**")
         st.markdown("##### System 내부의 파일 목록을 포함한 상세 구성도를 표시합니다.")
     
-    # 데이터 미리보기
-    with st.expander("📋 System Architecture Data Preview", expanded=False):
-        vc_display = df_ind[["Activity_Seq", "Activity_Type", "Activity", "Activity_Kor", "System", "System_Kor", "FileName"]].copy()
-        vc_display.columns = ["Seq", "Type", "Activity (EN)", "Activity (KR)", "System (EN)", "System (KR)", "File Name"]
+    # # 데이터 미리보기
+    # with st.expander("📋 System Architecture Data Preview", expanded=False):
+    #     preview_cols = [
+    #         "Activity_Seq", "Activity_Type", "Activity", "Activity_Kor",
+    #         "System", "System_Kor", "FileName",
+    #     ]
+    #     preview_headers = [
+    #         "Seq", "Type", "Activity (EN)", "Activity (KR)",
+    #         "System (EN)", "System (KR)", "File Name",
+    #     ]
+    #     if "System_Color" in df_ind.columns:
+    #         preview_cols.append("System_Color")
+    #         preview_headers.append("System Color")
+    #     vc_display = df_ind[preview_cols].copy()
+    #     vc_display.columns = preview_headers
 
-        st.dataframe(vc_display, width='stretch', hide_index=True)
+    #     st.dataframe(vc_display, width='stretch', hide_index=True)
 
     
     # Cloud 환경 체크
@@ -555,8 +647,9 @@ def system_architecture_tab(df_vc, df_sys, df_ind, df_mapping, selected_industry
         if graph:
             file_time = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
             path = IMAGE_DIR / f"SysArch_{mode}_{selected_industry}_{file_time}"
-            graph.attr(dpi='300')
-            graph.render(str(path), format='png', cleanup=True)
+            graph.attr(dpi=GRAPHVIZ_RENDER_DPI)
+            with st.spinner("Graphviz로 PNG를 생성하는 중입니다. 다이어그램이 크면 수십 초 이상 걸릴 수 있습니다."):
+                graph.render(str(path), format='png', cleanup=True)
             actual_png_filepath = IMAGE_DIR / f"{path.name}.png"
             
             if actual_png_filepath.exists():
@@ -579,8 +672,9 @@ def system_architecture_tab(df_vc, df_sys, df_ind, df_mapping, selected_industry
     except Exception as e:
         st.error(f"❌ System Architecture Diagram 생성 중 오류가 발생했습니다: {e}")
 
-def valuechain_file_tab(df_vc, df_ind, df_mapping, selected_industry):
+def valuechain_file_tab(df_vc, df_sys, df_ind, df_mapping, selected_industry):
     """Value Chain & File Diagram 탭"""
+    st.divider()
     st.markdown(f"### 📁 Value Chain & File Diagram: **{selected_industry}**")
     st.markdown("##### Value Chain Activity와 FileName을 직접 연결하는 구성도를 표시합니다.")
     
@@ -593,27 +687,32 @@ def valuechain_file_tab(df_vc, df_ind, df_mapping, selected_industry):
     # df_mapping = df_mapping[df_mapping["Industry"] == selected_industry].copy() if not df_mapping.empty else pd.DataFrame()
     
     # 데이터 미리보기
-    with st.expander("📋 Value Chain & File Data Preview", expanded=False):
-        col1, col2 = st.columns(2)
+    # with st.expander("📋 Value Chain & File Data Preview", expanded=False):
+    #     col1, col2 = st.columns(2)
         
-        with col1:
-            st.markdown("**Value Chain Activities**")
-            if not df_ind.empty:
-                vc_display = df_ind[["Activity_Seq", "Activity_Type", "Activity", "Activity_Kor"]].copy()
-                vc_display.columns = ["Seq", "Type", "Activity (EN)", "Activity (KR)"]
-                st.dataframe(vc_display, width='stretch', hide_index=True)
-            else:
-                st.info("No Value Chain data")
+    #     with col1:
+    #         st.markdown("**Value Chain Activities**")
+    #         if not df_ind.empty:
+    #             vc_cols = ["Activity_Seq", "Activity_Type", "Activity", "Activity_Kor"]
+    #             vc_headers = ["Seq", "Type", "Activity (EN)", "Activity (KR)"]
+    #             if "System_Color" in df_ind.columns:
+    #                 vc_cols.append("System_Color")
+    #                 vc_headers.append("System Color")
+    #             vc_display = df_ind[vc_cols].copy()
+    #             vc_display.columns = vc_headers
+    #             st.dataframe(vc_display, width='stretch', hide_index=True)
+    #         else:
+    #             st.info("No Value Chain data")
         
-        with col2:
-            st.markdown("**Activity-File Mapping**")
-            if not df_mapping.empty:
-                # Activity와 FileName만 표시 (System은 제외)
-                # mapping_display = df_mapping[["Activity", "FileName"]].drop_duplicates().copy()
-                # mapping_display.columns = ["Activity", "File Name"]
-                st.dataframe(df_mapping, width='stretch', hide_index=True)
-            else:
-                st.info("No Mapping data")
+    #     with col2:
+    #         st.markdown("**Activity-File Mapping**")
+    #         if not df_mapping.empty:
+    #             # Activity와 FileName만 표시 (System은 제외)
+    #             # mapping_display = df_mapping[["Activity", "FileName"]].drop_duplicates().copy()
+    #             # mapping_display.columns = ["Activity", "File Name"]
+    #             st.dataframe(df_mapping, width='stretch', hide_index=True)
+    #         else:
+    #             st.info("No Mapping data")
     
     # Cloud 환경 체크
     if is_cloud_env():
@@ -625,8 +724,9 @@ def valuechain_file_tab(df_vc, df_ind, df_mapping, selected_industry):
         if graph:
             file_time = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
             path = IMAGE_DIR / f"ValueChain_File_{selected_industry}_{file_time}"
-            graph.attr(dpi='300')
-            graph.render(str(path), format='png', cleanup=True)
+            graph.attr(dpi=GRAPHVIZ_RENDER_DPI)
+            with st.spinner("Graphviz로 PNG를 생성하는 중입니다. 다이어그램이 크면 수십 초 이상 걸릴 수 있습니다."):
+                graph.render(str(path), format='png', cleanup=True)
             actual_png_filepath = IMAGE_DIR / f"{path.name}.png"
             
             if actual_png_filepath.exists():
@@ -649,6 +749,211 @@ def valuechain_file_tab(df_vc, df_ind, df_mapping, selected_industry):
     except Exception as e:
         st.error(f"❌ Diagram 생성 중 오류가 발생했습니다: {e}")
 
+#-----------------------------------------------------------------------------------------
+def get_file_summary(file_names, df_mapping):
+    """선택된 파일 리스트에 대해 FileName, ColumnCnt, PK List를 추출"""
+    if df_mapping is None or len(file_names) == 0:
+        return pd.DataFrame(columns=['FileName', 'ColumnCnt', 'PK_List'])
+    
+    relevant_mapping = df_mapping[df_mapping['FileName'].isin(file_names)]
+    summary = []
+    for f_name in file_names:
+        f_data = relevant_mapping[relevant_mapping['FileName'] == f_name]
+        col_cnt = len(f_data)
+        
+        # PK 컬럼 추출 (PK 값이 1인 컬럼들)
+        pk_str = "-"
+        if 'PK' in f_data.columns:
+            pk_cols = f_data[f_data['PK'].astype(str).str.contains('1', na=False)]['ColumnName'].tolist()
+            if pk_cols:
+                pk_str = ", ".join(pk_cols)
+            
+        summary.append({
+            'FileName': f_name,
+            'ColumnCnt': col_cnt,
+            'PK_List': pk_str
+        })
+    
+    return pd.DataFrame(summary)
+
+def activity_analysis(df_ind, df_mapping, all_activities):
+    st.subheader(f"⚙️ Activity Analysis")
+    # Activity_Seq 순으로 정렬
+    act_counts = df_ind.groupby('Activity')['FileName'].count().reset_index()
+    # Activity_Seq를 가져와서 merge하여 정렬
+    activity_seq = df_ind[['Activity', 'Activity_Seq']].drop_duplicates()
+    act_counts = act_counts.merge(activity_seq, on='Activity', how='left')
+    act_counts = act_counts.sort_values('Activity_Seq', ascending=True)
+
+    # # 파이 차트 생성 (도넛 형태) 
+    fig_act = px.pie(act_counts, names='Activity', values='FileName', 
+                    title=f"Activity별 파일 분포",
+                    hole=0.4, # 도넛 형태
+                    color_discrete_sequence=px.colors.qualitative.Pastel,
+                    category_orders={'Activity': act_counts['Activity'].tolist()})
+    fig_act.update_traces(textposition='inside', textinfo='percent+label', sort=False)
+    st.plotly_chart(fig_act, width="stretch")
+
+    # selected_act = st.selectbox("Activity를 선택하세요", all_activities, key="sel_act")
+    # # st.subheader(f"📄 '{selected_act}' Activity에 속한 파일 요약")
+    # act_files = df_ind[df_ind['Activity'] == selected_act]['FileName'].unique()
+    # act_summary = get_file_summary(act_files, df_mapping)
+    # st.dataframe(act_summary, width="stretch", height=400, hide_index=True)
+    # st.divider()
+
+def system_analysis(df_ind, df_sys, df_mapping, all_systems):
+    st.subheader(f"💻 System Analysis")
+    # System_Seq 순으로 정렬
+    sys_counts = df_ind.groupby('System')['FileName'].count().reset_index()
+    # System_Seq를 가져와서 merge하여 정렬
+    system_seq = df_ind[['System', 'System_Seq']].drop_duplicates()
+    sys_counts = sys_counts.merge(system_seq, on='System', how='left')
+    sys_counts = sys_counts.sort_values('System_Seq', ascending=True)
+
+    sys_order = sys_counts['System'].tolist()
+    palette = px.colors.qualitative.Pastel
+    pie_color_map = {}
+    for i, sys_name in enumerate(sys_order):
+        custom = _first_valid_color_in_column(df_ind[df_ind['System'] == sys_name], 'System_Color')
+        pie_color_map[sys_name] = custom if custom is not None else palette[i % len(palette)]
+
+    fig_sys = px.pie(
+        sys_counts,
+        names='System',
+        values='FileName',
+        title=f"System별 파일 분포",
+        hole=0.4,
+        color='System',
+        color_discrete_map=pie_color_map,
+        category_orders={'System': sys_order},
+    )
+    fig_sys.update_traces(textposition='inside', textinfo='percent+label', sort=False)
+    st.plotly_chart(fig_sys, width="stretch")
+
+    # selected_sys = st.selectbox("System을 선택하세요", all_systems, key="sel_sys")
+    # sys_files = df_ind[df_ind['System'] == selected_sys]['FileName'].unique()
+    # sys_summary = get_file_summary(sys_files, df_mapping)
+    # st.dataframe(sys_summary, width="stretch", height=400, hide_index=True)
+
+# #-----------------------------------------------------------------------------------------
+# def Display_MasterFormat_Detail(ff_df):
+#     """Master Format Detail 화면 출력"""
+
+#     # 각 뷰별 컬럼 정의
+#     VIEW_COLUMNS = {
+#         "Value Info": [
+#             'FileName', 'ColumnName', 'OracleType', 'PK', 'ValueCnt',
+#             'Null(%)', 'UniqueCnt', 'Unique(%)',
+#             'MinString', 'MaxString', 'ModeString', # 'MedianString', 'ModeCnt', 'Mode(%)'
+#         ],
+#         "Value Type Info": [
+#             'FileName', 'ColumnName', 'ValueCnt', 'FormatCnt',
+#             'Format', 'Format(%)', 'FormatMin', 'FormatMax', 'FormatMode', 'FormatMedian',
+#             'Format2nd', 'Format2nd(%)', 'Format2ndMin', 'Format2ndMax', 'Format2ndMode', 'Format2ndMedian',
+#             'Format3rd', 'Format3rd(%)'
+#         ],
+
+#         "Top10 Info": [
+#             'FileName', 'ColumnName', 'ValueCnt', 'ModeString', 'ModeCnt', 'Mode(%)',
+#             'Top10', 'Top10(%)'
+#         ],
+#         "Length Info": [
+#             'FileName', 'ColumnName', 'OracleType', 'PK', 'DetailDataType',
+#             'LenCnt', 'LenMin', 'LenMax', 'LenAvg', 'LenMode',
+#             'RecordCnt', 'SampleRows', 'ValueCnt', 'NullCnt', 'Null(%)',
+#             'UniqueCnt', 'Unique(%)'
+#         ],
+#         "Character Info": [
+#             'FileName', 'ColumnName', 'ValueCnt', 'HasBrokenKor', 'HasSpecial', 'HasUnicode', 'HasChinese', 
+#             'HasTab', 'HasCr', 'HasLf', 'HasJapanese', 'HasBlank', 'HasDash', 'HasDot', 'HasAt', 'HasAlpha',
+#             'HasKor', 'HasNum', 'HasBracket', 'HasMinus', 'HasOnlyAlpha', 'HasOnlyNum',
+#             'HasOnlyKor', 'HasOnlyAlphanum',
+#             'FirstChrKor', 'FirstChrNum', 'FirstChrAlpha', 'FirstChrSpecial'
+#         ],
+#         "DQ Score Info": [
+#             'FileName', 'ColumnName', 'ValueCnt', 'Null_pct', 'TypeMixed_pct', 'LengthVol_pct', 'Duplicate_pct',
+#             'DQ_Score', 'DQ_Issues', 'Issue_Count'
+#         ]
+#     }
+
+#     # ---------------------------
+#     st.divider()
+#     st.subheader("📊 Data Quality Information")
+#     st.markdown("###### 아래의 탭에서 상세 정보를 확인할 수 있습니다.")
+
+#     if ff_df.empty:
+#         st.warning("Data Quality 분석 파일을 로드할 수 없습니다.")
+#         return False
+
+#     if ff_df is not None and not ff_df.empty:
+#         tabs = ['Value Info', 'Value Type Info', 'Top10 Info', 'Length Info', 
+#             'Character Info', 'DQ Score Info', 'Total Statistics']
+#         tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(tabs)
+
+#         with tab1:
+#             st.markdown("###### 모든 컬럼들의 데이터 값 정보를 제공합니다.")
+#             # 존재하는 컬럼만 선택
+#             available_cols = [col for col in VIEW_COLUMNS['Value Info'] if col in ff_df.columns]
+#             if available_cols:
+#                 df = ff_df[available_cols].reset_index(drop=True)
+#                 st.dataframe(data=df, width=1400, height=600, hide_index=True)
+#             else:
+#                 st.warning("표시할 컬럼이 없습니다.")
+#         with tab2:
+#             st.markdown("###### 모든 컬럼들의 데이터 타입 정보를 제공합니다.")
+#             # 존재하는 컬럼만 선택
+#             available_cols = [col for col in VIEW_COLUMNS['Value Type Info'] if col in ff_df.columns]
+#             if available_cols:
+#                 df = ff_df[available_cols].reset_index(drop=True)
+#                 st.dataframe(data=df, width=1400, height=600, hide_index=True)
+#             else:
+#                 st.warning("표시할 컬럼이 없습니다.")
+#         with tab3:
+#             st.markdown("###### 모든 컬럼들의 빈도수 상위 10개를 제공합니다.")
+#             # 존재하는 컬럼만 선택
+#             available_cols = [col for col in VIEW_COLUMNS['Top10 Info'] if col in ff_df.columns]
+#             if available_cols:
+#                 df = ff_df[available_cols].reset_index(drop=True)
+#                 st.dataframe(data=df, width=1400, height=600, hide_index=True)
+#             else:
+#                 st.warning("표시할 컬럼이 없습니다.")
+#         with tab4:
+#             st.markdown("###### 모든 컬럼들의 길이 정보를 제공합니다.")
+#             # 존재하는 컬럼만 선택
+#             available_cols = [col for col in VIEW_COLUMNS['Length Info'] if col in ff_df.columns]
+#             if available_cols:
+#                 df = ff_df[available_cols].reset_index(drop=True)
+#                 st.dataframe(data=df, width=1400, height=600, hide_index=True)
+#             else:
+#                 st.warning("표시할 컬럼이 없습니다.")
+#         with tab5:
+#             st.markdown("###### 모든 컬럼들의 구성하는 문자 정보를 제공합니다.")
+#             # 존재하는 컬럼만 선택
+#             available_cols = [col for col in VIEW_COLUMNS['Character Info'] if col in ff_df.columns]
+#             if available_cols:
+#                 df = ff_df[available_cols].reset_index(drop=True)
+#                 st.dataframe(data=df, width=1400, height=600, hide_index=True)
+#             else:
+#                 st.warning("표시할 컬럼이 없습니다.")
+#         with tab6:
+#             st.markdown("###### 모든 컬럼들의 Data Quality Score 정보를 제공합니다. (기업의 상황에 따라 기준이 다를 수 있습니다. 컨설팅 후 확정합니다.)")
+#             # 존재하는 컬럼만 선택
+#             available_cols = [col for col in VIEW_COLUMNS['DQ Score Info'] if col in ff_df.columns]
+#             if available_cols:
+#                 df = ff_df[available_cols].reset_index(drop=True)
+#                 st.dataframe(data=df, width=1400, height=600, hide_index=True)
+#             else:
+#                 st.warning("표시할 컬럼이 없습니다.")
+#         with tab7:
+#             st.markdown("###### 모든 컬럼들의 통계 정보를 제공합니다.")
+#             df = ff_df.reset_index(drop=True)
+#             st.dataframe(data=df, width=1400, height=600,hide_index=True)
+#     else:
+#         st.warning("Data Quality 분석 파일을 로드할 수 없습니다.")
+#         return False
+#     return True    
+#-----------------------------------------------------------------------------------------
+   
 def main():
         # st.set_page_config(layout="wide")
     st.title(APP_NAME)
@@ -668,7 +973,8 @@ def main():
     # df_mapping = df_mapping[df_mapping['Industry'] == selected_industry]
     
     # 탭 생성
-    st.write("조회할 탭을 선택하세요.")
+    st.divider()
+    st.subheader("조회할 탭을 선택하세요.")
     tab_vc, tab_sys_summary, tab_sys_detail, tab_vc_file = st.tabs([
         "📊 Value Chain Diagram",
         "🏗️ Value Chain & System Mapping",
@@ -686,7 +992,39 @@ def main():
         system_architecture_tab(df_vc, df_sys, df_ind, df_mapping, selected_industry, mode="Detailed")
     
     with tab_vc_file:
-        valuechain_file_tab(df_vc, df_ind, df_mapping, selected_industry)
+        valuechain_file_tab(df_vc, df_sys, df_ind, df_mapping, selected_industry)
+
+
+    all_activities = sorted(df_ind['Activity'].unique())
+    all_systems = sorted(df_ind['System'].unique())
+
+    st.divider()
+    col1, col2 = st.columns([3, 3])
+    with col1:
+        # 2. Activity 섹션 (파이 차트 + 독립 정보)
+        activity_analysis(df_ind, df_mapping, all_activities)
+
+    with col2:
+        # 3. System 섹션 (파이 차트 + 독립 정보)
+        system_analysis(df_ind, df_sys, df_mapping, all_systems)
+
+    with st.expander("Value Chain & System Mapping 전체 보기", expanded=False):
+        df_display = df_ind[['Activity_Seq','Activity_Type','Activity', 'Activity_Kor', 
+                            'System_Seq', 'System', 'System_Kor', 'FileName']].copy().sort_values(['Activity_Seq', 'System_Seq'])
+        df_display = df_display.rename(columns={'Activity_Seq': 'A_Seq', 'System_Seq': 'S_Seq', 'Activity_Type': 'A_Type'})
+        st.dataframe(df_display,
+            column_config={
+                'A_Seq': st.column_config.NumberColumn(width="small"),
+                'A_Type': st.column_config.SelectboxColumn(options=['Primary', 'Support'], width="small"),
+                'Activity': st.column_config.TextColumn(width="small"),
+                'Activity_Kor': st.column_config.TextColumn(width="medium"),
+                'S_Seq': st.column_config.NumberColumn(width="small"),
+                'System': st.column_config.TextColumn(width="small"),
+                'System_Kor': st.column_config.TextColumn(width="medium"),
+                'FileName': st.column_config.TextColumn(width="medium"),
+            },
+            width="stretch", 
+            height=500, hide_index=True)
 
 if __name__ == "__main__":
     main()

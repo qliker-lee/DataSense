@@ -48,8 +48,25 @@ YAML_FILE_DEFAULT = "DataSense_Config.yaml"
 # YAML_DIR_ENV = os.environ.get("DS_YAML_DIR")
 # YAML_FILE_ENV = os.environ.get("DS_YAML_FILE")
 
+# -------------------------------------------------------------------
+# 폰트 크기 조정 및 색상 변경 (신규추가)
+# -------------------------------------------------------------------
+st.markdown("""<style> html, body, [class*="css"]  { font-size: 14px; } </style> """, unsafe_allow_html=True)
+def load_css(file_name):
+    path = Path(file_name)
+    if not path.is_absolute():
+        path = PROJECT_ROOT / file_name
+    with open(path, encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+load_css("styles/styles.css")
+# -------------------------------------------------------------------
+# App Config
+# -------------------------------------------------------------------
+
 APP_NAME = "Configuration Setup"
-APP_KOR_NAME = "##### 환경 설정 편집기입니다."
+APP_DESC = "#### DataSense를 수행하기 위한 환경변수를 설정합니다. 초기에 수행합니다. "
+APP_KOR_NAME = "환경 설정 편집기"
 APP_VER = "2.4"
 
 # ------------------------------------------------------------
@@ -896,7 +913,8 @@ class ConfigEditorApp:
             set_page_config({"APP_NAME": APP_NAME, "APP_KOR_NAME": APP_KOR_NAME})
             _init_session_defaults()
             st.title(f"{APP_NAME}")
-            st.markdown(f"{APP_KOR_NAME}")
+            st.markdown(APP_DESC)
+            st.subheader(f"{APP_KOR_NAME}")
             return True
         except Exception as e:
             st.error(f"페이지 초기화 오류: {e}")

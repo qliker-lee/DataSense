@@ -44,15 +44,28 @@ SYSTEM_CSV_PATH = OUTPUT_DIR / "DS_System.csv"
 FILE_STATS_PATH = OUTPUT_DIR / "FileStats.csv"
 FILE_FORMAT_PATH = OUTPUT_DIR / "FileFormat.csv"
 MAPPING_CSV_PATH = OUTPUT_DIR / "DS_ValueChain_System_File.csv"
-
 # -------------------------------------------------
-# 3. Streamlit 페이지 설정
+# 3. Streamlit 페이지 설정 (다른 st.* 호출보다 먼저)
 # -------------------------------------------------
 APP_NAME = "🏭 Value Chain & System Definition"
 APP_DESC = "#### Value Chain & System을 입력, 수정, 삭제하고 파일을 매핑하는 통합 도구입니다."
 from util.Files_FunctionV20 import set_page_config
 
 set_page_config(APP_NAME)
+
+# -------------------------------------------------------------------
+# 폰트 크기 조정 및 색상 변경 (신규추가)
+# -------------------------------------------------------------------
+st.markdown("""<style> html, body, [class*="css"]  { font-size: 14px; } </style> """, unsafe_allow_html=True)
+
+def load_css(file_name):
+    path = Path(file_name)
+    if not path.is_absolute():
+        path = PROJECT_ROOT / file_name
+    with open(path, encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+load_css("styles/styles.css")
 
 # 디렉토리가 없으면 생성
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -111,6 +124,51 @@ def get_all_industries():
             pass
     
     return sorted(list(industries))
+
+def _read_csv_file(path: Path):
+    """CSV 읽기 (Streamlit UI 없음, cache_data용)."""
+    if not path.exists():
+        return None
+    try:
+        df = pd.read_csv(path, encoding="utf-8-sig")
+        return df if not df.empty else None
+    except Exception:
+        return None
+
+
+@st.cache_data(show_spinner=False)
+def _load_mapping_datasets():
+    """File 매핑용 CSV 병합 (캐시)."""
+    df_vc = _read_csv_file(VALUECHAIN_CSV_PATH)
+    df_sys = _read_csv_file(SYSTEM_CSV_PATH)
+    df_stats = _read_csv_file(FILE_STATS_PATH)
+    df_format = _read_csv_file(FILE_FORMAT_PATH)
+    if df_vc is None or df_sys is None or df_stats is None or df_format is None:
+        return None
+
+    except_master_type = ["Reference", "Validation", "Common"]
+    df_stats = df_stats[~df_stats["MasterType"].isin(except_master_type)].copy()
+    df_stats = df_stats.drop(columns=["MasterType", "SamplingRows", "Sampling(%)", "WorkDate"])
+
+    df_format = df_format[~df_format["MasterType"].isin(except_master_type)].copy()
+    df_PK = df_format[df_format["PK"] == 1].copy()
+    if not df_PK.empty and "ColumnName" in df_PK.columns:
+        df_PK = df_PK.groupby(["FilePath", "FileName"])["ColumnName"].apply(
+            lambda x: ", ".join(sorted(x.unique()))
+        ).reset_index()
+        df_PK.columns = ["FilePath", "FileName", "PK_List"]
+    else:
+        df_PK = pd.DataFrame(columns=["FilePath", "FileName", "PK_List"])
+
+    df_stats = pd.merge(df_stats, df_PK, on=["FilePath", "FileName"], how="left")
+    df_stats["PK_List"] = df_stats["PK_List"].fillna("")
+    df_format = pd.merge(
+        df_format, df_stats[["FilePath", "FileName", "FileNo"]], on=["FilePath", "FileName"], how="left"
+    )
+    df_format = df_format.drop(columns=["FilePath"])
+    df_stats = df_stats.drop(columns=["FilePath"])
+    return df_vc, df_sys, df_stats.reset_index(drop=True), df_format
+
 
 def load_csv(path, mode=0):
     """CSV 파일을 로드합니다. mode = 1 이면 read file & validateion, mode 0 이면 read only and not message"""
@@ -171,13 +229,21 @@ def value_chain_tab(target_industry):
         st.error("데이터에 'Industry' 컬럼이 없습니다. 파일을 확인해주세요.")
         return
     
-    industry_df = df[df["Industry"] == target_industry].sort_values("Activity_Seq")
-    
-    # 서브 탭
-    tab_list, tab_add = st.tabs(["📋 Activity List (Edit/Delete)", "➕ Add New Activity"])
-    
-    # [Tab: 목록 및 수정/삭제]
-    with tab_list:
+    industry_df = (
+        df[df["Industry"] == target_industry]
+        .sort_values("Activity_Seq")
+        .reset_index(drop=True)
+    )
+
+    sub_tab = st.radio(
+        "Value Chain 작업",
+        ["📋 Activity List (Edit/Delete)", "➕ Add New Activity"],
+        horizontal=True,
+        key=f"vc_sub_tab_{target_industry}",
+        label_visibility="collapsed",
+    )
+
+    if sub_tab == "📋 Activity List (Edit/Delete)":
         if industry_df.empty:
             st.info("등록된 활동이 없습니다. 'Add New Activity' 탭에서 첫 번째 항목을 추가하세요.")
         else:
@@ -216,10 +282,10 @@ def value_chain_tab(target_industry):
                     
                     if save_valuechain_data(final_df):
                         st.success("데이터가 성공적으로 저장되었습니다.")
+                        _load_mapping_datasets.clear()
                         st.rerun()
-    
-    # [Tab: 새 활동 등록]
-    with tab_add:
+
+    else:
         st.dataframe(
             industry_df,
             width='stretch',
@@ -272,6 +338,7 @@ def value_chain_tab(target_industry):
                     full_df = pd.concat([df, new_row], ignore_index=True)
                     if save_valuechain_data(full_df):
                         st.success(f"'{a_name}' Activity has been successfully registered.")
+                        _load_mapping_datasets.clear()
                         st.rerun()
 
 # -------------------------------------------------------------------
@@ -296,7 +363,7 @@ def save_system_data(df):
         st.error(f"System 파일 저장 중 오류가 발생했습니다: {e}")
         return False
 
-def system_tab(target_industry):
+def system_tab_old(target_industry):
     """System 관리 탭"""
     st.markdown("### 🏭 System Definition")
     
@@ -309,6 +376,12 @@ def system_tab(target_industry):
         return
     
     industry_df = df[df["Industry"] == target_industry].sort_values("System_Seq")
+    if "System_Color" in industry_df.columns:
+        industry_df["System_Color"] = (
+            industry_df["System_Color"]
+            .astype("string")
+            .fillna("")
+        )
     
     # 서브 탭
     tab_list, tab_add = st.tabs(["📋 System List", "➕ Add New System"])
@@ -332,6 +405,7 @@ def system_tab(target_industry):
                     "System_Seq": st.column_config.NumberColumn("순번", required=True, width="small"),
                     "System": st.column_config.TextColumn("System명(영문)", required=True, width="medium"),
                     "System_Kor": st.column_config.TextColumn("System명(한글)", required=True, width="medium"),
+                    "System_Color": st.column_config.TextColumn("System 색상", width="small"),
                     "System_Description": st.column_config.TextColumn("설명", width="large")
                 },
             )
@@ -365,6 +439,7 @@ def system_tab(target_industry):
                     "System_Seq": st.column_config.NumberColumn("순번", width="small"),
                     "System": st.column_config.TextColumn("System명(영문)", width="medium"),
                     "System_Kor": st.column_config.TextColumn("System명(한글)", width="medium"),
+                    "System_Color": st.column_config.TextColumn("System 색상", width="small"),
                     "System_Description": st.column_config.TextColumn("설명", width="large")
                 },
                 height=300
@@ -374,7 +449,10 @@ def system_tab(target_industry):
                 System = st.text_input("System명 (English Only)")
             with c2:
                 System_kor = st.text_input("System명 (한글 명칭)")
-            
+            with c3:
+                System_color = st.color_picker("System 색상")
+                if System_color:
+                    System_color = System_color.lower()
             system_desc = st.text_area("System 상세 설명")
             
             submitted = st.form_submit_button("System 등록")
@@ -395,6 +473,7 @@ def system_tab(target_industry):
                         "System_Seq": next_seq,
                         "System": System,
                         "System_Kor": System_kor,
+                        "System_Color": System_color,
                         "System_Description": system_desc
                     }])
                     
@@ -403,48 +482,162 @@ def system_tab(target_industry):
                         st.success(f"'{System}' System이 성공적으로 등록되었습니다.")
                         st.rerun()
 
+# import streamlit as st
+# import pandas as pd
+
+def system_tab(target_industry):
+    """System 관리 탭 - 시각적 요소 및 UI 개선 버전"""
+    st.markdown(f"### 🏭 {target_industry} System Definition")
+    
+    # 데이터 로드
+    df = load_system_data()
+    
+    # 현재 산업 데이터 필터링 및 전처리
+    if "Industry" not in df.columns:
+        st.error("데이터에 'Industry' 컬럼이 없습니다. 파일을 확인해주세요.")
+        return
+    
+    industry_df = (
+        df[df["Industry"] == target_industry]
+        .sort_values("System_Seq")
+        .reset_index(drop=True)
+    )
+
+    # 색상 데이터 보정 (문자열 변환 및 소문자화)
+    if "System_Color" in industry_df.columns:
+        industry_df["System_Color"] = (
+            industry_df["System_Color"].astype(str).str.lower().replace("nan", "")
+        )
+
+    sub_tab = st.radio(
+        "System 작업",
+        ["📋 System List & Edit", "➕ Add New System"],
+        horizontal=True,
+        key=f"sys_sub_tab_{target_industry}",
+        label_visibility="collapsed",
+    )
+
+    if sub_tab == "📋 System List & Edit":
+        if industry_df.empty:
+            st.info(f"'{target_industry}'에 등록된 System이 없습니다. 오른쪽 탭에서 첫 번째 항목을 추가하세요.")
+        else:
+            st.markdown("💡 **Tip:** 표 안의 값을 직접 수정하거나 행을 추가/삭제할 수 있습니다. 수정 후 반드시 아래 **저장 버튼**을 눌러주세요.")
+            
+            # 데이터 에디터 설정
+            edited_df = st.data_editor(
+                industry_df,
+                key=f"sys_editor_{target_industry}",
+                num_rows="dynamic",
+                width='stretch',
+                hide_index=True,
+                column_config={
+                    "Industry": st.column_config.TextColumn("산업군", disabled=True),
+                    "System_Seq": st.column_config.NumberColumn("순번", help="표시 순서", required=True, width="small"),
+                    "System": st.column_config.TextColumn("System명(영문)", help="영문명만 입력 가능", required=True),
+                    "System_Kor": st.column_config.TextColumn("System명(한글)", required=True),
+                    # 색상 컬럼을 텍스트 대신 미리보기나 선택박스로 운영 가능 (여기선 텍스트 유지하되 설명 추가)
+                    "System_Color": st.column_config.TextColumn("색상 코드", help="Hex 코드 (예: #ff4b4b)"),
+                    "System_Description": st.column_config.TextColumn("상세 설명", width="large")
+                },
+            )
+            
+            save_col1, save_col2 = st.columns([1, 5])
+            with save_col1:
+                save_btn = st.button("💾 변경사항 저장", key=f"sys_save_{target_industry}", type="primary")
+            
+            if save_btn:
+                # 유효성 검사 (영문명 한글 포함 여부)
+                invalid_names = [n for n in edited_df["System"] if not check_no_korean(str(n))]
+                
+                if invalid_names:
+                    st.error(f"❌ 오류: 영문명에 한글이 포함된 항목이 있습니다: {invalid_names}")
+                else:
+                    # 데이터 병합 프로세스
+                    other_df = df[df["Industry"] != target_industry]
+                    edited_df["Industry"] = target_industry  # 새로 추가된 행 대비
+                    # 색상 코드 표준화
+                    if "System_Color" in edited_df.columns:
+                        edited_df["System_Color"] = edited_df["System_Color"].astype(str).str.lower()
+                    
+                    final_df = pd.concat([other_df, edited_df], ignore_index=True)
+                    
+                    if save_system_data(final_df):
+                        st.success("🎉 데이터가 성공적으로 반영되었습니다.")
+                        _load_mapping_datasets.clear()
+                        st.rerun()
+
+    else:
+        st.markdown("##### ➕ 새로운 System 상세 등록")
+        
+        with st.form("add_system_form", clear_on_submit=True):
+            # 레이아웃 정돈
+            row1_c1, row1_c2 = st.columns(2)
+            with row1_c1:
+                new_sys_en = st.text_input("System명 (English Only) *", placeholder="E.g., ERP_SYSTEM")
+            with row1_c2:
+                new_sys_kor = st.text_input("System명 (한글 명칭) *", placeholder="예: 전사자원관리")
+            
+            row2_c1, row2_c2, row2_c3 = st.columns([1, 1, 2])
+            with row2_c1:
+                # Seq 자동 계산 시각화
+                next_seq_val = 1 if industry_df.empty else int(industry_df["System_Seq"].max() + 1)
+                st.info(f"다음 순번: **{next_seq_val}**")
+            with row2_c2:
+                # 컬러 피커
+                new_color = st.color_picker("시스템 테마 색상", "#1b6cff")
+            with row2_c3:
+                st.write("") # 간격 맞춤용
+                st.caption("선택한 색상은 대시보드 및 리포트의 테마로 사용됩니다.")
+            
+            new_desc = st.text_area("System 상세 설명", placeholder="해당 시스템의 주요 목적과 기능을 입력하세요.")
+            
+            # 제출 버튼
+            submitted = st.form_submit_button("🚀 System 등록하기", use_container_width=True)
+            
+            if submitted:
+                if not new_sys_en or not new_sys_kor:
+                    st.warning("⚠️ 필수 항목(영문/한글 명칭)을 모두 입력해 주세요.")
+                elif not check_no_korean(new_sys_en):
+                    st.error("❌ 영문 명칭에는 한글을 사용할 수 없습니다.")
+                else:
+                    # 신규 데이터 구성
+                    new_row = pd.DataFrame([{
+                        "Industry": target_industry,
+                        "System_Seq": next_seq_val,
+                        "System": new_sys_en,
+                        "System_Kor": new_sys_kor,
+                        "System_Color": new_color.lower(),
+                        "System_Description": new_desc
+                    }])
+                    
+                    # 저장 및 갱신
+                    full_df = pd.concat([df, new_row], ignore_index=True)
+                    if save_system_data(full_df):
+                        st.success(f"✅ '{new_sys_kor}' 시스템이 성공적으로 추가되었습니다.")
+                        _load_mapping_datasets.clear()
+                        st.rerun()
+
+        if not industry_df.empty:
+            with st.expander("현재 등록된 시스템 요약 보기"):
+                st.table(industry_df[["System_Seq", "System", "System_Kor", "System_Color"]])
 # -------------------------------------------------------------------
 # 5. File 매핑 관련 함수
 # -------------------------------------------------------------------
 def load_data_validation():
     """File 매핑에 필요한 데이터를 로드하고 검증합니다."""
-    # load_csv 함수에서 mode = 1 이면 read file & validateion, mode 0 이면 read only and not message 
-    df_vc = load_csv(VALUECHAIN_CSV_PATH, mode=1)
-    df_sys = load_csv(SYSTEM_CSV_PATH, mode=1)
-    df_stats = load_csv(FILE_STATS_PATH, mode=1)
-    df_format = load_csv(FILE_FORMAT_PATH, mode=1)
-
-    if df_vc is None or df_sys is None or df_stats is None or df_format is None:
+    missing = [
+        p.name for p in (VALUECHAIN_CSV_PATH, SYSTEM_CSV_PATH, FILE_STATS_PATH, FILE_FORMAT_PATH)
+        if not p.exists()
+    ]
+    if missing:
+        st.error(f"❌ 필요한 파일이 없습니다: {', '.join(missing)}. 먼저 파일 분석을 수행하세요.")
         return None, None, None, None
 
-    except_master_type = ["Reference", "Validation", "Common"]
-
-    df_stats = df_stats[~df_stats["MasterType"].isin(except_master_type)]
-    df_stats = df_stats.drop(columns=["MasterType", "SamplingRows", "Sampling(%)", "WorkDate"])
-
-    df_format = df_format[~df_format["MasterType"].isin(except_master_type)]
-
-    # PK List 생성: PK == 1인 행들의 ColumnName을 FilePath, FileName별로 그룹화
-    df_PK = df_format[df_format["PK"] == 1].copy()
-    if not df_PK.empty and "ColumnName" in df_PK.columns:
-        df_PK = df_PK.groupby(["FilePath", "FileName"])["ColumnName"].apply(
-            lambda x: ', '.join(sorted(x.unique()))
-        ).reset_index()
-        df_PK.columns = ["FilePath", "FileName", "PK_List"]
-    else:
-        # PK가 없는 경우 빈 DataFrame 생성
-        df_PK = pd.DataFrame(columns=["FilePath", "FileName", "PK_List"])
-    
-    df_stats = pd.merge(df_stats, df_PK, on=["FilePath", "FileName"], how="left")
-    df_stats["PK_List"] = df_stats["PK_List"].fillna("")
-
-    # df_format에서는 FileNo 컬럼이 없기 때문에 FileStats에서 FileNo 컬럼을 가져옴
-    df_format = pd.merge(df_format, df_stats[["FilePath", "FileName", "FileNo"]], on=["FilePath", "FileName"], how="left")
-    # df_format, df_stats에서 FilePath 컬럼 제거
-    df_format = df_format.drop(columns=["FilePath"])
-    df_stats = df_stats.drop(columns=["FilePath"])
-
-    return df_vc, df_sys, df_stats, df_format
+    result = _load_mapping_datasets()
+    if result is None:
+        st.error("❌ 필요한 데이터 파일이 없거나 내용이 비어 있습니다. 먼저 파일 분석을 수행하세요.")
+        return None, None, None, None
+    return result
 
 def mapping_file_tab(target_industry):
     """File Mapping Management Tab"""
@@ -466,16 +659,19 @@ def mapping_file_tab(target_industry):
     
     # Merge mapping information based on FileStats (Left Join)
     display_df = df_stats.copy()
-    
+
     if df_mapping_exist is not None and not df_mapping_exist.empty:
-        # 해당 산업군의 데이터만 필터링하여 병합
-        industry_mapping = df_mapping_exist[df_mapping_exist["Industry"] == target_industry]
+        # 해당 산업군의 데이터만 필터링하여 병합 (FileName 중복 제거)
+        industry_mapping = (
+            df_mapping_exist[df_mapping_exist["Industry"] == target_industry]
+            .drop_duplicates(subset=["FileName"], keep="last")
+        )
         if not industry_mapping.empty:
             display_df = pd.merge(
-                display_df, 
-                industry_mapping[["FileName", "Activity", "System"]], 
-                on="FileName", 
-                how="left"
+                display_df,
+                industry_mapping[["FileName", "Activity", "System"]],
+                on="FileName",
+                how="left",
             )
         else:
             display_df["Activity"] = ""
@@ -487,6 +683,7 @@ def mapping_file_tab(target_industry):
     # 결측치 처리
     display_df["Activity"] = display_df["Activity"].fillna("")
     display_df["System"] = display_df["System"].fillna("")
+    display_df = display_df.reset_index(drop=True)
 
     # 데이터 편집기
     # st.subheader(f"📍 [{target_industry}] File Mapping List")
@@ -542,6 +739,7 @@ def mapping_file_tab(target_industry):
         # 저장
         save_csv(final_df, MAPPING_CSV_PATH)
         st.success(f"🎉 [{target_industry}] Mapping information has been successfully saved.")
+        _load_mapping_datasets.clear()
         st.rerun()
     
     # 파일 상세 검색
@@ -568,7 +766,8 @@ def main():
     st.markdown(APP_DESC)
     # st.markdown("##### This is a unified tool to manage Value Chain, System Definition and File Mapping by Industry.")
     
-    show_sample_image("Sample_ValueChain_Licened.jfif", "Value Chain Image") 
+    with st.expander("Value Chain 예제 이미지 보기", expanded=False):
+        show_sample_image("Sample_ValueChain_Licened.jfif", "Value Chain Image")
     # --- [Section 1: Industry Selection and Management] ---
     st.markdown("### 1️⃣ Select Industry")
     
@@ -603,16 +802,25 @@ def main():
     # st.subheader(f"📍 대상 산업: {target_industry}")
     st.info("📌 **다음 탭을 순차적으로 수행하세요.**")
     
-    # --- [섹션 2: 메인 탭] ---
-    tab_vc, tab_sys, tab_mapping = st.tabs(["📊 Value Chain Definition", "🏭 System Definition", "🔗 Map Value Chain & System to File"])
-    
-    with tab_vc:
+    # --- [섹션 2: 메인 탭] (선택한 탭만 실행 — st.tabs는 숨은 탭까지 매번 실행됨) ---
+    main_tab_labels = [
+        "📊 Value Chain Definition",
+        "🏭 System Definition",
+        "🔗 Map Value Chain & System to File",
+    ]
+    main_tab = st.radio(
+        "작업 구분",
+        main_tab_labels,
+        horizontal=True,
+        key="vc_sys_main_tab",
+        label_visibility="collapsed",
+    )
+
+    if main_tab == main_tab_labels[0]:
         value_chain_tab(target_industry)
-    
-    with tab_sys:
+    elif main_tab == main_tab_labels[1]:
         system_tab(target_industry)
-    
-    with tab_mapping:
+    else:
         mapping_file_tab(target_industry)
 
 # --- 실행부 ---
