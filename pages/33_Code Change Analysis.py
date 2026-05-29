@@ -36,19 +36,19 @@ import yaml
 # -------------------------------------------------------------------
 # 폰트 크기 조정 및 색상 변경 (신규추가)
 # -------------------------------------------------------------------
-# st.markdown("""<style> html, body, [class*="css"]  { font-size: 14px; } </style> """, unsafe_allow_html=True)
-# def load_css(file_name):
-#     path = Path(file_name)
-#     if not path.is_absolute():
-#         path = PROJECT_ROOT / file_name
-#     with open(path, encoding="utf-8") as f:
-#         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+st.markdown("""<style> html, body, [class*="css"]  { font-size: 14px; } </style> """, unsafe_allow_html=True)
+def load_css(file_name):
+    path = Path(file_name)
+    if not path.is_absolute():
+        path = PROJECT_ROOT / file_name
+    with open(path, encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# load_css("styles/styles.css")
+load_css("styles/styles.css")
 # -------------------------------------------------------------------
 # 기본 앱 정보
 # -------------------------------------------------------------------
-APP_NAME = "Code Change Analysis (코드 변동성 분석) -dev"
+APP_NAME = "Code Change Analysis (코드 변동성 분석)"
 APP_DESC = "#### 코드의 데이터 형태가 변동된 이력을 분석합니다. "
 
 from util.Files_FunctionV20 import load_yaml_datasense, set_page_config
