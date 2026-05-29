@@ -1,0 +1,10 @@
+﻿FileName,ColumnName,TotalRows,ChangeCount,ChangeCode,ChangeStatus
+CONTRACT.csv,CONTRACT_NO,7683,3112,2,Variable
+CONTRACT.csv,CUST_NO,7683,34,2,Variable
+Z코드변동성예제.csv,코드,206,2,1,Changed
+계정코드관리.csv,정렬순서,330,0,3,Fixed
+관리회계_조직그룹상세.csv,정렬순서,349,0,3,Fixed
+법인정보.csv,법인번호,21844,18,2,Variable
+사업코드관리.csv,정렬순서,346,0,3,Fixed
+조직_수입관리.csv,OIO_ORG_COD,61,0,3,Fixed
+택배_조직도.csv,ERP코드,110,0,3,Fixed

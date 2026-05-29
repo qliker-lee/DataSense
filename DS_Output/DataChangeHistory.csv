@@ -1,0 +1,3 @@
+﻿FileName,ColumnName,TimestampColumn,EventTimestamp,BeforeFormat,AfterFormat,BeforeValue,AfterValue,ChangeCountInCol
+Z코드변동성예제.csv,코드,GEN_TIMESTAMP,2026-02-04 17:04:52.839144,nnnnnn,Annnnn,514721,A12831,2
+Z코드변동성예제.csv,코드,GEN_TIMESTAMP,2026-02-04 17:04:52.839254,Annnnn,AAnnnnn,A12151,BB21210,2
