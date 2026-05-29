@@ -1,0 +1,137 @@
+﻿FileName,ColumnName,TotalRows,ChangeCount,Status
+COMPANY.csv,CompanyID,1474,103,Noise(High Frequency)
+CONTRACT.csv,CONTRACT_ORG_CD,10000,3482,Noise(High Frequency)
+CONTRACT.csv,SALES_EMP,10000,3064,Noise(High Frequency)
+CONTRACT.csv,SALES_TYPE,10000,442,Noise(High Frequency)
+CONTRACT.csv,ORG_CODE,10000,567,Noise(High Frequency)
+CONTRACT.csv,CORRECT_ORG,10000,254,Noise(High Frequency)
+CONTRACT.csv,PAY_TYPE,10000,4809,Noise(High Frequency)
+CONTRACT.csv,DEVELOP_ORG,10000,13,Noise(High Frequency)
+CONTRACT.csv,ENT_EMP,10000,5014,Noise(High Frequency)
+CONTRACT.csv,UPDATE_EMP,10000,277,Noise(High Frequency)
+CUSTOMER.csv,고객번호,10000,3532,Noise(High Frequency)
+CUSTOMER.csv,판매점소,10000,5022,Noise(High Frequency)
+CUSTOMER.csv,판매원사번,10000,4,Meaningful
+CUSTOMER.csv,최종변경자사번,10000,446,Noise(High Frequency)
+CUSTOMER.csv,집하점소,10000,10,Noise(High Frequency)
+ORGNIZATION.csv,상위조직코드,3836,1186,Noise(High Frequency)
+ORGNIZATION.csv,좌표구분코드,3836,246,Noise(High Frequency)
+PRM계약.csv,운영점소대,3825,520,Noise(High Frequency)
+PRM계약.csv,운영점소중,3825,104,Noise(High Frequency)
+PRM계약.csv,운영점소,3825,1004,Noise(High Frequency)
+test.csv,Year,32,2,Meaningful
+test.csv,전화번호,32,7,Meaningful
+test.csv,YYMMDD,32,4,Meaningful
+test1.csv,Dept,12,2,Meaningful
+test1_sum.csv,Dept,4,2,Meaningful
+test1_sum2.csv,Amount_Sum,10,3,Meaningful
+test2.csv,Dept,4,2,Meaningful
+Z검증용데이터.csv,ID,1906,678,Noise(High Frequency)
+Z검증용데이터.csv,판매점소,1906,926,Noise(High Frequency)
+Z검증용데이터.csv,수량,1906,612,Noise(High Frequency)
+Z검증용데이터.csv,단가,1906,306,Noise(High Frequency)
+Z검증용데이터.csv,금액,1906,653,Noise(High Frequency)
+Z코드변동성예제.csv,코드,202,2,Meaningful
+개인고객.csv,개인고객번호,2272,18,Noise(High Frequency)
+개인고객.csv,판매점소,2272,240,Noise(High Frequency)
+개인고객.csv,최종변경자사번,2272,1168,Noise(High Frequency)
+결제조건.csv,처리자사번,19,2,Meaningful
+계약마스터.csv,계약관리번호,10000,4893,Noise(High Frequency)
+계약마스터.csv,계약번호,10000,897,Noise(High Frequency)
+계약마스터.csv,팀코드,10000,1106,Noise(High Frequency)
+계약마스터.csv,예상물량년,10000,6143,Noise(High Frequency)
+계정과목코드.csv,상위계정과목코드,410,4,Meaningful
+계정코드관리.csv,정렬순서,330,2,Meaningful
+고객마스터.csv,고객구분코드,10000,1394,Noise(High Frequency)
+관리회계BI_사업.csv,대사업코드,207,1,Meaningful
+관리회계BI_사업.csv,중사업코드,207,1,Meaningful
+관리회계BI_사업.csv,소사업코드,207,1,Meaningful
+관리회계BI_사업.csv,사업코드,207,1,Meaningful
+관리회계BI_조직.csv,본부코드,420,8,Meaningful
+관리회계BI_조직.csv,지부코드,420,7,Meaningful
+관리회계BI_조직.csv,지점코드,420,121,Noise(High Frequency)
+관리회계BI_조직.csv,팀센터코드,420,155,Noise(High Frequency)
+관리회계BI_조직.csv,귀속부서조직코드,420,155,Noise(High Frequency)
+관리회계QLIK_조직.csv,귀속부서조직코드,398,238,Noise(High Frequency)
+관리회계QLIK_조직.csv,지점코드,398,193,Noise(High Frequency)
+관리회계QLIK_조직.csv,지부코드,398,5,Meaningful
+관리회계QLIK_조직.csv,본부코드,398,2,Meaningful
+관리회계_계정그룹.csv,최초생성자ID,3,1,Meaningful
+관리회계_계정그룹.csv,최종갱신자ID,3,1,Meaningful
+관리회계_고객.csv,최초생성자ID,10000,6252,Noise(High Frequency)
+관리회계_고객.csv,최종갱신자ID,10000,6776,Noise(High Frequency)
+관리회계_공통코드.csv,최초생성자ID,114,3,Meaningful
+관리회계_공통코드.csv,최종갱신자ID,114,12,Noise(High Frequency)
+관리회계_분류공통코드.csv,최초생성자ID,26,4,Meaningful
+관리회계_분류공통코드.csv,최종갱신자ID,26,3,Meaningful
+관리회계_사업.csv,사업코드,412,40,Noise(High Frequency)
+관리회계_사업.csv,정렬순서,412,94,Noise(High Frequency)
+관리회계_조직.csv,부서조직코드,420,258,Noise(High Frequency)
+관리회계_조직.csv,상위부서조직코드,420,117,Noise(High Frequency)
+관리회계_조직.csv,정렬순서,420,159,Noise(High Frequency)
+관리회계_조직그룹.csv,정렬순서,10,1,Meaningful
+관리회계_조직그룹상세.csv,귀속부서조직코드,349,149,Noise(High Frequency)
+관리회계_조직그룹상세.csv,정렬순서,349,2,Meaningful
+관리회계계정.csv,관리회계상위계정코드,410,4,Meaningful
+관리회계계정.csv,정렬순서,410,151,Noise(High Frequency)
+기업고객.csv,기업고객번호,7392,3093,Noise(High Frequency)
+기업고객.csv,판매점소,7392,2334,Noise(High Frequency)
+기업고객.csv,판매원사번,7392,3952,Noise(High Frequency)
+기업고객.csv,청구점소,7392,165,Noise(High Frequency)
+기업고객.csv,수금점소,7392,327,Noise(High Frequency)
+기업고객.csv,최종변경자사번,7392,3783,Noise(High Frequency)
+기업고객.csv,집하점소,7392,323,Noise(High Frequency)
+배송점.csv,배송점코드,2530,64,Noise(High Frequency)
+법인정보.csv,최초생성자ID,21844,16,Noise(High Frequency)
+법인정보.csv,최종갱신자ID,21844,329,Noise(High Frequency)
+불량등급.csv,처리자사번,19,2,Meaningful
+사업구분.csv,사업구분코드,357,186,Noise(High Frequency)
+사업구분.csv,처리자사번,357,112,Noise(High Frequency)
+사업코드관리.csv,정렬순서,346,2,Meaningful
+사용자.csv,처리자사번,7287,86,Noise(High Frequency)
+사용자.csv,한웨이 ID,7287,22,Noise(High Frequency)
+사원기본.csv,사원번호,132328,2236,Noise(High Frequency)
+사원기본.csv,소속조직코드,132328,4066,Noise(High Frequency)
+사원마스터.csv,사원번호,10000,3027,Noise(High Frequency)
+사원마스터.csv,조직코드,10000,574,Noise(High Frequency)
+상품분류.csv,상품코드,152,47,Noise(High Frequency)
+상품코드.csv,상품코드,152,47,Noise(High Frequency)
+선석.csv,조회순번,978,44,Noise(High Frequency)
+수입관리_고객.csv,고객번호,10000,34,Noise(High Frequency)
+수입관리_고객.csv,등록자사번,10000,511,Noise(High Frequency)
+수입관리점소.csv,처리자사번,358,118,Noise(High Frequency)
+신용공여기간.csv,신용공여기준일수,43,23,Noise(High Frequency)
+신용공여기간.csv,처리자사번,43,23,Noise(High Frequency)
+영업소.csv,영업소코드,146,1,Meaningful
+영업소.csv,건평,146,47,Noise(High Frequency)
+영업소.csv,우편번호,146,24,Noise(High Frequency)
+영업소.csv,보증금,146,10,Noise(High Frequency)
+원가인명정보.csv,직원번호,67463,25277,Noise(High Frequency)
+원가인명정보.csv,전월급여조직코드,67463,33738,Noise(High Frequency)
+원가인명정보.csv,급여조직코드,67463,35669,Noise(High Frequency)
+원가인명정보.csv,귀속부서조직코드,67463,33250,Noise(High Frequency)
+조직_수입관리.csv,OIO_PIN_COD,196,39,Noise(High Frequency)
+조직코드관리.csv,본부코드,420,3,Meaningful
+조직코드관리.csv,지부코드,420,6,Meaningful
+조직코드관리.csv,지점코드,420,113,Noise(High Frequency)
+조직코드관리.csv,팀센터코드,420,173,Noise(High Frequency)
+조직코드관리.csv,정렬순서,420,2,Meaningful
+조직터미널마스터.csv,터미널조직코드,557,5,Meaningful
+조직터미널마스터.csv,usage_cat_cd,557,126,Noise(High Frequency)
+조직터미널마스터.csv,생성시스템ID,557,0,Meaningful
+지점코드.csv,OIO_PIN_COD,196,36,Noise(High Frequency)
+택배BI_조직.csv,사업본부코드,2692,0,Meaningful
+택배BI_조직.csv,지부코드,2692,3,Meaningful
+택배BI_조직.csv,지점코드,2692,16,Noise(High Frequency)
+택배_고객.csv,고객번호,86277,1636,Noise(High Frequency)
+택배_고객.csv,주민_사업자등록번호,86277,22,Noise(High Frequency)
+택배_고객.csv,판매점소,86277,3593,Noise(High Frequency)
+택배_고객.csv,판매원사번,86277,84,Noise(High Frequency)
+택배_조직도.csv,상위조직코드,3836,1180,Noise(High Frequency)
+택배_조직도.csv,좌표구분코드,3836,228,Noise(High Frequency)
+택배_조직도.csv,ERP코드,3836,0,Meaningful
+택배_조직도.csv,조직상태,3836,1166,Noise(High Frequency)
+택배_조직도.csv,등록사용자ID,3836,247,Noise(High Frequency)
+택배_조직도.csv,최종변경사용자ID,3836,1021,Noise(High Frequency)
+택배관리회계조직매핑.csv,택배영업_지점코드,48,6,Meaningful
+택배관리회계조직매핑.csv,관리회계_지점코드,48,4,Meaningful

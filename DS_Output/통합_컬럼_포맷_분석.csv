@@ -1,0 +1,5331 @@
+﻿FileName,ColumnName,Format,Count
+COMPANY.csv,CompanyID,nnn,900
+COMPANY.csv,CompanyID,nnnn,474
+COMPANY.csv,CompanyID,nn,90
+COMPANY.csv,CompanyID,n,10
+COMPANY.csv,CompanyType,n,1474
+COMPANY.csv,Company_Name,SKSKKKKK,185
+COMPANY.csv,Company_Name,SKSKKKK,177
+COMPANY.csv,Company_Name,KKKK,128
+COMPANY.csv,Company_Name,SKSKKKKKK,115
+COMPANY.csv,Company_Name,KKKKK,91
+COMPANY.csv,Company_Name,SKSKKK,68
+COMPANY.csv,Company_Name,SKSKK,66
+COMPANY.csv,Company_Name,SKSKKKKKKK,63
+COMPANY.csv,Company_Name,KKK,45
+COMPANY.csv,Company_Name,SKSKKKKKKKK,44
+COMPANY.csv,Company_Name,KKKKKK,38
+COMPANY.csv,Company_Name,KKKKSKS,34
+COMPANY.csv,Company_Name,KKKKKSKS,25
+COMPANY.csv,Company_Name,KKKKKKK,24
+COMPANY.csv,Company_Name,KKKKKKKK,22
+COMPANY.csv,Company_Name,KK,21
+COMPANY.csv,Company_Name,n,19
+COMPANY.csv,Company_Name,KKKKKKSKS,18
+COMPANY.csv,Company_Name,SKSKKKKKKKKK,16
+COMPANY.csv,Company_Name,SKSKKKKKKKKKK,9
+COMPANY.csv,Company_Name_Abbreviation,KKKK,370
+COMPANY.csv,Company_Name_Abbreviation,KKKKK,298
+COMPANY.csv,Company_Name_Abbreviation,KKK,162
+COMPANY.csv,Company_Name_Abbreviation,KK,149
+COMPANY.csv,Company_Name_Abbreviation,KKKKKK,149
+COMPANY.csv,Company_Name_Abbreviation,KKKKKKK,83
+COMPANY.csv,Company_Name_Abbreviation,KKKKKKKK,54
+COMPANY.csv,Company_Name_Abbreviation,n,24
+COMPANY.csv,Company_Name_Abbreviation,SKSKKKKK,13
+COMPANY.csv,Company_Name_Abbreviation,KKKKKKKKK,11
+COMPANY.csv,Company_Name_Abbreviation,SKSKKKK,9
+COMPANY.csv,Company_Name_Abbreviation,KKKKKKKKKK,8
+COMPANY.csv,Company_Name_Abbreviation,KKKSKKKKKS,7
+COMPANY.csv,Company_Name_Abbreviation,SKSKK,6
+COMPANY.csv,Company_Name_Abbreviation,KKKn,5
+COMPANY.csv,Company_Name_Abbreviation,SKSKKKKKK,5
+COMPANY.csv,Company_Name_Abbreviation,KKKKSKKS,5
+COMPANY.csv,Company_Name_Abbreviation,KKKKKKSKKKKS,4
+COMPANY.csv,Company_Name_Abbreviation,SKSKKKKKKK,3
+COMPANY.csv,Company_Name_Abbreviation,KKKKKSKKS,3
+COMPANY.csv,Business_Registration_Number,nnnnnnnnnn.n,1420
+COMPANY.csv,Business_Registration_Number,n.n,2
+COMPANY.csv,Business_Type,KKK,307
+COMPANY.csv,Business_Type,KK,203
+COMPANY.csv,Business_Type,KKSKKK,175
+COMPANY.csv,Business_Type,KK/KKK,94
+COMPANY.csv,Business_Type,KKSKK,86
+COMPANY.csv,Business_Type,KK/KK,73
+COMPANY.csv,Business_Type,KKKK,31
+COMPANY.csv,Business_Type,KKK/KK,29
+COMPANY.csv,Business_Type,KKKSKKK,25
+COMPANY.csv,Business_Type,KKKKK,24
+COMPANY.csv,Business_Type,KKKSKK,24
+COMPANY.csv,Business_Type,KKK/KKK,23
+COMPANY.csv,Business_Type,KK/KK/KK,21
+COMPANY.csv,Business_Type,KKKKKK,18
+COMPANY.csv,Business_Type,KKSKKSKK,16
+COMPANY.csv,Business_Type,KKK/KKK/KKK,11
+COMPANY.csv,Business_Type,KKK/KK/KK,11
+COMPANY.csv,Business_Type,KKSKKSKKK,11
+COMPANY.csv,Business_Type,KK/KKK/KKK,11
+COMPANY.csv,Business_Type,KKK/KK/KKK,10
+COMPANY.csv,Business_Item,KK,342
+COMPANY.csv,Business_Item,KKSKK,113
+COMPANY.csv,Business_Item,KKK,104
+COMPANY.csv,Business_Item,KKKK,88
+COMPANY.csv,Business_Item,KKKKK,81
+COMPANY.csv,Business_Item,KK/KK,60
+COMPANY.csv,Business_Item,KKKKKK,32
+COMPANY.csv,Business_Item,KKSKKSKK,25
+COMPANY.csv,Business_Item,KK/KK/KK,23
+COMPANY.csv,Business_Item,KKSKKK,16
+COMPANY.csv,Business_Item,KKSKKKK,16
+COMPANY.csv,Business_Item,KKKKKKKK,13
+COMPANY.csv,Business_Item,KKSKKKKK,13
+COMPANY.csv,Business_Item,KKKKKKK,13
+COMPANY.csv,Business_Item,KK/KKKK,11
+COMPANY.csv,Business_Item,KK/KK/KKKK,11
+COMPANY.csv,Business_Item,KKKK/KK,11
+COMPANY.csv,Business_Item,KKK/KK,11
+COMPANY.csv,Business_Item,KKKSKK,10
+COMPANY.csv,Business_Item,KK/KK/KKKKK,10
+COMPANY.csv,ZIP_Code,nnnnnn,1470
+COMPANY.csv,ZIP_Code,n,3
+COMPANY.csv,ZIP_Code,UUnnn,1
+COMPANY.csv,Address,KK KKK KKK nnn-n,91
+COMPANY.csv,Address,KK KKK KKK nnn-nn,56
+COMPANY.csv,Address,KK KKK KKK KKK nnn-n,42
+COMPANY.csv,Address,KK KKK KKK nn-n,40
+COMPANY.csv,Address,KK KKK KKK nnn,25
+COMPANY.csv,Address,KK KKKK KKK nnn-n,20
+COMPANY.csv,Address,KKKKK KKK KKKnK   nnn-nn KKKKK KKKK,20
+COMPANY.csv,Address,KK KKK KKK KKK nnn-nn,19
+COMPANY.csv,Address,KK KKK KKK nnn-n KKKK nK,14
+COMPANY.csv,Address,KKK KKK KKK KKK  nnn-n,13
+COMPANY.csv,Address,KK KKK KKK nn-nn,13
+COMPANY.csv,Address,KKKKK KKK KKK   nnn-n,12
+COMPANY.csv,Address,KK KK KKK nnn-n,12
+COMPANY.csv,Address,KK KKK KKK KKK nnn,11
+COMPANY.csv,Address,KK KKK KKK nnn-nn KKKK nK,10
+COMPANY.csv,Address,KK KKK KKKnK nnn-nn,10
+COMPANY.csv,Address,KK KKK KKK n-nn,10
+COMPANY.csv,Address,KK KKK KKK nnn-n KKKK,10
+COMPANY.csv,Address,KK KKK KKK nnn-nnKK,10
+COMPANY.csv,Address,KK KKK KKK,9
+COMPANY.csv,Insert_Emp_ID,nnnnn,1111
+COMPANY.csv,Insert_Emp_ID,nnnnnnn,253
+COMPANY.csv,Insert_Emp_ID,nnnnnn,72
+COMPANY.csv,Insert_Emp_ID,aaaaann,16
+COMPANY.csv,Insert_Emp_ID,aaaaaaaa,12
+COMPANY.csv,Insert_Emp_ID,aaaaa,5
+COMPANY.csv,Insert_Emp_ID,UUUUUU,3
+COMPANY.csv,Insert_Emp_ID,nnnn,2
+COMPANY.csv,Update_Emp_ID,nnnnnnn,461
+COMPANY.csv,Update_Emp_ID,nnnnn,292
+COMPANY.csv,Update_Emp_ID,nnnnnn,82
+COMPANY.csv,Update_Emp_ID,aaaaann,18
+COMPANY.csv,Update_Emp_ID,nnnn,16
+COMPANY.csv,Update_Emp_ID,AAAAAA,3
+COMPANY.csv,Update_Emp_ID,aaaaaaaa,2
+COMPANY.csv,Update_Emp_ID,aaaaa,1
+COMPANY.csv,Update_Emp_ID,UUUUUU,1
+COMPANY.csv,Management_Type,A,1282
+COMPANY.csv,Management_Date,nnnnnnnn.n,319
+COMPANY.csv,Start_Date,nnnnnnnn.n,1424
+COMPANY.csv,Start_Date,n.n,4
+COMPANY.csv,End_Date,nnnnnnnn,1474
+COMPANY.csv,Defect Grade(C60),A,1474
+COMPANY.csv,Transaction_Suspension,KK,58
+COMPANY.csv,Transaction_Suspension,KKKK,42
+COMPANY.csv,Transaction_Suspension,KKKKSnnKKKS,17
+COMPANY.csv,Transaction_Suspension,KKKKKKK,2
+COMPANY.csv,Transaction_Suspension,KKKKKKK nnnnKnnK nnKKK nnnnK nnK nnKK KK,1
+COMPANY.csv,Transaction_Suspension,UUUUUU UUUU UUUU UKU,1
+COMPANY.csv,Transaction_extension,KK,58
+COMPANY.csv,Transaction_extension,KKKK,42
+COMPANY.csv,Transaction_extension,A,18
+COMPANY.csv,Transaction_extension,KKKKSnnKKKS,17
+COMPANY.csv,Transaction_extension,KKKKKKK,2
+COMPANY.csv,Transaction_extension,KKKKKK,1
+COMPANY.csv,Transaction_Cancellation,KK,374
+COMPANY.csv,Transaction_Cancellation,UUUU,1
+COMPANY.csv,Transaction_Cancellation,KKKKKK,1
+COMPANY.csv,Road_Name_Code,nnnnnnnnnnnn.n,309
+COMPANY.csv,최종변경일시,nnnn-nn-nn nn:nn,882
+COMPANY.csv,최종변경일시,nnnn-nn-nn n:nn,592
+COMPANY.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,1474
+CONTRACT.csv,CONTRACT_NO,nnnnnnn,5551
+CONTRACT.csv,CONTRACT_NO,Annnnnn,2318
+CONTRACT.csv,CONTRACT_NO,nnnnnn,2007
+CONTRACT.csv,CONTRACT_NO,nnnnn,106
+CONTRACT.csv,CONTRACT_NO,nnnn,16
+CONTRACT.csv,CONTRACT_NO,nnn,1
+CONTRACT.csv,CONTRACT_NO,UK,1
+CONTRACT.csv,CUSTOMER,KKK,2789
+CONTRACT.csv,CUSTOMER,KKKK,1207
+CONTRACT.csv,CUSTOMER,KKKKK,785
+CONTRACT.csv,CUSTOMER,KKKKKK,455
+CONTRACT.csv,CUSTOMER,SKSKKKK,352
+CONTRACT.csv,CUSTOMER,SKSKKKKK,287
+CONTRACT.csv,CUSTOMER,KK,274
+CONTRACT.csv,CUSTOMER,KKKKKKK,241
+CONTRACT.csv,CUSTOMER,SKSKKKKKK,202
+CONTRACT.csv,CUSTOMER,SKSKKK,166
+CONTRACT.csv,CUSTOMER,KKKKKKKK,157
+CONTRACT.csv,CUSTOMER,KKKK KKKK,156
+CONTRACT.csv,CUSTOMER,KKKKKKKKK,114
+CONTRACT.csv,CUSTOMER,SKSKKKKKKK,113
+CONTRACT.csv,CUSTOMER,KKKK KKKKK,111
+CONTRACT.csv,CUSTOMER,KKKKKKSKS,108
+CONTRACT.csv,CUSTOMER,KKKK KKK,105
+CONTRACT.csv,CUSTOMER,KKKKSKS,101
+CONTRACT.csv,CUSTOMER,SKSKK,98
+CONTRACT.csv,CUSTOMER,KKKKKKKKKK,87
+CONTRACT.csv,CUST_NO,nnnnnnnnnn.n,9921
+CONTRACT.csv,CUST_NO,nnnnnn.n,11
+CONTRACT.csv,CUST_NO,nnnnn.n,5
+CONTRACT.csv,CUST_NO,nnnn.n,1
+CONTRACT.csv,CONTRACT_DATE,nnnnnnnn.n,9987
+CONTRACT.csv,CONTRACT_ORG_CD,AAAAAAA,6802
+CONTRACT.csv,CONTRACT_ORG_CD,AAAAA,2164
+CONTRACT.csv,CONTRACT_ORG_CD,AAAAAA,296
+CONTRACT.csv,CONTRACT_ORG_CD,AA,1
+CONTRACT.csv,SALES_EMP,nnnnnnn,4703
+CONTRACT.csv,SALES_EMP,nnnnnn,2037
+CONTRACT.csv,SALES_EMP,nnnnn,845
+CONTRACT.csv,SALES_EMP,AAAnnnn,3
+CONTRACT.csv,SALES_TYPE,AAAAA,9693
+CONTRACT.csv,SALES_TYPE,n,227
+CONTRACT.csv,ZIP,nnnnnn.n,6175
+CONTRACT.csv,ZIP,nnnnn.n,2891
+CONTRACT.csv,ZIP,nnnn.n,794
+CONTRACT.csv,ADDR,KKKKK KKK KKK,356
+CONTRACT.csv,ADDR,KKK KKK KKK KKK,180
+CONTRACT.csv,ADDR,KKKK KKK KKK KKK,155
+CONTRACT.csv,ADDR,KKK KKK KKK,141
+CONTRACT.csv,ADDR,KKKKK KK KKK,135
+CONTRACT.csv,ADDR,KK KK KK,83
+CONTRACT.csv,ADDR,KKK KKK KKK KKK nnn,81
+CONTRACT.csv,ADDR,KKKKK KKK KKKK nnn,80
+CONTRACT.csv,ADDR,KKKKK KKK KKK nnn,73
+CONTRACT.csv,ADDR,KKKKK KKK KKK nn,71
+CONTRACT.csv,ADDR,KKK KKK KKK nnn,68
+CONTRACT.csv,ADDR,KKK KKK KKK KKKK nnn,58
+CONTRACT.csv,ADDR,KKKK KKK KKK KKK nnn,58
+CONTRACT.csv,ADDR,KK KKK KKK nnn,57
+CONTRACT.csv,ADDR,KK KKK KKK nn,54
+CONTRACT.csv,ADDR,KKKKK KKK KKKnnK nn,52
+CONTRACT.csv,ADDR,KKKKK KK KKK nnn,50
+CONTRACT.csv,ADDR,KKKK KKK KKK,49
+CONTRACT.csv,ADDR,KK  KK,47
+CONTRACT.csv,ADDR,KKK KKK KKK KKK nn,46
+CONTRACT.csv,ADDR_DETAIL,nK,319
+CONTRACT.csv,ADDR_DETAIL,SKKKS,264
+CONTRACT.csv,ADDR_DETAIL,nnnK,233
+CONTRACT.csv,ADDR_DETAIL,nnn-n,205
+CONTRACT.csv,ADDR_DETAIL,nnn,146
+CONTRACT.csv,ADDR_DETAIL,KKKK,145
+CONTRACT.csv,ADDR_DETAIL,KKKKK,130
+CONTRACT.csv,ADDR_DETAIL,KKKK KKKKK,117
+CONTRACT.csv,ADDR_DETAIL,KKK,115
+CONTRACT.csv,ADDR_DETAIL,nnn-nn,100
+CONTRACT.csv,ADDR_DETAIL,nnnK nnnK,96
+CONTRACT.csv,ADDR_DETAIL,.,92
+CONTRACT.csv,ADDR_DETAIL,KKKKKK,85
+CONTRACT.csv,ADDR_DETAIL,nnnK nnnnK,79
+CONTRACT.csv,ADDR_DETAIL,KKKK nK,77
+CONTRACT.csv,ADDR_DETAIL,nnn-nnn,75
+CONTRACT.csv,ADDR_DETAIL,nnnn,70
+CONTRACT.csv,ADDR_DETAIL,nK SKKKS,67
+CONTRACT.csv,ADDR_DETAIL,nnn-nnnn,53
+CONTRACT.csv,ADDR_DETAIL,KKKKKKK,52
+CONTRACT.csv,RETURN_ZIP,nnn-nnn,6177
+CONTRACT.csv,RETURN_ZIP,nnnnn,2874
+CONTRACT.csv,RETURN_ZIP,nnnn,793
+CONTRACT.csv,RETURN_ADDR,KKKKK KKK KKK,360
+CONTRACT.csv,RETURN_ADDR,KKK KKK KKK KKK,184
+CONTRACT.csv,RETURN_ADDR,KKKK KKK KKK KKK,156
+CONTRACT.csv,RETURN_ADDR,KKK KKK KKK,142
+CONTRACT.csv,RETURN_ADDR,KKKKK KK KKK,136
+CONTRACT.csv,RETURN_ADDR,KK KK KK,82
+CONTRACT.csv,RETURN_ADDR,KKK KKK KKK KKK nnn,80
+CONTRACT.csv,RETURN_ADDR,KKKKK KKK KKKK nnn,77
+CONTRACT.csv,RETURN_ADDR,KKKKK KKK KKK nn,73
+CONTRACT.csv,RETURN_ADDR,KKKKK KKK KKK nnn,72
+CONTRACT.csv,RETURN_ADDR,KKK KKK KKK nnn,67
+CONTRACT.csv,RETURN_ADDR,KKKK KKK KKK KKK nnn,58
+CONTRACT.csv,RETURN_ADDR,KK KKK KKK nnn,57
+CONTRACT.csv,RETURN_ADDR,KK KKK KKK nn,54
+CONTRACT.csv,RETURN_ADDR,KKKKK KK KKK nnn,50
+CONTRACT.csv,RETURN_ADDR,KKKKK KKK KKKnnK nn,49
+CONTRACT.csv,RETURN_ADDR,KKKK KKK KKK,49
+CONTRACT.csv,RETURN_ADDR,KK  KK,48
+CONTRACT.csv,RETURN_ADDR,KKK KKK KKK KKK nn,46
+CONTRACT.csv,RETURN_ADDR,KKKKK KK KKK nn,44
+CONTRACT.csv,RETURN_ADDR_DETAIL,nK,318
+CONTRACT.csv,RETURN_ADDR_DETAIL,SKKKS,259
+CONTRACT.csv,RETURN_ADDR_DETAIL,nnnK,233
+CONTRACT.csv,RETURN_ADDR_DETAIL,nnn-n,205
+CONTRACT.csv,RETURN_ADDR_DETAIL,nnn,147
+CONTRACT.csv,RETURN_ADDR_DETAIL,KKKK,143
+CONTRACT.csv,RETURN_ADDR_DETAIL,KKKKK,130
+CONTRACT.csv,RETURN_ADDR_DETAIL,KKKK KKKKK,118
+CONTRACT.csv,RETURN_ADDR_DETAIL,KKK,113
+CONTRACT.csv,RETURN_ADDR_DETAIL,nnn-nn,102
+CONTRACT.csv,RETURN_ADDR_DETAIL,nnnK nnnK,96
+CONTRACT.csv,RETURN_ADDR_DETAIL,.,86
+CONTRACT.csv,RETURN_ADDR_DETAIL,KKKKKK,84
+CONTRACT.csv,RETURN_ADDR_DETAIL,nnnK nnnnK,79
+CONTRACT.csv,RETURN_ADDR_DETAIL,KKKK nK,77
+CONTRACT.csv,RETURN_ADDR_DETAIL,nnn-nnn,75
+CONTRACT.csv,RETURN_ADDR_DETAIL,nK SKKKS,71
+CONTRACT.csv,RETURN_ADDR_DETAIL,nnnn,70
+CONTRACT.csv,RETURN_ADDR_DETAIL,nnn-nnnn,53
+CONTRACT.csv,RETURN_ADDR_DETAIL,KKKKKKK,52
+CONTRACT.csv,START_DATE,nnnn-nn-nn,9986
+CONTRACT.csv,START_DATE,--,14
+CONTRACT.csv,END_DATE,nnnn-nn-nn,7682
+CONTRACT.csv,END_DATE,//,2318
+CONTRACT.csv,SUSPENSION_YN,A,10000
+CONTRACT.csv,SUSPENSION_DESC,KKKK KKK KK KKKK,514
+CONTRACT.csv,SUSPENSION_DESC,KK KKK,387
+CONTRACT.csv,SUSPENSION_DESC,KK,182
+CONTRACT.csv,SUSPENSION_DESC,KK KK,112
+CONTRACT.csv,SUSPENSION_DESC,KKKK KK,103
+CONTRACT.csv,SUSPENSION_DESC,KKK,93
+CONTRACT.csv,SUSPENSION_DESC,KKK KKKKK KKKKK,55
+CONTRACT.csv,SUSPENSION_DESC,KKKKKK KK,48
+CONTRACT.csv,SUSPENSION_DESC,KKKKK,43
+CONTRACT.csv,SUSPENSION_DESC,a-aaaaa KK,36
+CONTRACT.csv,SUSPENSION_DESC,KKKKKK,33
+CONTRACT.csv,SUSPENSION_DESC,KKKKSKK,33
+CONTRACT.csv,SUSPENSION_DESC,KKKK,32
+CONTRACT.csv,SUSPENSION_DESC,A/A KKKK nK,23
+CONTRACT.csv,SUSPENSION_DESC,aAaaaaKK KK,23
+CONTRACT.csv,SUSPENSION_DESC,KKK KK KK KK,19
+CONTRACT.csv,SUSPENSION_DESC,nnnnnnnnnn,18
+CONTRACT.csv,SUSPENSION_DESC,nKK KKK KKK,16
+CONTRACT.csv,SUSPENSION_DESC,AAAKKKK KK,16
+CONTRACT.csv,SUSPENSION_DESC,KKKK KKSnnnn-nn-nnSnnnn-nn-nnS,15
+CONTRACT.csv,SUSPENSION_DATE,nnnnnnnn.n,504
+CONTRACT.csv,ORG_CODE,nnnn,9566
+CONTRACT.csv,ORG_CODE,nnn,247
+CONTRACT.csv,ORG_CODE,n,32
+CONTRACT.csv,ORG_CODE,nn,12
+CONTRACT.csv,ORG_CODE,AAn,4
+CONTRACT.csv,EMP_NO,nnnnnnn.n,1550
+CONTRACT.csv,EMP_NO,nnnnnn.n,58
+CONTRACT.csv,EMP_NO,nnnnn.n,2
+CONTRACT.csv,REQUEST_ORG,AAAAA,9822
+CONTRACT.csv,REQUEST_ORG,AAAAn,79
+CONTRACT.csv,REQUEST_ORG,AAAnn,12
+CONTRACT.csv,REQUEST_ORG,A/A,2
+CONTRACT.csv,CORRECT_ORG,AAAAA,7428
+CONTRACT.csv,CORRECT_ORG,AAAAn,161
+CONTRACT.csv,CORRECT_ORG,AAAnn,12
+CONTRACT.csv,COST_ORG,nnnn.n,9917
+CONTRACT.csv,PAY_TYPE,AAAA,5522
+CONTRACT.csv,PAY_TYPE,AAAAAA,4394
+CONTRACT.csv,PRICE,nnnn.n,8076
+CONTRACT.csv,PRICE,n.n,1549
+CONTRACT.csv,PRICE,nnnnn.n,75
+CONTRACT.csv,PRICE,nn.n,7
+CONTRACT.csv,PRICE,nnn.n,5
+CONTRACT.csv,COMMISION,n.n,9708
+CONTRACT.csv,COMMISION,nnn.n,2
+CONTRACT.csv,COMMISION,nnnn.n,2
+CONTRACT.csv,DEVELOP_ORG,nnnn,1369
+CONTRACT.csv,DEVELOP_ORG,nnn,25
+CONTRACT.csv,DEVELOP_ORG,AAn,5
+CONTRACT.csv,DEVELOP_ORG,n,4
+CONTRACT.csv,IMAGE,A,10000
+CONTRACT.csv,GOOD_YN,A,10000
+CONTRACT.csv,ENT_EMP,nnnnnnn,5658
+CONTRACT.csv,ENT_EMP,nnnnnn,3307
+CONTRACT.csv,ENT_EMP,nnnnn,451
+CONTRACT.csv,ENT_EMP,AAAAAAA,139
+CONTRACT.csv,ENT_EMP,AAAAA,89
+CONTRACT.csv,ENT_EMP,AAAAAA,5
+CONTRACT.csv,ENT_EMP,AAAnnnn,1
+CONTRACT.csv,UPDATE_EMP,nnnnnnn,8776
+CONTRACT.csv,UPDATE_EMP,nnnnnn,79
+CONTRACT.csv,UPDATE_EMP,nnnnn,43
+CONTRACT.csv,UPDATE_EMP,AaaaaaaAaa,33
+CONTRACT.csv,ENT_DATE,nnnn-n-nn n:nn AA,4736
+CONTRACT.csv,ENT_DATE,nnnn-n-n n:nn AA,1998
+CONTRACT.csv,ENT_DATE,nnnn-n-nn nn:nn AA,1664
+CONTRACT.csv,ENT_DATE,nnnn-n-n nn:nn AA,702
+CONTRACT.csv,ENT_DATE,nnnn-nn-nn n:nn AA,444
+CONTRACT.csv,ENT_DATE,nnnn-nn-n n:nn AA,222
+CONTRACT.csv,ENT_DATE,nnnn-nn-nn nn:nn AA,156
+CONTRACT.csv,ENT_DATE,nnnn-nn-n nn:nn AA,78
+CONTRACT.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,10000
+CUSTOMER.csv,고객번호,nnnnnnn,7735
+CUSTOMER.csv,고객번호,Annnnnn,2265
+CUSTOMER.csv,개인기업고객구분,A,9664
+CUSTOMER.csv,사업구분,A,9979
+CUSTOMER.csv,고객명,KKK,2699
+CUSTOMER.csv,고객명,KKKK,1298
+CUSTOMER.csv,고객명,KKKKK,719
+CUSTOMER.csv,고객명,KKKKKK,438
+CUSTOMER.csv,고객명,KK,306
+CUSTOMER.csv,고객명,SKSKKKK,286
+CUSTOMER.csv,고객명,KKKKKKK,256
+CUSTOMER.csv,고객명,SKSKKKKK,255
+CUSTOMER.csv,고객명,SKSKKKKKK,197
+CUSTOMER.csv,고객명,KKKKKKKK,192
+CUSTOMER.csv,고객명,SKSKKK,161
+CUSTOMER.csv,고객명,KKKK KKKK,152
+CUSTOMER.csv,고객명,KKKK KKKKK,131
+CUSTOMER.csv,고객명,KKKKKKKKK,129
+CUSTOMER.csv,고객명,SKSKKKKKKK,126
+CUSTOMER.csv,고객명,KKKKKKSKS,122
+CUSTOMER.csv,고객명,KKKKSKS,104
+CUSTOMER.csv,고객명,KKKK KKK,99
+CUSTOMER.csv,고객명,SKSKK,97
+CUSTOMER.csv,고객명,KKKKKKKKKK,80
+CUSTOMER.csv,영문고객명,A,17
+CUSTOMER.csv,영문고객명,AAAAAAA,9
+CUSTOMER.csv,영문고객명,AAAAAA,7
+CUSTOMER.csv,영문고객명,AAAAA,6
+CUSTOMER.csv,영문고객명,AAAAAAAA,5
+CUSTOMER.csv,영문고객명,AAAAAA AAA,5
+CUSTOMER.csv,영문고객명,AAAA,5
+CUSTOMER.csv,영문고객명,AAAAA AAAAAA,4
+CUSTOMER.csv,영문고객명,AAAAA AAAAAAAAAAA,4
+CUSTOMER.csv,영문고객명,aaaaaa,4
+CUSTOMER.csv,영문고객명,AAAAAA AAAAAA,3
+CUSTOMER.csv,영문고객명,AAA,3
+CUSTOMER.csv,영문고객명,AAAAA AAAAAAAAAA,3
+CUSTOMER.csv,영문고객명,AAAA AAAAA AA.SAAA,3
+CUSTOMER.csv,영문고객명,AAAAAAA AA,3
+CUSTOMER.csv,영문고객명,nnnnnnn,3
+CUSTOMER.csv,영문고객명,AAAAAAA AAAA,3
+CUSTOMER.csv,영문고객명,AAAAAA AA.SAAA,3
+CUSTOMER.csv,영문고객명,AAAAAAAA AAAA AA.SAAA,2
+CUSTOMER.csv,영문고객명,AAAAAAA AA.SAAA,2
+CUSTOMER.csv,국가코드,AA,9306
+CUSTOMER.csv,주민_사업자등록번호,nnnnnnnnnn.n,9713
+CUSTOMER.csv,주민_사업자등록번호,nnnnnnnnn.n,1
+CUSTOMER.csv,주민_사업자등록번호,n.n,1
+CUSTOMER.csv,주민_사업자등록번호,nnnnnnnn.n,1
+CUSTOMER.csv,우편번호,nnnnnn,5961
+CUSTOMER.csv,우편번호,nnnnn,1190
+CUSTOMER.csv,우편번호,nnn-n,1
+CUSTOMER.csv,주소,nnn-n,626
+CUSTOMER.csv,주소,nnn-nn,390
+CUSTOMER.csv,주소,nnn,378
+CUSTOMER.csv,주소,.,321
+CUSTOMER.csv,주소,nK,182
+CUSTOMER.csv,주소,nnnK,169
+CUSTOMER.csv,주소,SKKKS,160
+CUSTOMER.csv,주소,Aaa-nn,149
+CUSTOMER.csv,주소,nnnK nnnK,102
+CUSTOMER.csv,주소,nnnn-n,98
+CUSTOMER.csv,주소,nnnK nnnnK,98
+CUSTOMER.csv,주소,nn,98
+CUSTOMER.csv,주소,nnK nnK,94
+CUSTOMER.csv,주소,nnn-nnn,92
+CUSTOMER.csv,주소,nnnn nnnn,91
+CUSTOMER.csv,주소,KKK nnn,87
+CUSTOMER.csv,주소,nnnn,87
+CUSTOMER.csv,주소,nn-nn,73
+CUSTOMER.csv,주소,KKK nnn-n,71
+CUSTOMER.csv,주소,KKKK,64
+CUSTOMER.csv,청구부서,KK,1133
+CUSTOMER.csv,청구부서,KKK,968
+CUSTOMER.csv,청구부서,.,256
+CUSTOMER.csv,청구부서,KKKKK,108
+CUSTOMER.csv,청구부서,KKKK,76
+CUSTOMER.csv,청구부서,S,39
+CUSTOMER.csv,청구부서,..,36
+CUSTOMER.csv,청구부서,KKKKKK,28
+CUSTOMER.csv,청구부서,KKKKKKK,13
+CUSTOMER.csv,청구부서,-,13
+CUSTOMER.csv,청구부서,AAKKK,11
+CUSTOMER.csv,청구부서,nnn,9
+CUSTOMER.csv,청구부서,KKAAK,8
+CUSTOMER.csv,청구부서,KKaaa,7
+CUSTOMER.csv,청구부서,KKnK,6
+CUSTOMER.csv,청구부서,AAKKKKK,5
+CUSTOMER.csv,청구부서,KKKKKU,4
+CUSTOMER.csv,청구부서,AAK,3
+CUSTOMER.csv,청구부서,n,3
+CUSTOMER.csv,청구부서,AAAK,2
+CUSTOMER.csv,청구지우편번호,nnnnnn.n,6451
+CUSTOMER.csv,청구지우편번호,nnnnn.n,963
+CUSTOMER.csv,청구지우편번호,nnnn.n,253
+CUSTOMER.csv,청구지주소,nnn-n,543
+CUSTOMER.csv,청구지주소,nnn-nn,342
+CUSTOMER.csv,청구지주소,nnn,286
+CUSTOMER.csv,청구지주소,SKKKS,203
+CUSTOMER.csv,청구지주소,.,174
+CUSTOMER.csv,청구지주소,Aaa-nn,111
+CUSTOMER.csv,청구지주소,nnK nnK,93
+CUSTOMER.csv,청구지주소,nn,82
+CUSTOMER.csv,청구지주소,nnnn,79
+CUSTOMER.csv,청구지주소,nn-nn,77
+CUSTOMER.csv,청구지주소,nnnn-n,76
+CUSTOMER.csv,청구지주소,KKK nnn,69
+CUSTOMER.csv,청구지주소,nK,61
+CUSTOMER.csv,청구지주소,KKK nnnK nn,59
+CUSTOMER.csv,청구지주소,KKK nnn-n,57
+CUSTOMER.csv,청구지주소,SKKKS nK,56
+CUSTOMER.csv,청구지주소,n,55
+CUSTOMER.csv,청구지주소,nnn-n nK,51
+CUSTOMER.csv,청구지주소,nnnn-nn,44
+CUSTOMER.csv,청구지주소,KKKKK,36
+CUSTOMER.csv,판매일,nnnnnnnn.n,9968
+CUSTOMER.csv,판매점소,AAAAA,6004
+CUSTOMER.csv,판매점소,AAAAAAA,3565
+CUSTOMER.csv,판매점소,AAAAAA,380
+CUSTOMER.csv,판매점소,AA,4
+CUSTOMER.csv,판매원사번,nnnnnnn,7645
+CUSTOMER.csv,판매원사번,AAAnnnn,2
+CUSTOMER.csv,담당부서,KK,3062
+CUSTOMER.csv,담당부서,KKK,2022
+CUSTOMER.csv,담당부서,.,360
+CUSTOMER.csv,담당부서,KKKK,233
+CUSTOMER.csv,담당부서,KKKKK,221
+CUSTOMER.csv,담당부서,KKKKKK,76
+CUSTOMER.csv,담당부서,S,49
+CUSTOMER.csv,담당부서,KKKKKKK,36
+CUSTOMER.csv,담당부서,..,27
+CUSTOMER.csv,담당부서,-,21
+CUSTOMER.csv,담당부서,AAKKK,14
+CUSTOMER.csv,담당부서,KKKKKKKKK,11
+CUSTOMER.csv,담당부서,nnn,10
+CUSTOMER.csv,담당부서,AAKKKKK,9
+CUSTOMER.csv,담당부서,KKKKKKKK,9
+CUSTOMER.csv,담당부서,KKAAK,8
+CUSTOMER.csv,담당부서,KKaaa,7
+CUSTOMER.csv,담당부서,KKnK,6
+CUSTOMER.csv,담당부서,KKKKAAA,6
+CUSTOMER.csv,담당부서,AAKKKKKKK,6
+CUSTOMER.csv,집하지우편번호,nnnnnn.n,6172
+CUSTOMER.csv,집하지우편번호,nnnnn.n,2917
+CUSTOMER.csv,집하지우편번호,nnnn.n,753
+CUSTOMER.csv,집하지대번지,nnn,1581
+CUSTOMER.csv,집하지대번지,nn,451
+CUSTOMER.csv,집하지대번지,nnnn,316
+CUSTOMER.csv,집하지대번지,n,188
+CUSTOMER.csv,집하지대번지,nnn-n,124
+CUSTOMER.csv,집하지대번지,nnn-nn,74
+CUSTOMER.csv,집하지대번지,KKK,60
+CUSTOMER.csv,집하지대번지,Aaa-nn,20
+CUSTOMER.csv,집하지대번지,.,18
+CUSTOMER.csv,집하지대번지,nn-nn,18
+CUSTOMER.csv,집하지대번지,nnnn-n,17
+CUSTOMER.csv,집하지대번지,nnK nnK,15
+CUSTOMER.csv,집하지대번지,KK,9
+CUSTOMER.csv,집하지대번지,n-nn,6
+CUSTOMER.csv,집하지대번지,n-nnn,4
+CUSTOMER.csv,집하지대번지,nnn-,4
+CUSTOMER.csv,집하지대번지,nnnnK,3
+CUSTOMER.csv,집하지대번지,nnKK,2
+CUSTOMER.csv,집하지대번지,nnnnn,2
+CUSTOMER.csv,집하지대번지,nKK,2
+CUSTOMER.csv,집하지소번지,n,1069
+CUSTOMER.csv,집하지소번지,nn,631
+CUSTOMER.csv,집하지소번지,nnn,100
+CUSTOMER.csv,집하지소번지,KK,16
+CUSTOMER.csv,집하지소번지,nK,13
+CUSTOMER.csv,집하지소번지,nnnn,7
+CUSTOMER.csv,집하지소번지,nnn-,3
+CUSTOMER.csv,집하지소번지,K,3
+CUSTOMER.csv,집하지소번지,nnK nnK,2
+CUSTOMER.csv,집하지소번지,/,1
+CUSTOMER.csv,집하지소번지,AK,1
+CUSTOMER.csv,집하지소번지,-,1
+CUSTOMER.csv,집하지소번지,Knn,1
+CUSTOMER.csv,집하지소번지,Kn,1
+CUSTOMER.csv,집하지소번지,Aaa-nn,1
+CUSTOMER.csv,집하지소번지,//,1
+CUSTOMER.csv,집하지주소,nK,358
+CUSTOMER.csv,집하지주소,SKKKS,297
+CUSTOMER.csv,집하지주소,nnnK,206
+CUSTOMER.csv,집하지주소,nnn-n,192
+CUSTOMER.csv,집하지주소,KKKKK,173
+CUSTOMER.csv,집하지주소,nnn,139
+CUSTOMER.csv,집하지주소,KKKK,127
+CUSTOMER.csv,집하지주소,KKK,109
+CUSTOMER.csv,집하지주소,nnnK nnnK,104
+CUSTOMER.csv,집하지주소,nnn-nn,104
+CUSTOMER.csv,집하지주소,.,100
+CUSTOMER.csv,집하지주소,nnnK nnnnK,100
+CUSTOMER.csv,집하지주소,KKKK KKKKK,96
+CUSTOMER.csv,집하지주소,KKKK nK,80
+CUSTOMER.csv,집하지주소,nK SKKKS,75
+CUSTOMER.csv,집하지주소,KKKKKK,70
+CUSTOMER.csv,집하지주소,nnn-nnn,65
+CUSTOMER.csv,집하지주소,KKKK nnnK,58
+CUSTOMER.csv,집하지주소,nnnn,56
+CUSTOMER.csv,집하지주소,KKKKKKK,53
+CUSTOMER.csv,1ST_STREET,aaaaa aaaaaa,10
+CUSTOMER.csv,1ST_STREET,nnn-nn AAAAAAA-AAAA,5
+CUSTOMER.csv,1ST_STREET,nnn-n AAAAAA-AAAA,4
+CUSTOMER.csv,1ST_STREET,nnn-n AAAAAAAA-AAAA,3
+CUSTOMER.csv,1ST_STREET,nn-n AAAAAAAAA-nAA,2
+CUSTOMER.csv,1ST_STREET,nAAS AAAAAAA AAAA.S,2
+CUSTOMER.csv,1ST_STREET,AAAAA-AAAA,2
+CUSTOMER.csv,1ST_STREET,AAAAAAA-AAAA,2
+CUSTOMER.csv,1ST_STREET,nnn-nn,2
+CUSTOMER.csv,1ST_STREET,nnnn AAAAAA AAA AAAA,2
+CUSTOMER.csv,1ST_STREET,AAAAAA-AAAA,2
+CUSTOMER.csv,1ST_STREET,nA AAAAAAAA AAAA,2
+CUSTOMER.csv,1ST_STREET,nnn-nn AAAAAAAA-AAAA,2
+CUSTOMER.csv,1ST_STREET,AAA,2
+CUSTOMER.csv,1ST_STREET,nnnS n-nnn,1
+CUSTOMER.csv,1ST_STREET,A.A AAAnnnn AA-nnn nn,1
+CUSTOMER.csv,1ST_STREET,nnn AAAAAA A-AAA AAAAA,1
+CUSTOMER.csv,1ST_STREET,AAAAAA-AAAA nnnn-nn,1
+CUSTOMER.csv,1ST_STREET,nAS nn-nS AAAAA-AAAAS AAAAAAAAAAA-AA,1
+CUSTOMER.csv,1ST_STREET,AAAAAAAA A/A nnn,1
+CUSTOMER.csv,계약기간종료일,nnnnnnnn.n,7735
+CUSTOMER.csv,청구점소,AAAAA,9834
+CUSTOMER.csv,청구점소,AAAAn,71
+CUSTOMER.csv,청구점소,AAAnn,13
+CUSTOMER.csv,청구점소,A/A,1
+CUSTOMER.csv,수금점소,AAAAA,9751
+CUSTOMER.csv,수금점소,AAAAn,152
+CUSTOMER.csv,수금점소,AAAnn,15
+CUSTOMER.csv,수금점소,A/A,1
+CUSTOMER.csv,최종수정일시,nn:nn.n,7836
+CUSTOMER.csv,최종변경자사번,nnnnnnn,9715
+CUSTOMER.csv,최종변경자사번,AAAAAAA,154
+CUSTOMER.csv,최종변경자사번,AAAAA,68
+CUSTOMER.csv,최종변경자사번,AAAAAA,6
+CUSTOMER.csv,최종변경자사번,AAAnnnn,1
+CUSTOMER.csv,집하점소,nnnn,9862
+CUSTOMER.csv,집하점소,AAn,4
+CUSTOMER.csv,집하점소,nnn,1
+CUSTOMER.csv,수입조직,nnnn.n,9922
+CUSTOMER.csv,법인번호,nnnnnnnnnnnnn.n,1290
+CUSTOMER.csv,법인번호,n.n,7
+CUSTOMER.csv,최종변경일시,nnnnK nK nnK KKK,5266
+CUSTOMER.csv,최종변경일시,nnnnK nK nK KKK,2280
+CUSTOMER.csv,최종변경일시,nnnnK nnK nnK KKK,1734
+CUSTOMER.csv,최종변경일시,nnnnK nnK nK KKK,720
+CUSTOMER.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,10000
+OneClick고객.csv,고객명,KKK,36021
+OneClick고객.csv,고객명,KKKK,2467
+OneClick고객.csv,고객명,KKKKK,1516
+OneClick고객.csv,고객명,KK,1038
+OneClick고객.csv,고객명,KKKKKK,903
+OneClick고객.csv,고객명,KKKKKKK,403
+OneClick고객.csv,고객명,KKKKKKKK,215
+OneClick고객.csv,고객명,KKKK KKKK,208
+OneClick고객.csv,고객명,SKSKKKK,152
+OneClick고객.csv,고객명,KKKK KKKKK,147
+OneClick고객.csv,고객명,KKKK KKK,138
+OneClick고객.csv,고객명,KKKKKKKKK,119
+OneClick고객.csv,고객명,SKSKKKKK,113
+OneClick고객.csv,고객명,SKSKKKKKK,96
+OneClick고객.csv,고객명,KKKK KK,86
+OneClick고객.csv,고객명,SKSKKK,80
+OneClick고객.csv,고객명,SKSKKKKKKK,79
+OneClick고객.csv,고객명,KKKK KKKKKK,73
+OneClick고객.csv,고객명,KKK KKK,68
+OneClick고객.csv,고객명,AAA AAAAAA,62
+OneClick고객.csv,고객구분코드,AAAAAAAA,46966
+OneClick고객.csv,사업자등록번호,nnn-nn-nnnnn,42591
+OneClick고객.csv,사업자등록번호,--,4375
+OneClick고객.csv,법인등록번호,nnnnnnnnnnnnn.n,602
+OneClick고객.csv,법인등록번호,n.n,40
+OneClick고객.csv,업태,KKK,4230
+OneClick고객.csv,업태,KK,1384
+OneClick고객.csv,업태,KK K KKK,1170
+OneClick고객.csv,업태,KKKK,943
+OneClick고객.csv,업태,KKKKK,725
+OneClick고객.csv,업태,KKKKK KKK,577
+OneClick고객.csv,업태,KKKKKK,389
+OneClick고객.csv,업태,KKKKKKKK,156
+OneClick고객.csv,업태,KK K KK,103
+OneClick고객.csv,업태,KKKKKKK,58
+OneClick고객.csv,업태,KKK K,53
+OneClick고객.csv,업태,KKK KKK,48
+OneClick고객.csv,업태,KKKSKKK,45
+OneClick고객.csv,업태,.,44
+OneClick고객.csv,업태,KSKK,43
+OneClick고객.csv,업태,KKSKKK,37
+OneClick고객.csv,업태,KK KKK,31
+OneClick고객.csv,업태,KKK KK,29
+OneClick고객.csv,업태,KKSKK,29
+OneClick고객.csv,업태,KKKKKKKKK,25
+OneClick고객.csv,업종명,KK,11453
+OneClick고객.csv,업종명,KKKK,7820
+OneClick고객.csv,업종명,KKK,6536
+OneClick고객.csv,업종명,KKKKK,3516
+OneClick고객.csv,업종명,KKKKKK,2415
+OneClick고객.csv,업종명,KKKKK KKK,835
+OneClick고객.csv,업종명,KKKK/KK,808
+OneClick고객.csv,업종명,K,634
+OneClick고객.csv,업종명,KK KK,600
+OneClick고객.csv,업종명,KK K KKK,589
+OneClick고객.csv,업종명,KKKK KK,402
+OneClick고객.csv,업종명,KKKKKKK,401
+OneClick고객.csv,업종명,KKK KK,387
+OneClick고객.csv,업종명,KKSKK,311
+OneClick고객.csv,업종명,KK/KK,303
+OneClick고객.csv,업종명,KKKKKKKK,294
+OneClick고객.csv,업종명,KKK KKK,262
+OneClick고객.csv,업종명,KK KKK,261
+OneClick고객.csv,업종명,KK K KK,210
+OneClick고객.csv,업종명,KK KKKK,192
+OneClick고객.csv,사업기본주소,KK KKK KKK nnn,1091
+OneClick고객.csv,사업기본주소,KK KKK KKK nn,777
+OneClick고객.csv,사업기본주소,KK KKK KKK KKK nnn,663
+OneClick고객.csv,사업기본주소,KK KKK KKKK nnn,567
+OneClick고객.csv,사업기본주소,KK KKK KKK KKK nn,532
+OneClick고객.csv,사업기본주소,KK KKK KKKnnK nn,396
+OneClick고객.csv,사업기본주소,KK KKK KKK,382
+OneClick고객.csv,사업기본주소,KK KKK KKKK nn,347
+OneClick고객.csv,사업기본주소,KK KK KKK nnn,300
+OneClick고객.csv,사업기본주소,KKKKK KKK KKK nnn,299
+OneClick고객.csv,사업기본주소,KK KKK KKK nnn-n,292
+OneClick고객.csv,사업기본주소,KK KKK KKK KKnK nn,282
+OneClick고객.csv,사업기본주소,KK KKK KKKnnnKK nn,270
+OneClick고객.csv,사업기본주소,KKK KKK KKK KKK,268
+OneClick고객.csv,사업기본주소,KK KKK KKKnnKK nn,268
+OneClick고객.csv,사업기본주소,KK KKK KKK nnn-nn,265
+OneClick고객.csv,사업기본주소,KK KKK KKK KKKK nnn,249
+OneClick고객.csv,사업기본주소,KKKKK KKK KKKnnK nn,248
+OneClick고객.csv,사업기본주소,KK KK KKK nn,235
+OneClick고객.csv,사업기본주소,KK KKK KKnK nn,228
+OneClick고객.csv,사업상세주소,nnnK,3507
+OneClick고객.csv,사업상세주소,nK,2262
+OneClick고객.csv,사업상세주소,nnnK nnnK,1993
+OneClick고객.csv,사업상세주소,nnnK nnnnK,1732
+OneClick고객.csv,사업상세주소,nnn-nnn,961
+OneClick고객.csv,사업상세주소,nnn-nnnn,954
+OneClick고객.csv,사업상세주소,nnnKnnnK,572
+OneClick고객.csv,사업상세주소,nK nnnK,543
+OneClick고객.csv,사업상세주소,KKKK,522
+OneClick고객.csv,사업상세주소,nnnnK,436
+OneClick고객.csv,사업상세주소,nnnKnnnnK,419
+OneClick고객.csv,사업상세주소,nK KKKK,392
+OneClick고객.csv,사업상세주소,KKKK nnnK,349
+OneClick고객.csv,사업상세주소,KKKKK,339
+OneClick고객.csv,사업상세주소,nnn,333
+OneClick고객.csv,사업상세주소,KKKKK nnnK,298
+OneClick고객.csv,사업상세주소,KKK,278
+OneClick고객.csv,사업상세주소,nK SSKKKSS,278
+OneClick고객.csv,사업상세주소,KKKKKK,276
+OneClick고객.csv,사업상세주소,nK KKKKK,275
+OneClick고객.csv,사업우편번호,nnnnn.n,7794
+OneClick고객.csv,사업우편번호,nnnn.n,2270
+OneClick고객.csv,사업우편번호,nnnnnn.n,228
+OneClick고객.csv,사업우편번호,nnn.n,1
+OneClick고객.csv,SFDC고객ID,AAnnnnnnnnnnnnn,4595
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaaaAaAAA,255
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaAAaaAAA,247
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaAAaAAAA,238
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaaaAAAAA,214
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaaaaaAAA,205
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaAAAAAAn,200
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaaaaAAAA,200
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaaAAAAAn,195
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaaAAaAAA,191
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaAAAaAAA,183
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaaAaAAAA,180
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaaAaaAAA,154
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaanAAAAA,112
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaAaAAAAn,99
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaanAaAAA,99
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaaAnaAAA,98
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaAAnaAAA,92
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaAAanAAA,88
+OneClick고객.csv,SFDC고객ID,nnnnAnnnnnaanaAAAA,87
+OneClick고객.csv,최종업데이트사원번호,nnnnnnn.n,32311
+OneClick고객.csv,최종업데이트사원번호,nnnnnn.n,7200
+OneClick고객.csv,최종업데이트사원번호,nnnnn.n,6674
+OneClick고객.csv,최종업데이트사원번호,n.n,496
+OneClick고객.csv,생성일시,nnnnK nK nnK KKK,25306
+OneClick고객.csv,생성일시,nnnnK nK nK KKK,10620
+OneClick고객.csv,생성일시,nnnnK nnK nnK KKK,7800
+OneClick고객.csv,생성일시,nnnnK nnK nK KKK,3240
+OneClick고객.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,46966
+ORGNIZATION.csv,조직코드,nnnn,3029
+ORGNIZATION.csv,조직코드,nnn,557
+ORGNIZATION.csv,조직코드,AAAAA,92
+ORGNIZATION.csv,조직코드,AAAAAAA,92
+ORGNIZATION.csv,조직코드,nnnnnn,39
+ORGNIZATION.csv,조직코드,AAAA,16
+ORGNIZATION.csv,조직코드,AA,5
+ORGNIZATION.csv,조직코드,nnnnnnn,2
+ORGNIZATION.csv,조직코드,nnnnn,2
+ORGNIZATION.csv,조직코드,AAA,1
+ORGNIZATION.csv,조직코드,AAAAAA,1
+ORGNIZATION.csv,상위조직코드,nnn,3047
+ORGNIZATION.csv,상위조직코드,AAAAAAA,474
+ORGNIZATION.csv,상위조직코드,AAAAA,236
+ORGNIZATION.csv,상위조직코드,nnnn,40
+ORGNIZATION.csv,상위조직코드,AAAAAA,9
+ORGNIZATION.csv,상위조직코드,AAA,1
+ORGNIZATION.csv,조직명,KKSKS,888
+ORGNIZATION.csv,조직명,KKKKSKS,347
+ORGNIZATION.csv,조직명,KK,255
+ORGNIZATION.csv,조직명,KKKSKS,253
+ORGNIZATION.csv,조직명,KKKKSKKS,241
+ORGNIZATION.csv,조직명,KKKK,155
+ORGNIZATION.csv,조직명,KKSKKS,148
+ORGNIZATION.csv,조직명,KKKKKK,83
+ORGNIZATION.csv,조직명,KKK,79
+ORGNIZATION.csv,조직명,AKK,67
+ORGNIZATION.csv,조직명,KKAAKK,59
+ORGNIZATION.csv,조직명,AnAKK,57
+ORGNIZATION.csv,조직명,KKKKKKSKS,51
+ORGNIZATION.csv,조직명,KKnSKS,49
+ORGNIZATION.csv,조직명,KKKKK,47
+ORGNIZATION.csv,조직명,KK KKK,43
+ORGNIZATION.csv,조직명,AAKK,38
+ORGNIZATION.csv,조직명,KKKKn,35
+ORGNIZATION.csv,조직명,SKKSKK,33
+ORGNIZATION.csv,조직명,KKKKKSKS,33
+ORGNIZATION.csv,조직구분코드,AAAAAAA,2303
+ORGNIZATION.csv,조직구분코드,AAA,680
+ORGNIZATION.csv,조직구분코드,AAAAAA,467
+ORGNIZATION.csv,조직구분코드,AAAASAAAA,227
+ORGNIZATION.csv,조직구분코드,AAASAAAA,58
+ORGNIZATION.csv,조직구분코드,AAAA,48
+ORGNIZATION.csv,조직구분코드,AA,35
+ORGNIZATION.csv,조직구분코드,AAAAA,16
+ORGNIZATION.csv,조직구분코드,AAASAAASAA,1
+ORGNIZATION.csv,조직구분코드,AAAAAAAA,1
+ORGNIZATION.csv,조직관리유형코드,AAASAAAAAA,2482
+ORGNIZATION.csv,조직관리유형코드,AAAAAA,1353
+ORGNIZATION.csv,조직권역구분코드,AA,3822
+ORGNIZATION.csv,조직계약시작일자,nnnnnnnn.n,1998
+ORGNIZATION.csv,조직계약시작일자,nnnnnn.n,3
+ORGNIZATION.csv,조직계약시작일자,nnnnnnn.n,2
+ORGNIZATION.csv,조직계약종료일자,nnnnnnnn.n,938
+ORGNIZATION.csv,조직폐쇄일자,nnnnnnnn.n,1068
+ORGNIZATION.csv,영문조직명,AAAAAA AAAAA,217
+ORGNIZATION.csv,영문조직명,AAAAAAA AAAAA,199
+ORGNIZATION.csv,영문조직명,AnA AAASAA,145
+ORGNIZATION.csv,영문조직명,AAAAA AAAAA,140
+ORGNIZATION.csv,영문조직명,AAAAAAAA AAAAA,138
+ORGNIZATION.csv,영문조직명,AnA AAA AAASAA,97
+ORGNIZATION.csv,영문조직명,AAAAAAAAA AAAAA,95
+ORGNIZATION.csv,영문조직명,AAAA AAAAA,79
+ORGNIZATION.csv,영문조직명,AAAAAAAAAA AAAAA,67
+ORGNIZATION.csv,영문조직명,AAAAAAAAAAA AAAAA,65
+ORGNIZATION.csv,영문조직명,AA AAAAA,59
+ORGNIZATION.csv,영문조직명,aaaaaaaaa,57
+ORGNIZATION.csv,영문조직명,AAAAAAAAAAAA AAAAA,45
+ORGNIZATION.csv,영문조직명,AAAAAAA AAAAAAAA,45
+ORGNIZATION.csv,영문조직명,AAAAAAAA AAAAAAAA,40
+ORGNIZATION.csv,영문조직명,AAAAAAAA,35
+ORGNIZATION.csv,영문조직명,AAAAAA AAAAAAAA,35
+ORGNIZATION.csv,영문조직명,AAAAA AAAAAAAA,34
+ORGNIZATION.csv,영문조직명,AAAAAAAAAAAAA AAAAA,34
+ORGNIZATION.csv,영문조직명,AAAAAAAAAAAAAA AAAAA,33
+ORGNIZATION.csv,팩스번호,nnnnnnnnnn,721
+ORGNIZATION.csv,팩스번호,nnn-nnn-nnnn,227
+ORGNIZATION.csv,팩스번호,nnnnnnnnnnn,84
+ORGNIZATION.csv,팩스번호,nn-nnn-nnnn,66
+ORGNIZATION.csv,팩스번호,nnnSnnn-nnnn,60
+ORGNIZATION.csv,팩스번호,nn,49
+ORGNIZATION.csv,팩스번호,nnnnnnnnn,46
+ORGNIZATION.csv,팩스번호,nn-nnnn-nnnn,35
+ORGNIZATION.csv,팩스번호,nnn,23
+ORGNIZATION.csv,팩스번호,nnn-nnnn-nnnn,8
+ORGNIZATION.csv,팩스번호,n,6
+ORGNIZATION.csv,팩스번호,nnnnnnnn,3
+ORGNIZATION.csv,팩스번호,nnnn-nnnn-nnnn,3
+ORGNIZATION.csv,팩스번호,nnn-nnn-nnn,3
+ORGNIZATION.csv,팩스번호,nnnn-nnn-nnnn,2
+ORGNIZATION.csv,팩스번호,nn-nnnn,1
+ORGNIZATION.csv,팩스번호,KKKnSnSnKK,1
+ORGNIZATION.csv,팩스번호,nnnnnnnnnnnn,1
+ORGNIZATION.csv,팩스번호,nnn-,1
+ORGNIZATION.csv,팩스번호,nnnn-nnnn-nnn,1
+ORGNIZATION.csv,우편번호,nnnnnn.n,1968
+ORGNIZATION.csv,우편번호,nnnnn.n,1218
+ORGNIZATION.csv,우편번호,nnnn.n,295
+ORGNIZATION.csv,기본주소,KK KK KK,149
+ORGNIZATION.csv,기본주소,KKKK KKK KKK KKK,104
+ORGNIZATION.csv,기본주소,KK KKK  KKKK,97
+ORGNIZATION.csv,기본주소,KKK KKK KKK KKK,73
+ORGNIZATION.csv,기본주소,KK  KK,68
+ORGNIZATION.csv,기본주소,KKKKK KKK KKK,48
+ORGNIZATION.csv,기본주소,KK KK KKn,40
+ORGNIZATION.csv,기본주소,KKKKK KK KKK,39
+ORGNIZATION.csv,기본주소,KKKKK KKK KKKK,35
+ORGNIZATION.csv,기본주소,KKKK KKK KKK,34
+ORGNIZATION.csv,기본주소,KKKK KKK KKK KKKK,34
+ORGNIZATION.csv,기본주소,KKKKK KKK KKKK nnSKKKS,32
+ORGNIZATION.csv,기본주소,KK KK,30
+ORGNIZATION.csv,기본주소,KKKK KKK KKK KKKKK,27
+ORGNIZATION.csv,기본주소,KKK KKK KKK,26
+ORGNIZATION.csv,기본주소,KK KKK  KKK,25
+ORGNIZATION.csv,기본주소,KK,23
+ORGNIZATION.csv,기본주소,KK KK KKK,23
+ORGNIZATION.csv,기본주소,KK KK  KKK,23
+ORGNIZATION.csv,기본주소,KKKK KKK KKK KKnK,22
+ORGNIZATION.csv,상세주소,nnn-n,237
+ORGNIZATION.csv,상세주소,nnn,219
+ORGNIZATION.csv,상세주소,nn SKKKS,206
+ORGNIZATION.csv,상세주소,nn,190
+ORGNIZATION.csv,상세주소,nnn SKKKS,106
+ORGNIZATION.csv,상세주소,nnn-nn,97
+ORGNIZATION.csv,상세주소,.,71
+ORGNIZATION.csv,상세주소,KKKKKK,62
+ORGNIZATION.csv,상세주소,Aaa-nn,51
+ORGNIZATION.csv,상세주소,KKK nnn-n,50
+ORGNIZATION.csv,상세주소,nnK nnK,47
+ORGNIZATION.csv,상세주소,KKK,45
+ORGNIZATION.csv,상세주소,nK,41
+ORGNIZATION.csv,상세주소,n,37
+ORGNIZATION.csv,상세주소,nnnn,35
+ORGNIZATION.csv,상세주소,U,33
+ORGNIZATION.csv,상세주소,nnnn-n,32
+ORGNIZATION.csv,상세주소,KKKKK,30
+ORGNIZATION.csv,상세주소,nn-nn,28
+ORGNIZATION.csv,상세주소,nnnn-nn,20
+ORGNIZATION.csv,수입조직코드,AAAAA,3000
+ORGNIZATION.csv,수입신규조직코드,nnnn.n,3000
+ORGNIZATION.csv,좌표구분코드,AAAAAA,687
+ORGNIZATION.csv,좌표구분코드,AAAnn,523
+ORGNIZATION.csv,X좌표,nnnnnn.n,685
+ORGNIZATION.csv,X좌표,nnn.nnnnn,472
+ORGNIZATION.csv,X좌표,nnn.nnnn,48
+ORGNIZATION.csv,X좌표,nnn.nnn,3
+ORGNIZATION.csv,X좌표,n.n,2
+ORGNIZATION.csv,Y좌표,nnnnnn.n,681
+ORGNIZATION.csv,Y좌표,nn.nnnnn,476
+ORGNIZATION.csv,Y좌표,nn.nnnn,35
+ORGNIZATION.csv,Y좌표,nn.nnn,10
+ORGNIZATION.csv,Y좌표,nnnnn.n,4
+ORGNIZATION.csv,Y좌표,nn.nn,2
+ORGNIZATION.csv,Y좌표,n.n,2
+ORGNIZATION.csv,사업자등록번호,nnnnnnnnnn.n,1925
+ORGNIZATION.csv,최수정일시,nn:nn.n,3528
+ORGNIZATION.csv,최종수정자,nnnnnnn.n,2272
+ORGNIZATION.csv,최종수정자,nnnnnn.n,788
+ORGNIZATION.csv,최종수정자,nnnnn.n,460
+ORGNIZATION.csv,입력일시,nnnnK nK nnK KKK,1552
+ORGNIZATION.csv,입력일시,nnnnK nnK nnK KKK,1084
+ORGNIZATION.csv,입력일시,nnnnK nK nK KKK,750
+ORGNIZATION.csv,입력일시,nnnnK nnK nK KKK,450
+ORGNIZATION.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,3836
+PRM계약.csv,PRM계약번호,AAnnnnnnnnn,3825
+PRM계약.csv,사업자번호,nnnnnnnnnn,3825
+PRM계약.csv,계약명,KKSKS KKK KK,934
+PRM계약.csv,계약명,KKKKSKS KKK KK,313
+PRM계약.csv,계약명,KKKSKS KKK KK,312
+PRM계약.csv,계약명,AAAAA KKKK,220
+PRM계약.csv,계약명,AAAAA KKKK KK,169
+PRM계약.csv,계약명,AAAAAA KKKK,165
+PRM계약.csv,계약명,KK KKK KK KK,141
+PRM계약.csv,계약명,KKKKK KK KK,111
+PRM계약.csv,계약명,KKKKK,107
+PRM계약.csv,계약명,AAAAAA KKKK KK,94
+PRM계약.csv,계약명,AAAAA KKK KK,65
+PRM계약.csv,계약명,KK KKK,59
+PRM계약.csv,계약명,AAAAA KKK,59
+PRM계약.csv,계약명,KKnSKS KKK KK,51
+PRM계약.csv,계약명,KKAAKK KKK KK,49
+PRM계약.csv,계약명,KKKKKK KKK KK,44
+PRM계약.csv,계약명,AAAAAA KKK,39
+PRM계약.csv,계약명,KKnnKnnnn,37
+PRM계약.csv,계약명,AAAAAA KKK KK,33
+PRM계약.csv,계약명,KK KKKK,31
+PRM계약.csv,계약구분,nnn,3825
+PRM계약.csv,계약형태,A,3825
+PRM계약.csv,사업자명,KKKK,687
+PRM계약.csv,사업자명,KKK,613
+PRM계약.csv,사업자명,KKKKK,456
+PRM계약.csv,사업자명,KKKKKK,306
+PRM계약.csv,사업자명,KKKKKKKKK,228
+PRM계약.csv,사업자명,KKKKKKK,203
+PRM계약.csv,사업자명,KKKKn,200
+PRM계약.csv,사업자명,KKKKKn,138
+PRM계약.csv,사업자명,KK,129
+PRM계약.csv,사업자명,KKKKKKKKKK,119
+PRM계약.csv,사업자명,KKKKKKKK,85
+PRM계약.csv,사업자명,KKKn,72
+PRM계약.csv,사업자명,KKKKKKKKKKK,51
+PRM계약.csv,사업자명,KKKKKKKSnnnnSKKK,33
+PRM계약.csv,사업자명,KKn,28
+PRM계약.csv,사업자명,KKKnnnn,27
+PRM계약.csv,사업자명,AAKK,23
+PRM계약.csv,사업자명,KKKK KKKKK,20
+PRM계약.csv,사업자명,KK KKK,20
+PRM계약.csv,사업자명,KKKKnnnn,18
+PRM계약.csv,상호명,KKSKS,536
+PRM계약.csv,상호명,KKK,475
+PRM계약.csv,상호명,KKKK,470
+PRM계약.csv,상호명,KKKKK,277
+PRM계약.csv,상호명,KKKKKK,192
+PRM계약.csv,상호명,KKKKSKS,191
+PRM계약.csv,상호명,KKKSKS,174
+PRM계약.csv,상호명,KKKKn,166
+PRM계약.csv,상호명,KKKKKKK,121
+PRM계약.csv,상호명,KKKKKKKKK,119
+PRM계약.csv,상호명,KKKKKn,117
+PRM계약.csv,상호명,KK,83
+PRM계약.csv,상호명,KKKKKKKKKK,76
+PRM계약.csv,상호명,KKKKKKKK,56
+PRM계약.csv,상호명,KKKn,55
+PRM계약.csv,상호명,SKSKKKK,47
+PRM계약.csv,상호명,SKSKKKKK,35
+PRM계약.csv,상호명,AAKK,34
+PRM계약.csv,상호명,KKKKKKKKKKK,30
+PRM계약.csv,상호명,KKnSKS,29
+PRM계약.csv,업태,KKK,1916
+PRM계약.csv,업태,KK,800
+PRM계약.csv,업태,KKKK,485
+PRM계약.csv,업태,KKKKKK,105
+PRM계약.csv,업태,KK K KKK,74
+PRM계약.csv,업태,KKK K,74
+PRM계약.csv,업태,KKKKKKK,44
+PRM계약.csv,업태,KKKKKKKKKK,42
+PRM계약.csv,업태,KKKSKKK K,41
+PRM계약.csv,업태,KKKKK,36
+PRM계약.csv,업태,KKKSKKK,22
+PRM계약.csv,업태,KKKKKKKK,20
+PRM계약.csv,업태,KKSKKK,14
+PRM계약.csv,업태,KKKS KKK,10
+PRM계약.csv,업태,K,7
+PRM계약.csv,업태,KKKK K KK KKKK,7
+PRM계약.csv,업태,KKKKSKKS,7
+PRM계약.csv,업태,KKS KK,6
+PRM계약.csv,업태,KKKKKK K,5
+PRM계약.csv,업태,KK KKKK,5
+PRM계약.csv,업종,KKK,908
+PRM계약.csv,업종,KK,808
+PRM계약.csv,업종,KKKK,764
+PRM계약.csv,업종,KKKKKK,198
+PRM계약.csv,업종,KKKKK,148
+PRM계약.csv,업종,KKKKKKKK,107
+PRM계약.csv,업종,KKKKKKK,97
+PRM계약.csv,업종,KKKKKKKKK,93
+PRM계약.csv,업종,KKKKKKKKK K,70
+PRM계약.csv,업종,KKKKKK K,61
+PRM계약.csv,업종,KKSKKK,57
+PRM계약.csv,업종,KKKSKKK,51
+PRM계약.csv,업종,KKKKKKK K KKKKKKK,42
+PRM계약.csv,업종,KKKKSKKS,41
+PRM계약.csv,업종,KK K KKK,26
+PRM계약.csv,업종,KKKKS KKK,16
+PRM계약.csv,업종,KK KKKK KKK,15
+PRM계약.csv,업종,KK K,14
+PRM계약.csv,업종,KKKK KKK,13
+PRM계약.csv,업종,KKKSKKKK,13
+PRM계약.csv,계약등록일,nnnnnnnn,3825
+PRM계약.csv,최초계약일,nnnnnnnn,3825
+PRM계약.csv,계약개시일,nnnnnnnn,3825
+PRM계약.csv,계약종료일,nnnnnnnn,3825
+PRM계약.csv,운영점소대,AAAAA,2023
+PRM계약.csv,운영점소대,AAA,1800
+PRM계약.csv,운영점소대,Ann,2
+PRM계약.csv,운영점소중,AAAAA,3666
+PRM계약.csv,운영점소중,AAAAAA,159
+PRM계약.csv,운영점소,AAAAA,2293
+PRM계약.csv,운영점소,AAAAAA,1381
+PRM계약.csv,운영점소,AAAAAAA,151
+PRM계약.csv,최종변경일시,nn:nn.n,3825
+PRM계약.csv,ETL일시,nn:nn.n,3825
+PRM계약.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,3825
+test.csv,ID,nn,23
+test.csv,ID,n,9
+test.csv,Name,KKK,31
+test.csv,Name,KK,1
+test.csv,Sex,K,32
+test.csv,SexE,A,32
+test.csv,Age,nn,32
+test.csv,Country,AAA,32
+test.csv,Tel,nnn-nnnn,20
+test.csv,Tel,nn-nnnn-nnnn,9
+test.csv,Tel,nnnn-nnnn,3
+test.csv,Addr,KKK KKKK KKK nn-n,16
+test.csv,Addr,KKKKK KKK KKK nn-n,9
+test.csv,Addr,KKK KKK KKK nnKK n,4
+test.csv,Addr,KK KKK KKK nnn,3
+test.csv,Cell Phone,nnn-nnnn-nnnn,29
+test.csv,Cell Phone,nnnnnnnnnn,3
+test.csv,Desc,KK KK KKK,16
+test.csv,Desc,KKK KK KKK KKK KKK KK,9
+test.csv,Desc,KK KKKK. K KKKKK KK.,4
+test.csv,Desc,KKK KKKK K KKK,3
+test.csv,Address,KKKKK KK KKK nn-n,9
+test.csv,Address,KKK KKK KKK nn-n,8
+test.csv,Address,KKK KKKK KKK nn-n,8
+test.csv,Address,KKK KKK nnKK n,4
+test.csv,Address,KK KKK KKK nnn,3
+test.csv,Year,nnnn,31
+test.csv,Year,nnn,1
+test.csv,YearMonth,nnnnnn,32
+test.csv,Email,aaaaaaSaaaaa.aa.aa,15
+test.csv,Email,aaSaaaaa.aa.aa,8
+test.csv,Email,aaaaaaSaaaaa.aaa,7
+test.csv,Email,aaaaaaaaaaa.aaa,2
+test.csv,Name2,KKK,31
+test.csv,Name2,KK,1
+test.csv,전화번호,nnnnnnnn,25
+test.csv,전화번호,nnnnnnn,7
+test.csv,YYYYMMDD,nnnnnnnn,32
+test.csv,시도,KK,13
+test.csv,시도,KKKK,11
+test.csv,시도,KKK,4
+test.csv,시도,KKKKK,4
+test.csv,YYMMDD,nnnnnn,28
+test.csv,YYMMDD,nnnnn,4
+test.csv,업체명,SKSKKKK,9
+test.csv,업체명,SKSKKKKK,6
+test.csv,업체명,SKSKKKKKK,6
+test.csv,업체명,KKKK,3
+test.csv,업체명,SKSKKK,2
+test.csv,업체명,SKSKK SKKKS,2
+test.csv,업체명,KKK,1
+test.csv,업체명,SKSKKKKSKKS,1
+test.csv,업체명,SKSKK,1
+test.csv,업체명,SKSAAA,1
+test.csv,차량번호,KKnnKnnnn,32
+test.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,32
+test1.csv,CompanyCode,A,12
+test1.csv,ID,n,12
+test1.csv,Name,KKK,12
+test1.csv,Dept,Aaaaa,6
+test1.csv,Dept,Aaaaaaa,6
+test1.csv,City,KK,12
+test1.csv,Qty,n,7
+test1.csv,Qty,nn,5
+test1.csv,Amt,nnn,12
+test1.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,12
+test1_sum.csv,CompanyCode,A,4
+test1_sum.csv,Dept,Aaaaa,2
+test1_sum.csv,Dept,Aaaaaaa,2
+test1_sum.csv,Qty_Sum,nnn,4
+test1_sum.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,4
+test1_sum2.csv,CompanyCode,A,10
+test1_sum2.csv,City,KK,10
+test1_sum2.csv,Amount_Sum,nnnn,5
+test1_sum2.csv,Amount_Sum,nnn,5
+test1_sum2.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,10
+test2.csv,CompanyCode,A,4
+test2.csv,Dept,Aaaaa,2
+test2.csv,Dept,Aaaaaaa,2
+test2.csv,DeptName,KKK,3
+test2.csv,DeptName,KKKK,1
+test2.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,4
+test3.csv,City,KK,8
+test3.csv,CityName,KKK,5
+test3.csv,CityName,KKKKK,3
+test3.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,8
+Z검증용데이터.csv,ID,nnnnnnn,1465
+Z검증용데이터.csv,ID,Annnnnn,441
+Z검증용데이터.csv,CP,A,1831
+Z검증용데이터.csv,Business,A,1901
+Z검증용데이터.csv,Customer,KKK,538
+Z검증용데이터.csv,Customer,KKKK,250
+Z검증용데이터.csv,Customer,KKKKK,135
+Z검증용데이터.csv,Customer,KKKKKK,77
+Z검증용데이터.csv,Customer,KK,62
+Z검증용데이터.csv,Customer,SKSKKKK,48
+Z검증용데이터.csv,Customer,SKSKKKKK,42
+Z검증용데이터.csv,Customer,KKKKKKKK,41
+Z검증용데이터.csv,Customer,KKKKKKK,38
+Z검증용데이터.csv,Customer,SKSKKKKKK,38
+Z검증용데이터.csv,Customer,KKKK KKKK,30
+Z검증용데이터.csv,Customer,SKSKKK,28
+Z검증용데이터.csv,Customer,KKKKKKKKK,27
+Z검증용데이터.csv,Customer,KKKK KKKKK,26
+Z검증용데이터.csv,Customer,SKSKKKKKKK,24
+Z검증용데이터.csv,Customer,KKKK KKK,23
+Z검증용데이터.csv,Customer,KKKKSKS,21
+Z검증용데이터.csv,Customer,KKKKKKSKS,20
+Z검증용데이터.csv,Customer,KKKKKKKKKK,20
+Z검증용데이터.csv,Customer,SKSKK,17
+Z검증용데이터.csv,사업자,nnnnnnnnnn,1787
+Z검증용데이터.csv,사업자,nnnn-nn-nn,68
+Z검증용데이터.csv,우편번호,nnnnnn,1114
+Z검증용데이터.csv,우편번호,nnnnn,232
+Z검증용데이터.csv,우편번호,nnn-n,1
+Z검증용데이터.csv,가공주소,KK KKK KKK nnn-n,76
+Z검증용데이터.csv,가공주소,KK KKK KKK nnn-nn,70
+Z검증용데이터.csv,가공주소,KK KKK KKK KKK nnn-,55
+Z검증용데이터.csv,가공주소,KK KKK KKKnnn-n,54
+Z검증용데이터.csv,가공주소,KK KKK KKKnnn-nn,48
+Z검증용데이터.csv,가공주소,KK KKK KKK KKKnnn-n,22
+Z검증용데이터.csv,가공주소,KK KKK KKK KKK nnnn,21
+Z검증용데이터.csv,가공주소,KK KKK KKK KKK nnn-n,19
+Z검증용데이터.csv,가공주소,KK KKK KKK nnnn-n,18
+Z검증용데이터.csv,가공주소,KK KKK KKKnn-n,18
+Z검증용데이터.csv,가공주소,KK KKK KKKnnnn-n,18
+Z검증용데이터.csv,가공주소,KK KKK KKK nnn-nKK,18
+Z검증용데이터.csv,가공주소,KK KKK KKK KKK nnn,16
+Z검증용데이터.csv,가공주소,KK KKK KKK KKK nn-n,14
+Z검증용데이터.csv,가공주소,KK KKK KKK nn-nn,14
+Z검증용데이터.csv,가공주소,KK KKK KKK nnn,14
+Z검증용데이터.csv,가공주소,KK KKK KKK nn-n,13
+Z검증용데이터.csv,가공주소,KK KKK KKKKKK nnn-n,12
+Z검증용데이터.csv,가공주소,KK KKK KKKnnn,12
+Z검증용데이터.csv,가공주소,KK KK KKKnnn-n,12
+Z검증용데이터.csv,날짜포맷다양,nnnn-nn-nn,1745
+Z검증용데이터.csv,날짜포맷다양,nnnnKnnKnnK,159
+Z검증용데이터.csv,날짜포맷다양,nnnnnnnn,2
+Z검증용데이터.csv,판매점소,AAAAA,1116
+Z검증용데이터.csv,판매점소,AAAAAAA,707
+Z검증용데이터.csv,판매점소,AAAAAA,72
+Z검증용데이터.csv,판매점소,AA,1
+Z검증용데이터.csv,판매원사번,nnnnnnn,1423
+Z검증용데이터.csv,판매원사번,KK,16
+Z검증용데이터.csv,판매원사번,KKK,15
+Z검증용데이터.csv,담당부서,KK,580
+Z검증용데이터.csv,담당부서,KKK,350
+Z검증용데이터.csv,담당부서,.,73
+Z검증용데이터.csv,담당부서,KKKK,43
+Z검증용데이터.csv,담당부서,KKKKK,39
+Z검증용데이터.csv,담당부서,nnnnnnnnnn,29
+Z검증용데이터.csv,담당부서,KKKKKK,14
+Z검증용데이터.csv,담당부서,KKKKKKK,8
+Z검증용데이터.csv,담당부서,S,8
+Z검증용데이터.csv,담당부서,..,4
+Z검증용데이터.csv,담당부서,-,4
+Z검증용데이터.csv,담당부서,KKKKKKKK,3
+Z검증용데이터.csv,담당부서,AAAKK KKKK,3
+Z검증용데이터.csv,담당부서,AAKKK,3
+Z검증용데이터.csv,담당부서,nnn,2
+Z검증용데이터.csv,담당부서,KKK KKK,2
+Z검증용데이터.csv,담당부서,SKSKKK,2
+Z검증용데이터.csv,담당부서,AAKKKKK,2
+Z검증용데이터.csv,담당부서,KKAAK,2
+Z검증용데이터.csv,담당부서,AAKKKKKKK,2
+Z검증용데이터.csv,집하지우편번호,nnnnnn.n,1124
+Z검증용데이터.csv,집하지우편번호,nnnnn.n,597
+Z검증용데이터.csv,집하지우편번호,nnnn.n,146
+Z검증용데이터.csv,수량,nn,1515
+Z검증용데이터.csv,수량,n,364
+Z검증용데이터.csv,수량,nnn,21
+Z검증용데이터.csv,수량,nnnnnn,4
+Z검증용데이터.csv,수량,nnnnn,1
+Z검증용데이터.csv,수량,nnnnnnn,1
+Z검증용데이터.csv,단가,nnnn,1729
+Z검증용데이터.csv,단가,nnn,171
+Z검증용데이터.csv,단가,n,5
+Z검증용데이터.csv,단가,nn,1
+Z검증용데이터.csv,금액,nnnn,1524
+Z검증용데이터.csv,금액,nnn,208
+Z검증용데이터.csv,금액,nnnnn,174
+Z검증용데이터.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,1906
+Z사용자.csv,사원번호,nnnnnnn,2190
+Z사용자.csv,사원번호,Annnnnn,96
+Z사용자.csv,사원번호,AAAnnnn,42
+Z사용자.csv,사원번호,AAnnnnn,17
+Z사용자.csv,사원번호,nnnnnn,5
+Z사용자.csv,사원번호,aaaaaa,3
+Z사용자.csv,사원번호,aaannnn,2
+Z사용자.csv,사원번호,KKK,1
+Z사용자.csv,사원번호,aaaaa,1
+Z사용자.csv,사원번호,aaaa,1
+Z사용자.csv,사원번호,AAAAAA,1
+Z사용자.csv,사원번호,nnnn,1
+Z사용자.csv,사원번호,annnnnn,1
+Z사용자.csv,점소코드,nnnn,2361
+Z사용자.csv,권한코드,n,2349
+Z사용자.csv,권한코드,A,12
+Z사용자.csv,비밀번호,nnnAnAnnnAnnnAnnnAAAnAnAAAnnAAnn,44
+Z사용자.csv,비밀번호,AnnnnAAnnnAnAAnAnnAAnnnnnAnAnAnn,13
+Z사용자.csv,비밀번호,AnAAnnAAAnAnAnnnnAAnnAAAnAAnAnnA,13
+Z사용자.csv,비밀번호,aannnnannnaaanannnnnanannannnnannnnaaannnnnnnnnnnannnnnaannnnnna,10
+Z사용자.csv,비밀번호,annnnanannnnannnaaannnnnnnaananaannnaanannnnnnnnnnnnnaanaannnnnn,9
+Z사용자.csv,비밀번호,nnnnnnnAnAnAnnAnAAnnnnnAnnAnnnnn,6
+Z사용자.csv,비밀번호,AAnAAAAAnnnAAnnnAnnnnAAnAnnnAnAn,5
+Z사용자.csv,비밀번호,AAnAAAAAAnnnnAnnnnnnnnAAnnnAnAAn,5
+Z사용자.csv,비밀번호,AnnAnAnAnAAnnAAAnnnAnnnAnnnnnAnn,5
+Z사용자.csv,비밀번호,nnnAAAAAnnnnnnnnAnnnAnnAAnAnnnnn,4
+Z사용자.csv,비밀번호,nnAnnnnAnAnnAnnAAAnAnnAnAAAnnAnA,4
+Z사용자.csv,비밀번호,nnAAnnAnnnnnAAnnnnnnAnAnnAnnnnnA,4
+Z사용자.csv,비밀번호,nnnnannnanannnannnnannaaannanaaannnnnanaannananaanannnnnanaaaann,4
+Z사용자.csv,비밀번호,AnnnnnnAAnnnnnAnAnAnnnAAAnnAAnAn,4
+Z사용자.csv,비밀번호,AAnnnAAnnnnnAnAnnAAnnnnAAnnnAAnA,4
+Z사용자.csv,비밀번호,nnAnAnAnAnAnnnAnnAAnnAnnnAnnAnnn,3
+Z사용자.csv,비밀번호,nnnnAAnAAAAnnAAnnAnnnAnnAnnAnAnn,3
+Z사용자.csv,비밀번호,nAnnnnnnAAnnnnnnAnnnAnnnAAnnnnnA,3
+Z사용자.csv,비밀번호,nnnAnAAnAnnAnAnAnnAnAnnAAAAnnnnn,3
+Z사용자.csv,비밀번호,nnnnnAAAnnnAAAnnAnnAAnnnnnnnnAAn,3
+Z사용자.csv,팀명,KKK,716
+Z사용자.csv,팀명,KKKKKK,569
+Z사용자.csv,팀명,KKKKK,336
+Z사용자.csv,팀명,KKKK,219
+Z사용자.csv,팀명,KKKKKKK,172
+Z사용자.csv,팀명,KKAAAK,61
+Z사용자.csv,팀명,KKKKKKKKK,34
+Z사용자.csv,팀명,KKKKKKKK,28
+Z사용자.csv,팀명,KKKKnK,24
+Z사용자.csv,팀명,nAAKKK,22
+Z사용자.csv,팀명,KK,17
+Z사용자.csv,팀명,KKnnnnK,15
+Z사용자.csv,팀명,KKnK,11
+Z사용자.csv,팀명,KKAA,11
+Z사용자.csv,팀명,KKnAAK,11
+Z사용자.csv,팀명,KKAAKKK,10
+Z사용자.csv,팀명,KKKK KKK,10
+Z사용자.csv,팀명,KKAAK,9
+Z사용자.csv,팀명,AnAKKK,7
+Z사용자.csv,팀명,KKKKKKKKKK,5
+Z사용자.csv,직급,KK,892
+Z사용자.csv,직급,nK,628
+Z사용자.csv,직급,KKKK,493
+Z사용자.csv,직급,KKKKKn,80
+Z사용자.csv,직급,KKK,62
+Z사용자.csv,직급,KKKKKK,51
+Z사용자.csv,직급,KKnK,36
+Z사용자.csv,직급,KKKKK,31
+Z사용자.csv,직급,KKKn,27
+Z사용자.csv,직급,A/AKKK,19
+Z사용자.csv,직급,nKK,12
+Z사용자.csv,직급,nKKK,5
+Z사용자.csv,직급,KKA,4
+Z사용자.csv,직급,KK A,4
+Z사용자.csv,직급,KKKKKKK,3
+Z사용자.csv,직급,nnn,1
+Z사용자.csv,직급,KKSKS,1
+Z사용자.csv,직급,nKKA,1
+Z사용자.csv,직급,KKSKKKKS,1
+Z사용자.csv,직급,AAA,1
+Z사용자.csv,전화번호,nnn-nnnn-nnnn,1332
+Z사용자.csv,전화번호,nnn-nnn-nnnn,845
+Z사용자.csv,전화번호,nn-nnn-nnnn,90
+Z사용자.csv,전화번호,nn-nnnn-nnnn,83
+Z사용자.csv,전화번호,nnSnnn-nnnn,4
+Z사용자.csv,전화번호,nnn-nnnn-nnn,2
+Z사용자.csv,전화번호,nnn-nnn-nnnnn,1
+Z사용자.csv,전화번호,nnn--,1
+Z사용자.csv,전화번호,nnnnnnSnnnn,1
+Z사용자.csv,전화번호,nnn-nnnn-nnnnn,1
+Z사용자.csv,전화번호,nnn-nnn-nnn,1
+Z사용자.csv,전화번호1,nnn-nnn-nnnn,916
+Z사용자.csv,전화번호1,nn-nnn-nnnn,584
+Z사용자.csv,전화번호1,nn-nnnn-nnnn,243
+Z사용자.csv,전화번호1,nnn-nnnn-nnnn,116
+Z사용자.csv,전화번호1,nnn-nnn-nnnnSn,58
+Z사용자.csv,전화번호1,nnn-nnn-nnnn/n,49
+Z사용자.csv,전화번호1,nn-nnnn-nnnnSn,15
+Z사용자.csv,전화번호1,nnn-nnn-nnn,4
+Z사용자.csv,전화번호1,nnSnnn-nnnn,4
+Z사용자.csv,전화번호1,nn-nnn-nnn,3
+Z사용자.csv,전화번호1,nn-nn-nnnn,1
+Z사용자.csv,전화번호1,nnn-nnn-nnAA,1
+Z사용자.csv,전화번호1,nnn-nnn-nnnn-n,1
+Z사용자.csv,휴대폰번호,nnn-nnnn-nnnn,1260
+Z사용자.csv,휴대폰번호,nnn-nnn-nnnn,840
+Z사용자.csv,휴대폰번호,--,211
+Z사용자.csv,휴대폰번호,nnn--,3
+Z사용자.csv,휴대폰번호,nnn-nnnn-nnn,2
+Z사용자.csv,휴대폰번호,-SaaaSaaaaSSaaaSaaS-,1
+Z사용자.csv,휴대폰번호,nnn-nnn-nnnnn,1
+Z사용자.csv,휴대폰번호,nnnnnnSnnnn,1
+Z사용자.csv,휴대폰번호,nnn-nnnn-nnnnn,1
+Z사용자.csv,휴대폰번호,nnn-nnn-nnn,1
+Z사용자.csv,EMAIL,aaaaaSaaaaaa.aaa,549
+Z사용자.csv,EMAIL,aaaaaaSaaaaaa.aaa,532
+Z사용자.csv,EMAIL,aaaaaaaSaaaaaa.aaa,311
+Z사용자.csv,EMAIL,aaaaaaaaSaaaaaa.aaa,230
+Z사용자.csv,EMAIL,aaaaaaaaaSaaaaaa.aaa,162
+Z사용자.csv,EMAIL,aaaaSaaaaaa.aaa,161
+Z사용자.csv,EMAIL,aaaaaaaaaaSaaaaaa.aaa,70
+Z사용자.csv,EMAIL,AAAAAASaaaaaa.aaa,22
+Z사용자.csv,EMAIL,AAAAASaaaaaa.aaa,18
+Z사용자.csv,EMAIL,aaannnnSaaaaaa.aaa,16
+Z사용자.csv,EMAIL,AAAAAAASAAAAAA.AA.AA,13
+Z사용자.csv,EMAIL,AAAAAAAASaaaaaa.aaa,12
+Z사용자.csv,EMAIL,aaaaaaaaaaaSaaaaaa.aaa,12
+Z사용자.csv,EMAIL,AAAAAAASaaaaaa.aaa,11
+Z사용자.csv,EMAIL,aaaSaaaaaa.aaa,10
+Z사용자.csv,EMAIL,AAAnnnnSaaaaaa.aaa,9
+Z사용자.csv,EMAIL,aaaaaaa,6
+Z사용자.csv,EMAIL,aa.aaaSaaaaaa.aaa,5
+Z사용자.csv,EMAIL,AAAAAAAAAASaaaaaa.aaa,5
+Z사용자.csv,EMAIL,aaannnnSaaaaaaa.aaa,5
+Z사용자.csv,주민등록번호,aaaaaaaa,355
+Z사용자.csv,등록일자,nnnnnnnn,2361
+Z사용자.csv,입사일자,nnnnnnnn.n,2344
+Z사용자.csv,입사일자,nnnnnnn.n,1
+Z사용자.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,2361
+Z코드변동성예제.csv,코드,Annnnn,110
+Z코드변동성예제.csv,코드,AAnnnnn,80
+Z코드변동성예제.csv,코드,nnnnnn,16
+Z코드변동성예제.csv,사업자,KKKK,42
+Z코드변동성예제.csv,사업자,KKKKK,21
+Z코드변동성예제.csv,사업자,KKK,17
+Z코드변동성예제.csv,사업자,KKKKKK,14
+Z코드변동성예제.csv,사업자,KKKKKKK,8
+Z코드변동성예제.csv,사업자,SKSKKKK,8
+Z코드변동성예제.csv,사업자,KKKK KKK,7
+Z코드변동성예제.csv,사업자,SKSKKKKK,6
+Z코드변동성예제.csv,사업자,KKKK KKKKK,5
+Z코드변동성예제.csv,사업자,SKSKKKKKKK,5
+Z코드변동성예제.csv,사업자,KKKK KKKK,5
+Z코드변동성예제.csv,사업자,KKKKKKKKK,4
+Z코드변동성예제.csv,사업자,KKKK KKKKKKK,3
+Z코드변동성예제.csv,사업자,SKSKKK,3
+Z코드변동성예제.csv,사업자,KKKK KK,3
+Z코드변동성예제.csv,사업자,KK,3
+Z코드변동성예제.csv,사업자,KKKKKSKS,3
+Z코드변동성예제.csv,사업자,SKSKKKKKKKK,2
+Z코드변동성예제.csv,사업자,SKSKKKKKK,2
+Z코드변동성예제.csv,사업자,KKKKKK KKKK,2
+Z코드변동성예제.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,206
+간선사업자.csv,사업자번호,nnn-nn-nnnnn,800
+간선사업자.csv,사업자번호,nnn-nnn-nnnn,1
+간선사업자.csv,적용일자,nnnnnnnn,796
+간선사업자.csv,적용일자,nnnnnn,2
+간선사업자.csv,적용일자,nnnnnnn,1
+간선사업자.csv,적용일자,Aaa-nn,1
+간선사업자.csv,업체구분,AA,801
+간선사업자.csv,업체명,KKnnKnnnn,508
+간선사업자.csv,업체명,KKKK,73
+간선사업자.csv,업체명,KKKKSKKKS,53
+간선사업자.csv,업체명,KKKKKK,21
+간선사업자.csv,업체명,KKK,19
+간선사업자.csv,업체명,KKKKKSKKKS,17
+간선사업자.csv,업체명,KKKKnnnn,11
+간선사업자.csv,업체명,KKKKK,9
+간선사업자.csv,업체명,KKKKKKSKKKS,8
+간선사업자.csv,업체명,KKnnnn,5
+간선사업자.csv,업체명,KKKKKKK,5
+간선사업자.csv,업체명,SKSKKKK,5
+간선사업자.csv,업체명,KKnnKnnnnSKKKS,4
+간선사업자.csv,업체명,SKSKKKKKK,4
+간선사업자.csv,업체명,KKKKSKKS,3
+간선사업자.csv,업체명,KK,3
+간선사업자.csv,업체명,SKSKKKKK,3
+간선사업자.csv,업체명,KKKKKKKKK,3
+간선사업자.csv,업체명,KKKSKKKS,2
+간선사업자.csv,업체명,KKKK KKK,2
+간선사업자.csv,last_update_dtm,nn:nn.n,801
+간선사업자.csv,etl_dtm,nn:nn.n,801
+간선사업자.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,801
+개인고객.csv,개인고객번호,Annnnnn,2263
+개인고객.csv,개인고객번호,nnnnnn,6
+개인고객.csv,개인고객번호,nnnnnnn,3
+개인고객.csv,개인기업고객구분,A,2272
+개인고객.csv,사업구분,A,2272
+개인고객.csv,고객명,KKK,2164
+개인고객.csv,고객명,KK,35
+개인고객.csv,고객명,KKKK,9
+개인고객.csv,고객명,AA AAAAAAAA,5
+개인고객.csv,고객명,AA AAAAAAA,5
+개인고객.csv,고객명,KKKKK,4
+개인고객.csv,고객명,AAAAAAAAAAAA,3
+개인고객.csv,고객명,AAAA AAAAAAA,3
+개인고객.csv,고객명,AAA AAAAAAA,3
+개인고객.csv,고객명,AAA AAAAAA,2
+개인고객.csv,고객명,AAA AAAA,2
+개인고객.csv,고객명,AAA AAA,2
+개인고객.csv,고객명,AAAAAAAAAA,2
+개인고객.csv,고객명,AAAAAAAA,2
+개인고객.csv,고객명,AAA AAAAAAAAA,2
+개인고객.csv,고객명,AAAAAAAAA,2
+개인고객.csv,고객명,SKSKKKKKKK,1
+개인고객.csv,고객명,nnn-nn-nnnnn,1
+개인고객.csv,고객명,AAAAA AAAAAAA,1
+개인고객.csv,고객명,AAAAAA AAAAAAAAA,1
+개인고객.csv,영문고객명,AAAAAAAA AAAAAAA AAAAAA,1
+개인고객.csv,영문고객명,AAAAAAAAAAA AAAAAAA AAAAA AAA AAA.,1
+개인고객.csv,영문고객명,AAAAAAAAAAAAA AAAAAAA AAAAAAA A.A,1
+개인고객.csv,영문고객명,AAAAAAAA AAAAAAAAA AAAAAAS AAA,1
+개인고객.csv,영문고객명,AAAAAAA AAAAAAAAAAA,1
+개인고객.csv,영문고객명,AAAAAAA AAAAA AAAAAAAAAA AAAAAA AAA,1
+개인고객.csv,국가코드,AA,2272
+개인고객.csv,사업자등록번호,nnnnnnnnnn.n,2010
+개인고객.csv,사업자등록번호,n.n,1
+개인고객.csv,우편번호,nnnnnn.n,1
+개인고객.csv,우편번호,nnnnn.n,1
+개인고객.csv,우편번호,nnnn.n,1
+개인고객.csv,주소,nnnK,162
+개인고객.csv,주소,nK,149
+개인고객.csv,주소,nnnK nnnK,101
+개인고객.csv,주소,nnnK nnnnK,98
+개인고객.csv,주소,nnn-nnn,54
+개인고객.csv,주소,nnn-nnnn,48
+개인고객.csv,주소,KKKK,35
+개인고객.csv,주소,nnnKnnnK,29
+개인고객.csv,주소,KKKK nnnK,25
+개인고객.csv,주소,KKKKK,24
+개인고객.csv,주소,nnnnK,23
+개인고객.csv,주소,nK KKK,21
+개인고객.csv,주소,nK nnnK,21
+개인고객.csv,주소,nnnKnnnnK,20
+개인고객.csv,주소,nnn,19
+개인고객.csv,주소,KK,19
+개인고객.csv,주소,KKKKK nnnK,19
+개인고객.csv,주소,nnnK SSKKKSS,18
+개인고객.csv,주소,KKK nnnK,15
+개인고객.csv,주소,nK SSKKKSS,15
+개인고객.csv,판매일,nnnnnnnn.n,2266
+개인고객.csv,판매점소,AAAAAAA,2138
+개인고객.csv,판매점소,AAAAAA,125
+개인고객.csv,판매점소,AAAAA,3
+개인고객.csv,집하지우편번호,nnnnn.n,1717
+개인고객.csv,집하지우편번호,nnnn.n,523
+개인고객.csv,집하지우편번호,nnnnnn.n,27
+개인고객.csv,집하지주소,nnnK,162
+개인고객.csv,집하지주소,nK,149
+개인고객.csv,집하지주소,nnnK nnnK,101
+개인고객.csv,집하지주소,nnnK nnnnK,99
+개인고객.csv,집하지주소,nnn-nnn,54
+개인고객.csv,집하지주소,nnn-nnnn,48
+개인고객.csv,집하지주소,KKKK,35
+개인고객.csv,집하지주소,nnnKnnnK,29
+개인고객.csv,집하지주소,KKKK nnnK,25
+개인고객.csv,집하지주소,KKKKK,25
+개인고객.csv,집하지주소,nnnnK,23
+개인고객.csv,집하지주소,nK KKK,21
+개인고객.csv,집하지주소,nK nnnK,21
+개인고객.csv,집하지주소,nnnKnnnnK,20
+개인고객.csv,집하지주소,nnn,19
+개인고객.csv,집하지주소,KK,19
+개인고객.csv,집하지주소,KKKKK nnnK,19
+개인고객.csv,집하지주소,nnnK SSKKKSS,18
+개인고객.csv,집하지주소,KKK,15
+개인고객.csv,집하지주소,nK SSKKKSS,15
+개인고객.csv,1ST_STREET,AAAAAAAA-AAA AAAA-AA AAAAAAAA,1
+개인고객.csv,1ST_STREET,nn AAAAAAAA AAAS AAAAAAA nnnn,1
+개인고객.csv,1ST_STREET,AAAAAAAAAA nnS A-nnnn AAAAAAAAA,1
+개인고객.csv,1ST_STREET,nn-nn AAAAAAAAAAAA AAA,1
+개인고객.csv,1ST_STREET,A.A AAAnnnn AA-nnn nn,1
+개인고객.csv,1ST_STREET,AAAA AAAAAAAAAA AA.n-AAAAAA AAAAAAAA nn,1
+개인고객.csv,계약기간종료일,nnnnnnnn.n,41
+개인고객.csv,청구점소,AAAAA,2258
+개인고객.csv,청구점소,A/A,1
+개인고객.csv,수금점소,AAAAA,2258
+개인고객.csv,수금점소,A/A,1
+개인고객.csv,최종수정일시,nn:nn.n,158
+개인고객.csv,최종변경자사번,nnnnnnn,1451
+개인고객.csv,최종변경자사번,nnnnnn,427
+개인고객.csv,최종변경자사번,nnnnn,387
+개인고객.csv,최종변경자사번,AAAAAAA,1
+개인고객.csv,집하점소,nnnn.n,2208
+개인고객.csv,집하점소,nnn.n,57
+개인고객.csv,집하점소,n.n,1
+개인고객.csv,수입조직,nnnn.n,2266
+개인고객.csv,최종변경일시,nn:nn.n,2272
+개인고객.csv,ETL일시,nn:nn.n,2272
+개인고객.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,2272
+결제조건.csv,결제조건코드,A,19
+결제조건.csv,결제조건명,KK,6
+결제조건.csv,결제조건명,KKKKKK,3
+결제조건.csv,결제조건명,KKKKK,2
+결제조건.csv,결제조건명,KKK,2
+결제조건.csv,결제조건명,AAAAA,1
+결제조건.csv,결제조건명,AA-AAAA,1
+결제조건.csv,결제조건명,KKKK,1
+결제조건.csv,결제조건명,KKKKKKKK,1
+결제조건.csv,결제조건명,KKSKK,1
+결제조건.csv,결제조건명,KKSKKS,1
+결제조건.csv,dt_reg,nnnnnnnn,19
+결제조건.csv,dt_adjt,nnnnnnnn.n,1
+결제조건.csv,yn_abd,A,19
+결제조건.csv,처리자사번,nnnnnnn,17
+결제조건.csv,처리자사번,nnnnnn,2
+결제조건.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,19
+결제조건.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,19
+결제조건.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,19
+계약마스터.csv,계약적용월,nnnnnn,10000
+계약마스터.csv,계약관리번호,nnnnAAAnnnnn,5634
+계약마스터.csv,계약관리번호,nnnnAAAnnnn,4366
+계약마스터.csv,계약번호,nnnnnnn,9534
+계약마스터.csv,계약번호,AAAAAnnnnnnn,442
+계약마스터.csv,계약번호,AAAnnnnn,23
+계약마스터.csv,계약번호,AAAAnnnnnnn,1
+계약마스터.csv,소사업코드,nnn,10000
+계약마스터.csv,팀코드,AAAAA,9406
+계약마스터.csv,팀코드,AAAAAA,580
+계약마스터.csv,팀코드,AAAAAAA,14
+계약마스터.csv,계약구분,A,10000
+계약마스터.csv,소사업명,AnAKK,9443
+계약마스터.csv,소사업명,KKKKKKK,97
+계약마스터.csv,소사업명,KKKKKKSKKS,84
+계약마스터.csv,소사업명,KKKKKKKKKK,73
+계약마스터.csv,소사업명,KKKK,71
+계약마스터.csv,소사업명,KKKKKKKK,64
+계약마스터.csv,소사업명,AnA,48
+계약마스터.csv,소사업명,KKKKKK,34
+계약마스터.csv,소사업명,KKKKKKKKSKKS,30
+계약마스터.csv,소사업명,KKKKK,16
+계약마스터.csv,소사업명,KKAAA,12
+계약마스터.csv,소사업명,KKKKKSKKS,9
+계약마스터.csv,소사업명,KKAA,7
+계약마스터.csv,소사업명,KKnAA,3
+계약마스터.csv,소사업명,KKAAKK,1
+계약마스터.csv,소사업명,AAAA,1
+계약마스터.csv,소사업명,KKnnnnK,1
+계약마스터.csv,소사업명,nAAKK,1
+계약마스터.csv,팀명,KKKKKK,8914
+계약마스터.csv,팀명,KKKK KKKKK,329
+계약마스터.csv,팀명,KKKKKKK,322
+계약마스터.csv,팀명,KKKK,208
+계약마스터.csv,팀명,KKKKK,151
+계약마스터.csv,팀명,KKKKKKKK,48
+계약마스터.csv,팀명,KKKKKKKKKK,11
+계약마스터.csv,팀명,KKAAAK,5
+계약마스터.csv,팀명,AnAKK,3
+계약마스터.csv,팀명,KKKKKKKKK,2
+계약마스터.csv,팀명,KKKK KKKKKK,2
+계약마스터.csv,팀명,KKKK KKK,2
+계약마스터.csv,팀명,KKnAAK,1
+계약마스터.csv,팀명,KKKK KKKK,1
+계약마스터.csv,팀명,ASAKKK,1
+계약마스터.csv,사업자번호,nnnnnnnnnn,10000
+계약마스터.csv,고객명,KKKK,1807
+계약마스터.csv,고객명,KKKKK,1097
+계약마스터.csv,고객명,SKSKKKK,1028
+계약마스터.csv,고객명,KKK,739
+계약마스터.csv,고객명,KKKKKK,690
+계약마스터.csv,고객명,SKSKKKKK,620
+계약마스터.csv,고객명,SKSKKK,402
+계약마스터.csv,고객명,KKKKKKK,382
+계약마스터.csv,고객명,SKSKKKKKK,363
+계약마스터.csv,고객명,KK,348
+계약마스터.csv,고객명,SKSKKKKKKK,235
+계약마스터.csv,고객명,SKSKK,219
+계약마스터.csv,고객명,KKKKKKKK,205
+계약마스터.csv,고객명,KKKKSKS,161
+계약마스터.csv,고객명,SKSKKKKKKKK,124
+계약마스터.csv,고객명,KKKKKKKKK,123
+계약마스터.csv,고객명,KKKKKSKS,114
+계약마스터.csv,고객명,KKKKKKSKS,95
+계약마스터.csv,고객명,KKKKKKKKKK,75
+계약마스터.csv,고객명,SKSKKKKKKKKK,65
+계약마스터.csv,계약개시일,nnnnnnnn,10000
+계약마스터.csv,계약종료일,nnnnnnnn,10000
+계약마스터.csv,물량단위,AAA,9844
+계약마스터.csv,물량단위,K,124
+계약마스터.csv,물량단위,U,25
+계약마스터.csv,물량단위,Aaaaaa,7
+계약마스터.csv,예상물량년,nnnn,5326
+계약마스터.csv,예상물량년,nnnnn,3025
+계약마스터.csv,예상물량년,nnn,861
+계약마스터.csv,예상물량년,nnnnnn,611
+계약마스터.csv,예상물량년,nn,103
+계약마스터.csv,예상물량년,nnnnnnn,50
+계약마스터.csv,예상물량년,n,14
+계약마스터.csv,예상물량년,nnnnnnnn,9
+계약마스터.csv,예상물량년,nnnnnnnnn,1
+계약마스터.csv,최초생성자ID,aaa,10000
+계약마스터.csv,최초생성일시,nn:nn.n,10000
+계약마스터.csv,ESB_STATUS,A,10000
+계약마스터.csv,최종변경일시,nn:nn.n,10000
+계약마스터.csv,ETL일시,nn:nn.n,10000
+계약마스터.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,10000
+계정과목코드.csv,계정과목코드,nnnnnn,410
+계정과목코드.csv,계정과목명,KKKKK,90
+계정과목코드.csv,계정과목명,KKKKKKK,42
+계정과목코드.csv,계정과목명,KKK,40
+계정과목코드.csv,계정과목명,KKKK,37
+계정과목코드.csv,계정과목명,KKKKKK,36
+계정과목코드.csv,계정과목명,KKKKKKKK,27
+계정과목코드.csv,계정과목명,KKKKKKKKKK,26
+계정과목코드.csv,계정과목명,KKKKKKKKK,22
+계정과목코드.csv,계정과목명,KK,7
+계정과목코드.csv,계정과목명,KKKKK KKK,5
+계정과목코드.csv,계정과목명,KKKK KKK,5
+계정과목코드.csv,계정과목명,KKK KKK,5
+계정과목코드.csv,계정과목명,KK KKK,4
+계정과목코드.csv,계정과목명,KKKKSKKS,4
+계정과목코드.csv,계정과목명,KKKSKKS,3
+계정과목코드.csv,계정과목명,KKKKKSKKKS,3
+계정과목코드.csv,계정과목명,KKKKKSKKS,3
+계정과목코드.csv,계정과목명,KKKKSKKKKKKS,3
+계정과목코드.csv,계정과목명,KKKK-KKKKKKKKKKKKKK,2
+계정과목코드.csv,계정과목명,KKAAAKK,2
+계정과목코드.csv,상위계정과목코드,nnnnnn,408
+계정과목코드.csv,상위계정과목코드,n,2
+계정과목코드.csv,계정유형코드,KKKK,30
+계정과목코드.csv,계정유형코드,KKKKnn,15
+계정과목코드.csv,계정유형코드,KKK,7
+계정과목코드.csv,계정유형코드,AASAnnn,4
+계정과목코드.csv,계정속성값1,KK,11
+계정과목코드.csv,계정속성값2,SnnnnnnS-nnnnnn,4
+계정과목코드.csv,계정속성값2,SnnnnnnSSnnnnnn,3
+계정과목코드.csv,계정속성값2,SnnnnSSnnnnSSnnnn,2
+계정과목코드.csv,계정속성값2,SnnnnnnSSnnnnnnSSnnnnnn,1
+계정과목코드.csv,계정속성값2,SnnnnnnS-nnnnnnS-nnnnnn,1
+계정과목코드.csv,계정속성값2,SnnnnSSnnnnSSnnnnSSnnnn,1
+계정과목코드.csv,계정속성값2,SAAAAS,1
+계정과목코드.csv,계정속성값2,SnnnnnnSSnnnnnnS-nnnnnnS-nnnnnn,1
+계정과목코드.csv,계정속성값2,SnnnnnnSSnnnnnnSSnnnnnnSSnnnnnnSSnnnnnn,1
+계정과목코드.csv,최초생성자ID,aaaaa,410
+계정과목코드.csv,최초생성일시,nn:nn.n,410
+계정과목코드.csv,최종갱신자ID,aaaaa,410
+계정과목코드.csv,최종변경일시,nn:nn.n,410
+계정과목코드.csv,ETL일시,nn:nn.n,410
+계정과목코드.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,410
+계정코드관리.csv,수익비용구분코드,nnnnnn,330
+계정코드관리.csv,수익비용구분명,KK,330
+계정코드관리.csv,상위계정과목코드,nnnnnn,330
+계정코드관리.csv,상위계정과목명,KKKK,243
+계정코드관리.csv,상위계정과목명,KKKKK,87
+계정코드관리.csv,계정과목코드,nnnnnn,330
+계정코드관리.csv,계정과목명,KKKKK,136
+계정코드관리.csv,계정과목명,KKK,55
+계정코드관리.csv,계정과목명,KKKK,51
+계정코드관리.csv,계정과목명,KKKKKKKKK,45
+계정코드관리.csv,계정과목명,KKKKKK,24
+계정코드관리.csv,계정과목명,KKKKKKK,13
+계정코드관리.csv,계정과목명,KK,3
+계정코드관리.csv,계정과목명,KKKKKKKKKK,2
+계정코드관리.csv,계정과목명,KKKKKSKK,1
+계정코드관리.csv,하위계정과목코드,nnnnnn,330
+계정코드관리.csv,하위계정과목명,KKKKK,63
+계정코드관리.csv,하위계정과목명,KKKKKKK,36
+계정코드관리.csv,하위계정과목명,KKKKKK,33
+계정코드관리.csv,하위계정과목명,KKKKKKKK,27
+계정코드관리.csv,하위계정과목명,KKK,27
+계정코드관리.csv,하위계정과목명,KKKKKKKKKK,25
+계정코드관리.csv,하위계정과목명,KKKK,19
+계정코드관리.csv,하위계정과목명,KKKKKKKKK,16
+계정코드관리.csv,하위계정과목명,KKKKK KKK,5
+계정코드관리.csv,하위계정과목명,KKKK KKK,5
+계정코드관리.csv,하위계정과목명,KKK KKK,5
+계정코드관리.csv,하위계정과목명,KK,4
+계정코드관리.csv,하위계정과목명,KK KKK,4
+계정코드관리.csv,하위계정과목명,KKKKSKKS,4
+계정코드관리.csv,하위계정과목명,KKKKKSKKKS,3
+계정코드관리.csv,하위계정과목명,KKKKKSKKS,3
+계정코드관리.csv,하위계정과목명,KKKKSKKKKKKS,3
+계정코드관리.csv,하위계정과목명,KKKSKKS,3
+계정코드관리.csv,하위계정과목명,KKKKKKK KKKKK,2
+계정코드관리.csv,하위계정과목명,KKKKSKKKS,2
+계정코드관리.csv,정렬순서,nnnn,230
+계정코드관리.csv,정렬순서,nnn,91
+계정코드관리.csv,정렬순서,nn,9
+계정코드관리.csv,최초생성자ID,aaaaa,330
+계정코드관리.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,330
+계정코드관리.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,330
+계정코드관리.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,330
+계정코드관리.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,330
+고객마스터.csv,고객번호,nnnnnnnnnn,10000
+고객마스터.csv,고객명,KKKK,1612
+고객마스터.csv,고객명,KKK,938
+고객마스터.csv,고객명,SKSKKKK,859
+고객마스터.csv,고객명,KKKKK,657
+고객마스터.csv,고객명,SKSKKKKK,601
+고객마스터.csv,고객명,KKKKKK,549
+고객마스터.csv,고객명,KKKKSKS,496
+고객마스터.csv,고객명,SKSKKKKKK,482
+고객마스터.csv,고객명,KKKKKKK,339
+고객마스터.csv,고객명,SKSKKKKKKK,296
+고객마스터.csv,고객명,KKKKKKSKS,256
+고객마스터.csv,고객명,SKSKKK,235
+고객마스터.csv,고객명,SKSKK,222
+고객마스터.csv,고객명,KKKKKKKK,211
+고객마스터.csv,고객명,KK,190
+고객마스터.csv,고객명,KKKKKSKS,187
+고객마스터.csv,고객명,SKSKKKKKKKK,146
+고객마스터.csv,고객명,KKKKKKKKK,125
+고객마스터.csv,고객명,KKKKKKKSKS,117
+고객마스터.csv,고객명,KKKKKKKKKK,94
+고객마스터.csv,고객구분코드,AAAAAAA,9252
+고객마스터.csv,고객구분코드,AAAAAAAA,748
+고객마스터.csv,사업자등록번호,nnn-nn-nnnnn,7966
+고객마스터.csv,사업자등록번호,AAA-AA-nnnnn,1309
+고객마스터.csv,사업자등록번호,--,725
+고객마스터.csv,법인등록번호,nnnnnnnnnnnnn.n,509
+고객마스터.csv,법인등록번호,n.n,6
+고객마스터.csv,업태,KKK,1776
+고객마스터.csv,업태,KK,1003
+고객마스터.csv,업태,KKKK,258
+고객마스터.csv,업태,KKKKK,97
+고객마스터.csv,업태,KK K KKK,85
+고객마스터.csv,업태,KKSKK,74
+고객마스터.csv,업태,KKKKKK,63
+고객마스터.csv,업태,KKSKKK,54
+고객마스터.csv,업태,KSKK,38
+고객마스터.csv,업태,KKKSKK,34
+고객마스터.csv,업태,KKKSKKK,26
+고객마스터.csv,업태,KKKKK KKK,25
+고객마스터.csv,업태,KKK KKK,23
+고객마스터.csv,업태,.,21
+고객마스터.csv,업태,KKK K,15
+고객마스터.csv,업태,KK KK,15
+고객마스터.csv,업태,KKKKKKK,12
+고객마스터.csv,업태,K.KK,12
+고객마스터.csv,업태,KK KKK,10
+고객마스터.csv,업태,KKKKKKKK,10
+고객마스터.csv,업종명,KK,888
+고객마스터.csv,업종명,KKKK,786
+고객마스터.csv,업종명,KKKKK,618
+고객마스터.csv,업종명,KKK,581
+고객마스터.csv,업종명,KKKKKK,337
+고객마스터.csv,업종명,KK KKK,326
+고객마스터.csv,업종명,KK KKK KKKSnnSnnS,317
+고객마스터.csv,업종명,KK KKKK KKK,225
+고객마스터.csv,업종명,KKKKK KKK,204
+고객마스터.csv,업종명,KKKK KKK,193
+고객마스터.csv,업종명,KKK KK KKK,188
+고객마스터.csv,업종명,KK KK KKK,154
+고객마스터.csv,업종명,KKK KKK,153
+고객마스터.csv,업종명,KK KK K KK KKK,149
+고객마스터.csv,업종명,KK KKKK,129
+고객마스터.csv,업종명,KKKK KK KKK,97
+고객마스터.csv,업종명,KKKKKKK,97
+고객마스터.csv,업종명,KKKUKK KKKKK KK K KKK,96
+고객마스터.csv,업종명,KKK KK K KKK,87
+고객마스터.csv,업종명,KK KKK KKK,84
+고객마스터.csv,주소,KK KKK KKK nn,18
+고객마스터.csv,주소,KKK KKK KKK KKK nnn,17
+고객마스터.csv,주소,KKKKK KKK KKKK nnn,16
+고객마스터.csv,주소,KK KKK KKK nnn,16
+고객마스터.csv,주소,KK KKK KKK KKK nnn,14
+고객마스터.csv,주소,KKKKK KKK KKK nn,12
+고객마스터.csv,주소,KK KKK KKK,11
+고객마스터.csv,주소,KKKKK KKK KKK nnn,11
+고객마스터.csv,주소,KK KKK KKKK nnn,11
+고객마스터.csv,주소,KKKK KKK KKK KKK nnn,10
+고객마스터.csv,주소,KKKK KKK KKK KKK nn,10
+고객마스터.csv,주소,KKK KKK KKK nnn,10
+고객마스터.csv,주소,KKK KKK KKK KKK nn,9
+고객마스터.csv,주소,KK KKK KKK KKnK nn,8
+고객마스터.csv,주소,KKK KKK KKK nn,7
+고객마스터.csv,주소,KK KKK KKK KKK nn,7
+고객마스터.csv,주소,KK KK KK,7
+고객마스터.csv,주소,KKKK KKK KKK KKnK nn,7
+고객마스터.csv,주소,KKK KKK KKKnnKK nn,7
+고객마스터.csv,주소,KK KKK KKK nnn-nn,7
+고객마스터.csv,상세주소,nK,51
+고객마스터.csv,상세주소,nnnK,42
+고객마스터.csv,상세주소,SKKKS,39
+고객마스터.csv,상세주소,nnnK nnnnK,35
+고객마스터.csv,상세주소,nnnK nnnK,30
+고객마스터.csv,상세주소,.,26
+고객마스터.csv,상세주소,KKKK,17
+고객마스터.csv,상세주소,nnn-nnn,14
+고객마스터.csv,상세주소,KKKKK,13
+고객마스터.csv,상세주소,nnn-nnnn,12
+고객마스터.csv,상세주소,nK nnnK,9
+고객마스터.csv,상세주소,KKK,9
+고객마스터.csv,상세주소,SKKKS nnnK,9
+고객마스터.csv,상세주소,nnnK SSKKKSS,8
+고객마스터.csv,상세주소,nK KKKK,7
+고객마스터.csv,상세주소,nnnKnnnK,7
+고객마스터.csv,상세주소,KKKKKKK nnnK,7
+고객마스터.csv,상세주소,SKKKS nK,7
+고객마스터.csv,상세주소,nK SSKKKSS,7
+고객마스터.csv,상세주소,KKKKK nnnK,6
+고객마스터.csv,우편번호,nnnnn.n,578
+고객마스터.csv,우편번호,nnnnnn.n,259
+고객마스터.csv,우편번호,nnnn.n,157
+고객마스터.csv,거래중지여부,A,2518
+고객마스터.csv,거래중지사유,KK,170
+고객마스터.csv,거래중지사유,KKKKK,11
+고객마스터.csv,거래중지사유,KKKKKK,11
+고객마스터.csv,거래중지사유,KKKKSnnKKKS-nK,6
+고객마스터.csv,거래중지사유,KKKKKKKK,1
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAaaAAAAA,536
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAaaAaAAA,513
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAaaaAAAA,485
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAaaaaAAA,455
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAaAaAAAA,254
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAaAAAAAn,250
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAaAaaAAA,237
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAaAAaAAA,234
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAAaaAAAA,224
+고객마스터.csv,SFDC고객ID,AAnnnnnnnnnnnnn,214
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAaanAAAA,211
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAanaAAAA,207
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAanAaAAA,205
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAanaaAAA,192
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAaanaAAA,191
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAAaAAAAn,190
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAAaaaAAA,187
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAAaAaAAA,184
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAaaanAAA,182
+고객마스터.csv,SFDC고객ID,nnnnnnnnnnAanAAAAA,178
+고객마스터.csv,등록일시,nn:nn.n,10000
+고객마스터.csv,최종사원업데이트일시,nn:nn.n,9408
+고객마스터.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,10000
+고객유형.csv,고객유형코드,AAA,5
+고객유형.csv,고객유형명,aAAAAA,2
+고객유형.csv,고객유형명,AA AAA,1
+고객유형.csv,고객유형명,KKKKK,1
+고객유형.csv,고객유형명,KK,1
+고객유형.csv,사용여부,A,5
+고객유형.csv,등록일시,nnnn-nn-nn nn:nn:nn.nnnnnn,5
+고객유형.csv,등록사용자ID,nnnnnnn,5
+고객유형.csv,변경사용자ID,nnnnnnn,5
+고객유형.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,5
+고객유형.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,5
+고객유형.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,5
+관리회계BI_계정.csv,수익비용구분코드,nnnnnn,348
+관리회계BI_계정.csv,수익비용구분명,KK,348
+관리회계BI_계정.csv,상위계정과목코드,nnnnnn,348
+관리회계BI_계정.csv,상위계정과목명,KKKK,250
+관리회계BI_계정.csv,상위계정과목명,KKKKK,93
+관리회계BI_계정.csv,상위계정과목명,KKKKKKK,3
+관리회계BI_계정.csv,상위계정과목명,KKK,2
+관리회계BI_계정.csv,계정과목코드,nnnnnn,348
+관리회계BI_계정.csv,계정과목명,KKKKK,139
+관리회계BI_계정.csv,계정과목명,KKKK,60
+관리회계BI_계정.csv,계정과목명,KKK,57
+관리회계BI_계정.csv,계정과목명,KKKKKKKKK,45
+관리회계BI_계정.csv,계정과목명,KKKKKK,24
+관리회계BI_계정.csv,계정과목명,KKKKKKK,17
+관리회계BI_계정.csv,계정과목명,KK,3
+관리회계BI_계정.csv,계정과목명,KKKKKKKKKK,2
+관리회계BI_계정.csv,계정과목명,KKKKKSKK,1
+관리회계BI_계정.csv,하위계정과목코드,nnnnnn,348
+관리회계BI_계정.csv,하위계정과목명,KKKKK,66
+관리회계BI_계정.csv,하위계정과목명,KKKKKKK,40
+관리회계BI_계정.csv,하위계정과목명,KKKKKK,33
+관리회계BI_계정.csv,하위계정과목명,KKK,29
+관리회계BI_계정.csv,하위계정과목명,KKKKKKKK,27
+관리회계BI_계정.csv,하위계정과목명,KKKK,26
+관리회계BI_계정.csv,하위계정과목명,KKKKKKKKKK,25
+관리회계BI_계정.csv,하위계정과목명,KKKKKKKKK,16
+관리회계BI_계정.csv,하위계정과목명,KKKK KKK,5
+관리회계BI_계정.csv,하위계정과목명,KKKKK KKK,5
+관리회계BI_계정.csv,하위계정과목명,KKK KKK,5
+관리회계BI_계정.csv,하위계정과목명,KKKKSKKS,4
+관리회계BI_계정.csv,하위계정과목명,KK,4
+관리회계BI_계정.csv,하위계정과목명,KK KKK,4
+관리회계BI_계정.csv,하위계정과목명,KKKKKSKKS,3
+관리회계BI_계정.csv,하위계정과목명,KKKKSKKKKKKS,3
+관리회계BI_계정.csv,하위계정과목명,KKKSKKS,3
+관리회계BI_계정.csv,하위계정과목명,KKKKKSKKKS,3
+관리회계BI_계정.csv,하위계정과목명,KKKKKSKKKKKS,2
+관리회계BI_계정.csv,하위계정과목명,KKSKKKKK,2
+관리회계BI_계정.csv,최초생성자ID,aaaaa,348
+관리회계BI_계정.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,348
+관리회계BI_계정.csv,최종갱신자ID,aaaaa,348
+관리회계BI_계정.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,348
+관리회계BI_계정.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,348
+관리회계BI_계정.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,348
+관리회계BI_사업.csv,사업유형코드,AAAAn,207
+관리회계BI_사업.csv,전사업코드,nnn,207
+관리회계BI_사업.csv,전사업명,KKKKK,207
+관리회계BI_사업.csv,대사업코드,nnn,206
+관리회계BI_사업.csv,대사업코드,n,1
+관리회계BI_사업.csv,대사업명,KKKKKK,154
+관리회계BI_사업.csv,대사업명,KKKKKKK,46
+관리회계BI_사업.csv,대사업명,KKKK,6
+관리회계BI_사업.csv,대사업명,KK,1
+관리회계BI_사업.csv,대사업,KK,155
+관리회계BI_사업.csv,대사업,KKK,46
+관리회계BI_사업.csv,대사업,KKKK,6
+관리회계BI_사업.csv,중사업코드,nnn,206
+관리회계BI_사업.csv,중사업코드,n,1
+관리회계BI_사업.csv,중사업명,KKKK,110
+관리회계BI_사업.csv,중사업명,KKKKK,35
+관리회계BI_사업.csv,중사업명,KKKKKK,33
+관리회계BI_사업.csv,중사업명,ASAKK,28
+관리회계BI_사업.csv,중사업명,KK,1
+관리회계BI_사업.csv,중사업,KK,111
+관리회계BI_사업.csv,중사업,KKKK,33
+관리회계BI_사업.csv,중사업,ASAKK,28
+관리회계BI_사업.csv,중사업,KKK,26
+관리회계BI_사업.csv,중사업,KKKKK,9
+관리회계BI_사업.csv,소사업코드,nnn,206
+관리회계BI_사업.csv,소사업코드,n,1
+관리회계BI_사업.csv,소사업명,KKKKKK,81
+관리회계BI_사업.csv,소사업명,KKKKKKK,35
+관리회계BI_사업.csv,소사업명,KKKKKKKK,26
+관리회계BI_사업.csv,소사업명,AnAKK,22
+관리회계BI_사업.csv,소사업명,KKKKKKKKK,10
+관리회계BI_사업.csv,소사업명,KKnAAKK,8
+관리회계BI_사업.csv,소사업명,KKAAKK,6
+관리회계BI_사업.csv,소사업명,KKKK,6
+관리회계BI_사업.csv,소사업명,KKKnAAKK,4
+관리회계BI_사업.csv,소사업명,KKKKKKKKKK,2
+관리회계BI_사업.csv,소사업명,KKKKK,2
+관리회계BI_사업.csv,소사업명,KKKKKKKKKKK,2
+관리회계BI_사업.csv,소사업명,nAAKK,2
+관리회계BI_사업.csv,소사업명,KK,1
+관리회계BI_사업.csv,소사업,KKKK,81
+관리회계BI_사업.csv,소사업,KKKKK,35
+관리회계BI_사업.csv,소사업,KKKKKK,26
+관리회계BI_사업.csv,소사업,AnA,22
+관리회계BI_사업.csv,소사업,KKKKKKK,10
+관리회계BI_사업.csv,소사업,KKnAA,8
+관리회계BI_사업.csv,소사업,KK,7
+관리회계BI_사업.csv,소사업,KKAA,6
+관리회계BI_사업.csv,소사업,KKKnAA,4
+관리회계BI_사업.csv,소사업,KKKKKKKK,2
+관리회계BI_사업.csv,소사업,KKK,2
+관리회계BI_사업.csv,소사업,KKKKKKKKK,2
+관리회계BI_사업.csv,소사업,nAA,2
+관리회계BI_사업.csv,사업코드,nnn,206
+관리회계BI_사업.csv,사업코드,n,1
+관리회계BI_사업.csv,사업명,KKKKKK,44
+관리회계BI_사업.csv,사업명,KKKK,44
+관리회계BI_사업.csv,사업명,KKKKKKK,18
+관리회계BI_사업.csv,사업명,KKKKK,16
+관리회계BI_사업.csv,사업명,KKK,10
+관리회계BI_사업.csv,사업명,KKKKKKKK,8
+관리회계BI_사업.csv,사업명,KKKKKKKKSKKS,8
+관리회계BI_사업.csv,사업명,KKKKKSKKS,8
+관리회계BI_사업.csv,사업명,KKnnnnK,8
+관리회계BI_사업.csv,사업명,KKAAA,8
+관리회계BI_사업.csv,사업명,AnAKK,6
+관리회계BI_사업.csv,사업명,AAAA,4
+관리회계BI_사업.csv,사업명,KKAA,4
+관리회계BI_사업.csv,사업명,KKKKKKSKKS,4
+관리회계BI_사업.csv,사업명,AAASKKKSKK,2
+관리회계BI_사업.csv,사업명,AAKKKKK,2
+관리회계BI_사업.csv,사업명,AnA,2
+관리회계BI_사업.csv,사업명,KKnAA,2
+관리회계BI_사업.csv,사업명,AKKKKKKKK,2
+관리회계BI_사업.csv,사업명,KK/KK KK,2
+관리회계BI_사업.csv,최초생성자ID,aaaaa,207
+관리회계BI_사업.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,207
+관리회계BI_사업.csv,최종갱신자ID,aaaaa,207
+관리회계BI_사업.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,207
+관리회계BI_사업.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,207
+관리회계BI_사업.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,207
+관리회계BI_조직.csv,회사코드,A,420
+관리회계BI_조직.csv,회사명,KK,420
+관리회계BI_조직.csv,본부코드,AAAAA,351
+관리회계BI_조직.csv,본부코드,AAAnnn,68
+관리회계BI_조직.csv,본부코드,A,1
+관리회계BI_조직.csv,본부명,KKKKKK,235
+관리회계BI_조직.csv,본부명,KKKK,88
+관리회계BI_조직.csv,본부명,KKKKKKK,84
+관리회계BI_조직.csv,본부명,KKKKKKKKKK,12
+관리회계BI_조직.csv,본부명,KK,1
+관리회계BI_조직.csv,지부코드,AAAAA,405
+관리회계BI_조직.csv,지부코드,AAAAAA,12
+관리회계BI_조직.csv,지부코드,AAAnnn,2
+관리회계BI_조직.csv,지부코드,A,1
+관리회계BI_조직.csv,지부명,KKKKK,143
+관리회계BI_조직.csv,지부명,KKKK,90
+관리회계BI_조직.csv,지부명,KKKKKK,54
+관리회계BI_조직.csv,지부명,KKKKKKK,46
+관리회계BI_조직.csv,지부명,AAKKK,17
+관리회계BI_조직.csv,지부명,Aaaa-Aaa KKK,13
+관리회계BI_조직.csv,지부명,ASAKKK,12
+관리회계BI_조직.csv,지부명,KKKKKKKKKK,12
+관리회계BI_조직.csv,지부명,KKK,11
+관리회계BI_조직.csv,지부명,SSKSKKKKK,8
+관리회계BI_조직.csv,지부명,KKKKSKKS,5
+관리회계BI_조직.csv,지부명,SSKSKKK KK,3
+관리회계BI_조직.csv,지부명,SSKSKKKKKKK,2
+관리회계BI_조직.csv,지부명,SSKSaaaaa-A KKK,2
+관리회계BI_조직.csv,지부명,KKKK KKK AAK,1
+관리회계BI_조직.csv,지부명,KK,1
+관리회계BI_조직.csv,지점코드,AAAAAA,223
+관리회계BI_조직.csv,지점코드,AAAAA,176
+관리회계BI_조직.csv,지점코드,AAAAAAA,13
+관리회계BI_조직.csv,지점코드,AAAAAAn,3
+관리회계BI_조직.csv,지점코드,AAAnnn,2
+관리회계BI_조직.csv,지점코드,AAAnnnn,2
+관리회계BI_조직.csv,지점코드,A,1
+관리회계BI_조직.csv,지점명,KKKKKK,96
+관리회계BI_조직.csv,지점명,KKKKK,65
+관리회계BI_조직.csv,지점명,KKKK,33
+관리회계BI_조직.csv,지점명,SSKSKKKKK,28
+관리회계BI_조직.csv,지점명,KKKKKKK,28
+관리회계BI_조직.csv,지점명,KKKK KKKKK,20
+관리회계BI_조직.csv,지점명,SSKSKKKKKKK,16
+관리회계BI_조직.csv,지점명,KKK,12
+관리회계BI_조직.csv,지점명,SSKSKKKKKK,8
+관리회계BI_조직.csv,지점명,KKKKKKKKKK,7
+관리회계BI_조직.csv,지점명,SSKSKKK,6
+관리회계BI_조직.csv,지점명,ASAKKK,5
+관리회계BI_조직.csv,지점명,SSKSKKKKKKKKK,4
+관리회계BI_조직.csv,지점명,KKKK KKK,4
+관리회계BI_조직.csv,지점명,KKKKKKKK,4
+관리회계BI_조직.csv,지점명,SKSKK AAAAA Aaaa-Aaa KK A/A,4
+관리회계BI_조직.csv,지점명,SSKSAAKKK,3
+관리회계BI_조직.csv,지점명,KKKKKKKKK,3
+관리회계BI_조직.csv,지점명,KKKK KKKKnK,2
+관리회계BI_조직.csv,지점명,SSKSKKnnnnK,2
+관리회계BI_조직.csv,팀센터코드,AAAAAA,201
+관리회계BI_조직.csv,팀센터코드,AAAAA,164
+관리회계BI_조직.csv,팀센터코드,AAAAAAA,47
+관리회계BI_조직.csv,팀센터코드,AAAAAAn,3
+관리회계BI_조직.csv,팀센터코드,AAAnnn,2
+관리회계BI_조직.csv,팀센터코드,AAAnnnn,2
+관리회계BI_조직.csv,팀센터코드,A,1
+관리회계BI_조직.csv,팀센터명,KKKKKK,79
+관리회계BI_조직.csv,팀센터명,KKKKK,59
+관리회계BI_조직.csv,팀센터명,KKKKKKK,31
+관리회계BI_조직.csv,팀센터명,SSKSKKKKK,28
+관리회계BI_조직.csv,팀센터명,KKKK,28
+관리회계BI_조직.csv,팀센터명,KKKK KKKKK,20
+관리회계BI_조직.csv,팀센터명,SSKSKKKKKK,17
+관리회계BI_조직.csv,팀센터명,SSKSKKKKKKK,15
+관리회계BI_조직.csv,팀센터명,KKK,11
+관리회계BI_조직.csv,팀센터명,KKKKKKKKKK,6
+관리회계BI_조직.csv,팀센터명,KKKKKKKK,6
+관리회계BI_조직.csv,팀센터명,ASAKKK,5
+관리회계BI_조직.csv,팀센터명,SSKSKKKKKKKKK,4
+관리회계BI_조직.csv,팀센터명,SSKSKKK,4
+관리회계BI_조직.csv,팀센터명,KKKK KKK,4
+관리회계BI_조직.csv,팀센터명,SSKSKKKKKKn,3
+관리회계BI_조직.csv,팀센터명,KKKKKK KKK,3
+관리회계BI_조직.csv,팀센터명,KKKKKKKKK,3
+관리회계BI_조직.csv,팀센터명,SSKSAAKKK,3
+관리회계BI_조직.csv,팀센터명,KKKKSKKS,2
+관리회계BI_조직.csv,귀속부서조직코드,AAAAAA,201
+관리회계BI_조직.csv,귀속부서조직코드,AAAAA,164
+관리회계BI_조직.csv,귀속부서조직코드,AAAAAAA,47
+관리회계BI_조직.csv,귀속부서조직코드,AAAAAAn,3
+관리회계BI_조직.csv,귀속부서조직코드,AAAnnn,2
+관리회계BI_조직.csv,귀속부서조직코드,AAAnnnn,2
+관리회계BI_조직.csv,귀속부서조직코드,A,1
+관리회계BI_조직.csv,귀속부서조직명,KKKKKK,79
+관리회계BI_조직.csv,귀속부서조직명,KKKKK,59
+관리회계BI_조직.csv,귀속부서조직명,KKKKKKK,31
+관리회계BI_조직.csv,귀속부서조직명,SSKSKKKKK,28
+관리회계BI_조직.csv,귀속부서조직명,KKKK,28
+관리회계BI_조직.csv,귀속부서조직명,KKKK KKKKK,20
+관리회계BI_조직.csv,귀속부서조직명,SSKSKKKKKK,17
+관리회계BI_조직.csv,귀속부서조직명,SSKSKKKKKKK,15
+관리회계BI_조직.csv,귀속부서조직명,KKK,11
+관리회계BI_조직.csv,귀속부서조직명,KKKKKKKKKK,6
+관리회계BI_조직.csv,귀속부서조직명,KKKKKKKK,6
+관리회계BI_조직.csv,귀속부서조직명,ASAKKK,5
+관리회계BI_조직.csv,귀속부서조직명,SSKSKKKKKKKKK,4
+관리회계BI_조직.csv,귀속부서조직명,SSKSKKK,4
+관리회계BI_조직.csv,귀속부서조직명,KKKK KKK,4
+관리회계BI_조직.csv,귀속부서조직명,SSKSKKKKKKn,3
+관리회계BI_조직.csv,귀속부서조직명,KKKKKK KKK,3
+관리회계BI_조직.csv,귀속부서조직명,KKKKKKKKK,3
+관리회계BI_조직.csv,귀속부서조직명,SSKSAAKKK,3
+관리회계BI_조직.csv,귀속부서조직명,KKKKSKKS,2
+관리회계BI_조직.csv,최초생성자ID,aaaaa,420
+관리회계BI_조직.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,420
+관리회계BI_조직.csv,최종갱신자ID,aaaaa,420
+관리회계BI_조직.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,420
+관리회계BI_조직.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,420
+관리회계BI_조직.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,420
+관리회계QLIK_조직.csv,귀속부서조직코드,AAAAAA,191
+관리회계QLIK_조직.csv,귀속부서조직코드,AAAAA,154
+관리회계QLIK_조직.csv,귀속부서조직코드,AAAAAAA,46
+관리회계QLIK_조직.csv,귀속부서조직코드,AAAAAAn,3
+관리회계QLIK_조직.csv,귀속부서조직코드,AAAnnnn,2
+관리회계QLIK_조직.csv,귀속부서조직코드,AAAnnn,1
+관리회계QLIK_조직.csv,귀속부서조직명,KKKKKK,84
+관리회계QLIK_조직.csv,귀속부서조직명,KKKKK,65
+관리회계QLIK_조직.csv,귀속부서조직명,KKKKKKK,31
+관리회계QLIK_조직.csv,귀속부서조직명,KKKK,30
+관리회계QLIK_조직.csv,귀속부서조직명,KKKK KKKKK,21
+관리회계QLIK_조직.csv,귀속부서조직명,SKSKKKKK,19
+관리회계QLIK_조직.csv,귀속부서조직명,KKK,12
+관리회계QLIK_조직.csv,귀속부서조직명,SKSKKKKKK,11
+관리회계QLIK_조직.csv,귀속부서조직명,SKSKKKKKKK,10
+관리회계QLIK_조직.csv,귀속부서조직명,KKKKKKKKKK,7
+관리회계QLIK_조직.csv,귀속부서조직명,KKKKKKKK,6
+관리회계QLIK_조직.csv,귀속부서조직명,ASAKKK,6
+관리회계QLIK_조직.csv,귀속부서조직명,KKKKKKKKK,4
+관리회계QLIK_조직.csv,귀속부서조직명,KKKK KKK,4
+관리회계QLIK_조직.csv,귀속부서조직명,AAKKK,4
+관리회계QLIK_조직.csv,귀속부서조직명,SKSKKK,4
+관리회계QLIK_조직.csv,귀속부서조직명,KKKKKK KKK,3
+관리회계QLIK_조직.csv,귀속부서조직명,KKnnnnK,3
+관리회계QLIK_조직.csv,귀속부서조직명,SKSKKKKKKKKK,3
+관리회계QLIK_조직.csv,귀속부서조직명,SKSKKKKKKn,3
+관리회계QLIK_조직.csv,조직LEVEL코드,n.n,126
+관리회계QLIK_조직.csv,지점코드,AAAAAA,208
+관리회계QLIK_조직.csv,지점코드,AAAAA,170
+관리회계QLIK_조직.csv,지점코드,AAAAAAA,13
+관리회계QLIK_조직.csv,지점코드,AAAAAAn,3
+관리회계QLIK_조직.csv,지점코드,AAAnnnn,2
+관리회계QLIK_조직.csv,지점코드,AAAnnn,1
+관리회계QLIK_조직.csv,지점명,KKKKKK,95
+관리회계QLIK_조직.csv,지점명,KKKKK,70
+관리회계QLIK_조직.csv,지점명,KKKK,33
+관리회계QLIK_조직.csv,지점명,KKKKKKK,26
+관리회계QLIK_조직.csv,지점명,KKKK KKKKK,21
+관리회계QLIK_조직.csv,지점명,SKSKKKKK,19
+관리회계QLIK_조직.csv,지점명,KKK,15
+관리회계QLIK_조직.csv,지점명,SKSKKKKKKK,11
+관리회계QLIK_조직.csv,지점명,KKKKKKKKKK,9
+관리회계QLIK_조직.csv,지점명,SKSKKKKKK,6
+관리회계QLIK_조직.csv,지점명,ASAKKK,6
+관리회계QLIK_조직.csv,지점명,SKSKK AaaaAaa A/A,5
+관리회계QLIK_조직.csv,지점명,KKKK KKK,4
+관리회계QLIK_조직.csv,지점명,AAKKK,4
+관리회계QLIK_조직.csv,지점명,KK AAAAA Aaaa-Aaa KK A/A,4
+관리회계QLIK_조직.csv,지점명,KKKKKKKK,4
+관리회계QLIK_조직.csv,지점명,KKKKKKKKK,4
+관리회계QLIK_조직.csv,지점명,SKSKKK,3
+관리회계QLIK_조직.csv,지점명,KKnnnnK,3
+관리회계QLIK_조직.csv,지점명,SKSKKKKKKKKK,3
+관리회계QLIK_조직.csv,지점LEVEL코드,n.n,132
+관리회계QLIK_조직.csv,지부코드,AAAAA,384
+관리회계QLIK_조직.csv,지부코드,AAAAAA,12
+관리회계QLIK_조직.csv,지부코드,AAAnnn,1
+관리회계QLIK_조직.csv,지부명,KKKKK,133
+관리회계QLIK_조직.csv,지부명,KKKK,90
+관리회계QLIK_조직.csv,지부명,KKKKKK,50
+관리회계QLIK_조직.csv,지부명,KKKKKKK,50
+관리회계QLIK_조직.csv,지부명,KKKKKKKK,22
+관리회계QLIK_조직.csv,지부명,ASAKKK,13
+관리회계QLIK_조직.csv,지부명,KKKKKKKKKK,11
+관리회계QLIK_조직.csv,지부명,AAKKK,10
+관리회계QLIK_조직.csv,지부명,KKK,8
+관리회계QLIK_조직.csv,지부명,KKK KK,4
+관리회계QLIK_조직.csv,지부명,SKSKKKKK,3
+관리회계QLIK_조직.csv,지부명,aaaaa-A KKK,2
+관리회계QLIK_조직.csv,지부명,KKKK KKK AAK,1
+관리회계QLIK_조직.csv,지부LEVEL코드,n.n,268
+관리회계QLIK_조직.csv,본부코드,AAAAA,334
+관리회계QLIK_조직.csv,본부코드,AAAnnn,63
+관리회계QLIK_조직.csv,본부명,KK,225
+관리회계QLIK_조직.csv,본부명,KKK,80
+관리회계QLIK_조직.csv,본부명,KKKK,63
+관리회계QLIK_조직.csv,본부명,KKKKKK,11
+관리회계QLIK_조직.csv,본부LEVEL코드,n.n,397
+관리회계QLIK_조직.csv,본부명_Org,KKKKKK,225
+관리회계QLIK_조직.csv,본부명_Org,KKKK,81
+관리회계QLIK_조직.csv,본부명_Org,KKKKKKK,80
+관리회계QLIK_조직.csv,본부명_Org,KKKKKKKKKK,11
+관리회계QLIK_조직.csv,조직계층단계,n.n,397
+관리회계QLIK_조직.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,398
+관리회계_계정그룹.csv,배부계정GROUP코드,AASnnnn,3
+관리회계_계정그룹.csv,배부계정GROUP명,KKKKK,2
+관리회계_계정그룹.csv,배부계정GROUP명,KKK,1
+관리회계_계정그룹.csv,정렬순서,nn,3
+관리회계_계정그룹.csv,사용여부,A,3
+관리회계_계정그룹.csv,최초생성자ID,aaaaa,2
+관리회계_계정그룹.csv,최초생성자ID,aaaaaa,1
+관리회계_계정그룹.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,3
+관리회계_계정그룹.csv,최종갱신자ID,aaaaa,2
+관리회계_계정그룹.csv,최종갱신자ID,aaaaaa,1
+관리회계_계정그룹.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,3
+관리회계_계정그룹.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,3
+관리회계_계정그룹.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,3
+관리회계_계정그룹상세.csv,배부계정GROUP코드,AASnnnn,93
+관리회계_계정그룹상세.csv,계정코드,nnnnnn,93
+관리회계_계정그룹상세.csv,정렬순서,nnn.n,83
+관리회계_계정그룹상세.csv,정렬순서,nn.n,9
+관리회계_계정그룹상세.csv,사용여부,A,93
+관리회계_계정그룹상세.csv,최초생성자ID,aaaaa,93
+관리회계_계정그룹상세.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,93
+관리회계_계정그룹상세.csv,최종갱신자ID,aaaaa,93
+관리회계_계정그룹상세.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,93
+관리회계_계정그룹상세.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,93
+관리회계_계정그룹상세.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,93
+관리회계_고객.csv,사업자등록번호,nnnnnnnnnn,9978
+관리회계_고객.csv,사업자등록번호,nnn-nn-nnnnn,7
+관리회계_고객.csv,사업자등록번호,nnn,3
+관리회계_고객.csv,사업자등록번호,nnnnnn-nnnnnnn,3
+관리회계_고객.csv,사업자등록번호,n.nnnnnASnn,3
+관리회계_고객.csv,사업자등록번호,nnnnnnnnn,2
+관리회계_고객.csv,사업자등록번호,nnnnnnnnnnnnnnnnnn,1
+관리회계_고객.csv,사업자등록번호,AAnnnnnnnnnn,1
+관리회계_고객.csv,사업자등록번호,nnnnnnA,1
+관리회계_고객.csv,사업자등록번호,nnnnnn,1
+관리회계_고객.csv,고객명,KKKK,2169
+관리회계_고객.csv,고객명,KKKKK,1514
+관리회계_고객.csv,고객명,KKK,1079
+관리회계_고객.csv,고객명,KKKKKK,1064
+관리회계_고객.csv,고객명,KKKKKKK,590
+관리회계_고객.csv,고객명,KK,387
+관리회계_고객.csv,고객명,KKKKKKKK,382
+관리회계_고객.csv,고객명,KKKKn,326
+관리회계_고객.csv,고객명,KKKKKKKKK,244
+관리회계_고객.csv,고객명,KKKKKKKKKK,178
+관리회계_고객.csv,고객명,KKn,146
+관리회계_고객.csv,고객명,KKKn,140
+관리회계_고객.csv,고객명,KKKKKn,134
+관리회계_고객.csv,고객명,KKKKKKKKKKK,86
+관리회계_고객.csv,고객명,KKKKKKn,70
+관리회계_고객.csv,고객명,KKKKKKKKKKKK,61
+관리회계_고객.csv,고객명,KKKKKKKn,35
+관리회계_고객.csv,고객명,KKKKKKKnnn,32
+관리회계_고객.csv,고객명,KKKKKKKKKKKKK,22
+관리회계_고객.csv,고객명,KKKKKKKKn,20
+관리회계_고객.csv,법인번호,nnnnnnnnnnnnn,2642
+관리회계_고객.csv,법인번호,nnnnnnSSSSSSS,1
+관리회계_고객.csv,법인번호,nnnnnnnnnnnnnn,1
+관리회계_고객.csv,고객구분코드,n,10000
+관리회계_고객.csv,최초생성자ID,AAAAA,5194
+관리회계_고객.csv,최초생성자ID,aaaaaaa,2833
+관리회계_고객.csv,최초생성자ID,aaaaa,764
+관리회계_고객.csv,최초생성자ID,aaaaaa,665
+관리회계_고객.csv,최초생성자ID,aaaa,531
+관리회계_고객.csv,최초생성일시,nn:nn.n,9987
+관리회계_고객.csv,최종갱신자ID,AAAAA,4575
+관리회계_고객.csv,최종갱신자ID,aaaaaaa,2892
+관리회계_고객.csv,최종갱신자ID,aaaa,1086
+관리회계_고객.csv,최종갱신자ID,aaaaa,763
+관리회계_고객.csv,최종갱신자ID,aaaaaa,677
+관리회계_고객.csv,최종변경일시,nn:nn.n,9993
+관리회계_고객.csv,ETL일시,nn:nn.n,10000
+관리회계_고객.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,10000
+관리회계_공통코드.csv,관리회계분류공통코드,AAASAAAASAAAASAAAAAAAASAAAAAASAA,17
+관리회계_공통코드.csv,관리회계분류공통코드,AAASAAAASAAAAAAAASAAAAAASAA,16
+관리회계_공통코드.csv,관리회계분류공통코드,AAAAAAAASAAAASAAAASAA,9
+관리회계_공통코드.csv,관리회계분류공통코드,AAAAAAAASAAAAAAAAAASAA,8
+관리회계_공통코드.csv,관리회계분류공통코드,AAAASAAAAAAAASAA,8
+관리회계_공통코드.csv,관리회계분류공통코드,AAAAAAAAAASAA,7
+관리회계_공통코드.csv,관리회계분류공통코드,AAAASAAAAASAAAAAAASAA,7
+관리회계_공통코드.csv,관리회계분류공통코드,AAAAAAAASAAAAAASAAAASAA,5
+관리회계_공통코드.csv,관리회계분류공통코드,AAAAAASAAAAAASAAA,5
+관리회계_공통코드.csv,관리회계분류공통코드,AAAAAAAASAAAAAASAAAAAA,3
+관리회계_공통코드.csv,관리회계분류공통코드,AAAASAAAASAAAASAA,3
+관리회계_공통코드.csv,관리회계분류공통코드,AAAASAAAASAAAAAAAASAAAASAA,3
+관리회계_공통코드.csv,관리회계분류공통코드,AAAASAAAAAAASAA,3
+관리회계_공통코드.csv,관리회계분류공통코드,AAAAAASAAAA,3
+관리회계_공통코드.csv,관리회계분류공통코드,AAAAAASAAASAAAAASAAAASAA,3
+관리회계_공통코드.csv,관리회계분류공통코드,AAAASAAAAAA,2
+관리회계_공통코드.csv,관리회계분류공통코드,AAAAAAAASAAAASAA,2
+관리회계_공통코드.csv,관리회계분류공통코드,AAAASAAAAAAAASAAAASAA,2
+관리회계_공통코드.csv,관리회계분류공통코드,AAAAAASAAAAAASAA,2
+관리회계_공통코드.csv,관리회계분류공통코드,AAAAAAASAA,2
+관리회계_공통코드.csv,관리회계공통코드,AASnnnn,16
+관리회계_공통코드.csv,관리회계공통코드,nnnn,15
+관리회계_공통코드.csv,관리회계공통코드,AAA,13
+관리회계_공통코드.csv,관리회계공통코드,AASAnnn,11
+관리회계_공통코드.csv,관리회계공통코드,AA,6
+관리회계_공통코드.csv,관리회계공통코드,AASAnnnSn,6
+관리회계_공통코드.csv,관리회계공통코드,nnnnnn,5
+관리회계_공통코드.csv,관리회계공통코드,AAAAAASAAAASn,5
+관리회계_공통코드.csv,관리회계공통코드,AAAASn,4
+관리회계_공통코드.csv,관리회계공통코드,AAAA,4
+관리회계_공통코드.csv,관리회계공통코드,A,3
+관리회계_공통코드.csv,관리회계공통코드,nnnnnnA,3
+관리회계_공통코드.csv,관리회계공통코드,Ann,2
+관리회계_공통코드.csv,관리회계공통코드,KKK,2
+관리회계_공통코드.csv,관리회계공통코드,AAAAn,2
+관리회계_공통코드.csv,관리회계공통코드,AAASAAA,1
+관리회계_공통코드.csv,관리회계공통코드,nnnnnnnnn,1
+관리회계_공통코드.csv,관리회계공통코드,AAAAAASAAAASAAAAAASAAAAAASAAA,1
+관리회계_공통코드.csv,관리회계공통코드,n,1
+관리회계_공통코드.csv,관리회계공통코드,AAAAAAAAAAA,1
+관리회계_공통코드.csv,관리회계공통코드명,KKKK,19
+관리회계_공통코드.csv,관리회계공통코드명,KKKKK,18
+관리회계_공통코드.csv,관리회계공통코드명,KK,16
+관리회계_공통코드.csv,관리회계공통코드명,KKK,11
+관리회계_공통코드.csv,관리회계공통코드명,KKKKKK,3
+관리회계_공통코드.csv,관리회계공통코드명,AAAAn,2
+관리회계_공통코드.csv,관리회계공통코드명,KKK KK,2
+관리회계_공통코드.csv,관리회계공통코드명,KKSAnASKKSKKS,2
+관리회계_공통코드.csv,관리회계공통코드명,SKKKKSKKKKKK,2
+관리회계_공통코드.csv,관리회계공통코드명,KKKKKKK,2
+관리회계_공통코드.csv,관리회계공통코드명,KKKKKKKKK,2
+관리회계_공통코드.csv,관리회계공통코드명,KKSKKS KKKK,2
+관리회계_공통코드.csv,관리회계공통코드명,KKSKKKSKKS,2
+관리회계_공통코드.csv,관리회계공통코드명,SKKKKSKKK,2
+관리회계_공통코드.csv,관리회계공통코드명,KKSKKS KKK KKKK,1
+관리회계_공통코드.csv,관리회계공통코드명,KKKK KKK,1
+관리회계_공통코드.csv,관리회계공통코드명,K,1
+관리회계_공통코드.csv,관리회계공통코드명,KKK KKKK,1
+관리회계_공통코드.csv,관리회계공통코드명,KKKKKKKKKKKKK,1
+관리회계_공통코드.csv,관리회계공통코드명,KKSKKKSKKSKK/KKS,1
+관리회계_공통코드.csv,관리회계공통코드설명,nnn,16
+관리회계_공통코드.csv,관리회계공통코드설명,AaaaaaKKKKKKSKKKKS KKKKK KKK KKKKK KK,8
+관리회계_공통코드.csv,관리회계공통코드설명,KKKKKKK KK KK KKKK,5
+관리회계_공통코드.csv,관리회계공통코드설명,KK,3
+관리회계_공통코드.csv,관리회계공통코드설명,KKKK,3
+관리회계_공통코드.csv,관리회계공통코드설명,SKKKS KKKKSS nSnKK KKKKKK,2
+관리회계_공통코드.csv,관리회계공통코드설명,nnnn K KKKKKK KKK,2
+관리회계_공통코드.csv,관리회계공통코드설명,KKK,2
+관리회계_공통코드.csv,관리회계공통코드설명,KKKKK KKKK KKKK KKKKK,1
+관리회계_공통코드.csv,관리회계공통코드설명,KKKKK nnS KKSKKKS KKKKS,1
+관리회계_공통코드.csv,관리회계공통코드설명,KKKKKKKKK SKKK KKKKS,1
+관리회계_공통코드.csv,관리회계공통코드설명,KKKKKK KKKKK KK KKKKK KKK KKKK KK,1
+관리회계_공통코드.csv,관리회계공통코드설명,KKKKK,1
+관리회계_공통코드.csv,관리회계공통코드설명,KKAAAA,1
+관리회계_공통코드.csv,관리회계공통코드설명,KKAAASAA,1
+관리회계_공통코드.csv,관리회계공통코드설명,Aaaaaa AA,1
+관리회계_공통코드.csv,관리회계공통코드설명,KKKKKKKK,1
+관리회계_공통코드.csv,관리회계공통코드설명,nnnn,1
+관리회계_공통코드.csv,관리회계공통코드설명,KKKKK nnS KKSKKKS KKKKSSKKKK,1
+관리회계_공통코드.csv,관리회계공통코드설명,AaaaaaKKKKSKKK KKKKS KKKKK KKKKK KK,1
+관리회계_공통코드.csv,제1속성값,nnnn,8
+관리회계_공통코드.csv,제1속성값,nnnnnn,6
+관리회계_공통코드.csv,제1속성값,AAA,6
+관리회계_공통코드.csv,제1속성값,nnnnnnSnnnnnnSnnnnnnSnnnnnn,4
+관리회계_공통코드.csv,제1속성값,KKKK,4
+관리회계_공통코드.csv,제1속성값,A,3
+관리회계_공통코드.csv,제1속성값,KKKKK,3
+관리회계_공통코드.csv,제1속성값,K,3
+관리회계_공통코드.csv,제1속성값,AA,3
+관리회계_공통코드.csv,제1속성값,AAAAA,3
+관리회계_공통코드.csv,제1속성값,AAAAAAAA,2
+관리회계_공통코드.csv,제1속성값,nnnnSnnnnSnnnnSnnnn,1
+관리회계_공통코드.csv,제1속성값,AAAA,1
+관리회계_공통코드.csv,제1속성값,KK,1
+관리회계_공통코드.csv,제2속성값,AAAAAA,9
+관리회계_공통코드.csv,제2속성값,KKK,4
+관리회계_공통코드.csv,제2속성값,nnnSnnn,4
+관리회계_공통코드.csv,제2속성값,nnnnnn,3
+관리회계_공통코드.csv,제2속성값,A,3
+관리회계_공통코드.csv,제2속성값,AAAA,3
+관리회계_공통코드.csv,제2속성값,nnn,2
+관리회계_공통코드.csv,제2속성값,AAA,2
+관리회계_공통코드.csv,제2속성값,nnnn,1
+관리회계_공통코드.csv,제2속성값,KKKSKKK,1
+관리회계_공통코드.csv,제2속성값,KKKKK,1
+관리회계_공통코드.csv,제3속성값,AAA,4
+관리회계_공통코드.csv,제3속성값,nnnSnnnSnnn,4
+관리회계_공통코드.csv,제3속성값,nnnSnnnSnnnSnnnSnnnSnnn,1
+관리회계_공통코드.csv,제3속성값,nnnSnnn,1
+관리회계_공통코드.csv,제4속성값,AAAAAA,6
+관리회계_공통코드.csv,제4속성값,KK,4
+관리회계_공통코드.csv,정렬순서,nn.n,98
+관리회계_공통코드.csv,정렬순서,nnn.n,6
+관리회계_공통코드.csv,정렬순서,n.n,4
+관리회계_공통코드.csv,사용여부,A,114
+관리회계_공통코드.csv,최초생성자ID,aaaaaa,27
+관리회계_공통코드.csv,최초생성자ID,aaaaa,27
+관리회계_공통코드.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,54
+관리회계_공통코드.csv,최종갱신자ID,aaaaaa,35
+관리회계_공통코드.csv,최종갱신자ID,aaaaa,20
+관리회계_공통코드.csv,최종갱신자ID,aaaa,3
+관리회계_공통코드.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,58
+관리회계_공통코드.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,114
+관리회계_공통코드.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,114
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAAAAAASAAAASAAAASAA,2
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAASAAAAASAAAAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAAAAAAAAASAAASAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAAAAAASAAAAAASAAAAAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAASAAAAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAAAAAASAAAAAASAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAAAAAASAAAAAAAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAASAAAAAAAASAAAAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAASAAAASAAAASAAAAAAAASAAAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAAAASAAAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAASAAAAAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAAAASAAAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAASAAAASAAAASAAAAAAAASAAAAAASAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAAAASAAAAAASAAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAASAAAAAAAASAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAASAAAASAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAASAAAASAAAAAAAASAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAAAASAAASAAAAASAAAASAA,1
+관리회계_분류공통코드.csv,관리회계분류공통코드,AAAAAAAAAASAA,1
+관리회계_분류공통코드.csv,분류공통코드명,KKKK,6
+관리회계_분류공통코드.csv,분류공통코드명,KKKKKK,4
+관리회계_분류공통코드.csv,분류공통코드명,KKKKKKKK,2
+관리회계_분류공통코드.csv,분류공통코드명,KKKKKK KKKK,1
+관리회계_분류공통코드.csv,분류공통코드명,KKAaaaaaKK,1
+관리회계_분류공통코드.csv,분류공통코드명,KKKSKKKK KKK KKKK KK,1
+관리회계_분류공통코드.csv,분류공통코드명,KKKKKKK,1
+관리회계_분류공통코드.csv,분류공통코드명,KKAAAKKKK,1
+관리회계_분류공통코드.csv,분류공통코드명,KKKK KK,1
+관리회계_분류공통코드.csv,분류공통코드명,KKKKKK KK,1
+관리회계_분류공통코드.csv,분류공통코드명,KKKKK KK,1
+관리회계_분류공통코드.csv,분류공통코드명,KKKKKKK KKKKKK,1
+관리회계_분류공통코드.csv,분류공통코드명,KKKKKKKK KKK KK,1
+관리회계_분류공통코드.csv,분류공통코드명,KKKKKKKKK,1
+관리회계_분류공통코드.csv,분류공통코드명,AAAKKKK,1
+관리회계_분류공통코드.csv,분류공통코드명,KKKKAAAKKKK,1
+관리회계_분류공통코드.csv,분류공통코드명,KKSKKKS KK KK KK,1
+관리회계_분류공통코드.csv,사용여부,A,26
+관리회계_분류공통코드.csv,최초생성자ID,aaaaaa,10
+관리회계_분류공통코드.csv,최초생성자ID,AAAAA,2
+관리회계_분류공통코드.csv,최초생성자ID,aaaaa,1
+관리회계_분류공통코드.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,13
+관리회계_분류공통코드.csv,최종갱신자ID,aaaaaa,10
+관리회계_분류공통코드.csv,최종갱신자ID,aaaaa,3
+관리회계_분류공통코드.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,13
+관리회계_분류공통코드.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,26
+관리회계_분류공통코드.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,26
+관리회계_사업.csv,사업유형코드,AAAAn,412
+관리회계_사업.csv,사업코드,nnn,358
+관리회계_사업.csv,사업코드,nnnA,54
+관리회계_사업.csv,유효시작일자V,nnnnnnnn,412
+관리회계_사업.csv,사업명,KKKKKK,91
+관리회계_사업.csv,사업명,KKKK,73
+관리회계_사업.csv,사업명,KKKKKKK,50
+관리회계_사업.csv,사업명,KKKKK,35
+관리회계_사업.csv,사업명,KKKKKKKK,18
+관리회계_사업.csv,사업명,KKKKKKKKSKKS,14
+관리회계_사업.csv,사업명,KKK,12
+관리회계_사업.csv,사업명,KKKKKSKKS,12
+관리회계_사업.csv,사업명,KKnnnnK,12
+관리회계_사업.csv,사업명,AnAKK,10
+관리회계_사업.csv,사업명,KKAAA,9
+관리회계_사업.csv,사업명,ASAKKKK,8
+관리회계_사업.csv,사업명,KKKKKKKKKK,8
+관리회계_사업.csv,사업명,KKKKKKSKKS,8
+관리회계_사업.csv,사업명,AAAA,6
+관리회계_사업.csv,사업명,KKAA,6
+관리회계_사업.csv,사업명,KKKKKKKKK,4
+관리회계_사업.csv,사업명,ASAKK,4
+관리회계_사업.csv,사업명,K/KKK,3
+관리회계_사업.csv,사업명,AnA,2
+관리회계_사업.csv,상위사업코드,nnn.n,408
+관리회계_사업.csv,사업LEVEL코드,n.n,313
+관리회계_사업.csv,유효종료일자V,nnnnnnnn,412
+관리회계_사업.csv,정렬순서,nnnn,313
+관리회계_사업.csv,정렬순서,nnn,90
+관리회계_사업.csv,정렬순서,nn,9
+관리회계_사업.csv,최초생성자ID,aaaaa,412
+관리회계_사업.csv,최초생성일시,nn:nn.n,412
+관리회계_사업.csv,최종갱신자ID,aaaaa,412
+관리회계_사업.csv,최종변경일시,nn:nn.n,412
+관리회계_사업.csv,ETL일시,nn:nn.n,412
+관리회계_사업.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,412
+관리회계_조직.csv,부서조직코드,AAAAAA,201
+관리회계_조직.csv,부서조직코드,AAAAA,164
+관리회계_조직.csv,부서조직코드,AAAAAAA,47
+관리회계_조직.csv,부서조직코드,AAAAAAn,3
+관리회계_조직.csv,부서조직코드,AAAnnn,2
+관리회계_조직.csv,부서조직코드,AAAnnnn,2
+관리회계_조직.csv,부서조직코드,A,1
+관리회계_조직.csv,유효시작일자V,nnnnnnnn,420
+관리회계_조직.csv,부서조직명,KKKKKK,79
+관리회계_조직.csv,부서조직명,KKKKK,59
+관리회계_조직.csv,부서조직명,KKKKKKK,31
+관리회계_조직.csv,부서조직명,KKKK,28
+관리회계_조직.csv,부서조직명,SKSKKKKK,28
+관리회계_조직.csv,부서조직명,KKKK KKKKK,20
+관리회계_조직.csv,부서조직명,SKSKKKKKK,19
+관리회계_조직.csv,부서조직명,SKSKKKKKKK,15
+관리회계_조직.csv,부서조직명,KKK,11
+관리회계_조직.csv,부서조직명,KKKKKKKKKK,6
+관리회계_조직.csv,부서조직명,KKKKKKKK,6
+관리회계_조직.csv,부서조직명,ASAKKK,5
+관리회계_조직.csv,부서조직명,SKSKKK,5
+관리회계_조직.csv,부서조직명,SKSKKKKKKKKK,4
+관리회계_조직.csv,부서조직명,KKKK KKK,4
+관리회계_조직.csv,부서조직명,SKSKKKK,4
+관리회계_조직.csv,부서조직명,KKKKKKKKK,3
+관리회계_조직.csv,부서조직명,SKSAAKKK,3
+관리회계_조직.csv,부서조직명,KKKKKK KKK,3
+관리회계_조직.csv,부서조직명,SKSKKKKKKn,3
+관리회계_조직.csv,상위부서조직코드,AAAAA,352
+관리회계_조직.csv,상위부서조직코드,AAAAAA,49
+관리회계_조직.csv,상위부서조직코드,AAAnnn,12
+관리회계_조직.csv,상위부서조직코드,A,6
+관리회계_조직.csv,조직LEVEL코드,n.n,132
+관리회계_조직.csv,조직유형코드,AAAAAA,43
+관리회계_조직.csv,조직유형코드,nSAAAAAA,12
+관리회계_조직.csv,유효종료일자V,nnnnnnnn,420
+관리회계_조직.csv,정렬순서,nnnn,321
+관리회계_조직.csv,정렬순서,nnn,90
+관리회계_조직.csv,정렬순서,nn,9
+관리회계_조직.csv,최초생성자ID,aaaaa,420
+관리회계_조직.csv,최초생성일시,nn:nn.n,420
+관리회계_조직.csv,최종갱신자ID,aaaaa,420
+관리회계_조직.csv,최종변경일시,nn:nn.n,420
+관리회계_조직.csv,ETL일시,nn:nn.n,420
+관리회계_조직.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,420
+관리회계_조직_test.csv,귀속부서조직코드,AAAAAA,3
+관리회계_조직_test.csv,귀속부서조직코드,KKKK,2
+관리회계_조직_test.csv,귀속부서조직코드,KKKKn,2
+관리회계_조직_test.csv,귀속부서조직코드,AAAAA,2
+관리회계_조직_test.csv,귀속부서조직코드,KKKKKKn,1
+관리회계_조직_test.csv,귀속부서조직코드,KKKKKK,1
+관리회계_조직_test.csv,귀속부서조직코드,A,1
+관리회계_조직_test.csv,유효시작일자V,nnnnnnnn.n,8
+관리회계_조직_test.csv,귀속부서조직명,KKKKKKKKKn,2
+관리회계_조직_test.csv,귀속부서조직명,KKKKKKK,2
+관리회계_조직_test.csv,귀속부서조직명,KKKKKKKKKK,1
+관리회계_조직_test.csv,귀속부서조직명,SKSKKKKKK,1
+관리회계_조직_test.csv,귀속부서조직명,SKSKKKKK,1
+관리회계_조직_test.csv,귀속부서조직명,KKKKK,1
+관리회계_조직_test.csv,상위귀속부서조직코드,AAAAA,4
+관리회계_조직_test.csv,상위귀속부서조직코드,KKKKAn,2
+관리회계_조직_test.csv,상위귀속부서조직코드,KKKKKK,1
+관리회계_조직_test.csv,상위귀속부서조직코드,KKKKKKn,1
+관리회계_조직_test.csv,상위귀속부서조직코드,A,1
+관리회계_조직_test.csv,상위귀속부서조직코드,KKKK,1
+관리회계_조직_test.csv,상위귀속부서조직코드,KKKKK,1
+관리회계_조직_test.csv,조직유형코드,AAAAAA,1
+관리회계_조직_test.csv,유효종료일자V,nnnnnnnn.n,8
+관리회계_조직_test.csv,정렬순서,nnnn.n,6
+관리회계_조직_test.csv,정렬순서,nnn.n,2
+관리회계_조직_test.csv,최초생성자ID,aaaaa,8
+관리회계_조직_test.csv,최초생성일시,nn:nn.n,8
+관리회계_조직_test.csv,최종갱신자ID,aaaaa,8
+관리회계_조직_test.csv,최종변경일시,nn:nn.n,8
+관리회계_조직_test.csv,ETL일시,nn:nn.n,8
+관리회계_조직_test.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,12
+관리회계_조직그룹.csv,귀속부서조직GROUP코드,AASAAAAA,6
+관리회계_조직그룹.csv,귀속부서조직GROUP코드,AASAAAAAAA,2
+관리회계_조직그룹.csv,귀속부서조직GROUP코드,AASAA,1
+관리회계_조직그룹.csv,귀속부서조직GROUP코드,AASAASnnnn,1
+관리회계_조직그룹.csv,귀속부서조직GROUP명,KKKKK,2
+관리회계_조직그룹.csv,귀속부서조직GROUP명,KKKK,1
+관리회계_조직그룹.csv,귀속부서조직GROUP명,AASAAA KK KK,1
+관리회계_조직그룹.csv,귀속부서조직GROUP명,KKKKKSKKKKKKS,1
+관리회계_조직그룹.csv,귀속부서조직GROUP명,KKKK KKK KKSAAASAAA,1
+관리회계_조직그룹.csv,귀속부서조직GROUP명,AnA KK KKKK,1
+관리회계_조직그룹.csv,귀속부서조직GROUP명,KKKKKSKKKKK,1
+관리회계_조직그룹.csv,귀속부서조직GROUP명,KKKKKK,1
+관리회계_조직그룹.csv,귀속부서조직GROUP명,AnAKKKKK,1
+관리회계_조직그룹.csv,정렬순서,nn,9
+관리회계_조직그룹.csv,정렬순서,nnn,1
+관리회계_조직그룹.csv,사용여부,A,10
+관리회계_조직그룹.csv,최초생성자ID,aaaaa,10
+관리회계_조직그룹.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,10
+관리회계_조직그룹.csv,최종갱신자ID,aaaaa,10
+관리회계_조직그룹.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,10
+관리회계_조직그룹.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,10
+관리회계_조직그룹.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,10
+관리회계_조직그룹상세.csv,귀속부서조직GROUP코드,AASAA,148
+관리회계_조직그룹상세.csv,귀속부서조직GROUP코드,AASAAAAA,143
+관리회계_조직그룹상세.csv,귀속부서조직GROUP코드,AASAAAAAAA,52
+관리회계_조직그룹상세.csv,귀속부서조직GROUP코드,AASAASnnnn,6
+관리회계_조직그룹상세.csv,귀속부서조직코드,AAAAAA,170
+관리회계_조직그룹상세.csv,귀속부서조직코드,AAAAA,124
+관리회계_조직그룹상세.csv,귀속부서조직코드,AAAAAAA,53
+관리회계_조직그룹상세.csv,귀속부서조직코드,AAAnnn,2
+관리회계_조직그룹상세.csv,정렬순서,nnnn,250
+관리회계_조직그룹상세.csv,정렬순서,nnn,90
+관리회계_조직그룹상세.csv,정렬순서,nn,9
+관리회계_조직그룹상세.csv,사용여부,A,349
+관리회계_조직그룹상세.csv,최초생성자ID,aaaaa,349
+관리회계_조직그룹상세.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,349
+관리회계_조직그룹상세.csv,최종갱신자ID,aaaaa,349
+관리회계_조직그룹상세.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,349
+관리회계_조직그룹상세.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,349
+관리회계_조직그룹상세.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,349
+관리회계계정.csv,관리회계계정코드,nnnnnn,410
+관리회계계정.csv,계정명,KKKKK,90
+관리회계계정.csv,계정명,KKKKKKK,42
+관리회계계정.csv,계정명,KKK,40
+관리회계계정.csv,계정명,KKKK,37
+관리회계계정.csv,계정명,KKKKKK,36
+관리회계계정.csv,계정명,KKKKKKKK,27
+관리회계계정.csv,계정명,KKKKKKKKKK,26
+관리회계계정.csv,계정명,KKKKKKKKK,22
+관리회계계정.csv,계정명,KK,7
+관리회계계정.csv,계정명,KKKKK KKK,5
+관리회계계정.csv,계정명,KKKK KKK,5
+관리회계계정.csv,계정명,KKK KKK,5
+관리회계계정.csv,계정명,KK KKK,4
+관리회계계정.csv,계정명,KKKKSKKS,4
+관리회계계정.csv,계정명,KKKSKKS,3
+관리회계계정.csv,계정명,KKKKKSKKKS,3
+관리회계계정.csv,계정명,KKKKKSKKS,3
+관리회계계정.csv,계정명,KKKKSKKKKKKS,3
+관리회계계정.csv,계정명,KKKK-KKKKKKKKKKKKKK,2
+관리회계계정.csv,계정명,KKAAAKK,2
+관리회계계정.csv,관리회계상위계정코드,nnnnnn,408
+관리회계계정.csv,관리회계상위계정코드,n,2
+관리회계계정.csv,관리회계계정유형코드,KKKK,30
+관리회계계정.csv,관리회계계정유형코드,KKKKnn,15
+관리회계계정.csv,관리회계계정유형코드,KKK,7
+관리회계계정.csv,관리회계계정유형코드,AASAnnn,4
+관리회계계정.csv,관리회계계정속성값1,KK,11
+관리회계계정.csv,관리회계계정속성값2,SnnnnnnS-nnnnnn,4
+관리회계계정.csv,관리회계계정속성값2,SnnnnnnSSnnnnnn,3
+관리회계계정.csv,관리회계계정속성값2,SnnnnSSnnnnSSnnnn,2
+관리회계계정.csv,관리회계계정속성값2,SnnnnnnSSnnnnnnSSnnnnnn,1
+관리회계계정.csv,관리회계계정속성값2,SnnnnnnS-nnnnnnS-nnnnnn,1
+관리회계계정.csv,관리회계계정속성값2,SnnnnSSnnnnSSnnnnSSnnnn,1
+관리회계계정.csv,관리회계계정속성값2,SAAAAS,1
+관리회계계정.csv,관리회계계정속성값2,SnnnnnnSSnnnnnnS-nnnnnnS-nnnnnn,1
+관리회계계정.csv,관리회계계정속성값2,SnnnnnnSSnnnnnnSSnnnnnnSSnnnnnnSSnnnnnn,1
+관리회계계정.csv,정렬순서,nnnn,311
+관리회계계정.csv,정렬순서,nnn,90
+관리회계계정.csv,정렬순서,nn,9
+관리회계계정.csv,최초생성자ID,aaaaa,410
+관리회계계정.csv,최초생성일시,nn:nn.n,410
+관리회계계정.csv,최종갱신자ID,aaaaa,410
+관리회계계정.csv,최종변경일시,nn:nn.n,410
+관리회계계정.csv,ETL일시,nn:nn.n,410
+관리회계계정.csv,create_time,nn:nn.n,410
+관리회계계정.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,410
+기업고객.csv,기업고객번호,nnnnnnn,5285
+기업고객.csv,기업고객번호,nnnnnn,1980
+기업고객.csv,기업고객번호,nnnnn,104
+기업고객.csv,기업고객번호,nnnn,18
+기업고객.csv,기업고객번호,nnn,3
+기업고객.csv,기업고객번호,Annnnnn,2
+기업고객.csv,개인기업고객구분,A,7392
+기업고객.csv,사업구분,A,7390
+기업고객.csv,기업고객명,KKKK,1224
+기업고객.csv,기업고객명,KKKKK,682
+기업고객.csv,기업고객명,KKK,507
+기업고객.csv,기업고객명,KKKKKK,423
+기업고객.csv,기업고객명,SKSKKKK,283
+기업고객.csv,기업고객명,KK,262
+기업고객.csv,기업고객명,SKSKKKKK,249
+기업고객.csv,기업고객명,KKKKKKK,243
+기업고객.csv,기업고객명,SKSKKKKKK,191
+기업고객.csv,기업고객명,KKKKKKKK,189
+기업고객.csv,기업고객명,SKSKKK,160
+기업고객.csv,기업고객명,KKKK KKKK,144
+기업고객.csv,기업고객명,KKKKKKKKK,125
+기업고객.csv,기업고객명,SKSKKKKKKK,123
+기업고객.csv,기업고객명,KKKK KKKKK,120
+기업고객.csv,기업고객명,KKKKKKSKS,119
+기업고객.csv,기업고객명,KKKKSKS,103
+기업고객.csv,기업고객명,SKSKK,91
+기업고객.csv,기업고객명,KKKK KKK,91
+기업고객.csv,기업고객명,SKSKKKKKKKK,76
+기업고객.csv,영문고객명,A,17
+기업고객.csv,영문고객명,AAAAAAA,9
+기업고객.csv,영문고객명,AAAAAA,7
+기업고객.csv,영문고객명,AAAAA,6
+기업고객.csv,영문고객명,AAAAAAAA,5
+기업고객.csv,영문고객명,AAAA,5
+기업고객.csv,영문고객명,AAAAAA AAA,5
+기업고객.csv,영문고객명,AAAAA AAAAAA,4
+기업고객.csv,영문고객명,AAAAA AAAAAAAAAAA,4
+기업고객.csv,영문고객명,aaaaaa,4
+기업고객.csv,영문고객명,AAA,3
+기업고객.csv,영문고객명,nnnnnn,3
+기업고객.csv,영문고객명,AAAAAAA AAAA,3
+기업고객.csv,영문고객명,AAAAAAA AA,3
+기업고객.csv,영문고객명,AAAAA AAAAAAAAAA,3
+기업고객.csv,영문고객명,AAAA AAAAA AA.SAAA,3
+기업고객.csv,영문고객명,AAAAAA AAAAAA,3
+기업고객.csv,영문고객명,AAAAAA AA.SAAA,3
+기업고객.csv,영문고객명,AAAAAAAAA,2
+기업고객.csv,영문고객명,aaaa,2
+기업고객.csv,국가코드,AA,6720
+기업고객.csv,기업사업자등록번호,nnnnnnnnnn.n,7389
+기업고객.csv,기업사업자등록번호,nnnnnnnnn.n,1
+기업고객.csv,기업사업자등록번호,nnnnnnnn.n,1
+기업고객.csv,기업우편번호,nnnnnn,5960
+기업고객.csv,기업우편번호,nnnnn,711
+기업고객.csv,기업우편번호,nnnn,477
+기업고객.csv,기업우편번호,nnn-n,1
+기업고객.csv,주소,nnn-n,619
+기업고객.csv,주소,nnn-nn,385
+기업고객.csv,주소,nnn,359
+기업고객.csv,주소,.,314
+기업고객.csv,주소,SKKKS,152
+기업고객.csv,주소,Aaa-nn,146
+기업고객.csv,주소,nnnn-n,97
+기업고객.csv,주소,nn,97
+기업고객.csv,주소,nnK nnK,92
+기업고객.csv,주소,nnnn nnnn,91
+기업고객.csv,주소,KKK nnn,85
+기업고객.csv,주소,nnnn,82
+기업고객.csv,주소,nn-nn,73
+기업고객.csv,주소,KKK nnn-n,71
+기업고객.csv,주소,nnnKK,59
+기업고객.csv,주소,nnnn-nn,54
+기업고객.csv,주소,n,53
+기업고객.csv,주소,nnn-n nK,50
+기업고객.csv,주소,nnn-nnn,38
+기업고객.csv,주소,nnn-nn nK,37
+기업고객.csv,청구부서,KK,1133
+기업고객.csv,청구부서,KKK,968
+기업고객.csv,청구부서,.,255
+기업고객.csv,청구부서,KKKKK,108
+기업고객.csv,청구부서,KKKK,76
+기업고객.csv,청구부서,S,39
+기업고객.csv,청구부서,..,36
+기업고객.csv,청구부서,KKKKKK,28
+기업고객.csv,청구부서,KKKKKKK,13
+기업고객.csv,청구부서,-,13
+기업고객.csv,청구부서,n,12
+기업고객.csv,청구부서,AAKKK,11
+기업고객.csv,청구부서,KKAAK,8
+기업고객.csv,청구부서,KKaaa,7
+기업고객.csv,청구부서,KKnK,6
+기업고객.csv,청구부서,AAKKKKK,5
+기업고객.csv,청구부서,KKKKKU,4
+기업고객.csv,청구부서,AAK,3
+기업고객.csv,청구부서,AAAK,2
+기업고객.csv,청구부서,KKAAA,2
+기업고객.csv,청구지우편번호,nnnnnn.n,6447
+기업고객.csv,청구지우편번호,nnnnn.n,697
+기업고객.csv,청구지우편번호,nnnn.n,206
+기업고객.csv,청구지주소,nnn-n,543
+기업고객.csv,청구지주소,nnn-nn,342
+기업고객.csv,청구지주소,nnn,286
+기업고객.csv,청구지주소,SKKKS,166
+기업고객.csv,청구지주소,.,151
+기업고객.csv,청구지주소,Aaa-nn,111
+기업고객.csv,청구지주소,nnK nnK,93
+기업고객.csv,청구지주소,nn,81
+기업고객.csv,청구지주소,nnnn,79
+기업고객.csv,청구지주소,nn-nn,77
+기업고객.csv,청구지주소,nnnn-n,76
+기업고객.csv,청구지주소,KKK nnn,68
+기업고객.csv,청구지주소,KKK nnnK nn,59
+기업고객.csv,청구지주소,KKK nnn-n,56
+기업고객.csv,청구지주소,n,55
+기업고객.csv,청구지주소,nnn-n nK,51
+기업고객.csv,청구지주소,nK,50
+기업고객.csv,청구지주소,SKKKS nK,45
+기업고객.csv,청구지주소,nnnn-nn,44
+기업고객.csv,청구지주소,nnn-nn nK,31
+기업고객.csv,판매일,nnnnnnnn.n,7388
+기업고객.csv,판매점소,AAAAA,6000
+기업고객.csv,판매점소,AAAAAAA,1126
+기업고객.csv,판매점소,AAAAAA,243
+기업고객.csv,판매점소,AA,4
+기업고객.csv,판매원사번,nnnnnnn,4401
+기업고객.csv,판매원사번,nnnnnn,2040
+기업고객.csv,판매원사번,nnnnn,887
+기업고객.csv,판매원사번,AAAnnnn,2
+기업고객.csv,담당부서,KK,3062
+기업고객.csv,담당부서,KKK,2022
+기업고객.csv,담당부서,.,359
+기업고객.csv,담당부서,KKKK,233
+기업고객.csv,담당부서,KKKKK,221
+기업고객.csv,담당부서,KKKKKK,76
+기업고객.csv,담당부서,S,49
+기업고객.csv,담당부서,KKKKKKK,36
+기업고객.csv,담당부서,..,27
+기업고객.csv,담당부서,-,21
+기업고객.csv,담당부서,n,16
+기업고객.csv,담당부서,AAKKK,14
+기업고객.csv,담당부서,KKKKKKKKK,11
+기업고객.csv,담당부서,AAKKKKK,9
+기업고객.csv,담당부서,KKKKKKKK,9
+기업고객.csv,담당부서,KKAAK,8
+기업고객.csv,담당부서,KKaaa,7
+기업고객.csv,담당부서,AAKKKKKKK,6
+기업고객.csv,담당부서,KKnK,6
+기업고객.csv,담당부서,KKK KKK,6
+기업고객.csv,집하지우편번호,nnnnnn.n,6142
+기업고객.csv,집하지우편번호,nnnnn.n,922
+기업고객.csv,집하지우편번호,nnnn.n,194
+기업고객.csv,집하지대번지,nnn,1579
+기업고객.csv,집하지대번지,nn,447
+기업고객.csv,집하지대번지,nnnn,315
+기업고객.csv,집하지대번지,n,192
+기업고객.csv,집하지대번지,nnn-n,124
+기업고객.csv,집하지대번지,nnn-nn,74
+기업고객.csv,집하지대번지,KKK,60
+기업고객.csv,집하지대번지,Aaa-nn,20
+기업고객.csv,집하지대번지,.,18
+기업고객.csv,집하지대번지,nn-nn,18
+기업고객.csv,집하지대번지,nnnn-n,17
+기업고객.csv,집하지대번지,nnK nnK,15
+기업고객.csv,집하지대번지,KK,9
+기업고객.csv,집하지대번지,n-nn,6
+기업고객.csv,집하지대번지,n-nnn,4
+기업고객.csv,집하지대번지,nnn-,4
+기업고객.csv,집하지대번지,nnnnK,3
+기업고객.csv,집하지대번지,nnKK,2
+기업고객.csv,집하지대번지,nnnnn,2
+기업고객.csv,집하지대번지,nKK,2
+기업고객.csv,집하지소번지,n,1069
+기업고객.csv,집하지소번지,nn,630
+기업고객.csv,집하지소번지,nnn,99
+기업고객.csv,집하지소번지,KK,16
+기업고객.csv,집하지소번지,nK,13
+기업고객.csv,집하지소번지,nnnn,6
+기업고객.csv,집하지소번지,nnn-,3
+기업고객.csv,집하지소번지,K,3
+기업고객.csv,집하지소번지,nnK nnK,2
+기업고객.csv,집하지소번지,/,1
+기업고객.csv,집하지소번지,AK,1
+기업고객.csv,집하지소번지,-,1
+기업고객.csv,집하지소번지,Knn,1
+기업고객.csv,집하지소번지,Kn,1
+기업고객.csv,집하지소번지,Aaa-nn,1
+기업고객.csv,집하지소번지,//,1
+기업고객.csv,집하지주소,SKKKS,257
+기업고객.csv,집하지주소,nK,199
+기업고객.csv,집하지주소,nnn-n,185
+기업고객.csv,집하지주소,KKKKK,142
+기업고객.csv,집하지주소,nnn,120
+기업고객.csv,집하지주소,nnn-nn,99
+기업고객.csv,집하지주소,KKKK KKKKK,94
+기업고객.csv,집하지주소,KKK,90
+기업고객.csv,집하지주소,KKKK,83
+기업고객.csv,집하지주소,KKKK nK,75
+기업고객.csv,집하지주소,.,69
+기업고객.csv,집하지주소,nK SKKKS,66
+기업고객.csv,집하지주소,KKKKKK,59
+기업고객.csv,집하지주소,nnnn,51
+기업고객.csv,집하지주소,Aaa-nn,45
+기업고객.csv,집하지주소,KKKKnK,42
+기업고객.csv,집하지주소,n,42
+기업고객.csv,집하지주소,nn,41
+기업고객.csv,집하지주소,nnnK,40
+기업고객.csv,집하지주소,KKKKKKK,39
+기업고객.csv,1ST_STREET,aaaaa aaaaaa,10
+기업고객.csv,1ST_STREET,nnn-nn AAAAAAA-AAAA,5
+기업고객.csv,1ST_STREET,nnn-n AAAAAA-AAAA,4
+기업고객.csv,1ST_STREET,nnn-n AAAAAAAA-AAAA,3
+기업고객.csv,1ST_STREET,AAAAAAA-AAAA,2
+기업고객.csv,1ST_STREET,AAAAAA-AAAA,2
+기업고객.csv,1ST_STREET,nn-n AAAAAAAAA-nAA,2
+기업고객.csv,1ST_STREET,nnnn AAAAAA AAA AAAA,2
+기업고객.csv,1ST_STREET,AAAAA-AAAA,2
+기업고객.csv,1ST_STREET,nAAS AAAAAAA AAAA.S,2
+기업고객.csv,1ST_STREET,nnn-nn,2
+기업고객.csv,1ST_STREET,AAA,2
+기업고객.csv,1ST_STREET,nA AAAAAAAA AAAA,2
+기업고객.csv,1ST_STREET,nnn-nn AAAAAAAA-AAAA,2
+기업고객.csv,1ST_STREET,AAAA-AAS AAAAA-AAAA,1
+기업고객.csv,1ST_STREET,AAAAAAA AAAAA nnnn-nn,1
+기업고객.csv,1ST_STREET,nnn AAAAAA A-AAA AAAAA,1
+기업고객.csv,1ST_STREET,nAS nn-nS AAAAA-AAAAS AAAAAAAAAAA-AA,1
+기업고객.csv,1ST_STREET,AAAAAAAA A/A nnn,1
+기업고객.csv,1ST_STREET,nAAnnnAAAAAAAAAAAAAAA AAAAAAA,1
+기업고객.csv,계약기간종료일,nnnnnnnn.n,7379
+기업고객.csv,청구점소,AAAAA,7259
+기업고객.csv,청구점소,AAAAn,71
+기업고객.csv,청구점소,AAAnn,13
+기업고객.csv,수금점소,AAAAA,7176
+기업고객.csv,수금점소,AAAAn,152
+기업고객.csv,수금점소,AAAnn,15
+기업고객.csv,최종수정일시,nn:nn.n,7361
+기업고객.csv,최종변경자사번,nnnnnnn,4283
+기업고객.csv,최종변경자사번,nnnnnn,2812
+기업고객.csv,최종변경자사번,AAAAAAA,151
+기업고객.csv,최종변경자사번,AAAAA,68
+기업고객.csv,최종변경자사번,nnnnn,39
+기업고객.csv,최종변경자사번,AAAAAA,6
+기업고객.csv,최종변경자사번,AAAnnnn,1
+기업고객.csv,집하점소,nnnn,7115
+기업고객.csv,집하점소,nnn,144
+기업고객.csv,집하점소,n,14
+기업고객.csv,집하점소,nn,7
+기업고객.csv,집하점소,AAn,4
+기업고객.csv,수입조직,nnnn.n,7339
+기업고객.csv,기업법인번호,nnnnnnnnnnnnn.n,1290
+기업고객.csv,기업법인번호,n.n,7
+기업고객.csv,최종변경일시,nn:nn.n,7392
+기업고객.csv,ETL일시,nn:nn.n,7392
+기업고객.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,7392
+기업설립형태.csv,기업설립형태코드,A,11
+기업설립형태.csv,기업설립형태명,KKKK,8
+기업설립형태.csv,기업설립형태명,KK,3
+기업설립형태.csv,dt_reg,nnnnnnnn,11
+기업설립형태.csv,yn_abd,A,11
+기업설립형태.csv,처리자사번,nnnnnnn,11
+기업설립형태.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,11
+기업설립형태.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,11
+기업설립형태.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,11
+미배송사유코드.csv,사유코드,n,65
+미배송사유코드.csv,사유코드,nn,39
+미배송사유코드.csv,작업코드,nn,102
+미배송사유코드.csv,작업코드,AA,2
+미배송사유코드.csv,사유명,KKKK,17
+미배송사유코드.csv,사유명,KKK KK,15
+미배송사유코드.csv,사유명,KKKKKK,11
+미배송사유코드.csv,사유명,KK KK,9
+미배송사유코드.csv,사유명,KKK,7
+미배송사유코드.csv,사유명,KKKK KK,6
+미배송사유코드.csv,사유명,KKSKKKKS,5
+미배송사유코드.csv,사유명,KKKKKKK,3
+미배송사유코드.csv,사유명,KKKKK,3
+미배송사유코드.csv,사유명,KKK KKKK,2
+미배송사유코드.csv,사유명,KKKK KKK,2
+미배송사유코드.csv,사유명,K KK,2
+미배송사유코드.csv,사유명,KKKKSKKS,2
+미배송사유코드.csv,사유명,KK KKK,2
+미배송사유코드.csv,사유명,K KKK KK,1
+미배송사유코드.csv,사유명,A/A KKK,1
+미배송사유코드.csv,사유명,KK KKK KK,1
+미배송사유코드.csv,사유명,KKKKKK KK KKKK,1
+미배송사유코드.csv,사유명,KKKK KK KK KK,1
+미배송사유코드.csv,사유명,KKK K KKKK SKKKS,1
+미배송사유코드.csv,사유명(영문),A,23
+미배송사유코드.csv,사유명(영문),Aaaaaaaaaa Aaaa,5
+미배송사유코드.csv,사유명(영문),Aaaaaaaaa Aaaaaaa,4
+미배송사유코드.csv,사유명(영문),Aaaaaaa Aaaaaaaa,4
+미배송사유코드.csv,사유명(영문),Aaaaaaaaa Aaaaa,4
+미배송사유코드.csv,사유명(영문),Aaaa Aaaa Aaaaaaaa,3
+미배송사유코드.csv,사유명(영문),Aaaaaaaaa Aaa Aaaa,3
+미배송사유코드.csv,사유명(영문),Aaaa Aaaaaaaa,3
+미배송사유코드.csv,사유명(영문),Aaaaaaa Aaaa Aaaaaaaa,2
+미배송사유코드.csv,사유명(영문),Aaaaaaa Aaaaaaa,2
+미배송사유코드.csv,사유명(영문),Aaaaaaa Aaaaaaaa Aaaaa,2
+미배송사유코드.csv,사유명(영문),Aaaaaaa Aaaaaa Aa,2
+미배송사유코드.csv,사유명(영문),Aaaaaaaaa aaaaaaaa,2
+미배송사유코드.csv,사유명(영문),Aaa Aaaaaaa,2
+미배송사유코드.csv,사유명(영문),Aaaaaaaa Aaa Aaaaa,2
+미배송사유코드.csv,사유명(영문),Aaaaa aaaa,2
+미배송사유코드.csv,사유명(영문),Aaaaaaa Aaaaaa,2
+미배송사유코드.csv,사유명(영문),Aaaaaaa Aaaaaaa Aaaaaaaaaaaa,1
+미배송사유코드.csv,사유명(영문),Aaaaaaaaa aaaa aaaaaaa,1
+미배송사유코드.csv,사유명(영문),Aaaaaaa Aaaaa,1
+미배송사유코드.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,104
+미배송사유코드.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,104
+미배송사유코드.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,104
+배송점.csv,배송점코드,nnnn,2263
+배송점.csv,배송점코드,nnn,177
+배송점.csv,배송점코드,nn,61
+배송점.csv,배송점코드,nnnnnn,19
+배송점.csv,배송점코드,nnnnn,9
+배송점.csv,배송점코드,nnnnnnn,1
+배송점.csv,상위조직코드,nnn.n,2359
+배송점.csv,상위조직코드,nn.n,121
+배송점.csv,상위조직코드,n.n,30
+배송점.csv,상위조직코드,nnnn.n,19
+배송점.csv,배송점명,KKSKS,674
+배송점.csv,배송점명,KKKKSKS,302
+배송점.csv,배송점명,KKKKSKKS,236
+배송점.csv,배송점명,KKKSKS,208
+배송점.csv,배송점명,KKSKKS,130
+배송점.csv,배송점명,AKK,67
+배송점.csv,배송점명,KKAAKK,58
+배송점.csv,배송점명,KK KKK,43
+배송점.csv,배송점명,KKnSKS,40
+배송점.csv,배송점명,AAKK,37
+배송점.csv,배송점명,KKKKKK,34
+배송점.csv,배송점명,KKKKKKSKS,30
+배송점.csv,배송점명,KK KKSKKS,28
+배송점.csv,배송점명,KKKKKSKS,27
+배송점.csv,배송점명,AAKKKK,24
+배송점.csv,배송점명,KK KKKK,21
+배송점.csv,배송점명,KKK KKK,18
+배송점.csv,배송점명,KKKSKKS,18
+배송점.csv,배송점명,AKKKK,18
+배송점.csv,배송점명,An,17
+배송점.csv,조직구분코드,AAAAAAA,2303
+배송점.csv,조직구분코드,AAAASAAAA,227
+배송점.csv,조직관리유형코드,AAASAAAAAA,2317
+배송점.csv,조직관리유형코드,AAAAAA,213
+배송점.csv,조직권역구분코드,AA,2530
+배송점.csv,조직계약시작일자,nnnnnnnn.n,1225
+배송점.csv,조직계약종료일자,nnnnnnnn.n,871
+배송점.csv,조직폐쇄일자,nnnnnnnn.n,917
+배송점.csv,영문조직명,AAAAAA AAAAA,186
+배송점.csv,영문조직명,AAAAAAA AAAAA,178
+배송점.csv,영문조직명,AnA AAASAA,145
+배송점.csv,영문조직명,AAAAA AAAAA,125
+배송점.csv,영문조직명,AAAAAAAA AAAAA,112
+배송점.csv,영문조직명,AAAAAAAAA AAAAA,83
+배송점.csv,영문조직명,AAAA AAAAA,67
+배송점.csv,영문조직명,AAAAAAAAAAA AAAAA,62
+배송점.csv,영문조직명,AA AAAAA,54
+배송점.csv,영문조직명,AAAAAAAAAA AAAAA,53
+배송점.csv,영문조직명,AAAAAAAAAAAA AAAAA,43
+배송점.csv,영문조직명,AAAAAAAAAAAAAA AAAAA,30
+배송점.csv,영문조직명,AA AAAA,30
+배송점.csv,영문조직명,AAAAAAAAAAAAA AAAAA,29
+배송점.csv,영문조직명,AAAAAAAA,27
+배송점.csv,영문조직명,AAA AAAAA,25
+배송점.csv,영문조직명,AAAAAAAAAAAAAAA AAAAA,21
+배송점.csv,영문조직명,AAAAA AA AAAAA,16
+배송점.csv,영문조직명,.,16
+배송점.csv,영문조직명,AAAAAAA AA AAAAA,16
+배송점.csv,팩스번호,nnnnnnnnnn,365
+배송점.csv,팩스번호,nnn-nnn-nnnn,166
+배송점.csv,팩스번호,nnnSnnn-nnnn,60
+배송점.csv,팩스번호,nn-nnn-nnnn,44
+배송점.csv,팩스번호,nn,44
+배송점.csv,팩스번호,nnnnnnnnnnn,37
+배송점.csv,팩스번호,nnnnnnnnn,23
+배송점.csv,팩스번호,nnn,19
+배송점.csv,팩스번호,nn-nnnn-nnnn,16
+배송점.csv,팩스번호,nnn-nnnn-nnnn,8
+배송점.csv,팩스번호,n,6
+배송점.csv,팩스번호,nnnnnnnn,3
+배송점.csv,팩스번호,nnnn-nnnn-nnnn,3
+배송점.csv,팩스번호,nnn-nnn-nnn,3
+배송점.csv,팩스번호,KKKnSnSnKK,1
+배송점.csv,팩스번호,nnnnnnnnnnnn,1
+배송점.csv,팩스번호,nnn-,1
+배송점.csv,팩스번호,nnnn-nnnn-nnn,1
+배송점.csv,팩스번호,.,1
+배송점.csv,우편번호,nnnnnn.n,1433
+배송점.csv,우편번호,nnnnn.n,729
+배송점.csv,우편번호,nnnn.n,194
+배송점.csv,기본주소,KK KK KK,114
+배송점.csv,기본주소,KKKK KKK KKK KKK,56
+배송점.csv,기본주소,KK KKK  KKKK,53
+배송점.csv,기본주소,KKK KKK KKK KKK,47
+배송점.csv,기본주소,KK KK KKn,40
+배송점.csv,기본주소,KKKKK KKK KKK,39
+배송점.csv,기본주소,KK  KK,38
+배송점.csv,기본주소,KKKKK KK KKK,32
+배송점.csv,기본주소,KKKKK KKK KKKK,32
+배송점.csv,기본주소,KK KK,29
+배송점.csv,기본주소,KK KKK  KKK,24
+배송점.csv,기본주소,KKKK KKK KKK,20
+배송점.csv,기본주소,KKKK KKK KKK KKKK,20
+배송점.csv,기본주소,KK KK KKK,19
+배송점.csv,기본주소,KKKK KKK KKK KKnK,18
+배송점.csv,기본주소,KK KK  KKK,17
+배송점.csv,기본주소,KKKK KKK KKKK,17
+배송점.csv,기본주소,KKK KKK KKK,16
+배송점.csv,기본주소,KK,16
+배송점.csv,기본주소,KKK KKK KKK KKKKK,15
+배송점.csv,상세주소,nnn-n,184
+배송점.csv,상세주소,nnn,173
+배송점.csv,상세주소,nn,162
+배송점.csv,상세주소,nn SKKKS,108
+배송점.csv,상세주소,nnn-nn,73
+배송점.csv,상세주소,nnn SKKKS,63
+배송점.csv,상세주소,KKK nnn-n,46
+배송점.csv,상세주소,Aaa-nn,40
+배송점.csv,상세주소,nnK nnK,37
+배송점.csv,상세주소,nK,36
+배송점.csv,상세주소,n,33
+배송점.csv,상세주소,U,32
+배송점.csv,상세주소,KKK,32
+배송점.csv,상세주소,nnnn-n,24
+배송점.csv,상세주소,nnnn,24
+배송점.csv,상세주소,nn-nn,23
+배송점.csv,상세주소,.,19
+배송점.csv,상세주소,KKK nn-n,18
+배송점.csv,상세주소,KKKKK,17
+배송점.csv,상세주소,nnnn-nn,16
+배송점.csv,사업자등록번호,nnnnnnnnnn.n,1687
+배송점.csv,최수정일시,nn:nn.n,2388
+배송점.csv,최종수정자,nnnnnnn.n,1439
+배송점.csv,최종수정자,nnnnnn.n,551
+배송점.csv,최종수정자,nnnnn.n,398
+배송점.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,2530
+법인정보.csv,법인번호,nnnnnnnnnnnnn,21833
+법인정보.csv,법인번호,nnnnnnSSSSSSS,6
+법인정보.csv,법인번호,nnnnnn,1
+법인정보.csv,법인번호,nnnnnnnSSSSSS,1
+법인정보.csv,법인번호,Annnnnnnnnnnn,1
+법인정보.csv,법인명,KKKK,4931
+법인정보.csv,법인명,KKKKK,3982
+법인정보.csv,법인명,KKKKKK,3234
+법인정보.csv,법인명,KKK,2225
+법인정보.csv,법인명,KKKKKKK,2078
+법인정보.csv,법인명,KK,1445
+법인정보.csv,법인명,KKKKKKKK,1310
+법인정보.csv,법인명,KKKKKKKKK,744
+법인정보.csv,법인명,KKKKKKKKKK,567
+법인정보.csv,법인명,KKKKKKKKKKK,304
+법인정보.csv,법인명,KKKKKKKKKKKK,183
+법인정보.csv,법인명,nnnnnn-nnnnnnn,111
+법인정보.csv,법인명,KKKKKKKKKKKKK,99
+법인정보.csv,법인명,KKKKKKKKKKKKKK,55
+법인정보.csv,법인명,KKKKKKKKKKKKKKK,27
+법인정보.csv,법인명,SKSKKKKKK,26
+법인정보.csv,법인명,SKSKKKKK,18
+법인정보.csv,법인명,KKKKKKKKKKKKKKKK,17
+법인정보.csv,법인명,SKSKKKKKKKKK,17
+법인정보.csv,법인명,K,16
+법인정보.csv,최초생성자ID,AAAAA,12402
+법인정보.csv,최초생성자ID,aaaaaaa,6005
+법인정보.csv,최초생성자ID,aaaaa,1472
+법인정보.csv,최초생성자ID,aaaaaa,1179
+법인정보.csv,최초생성자ID,aaaa,786
+법인정보.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,21844
+법인정보.csv,최종갱신자ID,AAAAA,12295
+법인정보.csv,최종갱신자ID,aaaaaaaaa,7861
+법인정보.csv,최종갱신자ID,aaaa,762
+법인정보.csv,최종갱신자ID,aaaaa,521
+법인정보.csv,최종갱신자ID,aaaaaa,306
+법인정보.csv,최종갱신자ID,aaaaaaa,99
+법인정보.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,21844
+법인정보.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,21844
+법인정보.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,21844
+불량등급.csv,불량등급코드,A,19
+불량등급.csv,불량등급명,KK,8
+불량등급.csv,불량등급명,KKKKSnnKKKS-nK,2
+불량등급.csv,불량등급명,KKKKK,2
+불량등급.csv,불량등급명,KKKKKKKK,1
+불량등급.csv,불량등급명,KKK,1
+불량등급.csv,불량등급명,KKKKKSKKKS,1
+불량등급.csv,불량등급명,KKKK,1
+불량등급.csv,불량등급명,KKKKSnnKKKS,1
+불량등급.csv,불량등급명,KKKK/KKKK,1
+불량등급.csv,불량등급명,KKKKKK,1
+불량등급.csv,dt_reg,nnnnnnnn,19
+불량등급.csv,yn_abd,A,19
+불량등급.csv,처리자사번,nnnnnnn,14
+불량등급.csv,처리자사번,nnnnnn,5
+불량등급.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,19
+불량등급.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,19
+불량등급.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,19
+사업구분.csv,사업구분코드,AAA,240
+사업구분.csv,사업구분코드,AA,97
+사업구분.csv,사업구분코드,A,20
+사업구분.csv,사업입체구분,n.n,202
+사업구분.csv,계정코드,nnnnnn.n,245
+사업구분.csv,계정코드,n.n,21
+사업구분.csv,사업구분한글명,KKKK,35
+사업구분.csv,사업구분한글명,KKKKKK,35
+사업구분.csv,사업구분한글명,KKKKK,30
+사업구분.csv,사업구분한글명,KKK,23
+사업구분.csv,사업구분한글명,KKKK KKKK,20
+사업구분.csv,사업구분한글명,KKKK KKKKKK,15
+사업구분.csv,사업구분한글명,KKK KKKK,12
+사업구분.csv,사업구분한글명,KKKKKKKK,11
+사업구분.csv,사업구분한글명,KKKKKKK,10
+사업구분.csv,사업구분한글명,KKKKKSKKS,9
+사업구분.csv,사업구분한글명,AAKK,8
+사업구분.csv,사업구분한글명,KKKK KKKKK,7
+사업구분.csv,사업구분한글명,KKK KKK,7
+사업구분.csv,사업구분한글명,KK KKKKKKK,7
+사업구분.csv,사업구분한글명,KKKK UUUKK,6
+사업구분.csv,사업구분한글명,KKKKKK KKKK,5
+사업구분.csv,사업구분한글명,KKK KKKKKK,5
+사업구분.csv,사업구분한글명,KKK KKKKKKK,5
+사업구분.csv,사업구분한글명,KKKSKKS,4
+사업구분.csv,사업구분한글명,KKKK KKKKKKK,4
+사업구분.csv,사업구분영문명,AAA AAA,5
+사업구분.csv,사업구분영문명,AAAAAAAAA AAAAAAAAA,5
+사업구분.csv,사업구분영문명,AAA-AA,5
+사업구분.csv,사업구분영문명,AAAAAAAA AAAAAAAAAAA,4
+사업구분.csv,사업구분영문명,AAAAAAA,4
+사업구분.csv,사업구분영문명,AAAAAAAAA AAAA AAAAAAAAA,4
+사업구분.csv,사업구분영문명,AAAAAAA S AAAAAA-AAAAAAAA AAAAA,4
+사업구분.csv,사업구분영문명,AAAA AAAAA AA AAAAAAAAA,4
+사업구분.csv,사업구분영문명,AAAAAAAAA AAAAAAAAAAAAAA,4
+사업구분.csv,사업구분영문명,A A A AAAAAAAAA,4
+사업구분.csv,사업구분영문명,AAAAAAA AAAAA AAAAAAAAAAAAAA-AAA,4
+사업구분.csv,사업구분영문명,AAAAAAAA,4
+사업구분.csv,사업구분영문명,AAAAAAAA AAAAAAAA,3
+사업구분.csv,사업구분영문명,AAAA AAAAA AAAAAAAAAAAAAA,3
+사업구분.csv,사업구분영문명,KKKKKKKK,3
+사업구분.csv,사업구분영문명,AAAA AAAAA AAAAAAA AAAAAAAA,3
+사업구분.csv,사업구분영문명,AAAAAAA AAAAA AAAAAAAAAAAAAA-AAAAA,3
+사업구분.csv,사업구분영문명,KKKKKK,3
+사업구분.csv,사업구분영문명,AAAA AAAAA AAAAAAAAAAA,3
+사업구분.csv,사업구분영문명,AAAAAAAA AAAAAAA AAAAAAAAAA AAAAAAAAA,3
+사업구분.csv,한글CHARGE명,KKKKK,42
+사업구분.csv,한글CHARGE명,KKK,34
+사업구분.csv,한글CHARGE명,KKKKKK,23
+사업구분.csv,한글CHARGE명,KKKK,15
+사업구분.csv,한글CHARGE명,KKKKKKK,13
+사업구분.csv,한글CHARGE명,KKK KKKK,11
+사업구분.csv,한글CHARGE명,KKK KKK,6
+사업구분.csv,한글CHARGE명,KKKKKKKK,6
+사업구분.csv,한글CHARGE명,KK KKK,5
+사업구분.csv,한글CHARGE명,AAAKKK,5
+사업구분.csv,한글CHARGE명,KKK KK,4
+사업구분.csv,한글CHARGE명,KKKK KKK,4
+사업구분.csv,한글CHARGE명,KKKKKSKKS,4
+사업구분.csv,한글CHARGE명,KKKK KKKK,4
+사업구분.csv,한글CHARGE명,KKKSKKS,3
+사업구분.csv,한글CHARGE명,KKKK KKK KK,3
+사업구분.csv,한글CHARGE명,KKKK KK,3
+사업구분.csv,한글CHARGE명,KKK KKKKK,3
+사업구분.csv,한글CHARGE명,AA KKK,3
+사업구분.csv,한글CHARGE명,KKK KKK KK,2
+사업구분.csv,영문CHARCE명,AAAAAAA AAA,6
+사업구분.csv,영문CHARCE명,AAA AAA,5
+사업구분.csv,영문CHARCE명,AAA-AA,5
+사업구분.csv,영문CHARCE명,AAAAAAA,4
+사업구분.csv,영문CHARCE명,AAAAAAAA AAA,4
+사업구분.csv,영문CHARCE명,AAAA AAAAAAAAA AAA,4
+사업구분.csv,영문CHARCE명,KKKKKK,3
+사업구분.csv,영문CHARCE명,AA-AAAA AAAAA AAA,3
+사업구분.csv,영문CHARCE명,KKKKKKKK,3
+사업구분.csv,영문CHARCE명,AAAAAAAA,3
+사업구분.csv,영문CHARCE명,AAAAAAAAA AAAAAAA AAA,3
+사업구분.csv,영문CHARCE명,AAAA AAAAA AA AAAAAAA AAA,2
+사업구분.csv,영문CHARCE명,AAAAAAA AAA AAAAAAA,2
+사업구분.csv,영문CHARCE명,AAAAAAAAAA S AAAAAAAAAAAAA AAA,2
+사업구분.csv,영문CHARCE명,AAAAAAAAA AAA,2
+사업구분.csv,영문CHARCE명,AA-AAAA AAAAAAAAA AAA,2
+사업구분.csv,영문CHARCE명,KKKKKKK,2
+사업구분.csv,영문CHARCE명,AAAAA AAAAA AAAAAAAAAAA,2
+사업구분.csv,영문CHARCE명,AAA-aaaaaaa,2
+사업구분.csv,영문CHARCE명,AAAA AAAAAAAAAA,2
+사업구분.csv,등록일자,nnnnnnnn,357
+사업구분.csv,수정일자,nnnnnnnn.n,261
+사업구분.csv,폐기일자,nnnnnnnn.n,91
+사업구분.csv,폐기여부,A,357
+사업구분.csv,처리자사번,nnnnnnn,261
+사업구분.csv,처리자사번,nnnnnn,96
+사업구분.csv,부대청구대상여부,A,357
+사업구분.csv,기타미수금여부,A,357
+사업구분.csv,면세청구대상여부,A,357
+사업구분.csv,ERP_COA_ACCOUNT,nnnnnn.n,192
+사업구분.csv,ERP_COA_DIVS,nnn.n,155
+사업구분.csv,ERP_COA_DIVS,n.n,35
+사업구분.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,357
+사업구분.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,357
+사업구분.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,357
+사업자등록번호정보.csv,사업자등록번호,nnnnnnnnnn,76009
+사업자등록번호정보.csv,사업자등록번호,nnnnnnnnnnnnn,81
+사업자등록번호정보.csv,사업자등록번호,nnn-nn-nnnnn,50
+사업자등록번호정보.csv,사업자등록번호,nnnnnn,17
+사업자등록번호정보.csv,사업자등록번호,nnnnnn-nnnnnnn,13
+사업자등록번호정보.csv,사업자등록번호,nnnnnnn,9
+사업자등록번호정보.csv,사업자등록번호,nnn,8
+사업자등록번호정보.csv,사업자등록번호,nnnnnnnnnnnn,6
+사업자등록번호정보.csv,사업자등록번호,nnnnnnnnn,4
+사업자등록번호정보.csv,사업자등록번호,nnnnnnA,4
+사업자등록번호정보.csv,사업자등록번호,Annnnnnnnn,3
+사업자등록번호정보.csv,사업자등록번호,nnnnnnnn,2
+사업자등록번호정보.csv,사업자등록번호,nnnnnnnnnnn,2
+사업자등록번호정보.csv,사업자등록번호,nnnnnnnnnnnnnnnnnn,2
+사업자등록번호정보.csv,사업자등록번호,AAnnnnnnnnnn,2
+사업자등록번호정보.csv,사업자등록번호,nnnnnnnnnnnnnnnnnA,1
+사업자등록번호정보.csv,사업자등록번호,nnAnnnnnnn,1
+사업자등록번호정보.csv,사업자등록번호,nnnnnnnnnnnnnnnn,1
+사업자등록번호정보.csv,사업자등록번호,AA nnnn,1
+사업자등록번호정보.csv,사업자등록번호,nnnnnnnnAAnAAAnAAn,1
+사업자등록번호정보.csv,고객명,KKKK,12851
+사업자등록번호정보.csv,고객명,KKKKK,7705
+사업자등록번호정보.csv,고객명,KKK,5609
+사업자등록번호정보.csv,고객명,KKKKKK,4794
+사업자등록번호정보.csv,고객명,KKKKKKK,2736
+사업자등록번호정보.csv,고객명,SKSKKKK,2529
+사업자등록번호정보.csv,고객명,KK,2469
+사업자등록번호정보.csv,고객명,SKSKKKKK,2278
+사업자등록번호정보.csv,고객명,KKKK KKKK,2224
+사업자등록번호정보.csv,고객명,SKSKKKKKK,1711
+사업자등록번호정보.csv,고객명,KKKK KKKKK,1705
+사업자등록번호정보.csv,고객명,KKKKKKKK,1702
+사업자등록번호정보.csv,고객명,KKKK KKK,1305
+사업자등록번호정보.csv,고객명,KKKK KKKKKK,1151
+사업자등록번호정보.csv,고객명,SKSKKKKKKK,1139
+사업자등록번호정보.csv,고객명,SKSKKK,1123
+사업자등록번호정보.csv,고객명,KKKKSKS,967
+사업자등록번호정보.csv,고객명,KKKKKKKKK,950
+사업자등록번호정보.csv,고객명,KKKK KK,871
+사업자등록번호정보.csv,고객명,SKSKK,759
+사업자등록번호정보.csv,생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,76222
+사업자등록번호정보.csv,법인번호,nnnnnnnnnnnnn,21262
+사업자등록번호정보.csv,법인번호,nnnnnnSSSSSSS,4
+사업자등록번호정보.csv,법인번호,nnnnnn,1
+사업자등록번호정보.csv,법인번호,S,1
+사업자등록번호정보.csv,법인번호,nnnnnnnSSSSSS,1
+사업자등록번호정보.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,76222
+사업자등록번호정보.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,76222
+사업자등록번호정보.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,76222
+사업코드관리.csv,사업유형코드,AAAA n,346
+사업코드관리.csv,전사업코드,nnn,346
+사업코드관리.csv,전사업명,KKKKKK,346
+사업코드관리.csv,대사업코드,nnn,346
+사업코드관리.csv,대사업명,KKKKKK,258
+사업코드관리.csv,대사업명,KKKKKKK,70
+사업코드관리.csv,대사업명,KKKK,18
+사업코드관리.csv,중사업코드,nnn,346
+사업코드관리.csv,중사업명,KKKK,166
+사업코드관리.csv,중사업명,ASAKK,73
+사업코드관리.csv,중사업명,KKKKKK,58
+사업코드관리.csv,중사업명,KKKKK,45
+사업코드관리.csv,중사업명,KKKKKKK,4
+사업코드관리.csv,소사업코드,nnn,346
+사업코드관리.csv,소사업명,KKKKKK,82
+사업코드관리.csv,소사업명,KKKKKKK,57
+사업코드관리.csv,소사업명,KKKK,55
+사업코드관리.csv,소사업명,ASAKKKK,43
+사업코드관리.csv,소사업명,AnAKK,24
+사업코드관리.csv,소사업명,KKKKKKKK,18
+사업코드관리.csv,소사업명,KKKKK,17
+사업코드관리.csv,소사업명,KKKKKKKKK,14
+사업코드관리.csv,소사업명,KKnAAKK,10
+사업코드관리.csv,소사업명,KKKnAAKK,6
+사업코드관리.csv,소사업명,KKAAKK,4
+사업코드관리.csv,소사업명,KKKKKKKKKKK,4
+사업코드관리.csv,소사업명,ASAKK,4
+사업코드관리.csv,소사업명,nAAKK,4
+사업코드관리.csv,소사업명,KKKK KK KK,2
+사업코드관리.csv,소사업명,KKKKKKKKKK,2
+사업코드관리.csv,business_level5_cd,nnn,346
+사업코드관리.csv,business_level5_name,KKKKKK,113
+사업코드관리.csv,business_level5_name,KKKKKKK,53
+사업코드관리.csv,business_level5_name,KKKK,49
+사업코드관리.csv,business_level5_name,KKKKKKKK,30
+사업코드관리.csv,business_level5_name,KKKKK,21
+사업코드관리.csv,business_level5_name,AnAKK,16
+사업코드관리.csv,business_level5_name,KKKKKKKKKK,7
+사업코드관리.csv,business_level5_name,KKAAA,7
+사업코드관리.csv,business_level5_name,KKAAKK,5
+사업코드관리.csv,business_level5_name,ASAKK,4
+사업코드관리.csv,business_level5_name,KKKKKSKKS,4
+사업코드관리.csv,business_level5_name,ASAKKKK,4
+사업코드관리.csv,business_level5_name,KKKK KK KK,4
+사업코드관리.csv,business_level5_name,KKKKKKKKK,4
+사업코드관리.csv,business_level5_name,AAAA,3
+사업코드관리.csv,business_level5_name,AKKKKKKKK,2
+사업코드관리.csv,business_level5_name,KKKnAAKK,2
+사업코드관리.csv,business_level5_name,AnA,2
+사업코드관리.csv,business_level5_name,KKnAAKK,2
+사업코드관리.csv,business_level5_name,KKK,2
+사업코드관리.csv,business_level6_cd,nnn,346
+사업코드관리.csv,business_level6_name,KKKKKK,86
+사업코드관리.csv,business_level6_name,KKKK,64
+사업코드관리.csv,business_level6_name,KKKKKKK,43
+사업코드관리.csv,business_level6_name,KKKKK,33
+사업코드관리.csv,business_level6_name,KKKKKKKK,20
+사업코드관리.csv,business_level6_name,AnAKK,10
+사업코드관리.csv,business_level6_name,KKKKKSKKS,8
+사업코드관리.csv,business_level6_name,KKKKKKSKKS,8
+사업코드관리.csv,business_level6_name,KKAAA,8
+사업코드관리.csv,business_level6_name,KKnnnnK,8
+사업코드관리.csv,business_level6_name,KKKKKKKKKK,4
+사업코드관리.csv,business_level6_name,ASAKK,4
+사업코드관리.csv,business_level6_name,ASAKKKK,4
+사업코드관리.csv,business_level6_name,KKK,4
+사업코드관리.csv,business_level6_name,AAAA,4
+사업코드관리.csv,business_level6_name,KKKKKKKKK,4
+사업코드관리.csv,business_level6_name,KKKK KK KK,4
+사업코드관리.csv,business_level6_name,KKAA,4
+사업코드관리.csv,business_level6_name,AnAKKK,2
+사업코드관리.csv,business_level6_name,AAKKKKK,2
+사업코드관리.csv,사업코드,nnn,346
+사업코드관리.csv,사업명,KKKKKK,81
+사업코드관리.csv,사업명,KKKK,65
+사업코드관리.csv,사업명,KKKKKKK,43
+사업코드관리.csv,사업명,KKKKK,33
+사업코드관리.csv,사업명,KKKKKKKK,20
+사업코드관리.csv,사업명,KKKKKKSKKS,12
+사업코드관리.csv,사업명,AnAKK,10
+사업코드관리.csv,사업명,KKnnnnK,8
+사업코드관리.csv,사업명,KKKKKSKKS,8
+사업코드관리.csv,사업명,KKAAA,8
+사업코드관리.csv,사업명,KKKKKKKKK,4
+사업코드관리.csv,사업명,AAAA,4
+사업코드관리.csv,사업명,KKKKKKKKKK,4
+사업코드관리.csv,사업명,ASAKK,4
+사업코드관리.csv,사업명,ASAKKKK,4
+사업코드관리.csv,사업명,KKK,4
+사업코드관리.csv,사업명,KKKK KK KK,4
+사업코드관리.csv,사업명,KKAA,4
+사업코드관리.csv,사업명,AnAKKK,2
+사업코드관리.csv,사업명,nAAKK,2
+사업코드관리.csv,정렬순서,nnnn,247
+사업코드관리.csv,정렬순서,nnn,90
+사업코드관리.csv,정렬순서,nn,9
+사업코드관리.csv,최초생성자ID,aaaaa,346
+사업코드관리.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,346
+사업코드관리.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,346
+사업코드관리.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,346
+사업코드관리.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,346
+사용자.csv,사원번호,nnnnnnn,6923
+사용자.csv,사원번호,Annnnnn,156
+사용자.csv,사원번호,AAAnnnn,126
+사용자.csv,사원번호,AAnnnnn,58
+사용자.csv,사원번호,nnnnnn,7
+사용자.csv,사원번호,annnnnn,3
+사용자.csv,사원번호,aaaaaa,3
+사용자.csv,사원번호,aaannnn,3
+사용자.csv,사원번호,KKK,2
+사용자.csv,사원번호,nnnn,1
+사용자.csv,사원번호,nnnnnnS,1
+사용자.csv,사원번호,aaaaa,1
+사용자.csv,사원번호,aaaa,1
+사용자.csv,사원번호,AAAAnnn,1
+사용자.csv,사원번호,AAAAAA,1
+사용자.csv,점소코드,nnnn,7287
+사용자.csv,권한코드,n,7263
+사용자.csv,권한코드,A,24
+사용자.csv,비밀번호,aannnnannnaaanannnnnanannannnnannnnaaannnnnnnnnnnannnnnaannnnnna,125
+사용자.csv,비밀번호,nnnAnAnnnAnnnAnnnAAAnAnAAAnnAAnn,54
+사용자.csv,비밀번호,AnAAnnAAAnAnAnnnnAAnnAAAnAAnAnnA,19
+사용자.csv,비밀번호,AnnnnAAnnnAnAAnAnnAAnnnnnAnAnAnn,16
+사용자.csv,비밀번호,AAnAAAAAAnnnnAnnnnnnnnAAnnnAnAAn,14
+사용자.csv,비밀번호,annnnanannnnannnaaannnnnnnaananaannnaanannnnnnnnnnnnnaanaannnnnn,9
+사용자.csv,비밀번호,AnnAnAnAnAAnnAAAnnnAnnnAnnnnnAnn,8
+사용자.csv,비밀번호,nnAAnnAnnnnnAAnnnnnnAnAnnAnnnnnA,8
+사용자.csv,비밀번호,AAnAAAAAnnnAAnnnAnnnnAAnAnnnAnAn,7
+사용자.csv,비밀번호,nnnnannnanannnannnnannaaannanaaannnnnanaannananaanannnnnanaaaann,6
+사용자.csv,비밀번호,nnnAAnAnnnAnAnnAnAAAAnnnAnAAnAAn,6
+사용자.csv,비밀번호,nnnnnnnAnAnAnnAnAAnnnnnAnnAnnnnn,6
+사용자.csv,비밀번호,nnAnnnnAnAnnAnnAAAnAnnAnAAAnnAnA,5
+사용자.csv,비밀번호,nnnAAAAAnnnnnnnnAnnnAnnAAnAnnnnn,4
+사용자.csv,비밀번호,AnnnnnnAAnnnnnAnAnAnnnAAAnnAAnAn,4
+사용자.csv,비밀번호,AAnnnAAnnnnnAnAnnAAnnnnAAnnnAAnA,4
+사용자.csv,비밀번호,AnnAnnAnnAAnnAnAAnnAAnnnnnAnnnnA,4
+사용자.csv,비밀번호,nnnnnAAAnnnAAAnnAnnAAnnnnnnnnAAn,4
+사용자.csv,비밀번호,AnAAnAnnnAAnnnnnAnAnnnnAnAAAnAnn,4
+사용자.csv,비밀번호,nnnnAAnAnAAnnnnnAnnAnnnnnAAAAnAn,3
+사용자.csv,팀명,KKK,2547
+사용자.csv,팀명,KKKKK,1415
+사용자.csv,팀명,KKKKKK,1221
+사용자.csv,팀명,KKKK,548
+사용자.csv,팀명,KKKKKKK,358
+사용자.csv,팀명,KKnK,219
+사용자.csv,팀명,KKAAAK,212
+사용자.csv,팀명,KK,159
+사용자.csv,팀명,KKnnnnK,74
+사용자.csv,팀명,KKKKKKKKK,50
+사용자.csv,팀명,KKKKKKKK,49
+사용자.csv,팀명,KKKKnK,42
+사용자.csv,팀명,nAAKKK,28
+사용자.csv,팀명,KKKK KKKKK,18
+사용자.csv,팀명,KKKUUUU,15
+사용자.csv,팀명,nnKKK,14
+사용자.csv,팀명,KKnAAK,14
+사용자.csv,팀명,KKKKKnK,14
+사용자.csv,팀명,KKAA,14
+사용자.csv,팀명,KKKKKKKKKK,13
+사용자.csv,직급,KK,4774
+사용자.csv,직급,KKKK,812
+사용자.csv,직급,nK,715
+사용자.csv,직급,KKKKKn,356
+사용자.csv,직급,KKK,215
+사용자.csv,직급,KKKKKK,92
+사용자.csv,직급,A/AKKK,80
+사용자.csv,직급,nKK,60
+사용자.csv,직급,KKKKK,53
+사용자.csv,직급,KKKn,46
+사용자.csv,직급,KKnK,41
+사용자.csv,직급,nKKK,8
+사용자.csv,직급,KK A,5
+사용자.csv,직급,KKA,5
+사용자.csv,직급,KKKKKKK,4
+사용자.csv,직급,nKKA,4
+사용자.csv,직급,KKKnK,1
+사용자.csv,직급,KK.,1
+사용자.csv,직급,KUU,1
+사용자.csv,직급,KK KK,1
+사용자.csv,직책,n.n,7286
+사용자.csv,전화번호,nnn-nnn-nnnn,2309
+사용자.csv,전화번호,nn-nnn-nnnn,1631
+사용자.csv,전화번호,nnn-nnn-nnnnSn,928
+사용자.csv,전화번호,nn-nnnn-nnnn,369
+사용자.csv,전화번호,nnn-nnnn-nnnn,350
+사용자.csv,전화번호,nn-nnnn-nnnnSn,320
+사용자.csv,전화번호,nnn-nnn-nnnn/n,162
+사용자.csv,전화번호,nnn-nnn-nnn,16
+사용자.csv,전화번호,nn-nnn-nnn,11
+사용자.csv,전화번호,nnn-nnnn-nnn,11
+사용자.csv,전화번호,nn-nnn-nnnn-n,10
+사용자.csv,전화번호,nnn-nnn-nnnn-n,7
+사용자.csv,전화번호,nnSnnn-nnnn,4
+사용자.csv,전화번호,nnn-nn-nnnn,4
+사용자.csv,전화번호,nnnn-nnn-nnnn,3
+사용자.csv,전화번호,nn-nnnnnnn,2
+사용자.csv,전화번호,nnnSnnn-nnnn,2
+사용자.csv,전화번호,nnnn-nn-nnnn,1
+사용자.csv,전화번호,nnn-nnn-nnAA,1
+사용자.csv,전화번호,nn-nn-nnnn,1
+사용자.csv,휴대폰번호,--,1394
+사용자.csv,휴대폰번호,nnn-nnnn-nnnn,1278
+사용자.csv,휴대폰번호,nnn-nnn-nnnn,851
+사용자.csv,휴대폰번호,nnn--,3
+사용자.csv,휴대폰번호,nnn-nnnn-nnn,2
+사용자.csv,휴대폰번호,nnn-nnnn-nnnnn,1
+사용자.csv,휴대폰번호,nnnnnnSnnnn,1
+사용자.csv,휴대폰번호,-nnn-nnnn,1
+사용자.csv,휴대폰번호,nnn-nnn-nnnnn,1
+사용자.csv,휴대폰번호,nnn-nnn-nnn,1
+사용자.csv,휴대폰번호,-SaaaSaaaaSSaaaSaaS-,1
+사용자.csv,FAX번호,--,1857
+사용자.csv,FAX번호,nnn-nnn-nnnn,645
+사용자.csv,FAX번호,nn-nnn-nnnn,365
+사용자.csv,FAX번호,nn-nnnn-nnnn,93
+사용자.csv,FAX번호,nnn-nnnn-nnnn,7
+사용자.csv,FAX번호,nn--,6
+사용자.csv,FAX번호,nnn--,2
+사용자.csv,FAX번호,nn-nnn-nnn,2
+사용자.csv,FAX번호,nn-nnn -nnnn,1
+사용자.csv,FAX번호,nn-nnnS-nnnn,1
+사용자.csv,FAX번호,nnn-nnnn-,1
+사용자.csv,FAX번호,-nnnn-nnnn,1
+사용자.csv,EMAIL,aaaaaaSaaaaaa.aaa,890
+사용자.csv,EMAIL,aaaaaSaaaaaa.aaa,887
+사용자.csv,EMAIL,aaaaaaaSaaaaaa.aaa,522
+사용자.csv,EMAIL,aaaaaaaaSaaaaaa.aaa,377
+사용자.csv,EMAIL,aaaaaaaaaSaaaaaa.aaa,278
+사용자.csv,EMAIL,aaaaSaaaaaa.aaa,253
+사용자.csv,EMAIL,aaaaaaaaaaSaaaaaa.aaa,115
+사용자.csv,EMAIL,AAAnnnnSaaaaaa.aaa,54
+사용자.csv,EMAIL,AAAAAASaaaaaa.aaa,50
+사용자.csv,EMAIL,AAAAASaaaaaa.aaa,41
+사용자.csv,EMAIL,AAAAAAASAAAAAA.AA.AA,32
+사용자.csv,EMAIL,AAAAAAAASaaaaaa.aaa,32
+사용자.csv,EMAIL,AAAAAAASaaaaaa.aaa,27
+사용자.csv,EMAIL,aaannnnSaaaaaa.aaa,24
+사용자.csv,EMAIL,aaaaaaaaaaaSaaaaaa.aaa,23
+사용자.csv,EMAIL,AAAAAAAAASaaaaaa.aaa,20
+사용자.csv,EMAIL,aa.aaaSaaaaaa.aaa,18
+사용자.csv,EMAIL,aaaSaaaaaa.aaa,14
+사용자.csv,EMAIL,aaaaaaa,13
+사용자.csv,EMAIL,AAAASaaaaaa.aaa,12
+사용자.csv,주민등록번호,aaaaaaaa,533
+사용자.csv,등록일자,nnnnnnnn,7287
+사용자.csv,입사일자,nnnnnnnn.n,7261
+사용자.csv,입사일자,nnnnnnn.n,1
+사용자.csv,사직일자,nnnnnnnn.n,5211
+사용자.csv,수금요원여부,A,7287
+사용자.csv,수정일자,nnnnnnnn.n,2924
+사용자.csv,폐기일자,nnnnnnnn.n,6164
+사용자.csv,폐기여부,A,7287
+사용자.csv,처리자사번,nnnnnnn,7242
+사용자.csv,처리자사번,Annnnnn,26
+사용자.csv,처리자사번,AAAnnnn,10
+사용자.csv,처리자사번,AAnnnnn,4
+사용자.csv,처리자사번,nnnnnn,2
+사용자.csv,처리자사번,annnnnn,1
+사용자.csv,처리자사번,AAAAAA,1
+사용자.csv,처리자사번,aaannnn,1
+사용자.csv,수입금담당자여부,A,7287
+사용자.csv,수납직원여부,A,20
+사용자.csv,직책2,A,6987
+사용자.csv,한웨이 ID,nnnnnnn,1555
+사용자.csv,한웨이 ID,AAAnnnn,37
+사용자.csv,한웨이 ID,AAnnnnn,36
+사용자.csv,한웨이 ID,Annnnnn,4
+사용자.csv,한웨이 ID,nnnnnn,2
+사용자.csv,한웨이 ID,AAAAnnn,1
+사용자.csv,비밀번호이력1,nnnnanaanannananaannnannnaaananannnannannnanannannnnnannnnnnnnna,5
+사용자.csv,비밀번호이력1,aannnnannnaaanannnnnanannannnnannnnaaannnnnnnnnnnannnnnaannnnnna,4
+사용자.csv,비밀번호이력1,nanannnnnnnnannnanannanananaanannnnannannnanannnnaanannannaaannn,3
+사용자.csv,비밀번호이력1,nnnnaannnannannanaannnnnnnnnnannnnnanannnaanannannnnnnnnaannnnnn,2
+사용자.csv,비밀번호이력1,AnnnnAAnnnAnAAnAnnAAnnnnnAnAnAnn,2
+사용자.csv,비밀번호이력1,nnnnnananaanannannnnnnnnnaaaaaannaaannnannannannnnnnannaannnnann,2
+사용자.csv,비밀번호이력1,AnnAnnnAnnnnnAnnAnnnnnnAAAnnnAnn,2
+사용자.csv,비밀번호이력1,nnnnnnnnnaannnnnnnnnnnaaaaaannnnnnnaaaaaannnannnnannannnnnannaan,2
+사용자.csv,비밀번호이력1,nnnAnAnnnAnnnAnnnAAAnAnAAAnnAAnn,2
+사용자.csv,비밀번호이력1,nnnnnAAAAnnnnAnnAnnnAnnnAnnnAnAA,2
+사용자.csv,비밀번호이력1,nannnnaanannanaanananaannnnnnanannnananaannnannnnnnnnnnnanananan,2
+사용자.csv,비밀번호이력1,annnnnannnananannannnnnnannannnanaaaanannnnannnnnnnnanaannnaanna,2
+사용자.csv,비밀번호이력1,nnaannnnnnnnnnanannanananannnnannnnnnanannaannaannannanannnaaann,2
+사용자.csv,비밀번호이력1,AnAAAAAAAAnnnnAnnAnnAnAnnnnnnnnA,2
+사용자.csv,비밀번호이력1,annnnanannnnannnaaannnnnnnaananaannnaanannnnnnnnnnnnnaanaannnnnn,2
+사용자.csv,비밀번호이력1,nnnaannnanaannnnananannaaanannnnnnannaaaannnnnnnaananaannnaaanaa,2
+사용자.csv,비밀번호이력1,naaanannannaanaannnnnanannnnnaaanaanaannaanannnnnaaananaaannnann,2
+사용자.csv,비밀번호이력1,AnnnnAnnAAnAnnAnnnnAnnAAnnnnnAnn,2
+사용자.csv,비밀번호이력1,nnnAnnnnAnnAnAAnnAAAAAAnAAAnnnAA,2
+사용자.csv,비밀번호이력1,nnannananannanaaanannaanannnaaaanannnnnnnnnnaaanaannannnnannnaaa,2
+사용자.csv,비밀번호이력2,nnnnnnAnAAnnnnnnnnAnnnnnnAnAAAAn,56
+사용자.csv,비밀번호이력2,aannnnannnaaanannnnnanannannnnannnnaaannnnnnnnnnnannnnnaannnnnna,46
+사용자.csv,비밀번호이력2,nanannnnnnnnannnanannanananaanannnnannannnanannnnaanannannaaannn,4
+사용자.csv,비밀번호이력2,anaannannanaaaaannnaanannnnnnnaannannnnnnannanaanannnnnaanannann,4
+사용자.csv,비밀번호이력2,nnnnnannannannanaaannnnannananaanaannnannnanaannannnnnnnnnnnnnnn,3
+사용자.csv,비밀번호이력2,nnnaaaanannnaannnaannnnannnnaannnnnnannanananannnanannannnaaannn,3
+사용자.csv,비밀번호이력2,nnnnanannnnannnnannnaannnnnnnnnannaanaaannannnaannnanannaannanna,2
+사용자.csv,비밀번호이력2,aanaanaaaanaaannnanaannnnnnnnnaannaaannnnnnaaaaaannanannaaannana,2
+사용자.csv,비밀번호이력2,nnnaaaannnanaaanannnnnnnnaanannnannananaanannnnanannnnnannnaaann,2
+사용자.csv,비밀번호이력2,AnnAnAnAnAAnnAAAnnnAnnnAnnnnnAnn,2
+사용자.csv,비밀번호이력2,AAAnnAAnnnnAAAnnAnnnAnAnnnAAnnnA,2
+사용자.csv,비밀번호이력2,nnAnAAAnAnnnnnnnnnAAnAnnnAnnnAnA,2
+사용자.csv,비밀번호이력2,annnannnnnaannnnnnaaannannnnnaannannnanannnnnnnnannnnnannnnannna,2
+사용자.csv,비밀번호이력2,nannaannnnnnnnnaannannaannanananaaanannnnannnnnnaannaaaananaannn,2
+사용자.csv,비밀번호이력2,nannnnnnnnannaannnnnnnnnaanannnnaannnnnnnnanannannnnnannannnnaan,2
+사용자.csv,비밀번호이력2,nnnaannnnnnnannaannaannaaaaaaaannnnnnaannnnannannaannanaaanannnn,2
+사용자.csv,비밀번호이력2,annnaaannannaannaannannnanannnaanannanaanannnnnnnaaaannnnanaannn,2
+사용자.csv,비밀번호이력2,AnnAAnAAAnnnAAnnnnAAnnnnAnAAnnnA,2
+사용자.csv,비밀번호이력2,AAnnAAnAAAnnnnnAnAnnnnAnnnAAAnnn,2
+사용자.csv,비밀번호이력2,nnaaaanannnananannannaannnnanaaannnnnnnannnnaanaaannaannnanaanaa,2
+사용자.csv,비밀번호변경일,nnnnnnnn.n,1823
+사용자.csv,미빌번호오류횟수,n,7287
+사용자.csv,계정근거,KKKK K nnnn-nnnK,266
+사용자.csv,계정근거,KKKK K nnnK,67
+사용자.csv,계정근거,KKKKKK-KKK KKKKKSAA AaaaaSS-nnnnnnnnnnnn,64
+사용자.csv,계정근거,KKKK K nnnn - nnnK,63
+사용자.csv,계정근거,KKKK K nnnnnnnnK,63
+사용자.csv,계정근거,KKKKK-KKK KKKKKSAA AaaaaSS-nnnnnnnnnnnn,48
+사용자.csv,계정근거,KKKK K nnnn-nnK,46
+사용자.csv,계정근거,KKKK K nnK,34
+사용자.csv,계정근거,KKKKKK-AA-nnnnnnnnnn,31
+사용자.csv,계정근거,KKKKKK-AA-nnnnnnnnn,23
+사용자.csv,계정근거,KKKK KKKKKK-KKK KKKKKSAA AaaaaSS-nnnnnnnnnnnn,19
+사용자.csv,계정근거,KKKK K nnnnK,16
+사용자.csv,계정근거,KKKK KKKKK-KKK KKKKKSAA AaaaaSS-nnnnnnnnnnnn,14
+사용자.csv,계정근거,KKKKK-AA-nnnnnnnnn,13
+사용자.csv,계정근거,KKKKK-AA-nnnnnnnnnn,12
+사용자.csv,계정근거,KKKKKKK-KKK KKKKKSAA AaaaaSS-nnnnnnnnnnnn,11
+사용자.csv,계정근거,nnnnnnnnnnnn,10
+사용자.csv,계정근거,KKKK KKKKK-AA-nnnnnnnnn,6
+사용자.csv,계정근거,KKKK K nnnnnnnK,6
+사용자.csv,계정근거,KKKKKKK-AA-nnnnnnnnn,5
+사용자.csv,비매출세금계산서발급제한일,nnnnnnnn.n,234
+사용자.csv,어음입금표발행제한일,nnnnnnnn.n,13
+사용자.csv,접근권한 IP,nnn.nn.nn.nnn,8
+사용자.csv,접근권한 IP,nn.nn.nnn.nn,3
+사용자.csv,접근권한 IP,nn.nn.nn.nnSnnn.nn.nn.nn,1
+사용자.csv,접근권한 IP,nn.nn.nn.nnnSnnn.nn.nn.nn,1
+사용자.csv,접근권한 IP,nnn.nn.nn.nnSnnn.nn.nn.nnn,1
+사용자.csv,접근권한 IP,nnn.nn.nn.nnnSnnn.nn.nn.nnn,1
+사용자.csv,접근권한 IP,nnn.nn.nn.nn,1
+사용자.csv,사용자계정잠금여부,A,1250
+사용자.csv,사용자계정잠금일자,nnnnnnnn.n,720
+사용자.csv,HR시스템소속변경일자,nnnnnnnn.n,1063
+사용자.csv,HR시스템소속코드,AAAAAA,587
+사용자.csv,HR시스템소속코드,AAAAA,409
+사용자.csv,HR시스템소속코드,AAAAAAA,44
+사용자.csv,HR시스템소속코드,AAAAAASnS,5
+사용자.csv,HR시스템소속코드,AAAAAAn,3
+사용자.csv,HR시스템소속코드,AAAAAAAA,2
+사용자.csv,비밀번호이력3,aannnnannnaaanannnnnanannannnnannnnaaannnnnnnnnnnannnnnaannnnnna,15
+사용자.csv,비밀번호이력3,nnnaannananannannaannnannnnananananannnannnannnaannnnnnnaanaaaan,4
+사용자.csv,비밀번호이력3,aananannnnnananannnaannnnnnnnnaaaaananaannananaannnnannnnnnnanaa,2
+사용자.csv,비밀번호이력3,naanaaanannnannnaanannnannnaaannnaaannannnnaaaannannnnnaaaanaaan,2
+사용자.csv,비밀번호이력3,nnaannnnnannaannnnnnnaannanaananaannannnnnnaaaannaaannannnnnaaaa,2
+사용자.csv,비밀번호이력3,annannaannnnnaaaanannnannaannnnnaananannnaaannanaaanaaanananannn,2
+사용자.csv,비밀번호이력3,nnnnaannnannannanaannnnnnnnnnannnnnanannnaanannannnnnnnnaannnnnn,2
+사용자.csv,비밀번호이력3,nnnnanannnnanaaanannnananannnanannnnannananaannnnnnanannnnannnna,2
+사용자.csv,비밀번호이력3,nannnnannnananannnnnnnnannannannaanaannannnnnnnananananannnannan,2
+사용자.csv,비밀번호이력3,naaannnannnnnnnnnaaannaanannnnnnaaannanannnnananaannnnannnnanann,1
+사용자.csv,비밀번호이력3,nnaaanannnnnnanaaaaanaannnannannaanaannnannnanannaannananaannaan,1
+사용자.csv,비밀번호이력3,nnnnnnannananaannnaananannaaaannnaanaaaaananannanannnnnnaananaan,1
+사용자.csv,비밀번호이력3,nnnnnnnnnnnannnaannnnaaannananannananannannnnnnnanaanaanaannnnna,1
+사용자.csv,비밀번호이력3,nanannnnnnannnnanannnnaaannaananaannnaaananaannnannnnnaannnnanna,1
+사용자.csv,비밀번호이력3,nnnanaanaannnnnnnnnnnnnannnnnannnnnnnnnnnnnannnnnannnannnnaanana,1
+사용자.csv,비밀번호이력3,annnnnnnnnnnnnaaannnanaannnnnannnnannnnnaannnnnaaannnnnnaannnaan,1
+사용자.csv,비밀번호이력3,nnannnaannannannnnnaaanaaaanaannaananananananananaanaanaannnnnna,1
+사용자.csv,비밀번호이력3,nannnaannnnnaaaannaanaannnaannnaananaanannnnnnaannaannannnnnnnnn,1
+사용자.csv,비밀번호이력3,nnnnnnnanaaaannnnnannnnnnannanannnnnnnaannnanannnannanannanaannn,1
+사용자.csv,비밀번호이력3,annaanaaannnnnnnnnnnaanannaananaaanaaanannaanannanaannannnannaan,1
+사용자.csv,비밀번호이력4,aannnnannnaaanannnnnanannannnnannnnaaannnnnnnnnnnannnnnaannnnnna,14
+사용자.csv,비밀번호이력4,nannnnannnananannnnnnnnannannannaanaannannnnnnnananananannnannan,3
+사용자.csv,비밀번호이력4,nnnaaaanannnaannnaannnnannnnaannnnnnannanananannnanannannnaaannn,3
+사용자.csv,비밀번호이력4,aaanaannaannananannnnnaannnannnannannnanananannnannannannnnnnnnn,3
+사용자.csv,비밀번호이력4,nnnnnannannannanaaannnnannananaanaannnannnanaannannnnnnnnnnnnnnn,2
+사용자.csv,비밀번호이력4,nanannaannnnnaannanaannnnnannanannanannnannnnnaaannannnanannaann,2
+사용자.csv,비밀번호이력4,nannnnnnnnannaannnnnnnnnaanannnnaannnnnnnnanannannnnnannannnnaan,2
+사용자.csv,비밀번호이력4,naanaaanannnannnaanannnannnaaannnaaannannnnaaaannannnnnaaaanaaan,2
+사용자.csv,비밀번호이력4,nnnannnannnnnnnnananannanannnnnnnnnnnnaannnnannannnaannnaannaann,1
+사용자.csv,비밀번호이력4,annnnnannnnnannnnnnanannannnnannnaannnnnaannaaannnnnannnnnnnnnna,1
+사용자.csv,비밀번호이력4,nannannnnannannaanannnnnnnnanannnnannannnnnnannnnanannnnnaannnnn,1
+사용자.csv,비밀번호이력4,nannaannannnnannannannnnnnaannaaaannnnanannannaanaanaaaannnanaan,1
+사용자.csv,비밀번호이력4,annnnnaaannnnnnannnnnnnnnnnnnnaanananannannnannnnnannannaanannnn,1
+사용자.csv,비밀번호이력4,aannanannannaaanannannnaannnaannannnnnnnanannaaaaanannannannanan,1
+사용자.csv,비밀번호이력4,aannannnnannnnnannannnanannnnnannannnnnanaaaaaaaanannnaannnnnann,1
+사용자.csv,비밀번호이력4,nnnanaannananaaanaannnnnanaanaannaaannnnaaaannnnnnnanannnnnannan,1
+사용자.csv,비밀번호이력4,nnnaannaannnnnnaaaanannnannannannnnanaannannannnnnnnnnnnnannnnaa,1
+사용자.csv,비밀번호이력4,nnnnannnnannnnannnnanaaannaannannnnannnanaananannannnannnnnnanan,1
+사용자.csv,비밀번호이력4,nannnnanaannnnnnnaanaannnnannnnnnanannnnnaannanannnnnnannanaanan,1
+사용자.csv,비밀번호이력4,nannaannaannnaannnanaaaanannnnnnaaaannnaananaannannnnnnnnnannann,1
+사용자.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,7287
+사용자.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,7287
+사용자.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,7287
+사원기본.csv,사원번호,nnnnnnn,107754
+사원기본.csv,사원번호,nnnnnn,22192
+사원기본.csv,사원번호,nnnnn,2376
+사원기본.csv,사원번호,nnnn,2
+사원기본.csv,사원번호,nnn,1
+사원기본.csv,사원번호,n,1
+사원기본.csv,사원번호,aaaaaa,1
+사원기본.csv,사원번호,aaaaann,1
+사원기본.csv,정규비정규,n.n,132326
+사원기본.csv,소속조직코드,nnnn,128657
+사원기본.csv,소속조직코드,nnn,2933
+사원기본.csv,소속조직코드,nnnnnn,292
+사원기본.csv,소속조직코드,AA,224
+사원기본.csv,소속조직코드,AAAAA,147
+사원기본.csv,소속조직코드,AAAA,55
+사원기본.csv,소속조직코드,nnnnnnn,8
+사원기본.csv,소속조직코드,AAn,2
+사원기본.csv,소속조직코드,nnnnn,1
+사원기본.csv,소속조직코드,AAA,1
+사원기본.csv,직종코드,nn,132223
+사원기본.csv,직종코드,AA,105
+사원기본.csv,국내집배구역,nnnnnn.n,43508
+사원기본.csv,국내집배구역,nnnnnn,8035
+사원기본.csv,국내집배구역,nnnnn.n,3783
+사원기본.csv,국내집배구역,nnnnnnn,20
+사원기본.csv,국내집배구역,nnnn.n,18
+사원기본.csv,국내집배구역,n.n,4
+사원기본.csv,국내집배구역,nnnn..,1
+사원기본.csv,사직일자,nnnnnnnn.n,114550
+사원기본.csv,사직일자,nnnnnn.n,1
+사원기본.csv,소속회사,KK,1758
+사원기본.csv,소속회사,nnnnnn,1112
+사원기본.csv,소속회사,nn,406
+사원기본.csv,소속회사,nnnn,206
+사원기본.csv,소속회사,nnn,190
+사원기본.csv,소속회사,AAA,40
+사원기본.csv,소속회사,KKK,37
+사원기본.csv,소속회사,KKU,33
+사원기본.csv,소속회사,n,30
+사원기본.csv,소속회사,AA,12
+사원기본.csv,소속회사,nnnnnnn,7
+사원기본.csv,소속회사,AAAA,7
+사원기본.csv,소속회사,nnnnn,6
+사원기본.csv,소속회사,KKnnn,6
+사원기본.csv,소속회사,AAAnnn,3
+사원기본.csv,소속회사,-,2
+사원기본.csv,소속회사,AAAAA,2
+사원기본.csv,소속회사,AAA AAA,1
+사원기본.csv,소속회사,//,1
+사원기본.csv,소속회사,nnnKK,1
+사원기본.csv,시근일자,nnnnnnnn.n,130751
+사원기본.csv,시근일자,nnnnnn.n,77
+사원기본.csv,시근일자,nnnnnnn.n,17
+사원기본.csv,시근일자,nnnn.n,13
+사원기본.csv,시근일자,nnnnn.n,1
+사원기본.csv,마감시간,nnnn.n,183
+사원기본.csv,마감시간,nnn.n,14
+사원기본.csv,부재기간1,nnnnnnnn.n,3
+사원기본.csv,부재기간2,nnnnnnnn.n,2
+사원기본.csv,부재시각1,nnnn.n,2
+사원기본.csv,부재시각2,nnnn.n,2
+사원기본.csv,대체ESMAN,nnnnnn.n,2
+사원기본.csv,대체ESMAN,nnnnnnn.n,1
+사원기본.csv,마감시각여부,A,207
+사원기본.csv,한덱스IF구분,A,6185
+사원기본.csv,한덱스IF발생일시,nnnnnnnnnnnnnn.n,11777
+사원기본.csv,사원주소1(동이상),KK KK KK,2934
+사원기본.csv,사원주소1(동이상),KK  KK,1956
+사원기본.csv,사원주소1(동이상),KK KK,1643
+사원기본.csv,사원주소1(동이상),KK,1167
+사원기본.csv,사원주소1(동이상),KKKK KKK KKK KKK,644
+사원기본.csv,사원주소1(동이상),KK K KK,556
+사원기본.csv,사원주소1(동이상),KKK KKK KKK KKK,479
+사원기본.csv,사원주소1(동이상),KK KKK KKK,460
+사원기본.csv,사원주소1(동이상),KK K,446
+사원기본.csv,사원주소1(동이상),KK KK KKK,393
+사원기본.csv,사원주소1(동이상),KKK KKK KKK,360
+사원기본.csv,사원주소1(동이상),KK KK KKn,354
+사원기본.csv,사원주소1(동이상),KK KKK KK,298
+사원기본.csv,사원주소1(동이상),KK KKK  KKKK,249
+사원기본.csv,사원주소1(동이상),KKKK KKK KKK,197
+사원기본.csv,사원주소1(동이상),KK KKK  KKK,186
+사원기본.csv,사원주소1(동이상),KKK,182
+사원기본.csv,사원주소1(동이상),KK KKKK  KKKKnnK,174
+사원기본.csv,사원주소1(동이상),KKK KKK  KKK,171
+사원기본.csv,사원주소1(동이상),KK KKKK KKK,170
+사원기본.csv,사원주소도로명주소여부,n.n,18554
+사원기본.csv,인사시스템사번,nnnnnnn.n,303
+사원기본.csv,인사시스템사번,nnnnnnn,283
+사원기본.csv,인사시스템사번,nnnnnn,235
+사원기본.csv,인사시스템사번,nnnnnn.n,112
+사원기본.csv,인사시스템사번,nnnnn.n,33
+사원기본.csv,인사시스템사번,nnnnnnnn,1
+사원기본.csv,인사시스템사번,nnnnn,1
+사원기본.csv,인사시스템사번,KK,1
+사원기본.csv,인사시스템사번,An,1
+사원기본.csv,출력양식,AASnn,14521
+사원기본.csv,운전면허종류,nn.n,28884
+사원기본.csv,화물운송종사자자격취득일,nnnnnnnn.n,19251
+사원기본.csv,화물운송종사자자격취득일,nnnnnn.n,66
+사원기본.csv,화물운송종사자자격취득일,nnnnnnn.n,62
+사원기본.csv,화물운송종사자자격취득일,nnnnn.n,25
+사원기본.csv,화물운송종사자자격취득일,nnn.n,1
+사원기본.csv,휴면일자,nnnnnnnn.n,730
+사원기본.csv,차량번호,KKnnKnnnn,9360
+사원기본.csv,차량번호,nnKnnnn,5065
+사원기본.csv,차량번호,nnnKnnnn,1100
+사원기본.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,132328
+사원기본.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,132328
+사원기본.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,132328
+사원마스터.csv,사원번호,nnnnnnn,8167
+사원마스터.csv,사원번호,nnnnnn,1649
+사원마스터.csv,사원번호,nnnnn,184
+사원마스터.csv,정규비정규,n,10000
+사원마스터.csv,조직코드,nnnn,9707
+사원마스터.csv,조직코드,nnn,230
+사원마스터.csv,조직코드,AA,22
+사원마스터.csv,조직코드,nnnnnn,21
+사원마스터.csv,조직코드,AAAAA,14
+사원마스터.csv,조직코드,AAAA,5
+사원마스터.csv,조직코드,nnnnnnn,1
+사원마스터.csv,직종코드,nn,9990
+사원마스터.csv,직종코드,AA,10
+사원마스터.csv,국내집배구역,nnnnnn.n,3866
+사원마스터.csv,국내집배구역,nnnnn.n,318
+사원마스터.csv,사직일자,nnnnnnnn.n,8656
+사원마스터.csv,소속회사,KK,114
+사원마스터.csv,소속회사,nnnnnn,83
+사원마스터.csv,소속회사,nn,38
+사원마스터.csv,소속회사,nnnn,19
+사원마스터.csv,소속회사,nnn,17
+사원마스터.csv,소속회사,KKK,3
+사원마스터.csv,소속회사,KKU,2
+사원마스터.csv,소속회사,AAA,2
+사원마스터.csv,소속회사,nnnnnnn,1
+사원마스터.csv,소속회사,n,1
+사원마스터.csv,소속회사,AAAnnn,1
+사원마스터.csv,소속회사,AA,1
+사원마스터.csv,근무시작일자,nnnnnnnn.n,9860
+사원마스터.csv,근무시작일자,nnnnnn.n,6
+사원마스터.csv,근무시작일자,nnnn.n,3
+사원마스터.csv,근무시작일자,nnnnnnn.n,1
+사원마스터.csv,마감시간,nnnn.n,12
+사원마스터.csv,마감시각여부,A,14
+사원마스터.csv,주소,KK KK KK,226
+사원마스터.csv,주소,KK  KK,161
+사원마스터.csv,주소,KK KK,106
+사원마스터.csv,주소,KK,89
+사원마스터.csv,주소,KKKK KKK KKK KKK,45
+사원마스터.csv,주소,KK K KK,39
+사원마스터.csv,주소,KK KK KKK,34
+사원마스터.csv,주소,KKK KKK KKK KKK,33
+사원마스터.csv,주소,KK KK KKn,32
+사원마스터.csv,주소,KK KKK KKK,32
+사원마스터.csv,주소,KKK KKK KKK,31
+사원마스터.csv,주소,KK K,29
+사원마스터.csv,주소,KK KKK,25
+사원마스터.csv,주소,KK KKK  KKKK,20
+사원마스터.csv,주소,KK KKK KK,20
+사원마스터.csv,주소,KKK  KK,19
+사원마스터.csv,주소,KK KKKK  KKKKnnK,19
+사원마스터.csv,주소,KK KKKK KKK,17
+사원마스터.csv,주소,KK KKK  KKK,17
+사원마스터.csv,주소,KKKK KKK KKK,14
+사원마스터.csv,인사시스템사번,nnnnnnn.n,53
+사원마스터.csv,인사시스템사번,nnnnnn.n,31
+사원마스터.csv,인사시스템사번,nnnnn.n,4
+사원마스터.csv,운전면허종류,nn.n,2197
+사원마스터.csv,화물운송종사자자격취득일,nnnnnnnn.n,1442
+사원마스터.csv,화물운송종사자자격취득일,nnnnnnn.n,10
+사원마스터.csv,화물운송종사자자격취득일,nnnnnn.n,7
+사원마스터.csv,화물운송종사자자격취득일,nnnnn.n,2
+사원마스터.csv,차량번호,KKnnKnnnn,714
+사원마스터.csv,차량번호,nnKnnnn,380
+사원마스터.csv,차량번호,nnnKnnnn,83
+사원마스터.csv,최종변경일시,nn:nn.n,10000
+사원마스터.csv,ETL일시,nn:nn.n,10000
+사원마스터.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,10000
+상품분류.csv,상품코드,nn,57
+상품분류.csv,상품코드,Ann,44
+상품분류.csv,상품코드,nnA,23
+상품분류.csv,상품코드,AAA,13
+상품분류.csv,상품코드,AA,8
+상품분류.csv,상품코드,nnn,4
+상품분류.csv,상품코드,AAn,2
+상품분류.csv,상품코드,n,1
+상품분류.csv,사업구분,A,152
+상품분류.csv,상품명,KKKK,23
+상품분류.csv,상품명,KKKKK,15
+상품분류.csv,상품명,KKKKKK,7
+상품분류.csv,상품명,KKKK KKKK,7
+상품분류.csv,상품명,Aaaaaaa Aaaaaa,5
+상품분류.csv,상품명,KKKKKKK,5
+상품분류.csv,상품명,Aaaaaaa Aaaaaaaa,5
+상품분류.csv,상품명,Aaaa Aaaa Aaaaaaa A,4
+상품분류.csv,상품명,KKKKKKKKKK,4
+상품분류.csv,상품명,Aaaaaaaa Aaaaaa,3
+상품분류.csv,상품명,Aaaaaaaa Aaaaaaaa,3
+상품분류.csv,상품명,Aaaaaaa AaaaaaSAS,3
+상품분류.csv,상품명,Aaa Aaaaaaa A,2
+상품분류.csv,상품명,KKKK KKn,2
+상품분류.csv,상품명,KKKK KKK,2
+상품분류.csv,상품명,KKKKK KKKK,2
+상품분류.csv,상품명,AAA KKK,2
+상품분류.csv,상품명,AAASKKKSKK,2
+상품분류.csv,상품명,KKKKK KK,2
+상품분류.csv,상품명,Aaaa Aaaaaaa,2
+상품분류.csv,설명,n. KKKS KKKKKKS KKKK KK KKKK KKKK KKKKK KK KKKSKKKKK KKK KKKKSKK KKKK KKK,1
+상품분류.csv,설명,KKK KK KK KKKK..,1
+상품분류.csv,설명,K KKKKKSKK KKS K KKS,1
+상품분류.csv,설명,KKKK,1
+상품분류.csv,설명,KKKKKK KKK KKKKKKUUAKKK KK KKK KKK KK KK KKKK KKK KK,1
+상품분류.csv,설명,KK KKKK KKKK K AAAA KKKKK,1
+상품분류.csv,설명,KKK KKKK KKK KK..,1
+상품분류.csv,설명,AAAAKKK KKKK  KK KKKKK KK KKKKK ..,1
+상품분류.csv,설명,KKK KKK KKK KK KKK KKK KKKK KKKK KKK...,1
+상품분류.csv,설명,KKKK KKK KKK KKKKK KKKK KKK KKKKKKK KKKK KKKK KKKKKKK KKK,1
+상품분류.csv,설명,KKS KK KKK KKK KKKK KK KK KKK KKKK KKKK,1
+상품분류.csv,설명,KKK KKK KKK KKKK KKKK KKK KKKKK KKK KKKK KKK,1
+상품분류.csv,설명,U KKKK KKKK KK KK KKKK KK KK K KKKK KKKK KK KKS UU   KKK K KKKK KK KKK nSnKKK KK.KKKK UU   KKK KKK KKKKKK.,1
+상품분류.csv,설명,KKK KK KKK KKK KK KK KKKK KKK. KK KKKKK KKK KKK.,1
+상품분류.csv,설명,A,1
+상품분류.csv,설명,U KKKSKKKS K KK KK KKKK KKK KK KKKKK KKKK KKKUU   - KKK KK K KKKK KKKKK KKK KKKK KKK,1
+상품분류.csv,설명,KKK KK nnaa KKS KK KKK K nnnaa KKK KKKKUKKK KK KKKK nnKK KKKSKK KKKSKKKKK SnSnK K KKS UKKK KKK KKKK KK KKK,1
+상품분류.csv,설명,U KKSKKS KKK K KKS KK KKK KK K KKK KK KKK,1
+상품분류.csv,설명,U KKK KKUU   - KK KKKKK KKKKK KK KKKK KK KKK KKK KSUU     KKK KKK KK KKK KKKK KKKK KKKKK KKKSUU     KKKK KKK KKK KKKK KKK KK KKK KKK KKK,1
+상품분류.csv,설명,KKK,1
+상품분류.csv,판매중지일,nnnnnnnn.n,53
+상품분류.csv,화물종류,A,48
+상품분류.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/Ann.aaa,43
+상품분류.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/aaaSnnnnnnnn.aaa,5
+상품분류.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/aaaaSnnnnnnnn.aaa,2
+상품분류.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/aaaaaaSnnnnnnnn.aaa,2
+상품분류.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/aaaaaaaSnnnnnnnn.aaa,2
+상품분류.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/AaaaaaaSaaa.aaa,2
+상품분류.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/AASaaa.aaa,1
+상품분류.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/AAASaaaa.aaa,1
+상품분류.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/Aaaaaa.aaa,1
+상품분류.csv,접수시주의사항,n. KKKK KKK KKK KKUU   KKKK KK KK KKKK KKKK KKK KKUU   KKKK KKKK KKKK,1
+상품분류.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/aaaaaaaaSnnnnnnnn.aaa,1
+상품분류.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/Aaaaaaaa.aaa,1
+상품분류.csv,서비스지역 및 요율,UUUUUUUUUUUUUUUUUUUUUUUUUU    KK KKK     U    KK KKK     UUUUUUUUUUUUUUUUUUUUUUUUUUUUU      nnSnnnK      U      nnSnnnK      UUUUUUUUUUUUUUUUUUUUUUUUUUUUUU KKK KKSKKS                      UUUUUUUUUUUUUUUUUUUUUUUUUUUUUU nKK     nSnnnKUU KKK   nnSnnnKUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU KKK   nnSnnnKUU KKK       KKUUUUUUUUUUUUUUUUUUUUUUUUUUUU  S KKKK KK KKKKK KK KKUU  S KKKK KK KK KKSKKKKS KKUU  S KKK KKKK nKKKK,1
+상품분류.csv,서비스지역 및 요율,UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU KKKKKKK                                             UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU          U          U              U       KKKK       UUUUKKKKKUKKKKKU   KKKK   UUUUUUUUUUUUUUUU          U          U              U nKKU nKKU nKKUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUKKUKKU   nKK  U      -       UnnSnnnU  -   U  -   UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUKKUAAAAU   nKK  UKKSnnaaKKSUnnSnnnUnnSnnnUnnSnnnUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUAAAAUAAAAU   nKK  UKKSnnaaKKSUnnSnnnUnnSnnnUnnSnnnUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU          U          UKKSnnaaKKSUnnSnnnUnnSnnnUnnSnnnUUUU          U          UUUUUUUUUUUUUUUUUUUUUUUUAAAAUAAAAU  nnKK  UKKSnnaaKKSUnnSnnnUnnSnnnUnnSnnnUUUU          U          UUUUUUUUUUUUUUUUUUUUUUUU          U          UKKSnnaaKKSUnnSnnnUnnSnnnUnnSnnnUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU KKK KKKK : KKKK KK KKKKS                  UUUU                     KKK KK KKK KK                  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU               U KKKKSKKK K KKKS U               UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU KK UKKK KK U        KK/KKK         U  KKK  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU      U            UKKSKKSKKKSKKSKKS U          UUUU nKKUKKK KK UKKSKKSKKSKKSKKKS U KKKK UUUU      U            UKKSKKSKKSKK         U          UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU      U            UKKSKKSKKSKKSKK    U          UUUU nKKUKKK KK UKKSKKSKKSKKKSKKS U    -     UUUU      U            UKKSKKSKKSKKSKK    U          UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU nKKUKKK KK U       KKKSKKK        UKKKKKUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                                  U KKK KKK:nnnn. n. n UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU,1
+상품분류.csv,서비스지역 및 요율,U KKK KKUU  - KKK KK KK K KK KKSKK nSnnnK KKS,1
+상품분류.csv,서비스지역 및 요율,U KKKK KKUU   U KKKKK KKK KK,1
+상품분류.csv,서비스지역 및 요율,n.KKKK: KKKKKK SnK KKKK KKKSUU            UUn.KKKKK: KKKSKKKSKKK KK KKUUUU UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU UUUUUUUUU KKKKSKS KKK KKS                                              UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU     KK     U   KKK U   KK   U   KK   U    KK  U  KKK  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU     KK     U naa KK Unnaa KK U nnaa KKU nnaa KKU nnaa KKUUU UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU-UUUUUUU   KKKK   U          U          U          U          U          UUUU KKKKKK U  nSnnnK U  nSnnnK U  nSnnnK U  nSnnnK U nnSnnnK UUUU  U KKK   U          U          U          U          U          UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU    KKK    U          U          U          U          U          U   UUU   KKKK   U  nSnnnK U  nSnnnK U  nSnnnK U nnSnnnK U nnSnnnK UUUUU KKK KKU          U          U          U          U          UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   KKKK   U          U          U          U          U          UUUU KKKKKK U  nSnnnK U nnSnnnK U nnSnnnK U nnSnnnK U nnSnnnK UUUU  U KKK   U          U          U          U          U          UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU KKKKSKKK KKS                          UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU    KKKKK    U       KKSnnaa KKS        UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU     KKKK     U           nnSnnnK           UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU  KK/KKKK   U           nnSnnnK           UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU    KKKKK    U           nnSnnnK           UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUKKKKKK:KKnK                            UUUU  SKK KKKKK KKKKS                      UUUUUKK KK KKnKKKK KK                    UUUUUUUUUUUUUUUUUUUUUUUUUUUUUU,1
+상품분류.csv,서비스지역 및 요율,U KK : KKK KKKK KK KK,1
+상품분류.csv,서비스지역 및 요율,U KKK KK : KKKUU    - KKKK KKKK KKKK KKK KKUUUUU KKKKUU    - KKKK : KK KKKKK SnSnnnKUU    - KKKK : U KKKKK SnSnnnK,1
+상품분류.csv,서비스지역 및 요율,U KK : KKK,1
+상품분류.csv,서비스지역 및 요율,UUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UUK    KU  KKK  U   KK   U   KK   U   KK   U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UUK    KU naa KK U nnaa KKU nnaa KKU nnaa KKU                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UUK    KUnnaa KK Unnnaa KKUnnnaa KKUnnnaa KKU                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UUKKKKU  nSnnnK U  nSnnnK U  nSnnnK U  nSnnnK U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UUK K KU  nSnnnK U  nSnnnK U  nSnnnK U  nSnnnK U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UUK K KU  nSnnnK U  nSnnnK U nnSnnnK U nnSnnnK U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UU   KKK KK KKK KKKKK KKKKK KKK.     U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UU                U            KKKKK nnS            U                         UU                UUUUUUUUUUUUUUUUUUUUU                         UU                U              U nn S nnnKK   nnS   U                         UU                U              UUUUUUUUUUUUU                         UU      KK      U              Unnn S nnnKK   nnS   U                         UU                U              UUUUUUUUUUUUU                         UU                U   KKK     Unnn S nnnKK  nnnS   U                         UU                U              UUUUUUUUUUUUU                         UU                U              Unnn S nnnKK  nnnS   U                         UU                U              UUUUUUUUUUUUU                         UU                U              UnnnKK KK KKKK U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UU                U  n S n AAA  nnS  U n S n AAA  nnS   U                         UU      KK      UUUUUUUUUUUUUUUUUUUUU                         UU                U  n AAA KK  nnS U                  U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         U  S KKK KKK KKSKKS KKS KKS K KK                                 U  S KKKK KKKKK nnnaa KK                                               U  S KKKK KKKK K KKKKK KK KKKKK KKK                             U    KKK K KK.SKKK KKK KKS,1
+상품분류.csv,서비스지역 및 요율,U KK : KK KK KKKK KK,1
+상품분류.csv,서비스지역 및 요율,U KKKKKKKUU   - KK : nSnnnKS KK : nSnnnKS KKKK : nnSnnnKUU      UKKK KKK KKKK KK KK nKK \nSnnnK KKUUUUU KKKKKKKUU   - KK KKKSKKS:KK\nSnnnKS KK\nSnnnKS KKKK\nnSnnnKUU   - KK KKKSKKS:KK\nSnnnKS KK\nSnnnKS KKKK\nnSnnnKUU      UKKK KKK KKKK KK KKnKK UnSnnnK KK,1
+상품분류.csv,서비스지역 및 요율,n.KKKKSKKKKKKSSaaSUSaaaaSSaaaaS- SKS KKK KKKK ----------------------- nSnnnK/nKKKSaaSUSaaaaSSaaaaS- SKSKK KKKSKSK KKKK KK ------- nnSnnnK/nKKKSaaSUSaaaaSSaaaaS- SKKKS K SKKK KKSK KKKK KK - nnSnnnK/nKKKSaaSUSaaaaSSaaaaSn.n KKKKSKKKKSSaaSUSaaaaSSaaaaSSaaaaS- KKK : nKKSaaSUSaaaaSSaaaaSSaaaaS- KK : nKKSaaSUSaaaaSSaaaaSSaaaaS- KK : nKKSaaSUSaaaaSSaaaaSSaaaaS- KK : nKKSaaSSaaSUUn.KKKKKSaaSUSaaaaSSaaaaS- KKK KKS KKK KKSKKKS KKK KKSSaaSUSaaaaSSaaaaS- KKK KKKK KK: KKK KKKS KKK KKKS KKKS KKKSaaSU                          KKK KKKKSaaSSaaS,1
+상품분류.csv,최종변경일시,nn:nn.n,152
+상품분류.csv,ETL일시,nn:nn.n,152
+상품분류.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,152
+상품코드.csv,상품코드,nn,57
+상품코드.csv,상품코드,Ann,44
+상품코드.csv,상품코드,nnA,23
+상품코드.csv,상품코드,AAA,13
+상품코드.csv,상품코드,AA,8
+상품코드.csv,상품코드,nnn,4
+상품코드.csv,상품코드,AAn,2
+상품코드.csv,상품코드,n,1
+상품코드.csv,사업구분,A,152
+상품코드.csv,상품명,KKKK,23
+상품코드.csv,상품명,KKKKK,15
+상품코드.csv,상품명,KKKKKK,7
+상품코드.csv,상품명,KKKK KKKK,7
+상품코드.csv,상품명,Aaaaaaa Aaaaaa,5
+상품코드.csv,상품명,KKKKKKK,5
+상품코드.csv,상품명,Aaaaaaa Aaaaaaaa,5
+상품코드.csv,상품명,Aaaa Aaaa Aaaaaaa A,4
+상품코드.csv,상품명,KKKKKKKKKK,4
+상품코드.csv,상품명,Aaaaaaaa Aaaaaa,3
+상품코드.csv,상품명,Aaaaaaaa Aaaaaaaa,3
+상품코드.csv,상품명,Aaaaaaa AaaaaaSAS,3
+상품코드.csv,상품명,Aaa Aaaaaaa A,2
+상품코드.csv,상품명,KKKK KKn,2
+상품코드.csv,상품명,KKKK KKK,2
+상품코드.csv,상품명,KKKKK KKKK,2
+상품코드.csv,상품명,AAA KKK,2
+상품코드.csv,상품명,AAASKKKSKK,2
+상품코드.csv,상품명,KKKKK KK,2
+상품코드.csv,상품명,Aaaa Aaaaaaa,2
+상품코드.csv,설명,n. KKKS KKKKKKS KKKK KK KKKK KKKK KKKKK KK KKKSKKKKK KKK KKKKSKK KKKK KKK,1
+상품코드.csv,설명,KKK KK KK KKKK..,1
+상품코드.csv,설명,K KKKKKSKK KKS K KKS,1
+상품코드.csv,설명,KKKK,1
+상품코드.csv,설명,KKKKKK KKK KKKKKKUUAKKK KK KKK KKK KK KK KKKK KKK KK,1
+상품코드.csv,설명,KK KKKK KKKK K AAAA KKKKK,1
+상품코드.csv,설명,KKK KKKK KKK KK..,1
+상품코드.csv,설명,AAAAKKK KKKK  KK KKKKK KK KKKKK ..,1
+상품코드.csv,설명,KKK KKK KKK KK KKK KKK KKKK KKKK KKK...,1
+상품코드.csv,설명,KKKK KKK KKK KKKKK KKKK KKK KKKKKKK KKKK KKKK KKKKKKK KKK,1
+상품코드.csv,설명,KKS KK KKK KKK KKKK KK KK KKK KKKK KKKK,1
+상품코드.csv,설명,KKK KKK KKK KKKK KKKK KKK KKKKK KKK KKKK KKK,1
+상품코드.csv,설명,U KKKK KKKK KK KK KKKK KK KK K KKKK KKKK KK KKS UU   KKK K KKKK KK KKK nSnKKK KK.KKKK UU   KKK KKK KKKKKK.,1
+상품코드.csv,설명,KKK KK KKK KKK KK KK KKKK KKK. KK KKKKK KKK KKK.,1
+상품코드.csv,설명,A,1
+상품코드.csv,설명,U KKKSKKKS K KK KK KKKK KKK KK KKKKK KKKK KKKUU   - KKK KK K KKKK KKKKK KKK KKKK KKK,1
+상품코드.csv,설명,KKK KK nnaa KKS KK KKK K nnnaa KKK KKKKUKKK KK KKKK nnKK KKKSKK KKKSKKKKK SnSnK K KKS UKKK KKK KKKK KK KKK,1
+상품코드.csv,설명,U KKSKKS KKK K KKS KK KKK KK K KKK KK KKK,1
+상품코드.csv,설명,U KKK KKUU   - KK KKKKK KKKKK KK KKKK KK KKK KKK KSUU     KKK KKK KK KKK KKKK KKKK KKKKK KKKSUU     KKKK KKK KKK KKKK KKK KK KKK KKK KKK,1
+상품코드.csv,설명,KKK,1
+상품코드.csv,판매중지일,nnnnnnnn.n,53
+상품코드.csv,서비스금액,n.n,8
+상품코드.csv,화물종류,A,48
+상품코드.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/Ann.aaa,43
+상품코드.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/aaaSnnnnnnnn.aaa,5
+상품코드.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/aaaaSnnnnnnnn.aaa,2
+상품코드.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/aaaaaaSnnnnnnnn.aaa,2
+상품코드.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/aaaaaaaSnnnnnnnn.aaa,2
+상품코드.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/AaaaaaaSaaa.aaa,2
+상품코드.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/AASaaa.aaa,1
+상품코드.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/AAASaaaa.aaa,1
+상품코드.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/Aaaaaa.aaa,1
+상품코드.csv,접수시주의사항,n. KKKK KKK KKK KKUU   KKKK KK KK KKKK KKKK KKK KKUU   KKKK KKKK KKKK,1
+상품코드.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/aaaaaaaaSnnnnnnnn.aaa,1
+상품코드.csv,접수시주의사항,aaaa://aaaaaa.aaaaaa.aa.aa:nnnn/Saaaa/Aaaaaaaa.aaa,1
+상품코드.csv,당일익일구분,A,47
+상품코드.csv,당일익일구분,n,46
+상품코드.csv,서비스지역 및 요율,UUUUUUUUUUUUUUUUUUUUUUUUUU    KK KKK     U    KK KKK     UUUUUUUUUUUUUUUUUUUUUUUUUUUUU      nnSnnnK      U      nnSnnnK      UUUUUUUUUUUUUUUUUUUUUUUUUUUUUU KKK KKSKKS                      UUUUUUUUUUUUUUUUUUUUUUUUUUUUUU nKK     nSnnnKUU KKK   nnSnnnKUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU KKK   nnSnnnKUU KKK       KKUUUUUUUUUUUUUUUUUUUUUUUUUUUU  S KKKK KK KKKKK KK KKUU  S KKKK KK KK KKSKKKKS KKUU  S KKK KKKK nKKKK,1
+상품코드.csv,서비스지역 및 요율,UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU KKKKKKK                                             UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU          U          U              U       KKKK       UUUUKKKKKUKKKKKU   KKKK   UUUUUUUUUUUUUUUU          U          U              U nKKU nKKU nKKUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUKKUKKU   nKK  U      -       UnnSnnnU  -   U  -   UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUKKUAAAAU   nKK  UKKSnnaaKKSUnnSnnnUnnSnnnUnnSnnnUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUAAAAUAAAAU   nKK  UKKSnnaaKKSUnnSnnnUnnSnnnUnnSnnnUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU          U          UKKSnnaaKKSUnnSnnnUnnSnnnUnnSnnnUUUU          U          UUUUUUUUUUUUUUUUUUUUUUUUAAAAUAAAAU  nnKK  UKKSnnaaKKSUnnSnnnUnnSnnnUnnSnnnUUUU          U          UUUUUUUUUUUUUUUUUUUUUUUU          U          UKKSnnaaKKSUnnSnnnUnnSnnnUnnSnnnUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU KKK KKKK : KKKK KK KKKKS                  UUUU                     KKK KK KKK KK                  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU               U KKKKSKKK K KKKS U               UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU KK UKKK KK U        KK/KKK         U  KKK  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU      U            UKKSKKSKKKSKKSKKS U          UUUU nKKUKKK KK UKKSKKSKKSKKSKKKS U KKKK UUUU      U            UKKSKKSKKSKK         U          UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU      U            UKKSKKSKKSKKSKK    U          UUUU nKKUKKK KK UKKSKKSKKSKKKSKKS U    -     UUUU      U            UKKSKKSKKSKKSKK    U          UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU nKKUKKK KK U       KKKSKKK        UKKKKKUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                                  U KKK KKK:nnnn. n. n UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU,1
+상품코드.csv,서비스지역 및 요율,U KKK KKUU  - KKK KK KK K KK KKSKK nSnnnK KKS,1
+상품코드.csv,서비스지역 및 요율,U KKKK KKUU   U KKKKK KKK KK,1
+상품코드.csv,서비스지역 및 요율,n.KKKK: KKKKKK SnK KKKK KKKSUU            UUn.KKKKK: KKKSKKKSKKK KK KKUUUU UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU UUUUUUUUU KKKKSKS KKK KKS                                              UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU     KK     U   KKK U   KK   U   KK   U    KK  U  KKK  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU     KK     U naa KK Unnaa KK U nnaa KKU nnaa KKU nnaa KKUUU UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU-UUUUUUU   KKKK   U          U          U          U          U          UUUU KKKKKK U  nSnnnK U  nSnnnK U  nSnnnK U  nSnnnK U nnSnnnK UUUU  U KKK   U          U          U          U          U          UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU    KKK    U          U          U          U          U          U   UUU   KKKK   U  nSnnnK U  nSnnnK U  nSnnnK U nnSnnnK U nnSnnnK UUUUU KKK KKU          U          U          U          U          UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   KKKK   U          U          U          U          U          UUUU KKKKKK U  nSnnnK U nnSnnnK U nnSnnnK U nnSnnnK U nnSnnnK UUUU  U KKK   U          U          U          U          U          UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU KKKKSKKK KKS                          UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU    KKKKK    U       KKSnnaa KKS        UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU     KKKK     U           nnSnnnK           UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU  KK/KKKK   U           nnSnnnK           UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU    KKKKK    U           nnSnnnK           UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUKKKKKK:KKnK                            UUUU  SKK KKKKK KKKKS                      UUUUUKK KK KKnKKKK KK                    UUUUUUUUUUUUUUUUUUUUUUUUUUUUUU,1
+상품코드.csv,서비스지역 및 요율,U KK : KKK KKKK KK KK,1
+상품코드.csv,서비스지역 및 요율,U KKK KK : KKKUU    - KKKK KKKK KKKK KKK KKUUUUU KKKKUU    - KKKK : KK KKKKK SnSnnnKUU    - KKKK : U KKKKK SnSnnnK,1
+상품코드.csv,서비스지역 및 요율,U KK : KKK,1
+상품코드.csv,서비스지역 및 요율,UUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UUK    KU  KKK  U   KK   U   KK   U   KK   U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UUK    KU naa KK U nnaa KKU nnaa KKU nnaa KKU                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UUK    KUnnaa KK Unnnaa KKUnnnaa KKUnnnaa KKU                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UUKKKKU  nSnnnK U  nSnnnK U  nSnnnK U  nSnnnK U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UUK K KU  nSnnnK U  nSnnnK U  nSnnnK U  nSnnnK U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UUK K KU  nSnnnK U  nSnnnK U nnSnnnK U nnSnnnK U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UU   KKK KK KKK KKKKK KKKKK KKK.     U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UU                U            KKKKK nnS            U                         UU                UUUUUUUUUUUUUUUUUUUUU                         UU                U              U nn S nnnKK   nnS   U                         UU                U              UUUUUUUUUUUUU                         UU      KK      U              Unnn S nnnKK   nnS   U                         UU                U              UUUUUUUUUUUUU                         UU                U   KKK     Unnn S nnnKK  nnnS   U                         UU                U              UUUUUUUUUUUUU                         UU                U              Unnn S nnnKK  nnnS   U                         UU                U              UUUUUUUUUUUUU                         UU                U              UnnnKK KK KKKK U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         UU                U  n S n AAA  nnS  U n S n AAA  nnS   U                         UU      KK      UUUUUUUUUUUUUUUUUUUUU                         UU                U  n AAA KK  nnS U                  U                         UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU                         U  S KKK KKK KKSKKS KKS KKS K KK                                 U  S KKKK KKKKK nnnaa KK                                               U  S KKKK KKKK K KKKKK KK KKKKK KKK                             U    KKK K KK.SKKK KKK KKS,1
+상품코드.csv,서비스지역 및 요율,U KK : KK KK KKKK KK,1
+상품코드.csv,서비스지역 및 요율,U KKKKKKKUU   - KK : nSnnnKS KK : nSnnnKS KKKK : nnSnnnKUU      UKKK KKK KKKK KK KK nKK \nSnnnK KKUUUUU KKKKKKKUU   - KK KKKSKKS:KK\nSnnnKS KK\nSnnnKS KKKK\nnSnnnKUU   - KK KKKSKKS:KK\nSnnnKS KK\nSnnnKS KKKK\nnSnnnKUU      UKKK KKK KKKK KK KKnKK UnSnnnK KK,1
+상품코드.csv,서비스지역 및 요율,n.KKKKSKKKKKKSSaaSUSaaaaSSaaaaS- SKS KKK KKKK ----------------------- nSnnnK/nKKKSaaSUSaaaaSSaaaaS- SKSKK KKKSKSK KKKK KK ------- nnSnnnK/nKKKSaaSUSaaaaSSaaaaS- SKKKS K SKKK KKSK KKKK KK - nnSnnnK/nKKKSaaSUSaaaaSSaaaaSn.n KKKKSKKKKSSaaSUSaaaaSSaaaaSSaaaaS- KKK : nKKSaaSUSaaaaSSaaaaSSaaaaS- KK : nKKSaaSUSaaaaSSaaaaSSaaaaS- KK : nKKSaaSUSaaaaSSaaaaSSaaaaS- KK : nKKSaaSSaaSUUn.KKKKKSaaSUSaaaaSSaaaaS- KKK KKS KKK KKSKKKS KKK KKSSaaSUSaaaaSSaaaaS- KKK KKKK KK: KKK KKKS KKK KKKS KKKS KKKSaaSU                          KKK KKKKSaaSSaaS,1
+상품코드.csv,최종변경일시,nn:nn.n,152
+상품코드.csv,ETL일시,nn:nn.n,152
+상품코드.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,152
+서브터미널.csv,서브코드,nnn.n,293
+서브터미널.csv,서브코드,nn.n,5
+서브터미널.csv,터미널구분코드,AAA,205
+서브터미널.csv,터미널구분코드,AnASAAA,93
+서브터미널.csv,서브명,KK,145
+서브터미널.csv,서브명,AnAKK,56
+서브터미널.csv,서브명,SKKSKK,26
+서브터미널.csv,서브명,KKK,16
+서브터미널.csv,서브명,AnAKKK,15
+서브터미널.csv,서브명,KKKK,6
+서브터미널.csv,서브명,KKAA,3
+서브터미널.csv,서브명,SKKSKKK,3
+서브터미널.csv,서브명,AnAKKn,2
+서브터미널.csv,서브명,AnAKKKK,2
+서브터미널.csv,서브명,AKKSKKKKS,2
+서브터미널.csv,서브명,AnAKKSKKKKS,2
+서브터미널.csv,서브명,AnAKKSKKS,2
+서브터미널.csv,서브명,KKKn,2
+서브터미널.csv,서브명,AnAKKSKKKS,1
+서브터미널.csv,서브명,AnAKKSKKKKKS,1
+서브터미널.csv,서브명,AnAKKKnSKKS,1
+서브터미널.csv,서브명,AA KKK,1
+서브터미널.csv,서브명,AnAKKKSKKS,1
+서브터미널.csv,서브명,AKKKK,1
+서브터미널.csv,서브영문명,AnA AAA AAASAA,94
+서브터미널.csv,서브영문명,AAAAAAA AAAAAAAA,32
+서브터미널.csv,서브영문명,AAAAAAAA AAAAAAAA,23
+서브터미널.csv,서브영문명,AAAAAA AAAAAAAA,22
+서브터미널.csv,서브영문명,AAAAA AAAAAAAA,17
+서브터미널.csv,서브영문명,AAAAAAAAA AAAAAAAA,10
+서브터미널.csv,서브영문명,AAAAAAAAAA AAAAAAAA,8
+서브터미널.csv,서브영문명,AAAA AAAAAAAA,7
+서브터미널.csv,서브영문명,AAAAAAAAAAA AAAAAAAA,5
+서브터미널.csv,서브영문명,SAaaa-aaaSAAAAAAA AAAAAAAA,5
+서브터미널.csv,서브영문명,SAaaa-aaaSAAAAAA AAAAAAAA,5
+서브터미널.csv,서브영문명,SAaaa-aaaSAAAAAAAA AAAAAAAA,4
+서브터미널.csv,서브영문명,AAAAAAAA,4
+서브터미널.csv,서브영문명,AAAAAAA AAA,4
+서브터미널.csv,서브영문명,AAAAA AAAAAAAASAAAAAS,3
+서브터미널.csv,서브영문명,AAAAA AAA,2
+서브터미널.csv,서브영문명,AAAA AAAAAAAASAAAAAS,2
+서브터미널.csv,서브영문명,SAaaa-aaaSAAAAAAAA AAA,2
+서브터미널.csv,서브영문명,SAaaa-aaaSAAAAAA AAA,2
+서브터미널.csv,서브영문명,AAAAAAAAAAAAAA,2
+서브터미널.csv,우편번호,nnnnn.n,168
+서브터미널.csv,우편번호,n.n,93
+서브터미널.csv,우편번호,nnnn.n,37
+서브터미널.csv,기본주소,n,93
+서브터미널.csv,기본주소,KK KKK  KKKK,29
+서브터미널.csv,기본주소,KKKK KKK KKK KKK,29
+서브터미널.csv,기본주소,KKKK KKK KKK KKKK,11
+서브터미널.csv,기본주소,KKKK KKK KKK,10
+서브터미널.csv,기본주소,KKK KKK KKK KKK,9
+서브터미널.csv,기본주소,KKKK KKK KKK KKKKK,8
+서브터미널.csv,기본주소,KKKKK KKK KKK,6
+서브터미널.csv,기본주소,KKKKK KK KKK,4
+서브터미널.csv,기본주소,KKK KKK KKK KKKK,4
+서브터미널.csv,기본주소,KKK KKK KKK,3
+서브터미널.csv,기본주소,KKKK KKK KKK KKnK,3
+서브터미널.csv,기본주소,KKKK KKK KKK KKK nn,3
+서브터미널.csv,기본주소,KKK KKK KKKK,3
+서브터미널.csv,기본주소,KKKK KKK KKK KKK nnnn-n,2
+서브터미널.csv,기본주소,KKKKK KK KKKKnnnKK,2
+서브터미널.csv,기본주소,KKKK KKK KKKK,2
+서브터미널.csv,기본주소,KKK KKK KKKK KKK,2
+서브터미널.csv,기본주소,KKK KKK KKKnnnKK,2
+서브터미널.csv,기본주소,KKK KKK KKK KKKKK,2
+서브터미널.csv,X좌표,nnn.nnnnn,153
+서브터미널.csv,X좌표,n.n,123
+서브터미널.csv,X좌표,nnn.nnnn,21
+서브터미널.csv,X좌표,nnn.nnn,1
+서브터미널.csv,Y좌표,nn.nnnnn,156
+서브터미널.csv,Y좌표,n.n,123
+서브터미널.csv,Y좌표,nn.nnnn,17
+서브터미널.csv,Y좌표,nn.nn,1
+서브터미널.csv,Y좌표,nn.nnn,1
+서브터미널.csv,사업자등록번호,n.n,187
+서브터미널.csv,사업자등록번호,nnnnnnnnnn.n,111
+서브터미널.csv,수정일시,nn:nn.n,298
+서브터미널.csv,수정사원번호,nnnnnnn.n,280
+서브터미널.csv,수정사원번호,nnnnnn.n,11
+서브터미널.csv,수정사원번호,nnnnn.n,7
+서브터미널.csv,최종업데이트일시,nn:nn.n,298
+서브터미널.csv,ETL일시,nn:nn.n,298
+서브터미널.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,1048316
+선박.csv,선박코드,AnAAn,5630
+선박.csv,선박코드,AAAAn,5041
+선박.csv,선박코드,nAAAn,4745
+선박.csv,선박코드,AAAA,2486
+선박.csv,선박코드,nnnnnn,2038
+선박.csv,선박코드,nAnnnn,1672
+선박.csv,선박코드,AnAA,1333
+선박.csv,선박코드,nAAnnnn,1037
+선박.csv,선박코드,AnAnnnn,701
+선박.csv,선박코드,nAAA,572
+선박.csv,선박코드,AAnnnn,193
+선박.csv,선박코드,AAAnnnn,105
+선박.csv,선박코드,AAAnA,39
+선박.csv,선박코드,nnnnnnnnn,32
+선박.csv,선박코드,AnAAA,31
+선박.csv,선박코드,nAAnnn,26
+선박.csv,선박코드,AAnAA,25
+선박.csv,선박코드,AAAnnn,21
+선박.csv,선박코드,AAAnnnnnn,15
+선박.csv,선박코드,nnnnnnn,15
+선박.csv,선박명_한글,AAAAAA,820
+선박.csv,선박명_한글,AAAAAAA,741
+선박.csv,선박명_한글,AAAAA,607
+선박.csv,선박명_한글,AAAAAAAA,595
+선박.csv,선박명_한글,AAAA AAAAA,533
+선박.csv,선박명_한글,AAA AAAAAAA,531
+선박.csv,선박명_한글,AAAAA AAAAAA,506
+선박.csv,선박명_한글,AAAAA AAAAA,496
+선박.csv,선박명_한글,AAA AAAAA,489
+선박.csv,선박명_한글,AAA AAAAAA,487
+선박.csv,선박명_한글,AAAAA AAAAAAA,480
+선박.csv,선박명_한글,AAAAAA AAAAAA,468
+선박.csv,선박명_한글,AAAA AAAAAA,465
+선박.csv,선박명_한글,AAAA AAAAAAA,431
+선박.csv,선박명_한글,AAAAA AAAA,423
+선박.csv,선박명_한글,AAAAAA AAAAA,422
+선박.csv,선박명_한글,AAA AAAA,416
+선박.csv,선박명_한글,AAAAAA AAAAAAA,410
+선박.csv,선박명_한글,AAAAAAA AAAAAA,389
+선박.csv,선박명_한글,AAAAAAA AAAAA,367
+선박.csv,선박명_영문,AAAAAA,821
+선박.csv,선박명_영문,AAAAAAA,741
+선박.csv,선박명_영문,AAAAA,610
+선박.csv,선박명_영문,AAAAAAAA,596
+선박.csv,선박명_영문,AAAA AAAAA,535
+선박.csv,선박명_영문,AAA AAAAAAA,533
+선박.csv,선박명_영문,AAAAA AAAAAA,508
+선박.csv,선박명_영문,AAA AAAAA,497
+선박.csv,선박명_영문,AAAAA AAAAA,497
+선박.csv,선박명_영문,AAA AAAAAA,486
+선박.csv,선박명_영문,AAAAA AAAAAAA,481
+선박.csv,선박명_영문,AAAAAA AAAAAA,474
+선박.csv,선박명_영문,AAAA AAAAAA,468
+선박.csv,선박명_영문,AAAA AAAAAAA,432
+선박.csv,선박명_영문,AAAAAA AAAAA,429
+선박.csv,선박명_영문,AAAAA AAAA,424
+선박.csv,선박명_영문,AAA AAAA,417
+선박.csv,선박명_영문,AAAAAA AAAAAAA,412
+선박.csv,선박명_영문,AAAAAAA AAAAAA,392
+선박.csv,선박명_영문,AAAAAAA AAAAA,372
+선박.csv,선사코드,AAAnnnn,14507
+선박.csv,선사코드,AAnnnn,6
+선박.csv,선사코드,AAAAAA,3
+선박.csv,선사코드,AAA AAAAA,3
+선박.csv,선사코드,nAAAnnnn,2
+선박.csv,선사코드,AA-A-nnnn,1
+선박.csv,선사코드,n,1
+선박.csv,선사코드,AAAnnnnn,1
+선박.csv,선박종류코드,nn.n,23542
+선박.csv,총길이,nnn.n,256
+선박.csv,총길이,nn.n,38
+선박.csv,총길이,n.n,8
+선박.csv,총중량,nnnnn.n,14431
+선박.csv,총중량,nnnn.n,5818
+선박.csv,총중량,n.n,2921
+선박.csv,총중량,nnn.n,1425
+선박.csv,총중량,nnnnnn.n,944
+선박.csv,총중량,nn.n,321
+선박.csv,외내항구분,n,25918
+선박.csv,사용여부,A,25918
+선박.csv,비고,aaaaK KK,1
+선박.csv,처리일시,nnnnnnnnnnnnnn.n,25881
+선박.csv,처리일시,nnnnnnnnnnnn.n,23
+선박.csv,최종변경일시,nn:nn.n,25918
+선박.csv,ETL일시,nn:nn.n,25918
+선박.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,25918
+선석.csv,항구코드,AAA,978
+선석.csv,국가코드,AA,978
+선석.csv,선석코드,AAA-nn,604
+선석.csv,선석코드,AAn-nn,297
+선석.csv,선석코드,AAn-nA,64
+선석.csv,선석코드,SAA-nn,8
+선석.csv,선석코드,AAA-An,4
+선석.csv,선석코드,AAA-AA,1
+선석.csv,선석명,KKKK,239
+선석.csv,선석명,nKK nnKK,90
+선석.csv,선석명,nKK nnKK A,48
+선석.csv,선석명,AKK Ann,32
+선석.csv,선석명,KKKK nn,29
+선석.csv,선석명,K nKK nnKK,28
+선석.csv,선석명,KK nKK nKK,21
+선석.csv,선석명,nKK nn,19
+선석.csv,선석명,KKKKKK,19
+선석.csv,선석명,KKKK nnKK,19
+선석.csv,선석명,KKKKK,16
+선석.csv,선석명,KKKK AnKK,13
+선석.csv,선석명,KKK-nn,13
+선석.csv,선석명,KKKKKKK,12
+선석.csv,선석명,KKKK KKKK nKK,11
+선석.csv,선석명,KKKKKKKKnn,9
+선석.csv,선석명,KKKKKK nKK,9
+선석.csv,선석명,AKK AnKK,9
+선석.csv,선석명,A KK Ann,9
+선석.csv,선석명,A KK An,9
+선석.csv,정산용선석명,A - n,233
+선석.csv,정산용선석명,n - n,117
+선석.csv,정산용선석명,n - nn,47
+선석.csv,정산용선석명,n - A,7
+선석.csv,정산용선석명,nn,4
+선석.csv,정산용선석명,A - nn,2
+선석.csv,정산용선석명,n,2
+선석.csv,정산용선석명,AAAAAA AAAAA - n,1
+선석.csv,정산용선석명,nn - n,1
+선석.csv,수심,nSn.n,238
+선석.csv,수심,nSn,203
+선석.csv,수심,nn-nn,95
+선석.csv,수심,nSnn,91
+선석.csv,수심,nnn.nSnnn.n,61
+선석.csv,수심,nnSnn,60
+선석.csv,수심,n-n,49
+선석.csv,수심,n.n-n.n,38
+선석.csv,수심,S,30
+선석.csv,수심,Snn,17
+선석.csv,수심,n.nSn.n,11
+선석.csv,수심,n.nSnn,10
+선석.csv,수심,n-nn,8
+선석.csv,수심,nSnn.n,8
+선석.csv,수심,n.n-n,6
+선석.csv,수심,nnn-nnn,5
+선석.csv,수심,nn.n-nn.n,5
+선석.csv,수심,n-n.n,4
+선석.csv,수심,Sn,4
+선석.csv,수심,nn.nSnn,3
+선석.csv,선석길이,nnn.n,779
+선석.csv,선석길이,n.n,118
+선석.csv,선석길이,nn.n,74
+선석.csv,선석길이,nnnn.n,7
+선석.csv,업체코드,A-AAAnnn,473
+선석.csv,항구상세코드,A-AAAnnn,830
+선석.csv,조직코드,nnnnnn.n,604
+선석.csv,한진소유여부,A,978
+선석.csv,조회순번,nnn,822
+선석.csv,조회순번,nn,129
+선석.csv,조회순번,n,27
+선석.csv,사용여부,A,978
+선석.csv,비고,KKKK KK KKKK,5
+선석.csv,비고,KKKKKKKK,4
+선석.csv,비고,A-AAAnnn,1
+선석.csv,본선구분,A,74
+선석.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,978
+선석.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,978
+선석.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,978
+수입관리_고객.csv,고객번호,nnnnnnnnnn,9983
+수입관리_고객.csv,고객번호,nnnnn,17
+수입관리_고객.csv,수금점소코드,nnnn.n,5568
+수입관리_고객.csv,불량등급코드,A,10000
+수입관리_고객.csv,신용등급코드,A,10000
+수입관리_고객.csv,기업설립형태코드,A,10000
+수입관리_고객.csv,결제조건코드,A,10000
+수입관리_고객.csv,신용공여기간코드,A,9994
+수입관리_고객.csv,신용공여기간코드,n,6
+수입관리_고객.csv,고객구분,n,10000
+수입관리_고객.csv,주소,nnn,1138
+수입관리_고객.csv,주소,nnn-n,866
+수입관리_고객.csv,주소,nnn-nn,370
+수입관리_고객.csv,주소,Aaa-nn,214
+수입관리_고객.csv,주소,nnnn-n,128
+수입관리_고객.csv,주소,nnK nnK,117
+수입관리_고객.csv,주소,nn-nn,97
+수입관리_고객.csv,주소,nnnn,97
+수입관리_고객.csv,주소,nn,88
+수입관리_고객.csv,주소,KKK nnn,74
+수입관리_고객.csv,주소,KKK nn,66
+수입관리_고객.csv,주소,nnn-n nK,61
+수입관리_고객.csv,주소,nnn-nnn,60
+수입관리_고객.csv,주소,nnnn-nn,60
+수입관리_고객.csv,주소,nnn-n n,60
+수입관리_고객.csv,주소,nnn-nn nK,48
+수입관리_고객.csv,주소,KKK nnn-n,45
+수입관리_고객.csv,주소,nnnKK,42
+수입관리_고객.csv,주소,nnn-nKK,41
+수입관리_고객.csv,주소,nnn-nn KKKK nK,28
+수입관리_고객.csv,고객명,KKKK,2153
+수입관리_고객.csv,고객명,KKKKK,920
+수입관리_고객.csv,고객명,KKKKKK,686
+수입관리_고객.csv,고객명,KKK,594
+수입관리_고객.csv,고객명,SKSKKKK,399
+수입관리_고객.csv,고객명,KKKKKKK,391
+수입관리_고객.csv,고객명,KK,342
+수입관리_고객.csv,고객명,SKSKKKKK,295
+수입관리_고객.csv,고객명,SKSKKKKKK,275
+수입관리_고객.csv,고객명,KKKKKKKK,256
+수입관리_고객.csv,고객명,KKKKSKS,237
+수입관리_고객.csv,고객명,KKKKKKKKK,156
+수입관리_고객.csv,고객명,SKSKKK,154
+수입관리_고객.csv,고객명,KKKK KKKK,154
+수입관리_고객.csv,고객명,SKSKKKKKKK,153
+수입관리_고객.csv,고객명,KKKKKKSKS,150
+수입관리_고객.csv,고객명,KKKK KKKKK,110
+수입관리_고객.csv,고객명,SKSKK,102
+수입관리_고객.csv,고객명,KKKK KKK,97
+수입관리_고객.csv,고객명,KKKKKSKS,94
+수입관리_고객.csv,등록일자,nnnnnnnn,9998
+수입관리_고객.csv,등록일자,nnSnnnnn,2
+수입관리_고객.csv,등록자사번,nnnnnnn,9732
+수입관리_고객.csv,등록자사번,Annnnnn,196
+수입관리_고객.csv,등록자사번,nnnnn,56
+수입관리_고객.csv,등록자사번,nnnnnn,5
+수입관리_고객.csv,등록자사번,nnnn,2
+수입관리_고객.csv,등록자사번,AAAnnnn,2
+수입관리_고객.csv,SFDC고객ID,AAnnnnnnnnnnnnn,552
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAaaAAAA,460
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAaaaAAA,452
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAaAaAAA,428
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAaAAAAn,425
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAaanAAA,170
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAanaAAA,158
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAanAAAA,154
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAaAnAAA,147
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAAAAAAn,137
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAAAaAAA,116
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAAaAAAA,97
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAAaaAAA,94
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAnAAAAn,70
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAnAaAAA,69
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAnaaAAA,63
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAannAAA,63
+수입관리_고객.csv,SFDC고객ID,nnnAnnnnnnaaaaaAAA,60
+수입관리_고객.csv,SFDC고객ID,nnnnnnnnnnAAnaAAAA,58
+수입관리_고객.csv,SFDC고객ID,nnnAnnnnnnaaAaAAAA,57
+수입관리_고객.csv,법인번호,n.nnnnnASnn,1588
+수입관리_고객.csv,법인번호,nnnnnnnnnnnnn,9
+수입관리_고객.csv,법인번호,nnnnnnSSSSSSS,2
+수입관리_고객.csv,법인번호,nASnn,1
+수입관리_고객.csv,최종변경일시,nn:nn.n,10000
+수입관리_고객.csv,ETL일시,nn:nn.n,10000
+수입관리_고객.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,10000
+수입관리점소.csv,수입점소코드,nnnn,358
+수입관리점소.csv,센터코드,nnnnnn.n,306
+수입관리점소.csv,점소명,KKKKKK,99
+수입관리점소.csv,점소명,KKKKK,55
+수입관리점소.csv,점소명,KKKKKKK,45
+수입관리점소.csv,점소명,KKKK,32
+수입관리점소.csv,점소명,KKKKKKKK,18
+수입관리점소.csv,점소명,KKK,16
+수입관리점소.csv,점소명,KKKKKKKKK,16
+수입관리점소.csv,점소명,KKKKKKKKKK,6
+수입관리점소.csv,점소명,KKAA,5
+수입관리점소.csv,점소명,AnAKK,3
+수입관리점소.csv,점소명,KKKKnK,3
+수입관리점소.csv,점소명,KKnAAK,3
+수입관리점소.csv,점소명,KKKKKKSKS,3
+수입관리점소.csv,점소명,nAAKKK,3
+수입관리점소.csv,점소명,ASAKKK,3
+수입관리점소.csv,점소명,KKKKKKSKKKKKS,2
+수입관리점소.csv,점소명,AAAnK,2
+수입관리점소.csv,점소명,nAAKK,2
+수입관리점소.csv,점소명,KKKKKKnKK,2
+수입관리점소.csv,점소명,AAKKnK,2
+수입관리점소.csv,소재지주소,nnnKK,66
+수입관리점소.csv,소재지주소,nnn-n,26
+수입관리점소.csv,소재지주소,nnn,25
+수입관리점소.csv,소재지주소,nnnKK n,22
+수입관리점소.csv,소재지주소,KK nnK,18
+수입관리점소.csv,소재지주소,Snnn-nnnS KK KKK KKK nnn-n,17
+수입관리점소.csv,소재지주소,SnnnnnS KKK KK KKKK nn KK nnK,10
+수입관리점소.csv,소재지주소,nnKK,10
+수입관리점소.csv,소재지주소,nnn-nn,10
+수입관리점소.csv,소재지주소,nnKK n,9
+수입관리점소.csv,소재지주소,SnnnnnS KK KK KKKK nn  KKnnK,9
+수입관리점소.csv,소재지주소,nn,8
+수입관리점소.csv,소재지주소,nnnnKK n,7
+수입관리점소.csv,소재지주소,nnn-nKK,5
+수입관리점소.csv,소재지주소,nnKK nn,5
+수입관리점소.csv,소재지주소,nnnn-n,5
+수입관리점소.csv,소재지주소,Snnn-nnnS KK KKK KKK KKK KKK nnn-n,5
+수입관리점소.csv,소재지주소,KK nK,5
+수입관리점소.csv,소재지주소,nnnn,5
+수입관리점소.csv,소재지주소,KK nnK KKKKK,4
+수입관리점소.csv,전화번호,nn-nnn-nnnn,158
+수입관리점소.csv,전화번호,nnn-nnn-nnnn,151
+수입관리점소.csv,전화번호,nn-nnnn-nnnn,46
+수입관리점소.csv,전화번호,nnn-nnn-nnnnSn,2
+수입관리점소.csv,전화번호,nnn-nnnn-nnnn,1
+수입관리점소.csv,부가세신고점소코드,nnnn,358
+수입관리점소.csv,사업자번호,nnnnnnnnnn,358
+수입관리점소.csv,관할세무서명,KK,320
+수입관리점소.csv,관할세무서명,KKK,37
+수입관리점소.csv,관할세무서명,KKKKKK,1
+수입관리점소.csv,점소구분,n,358
+수입관리점소.csv,등록일자,nnnnnnnn,358
+수입관리점소.csv,수정일자,nnnnnnnn.n,282
+수입관리점소.csv,처리자사번,nnnnnnn,276
+수입관리점소.csv,처리자사번,nnnnnn,82
+수입관리점소.csv,최종변경일시,nn:nn.n,358
+수입관리점소.csv,ETL일시,nn:nn.n,358
+수입관리점소.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,358
+신용공여기간.csv,신용공여기간코드,A,26
+신용공여기간.csv,신용공여기간코드,n,9
+신용공여기간.csv,신용공여기간코드,S,8
+신용공여기간.csv,신용공여기준일수,nn,25
+신용공여기간.csv,신용공여기준일수,nnn,13
+신용공여기간.csv,신용공여기준일수,n,5
+신용공여기간.csv,dt_reg,nnnnnnnn,43
+신용공여기간.csv,dt_adjt,nnnnnnnn.n,19
+신용공여기간.csv,yn_abd,A,43
+신용공여기간.csv,처리자사번,nnnnnnn,22
+신용공여기간.csv,처리자사번,nnnnnn,14
+신용공여기간.csv,처리자사번,nnnnn,7
+신용공여기간.csv,월매트릭스구분,AASnA,6
+신용공여기간.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,43
+신용공여기간.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,43
+신용공여기간.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,43
+신용등급.csv,신용등급코드,A,6
+신용등급.csv,신용등급명,KK,3
+신용등급.csv,신용등급명,KKKK,2
+신용등급.csv,신용등급명,KKK,1
+신용등급.csv,FROM점수,nn.n,4
+신용등급.csv,FROM점수,n.n,1
+신용등급.csv,TO점수,nn.n,4
+신용등급.csv,TO점수,nnn.n,1
+신용등급.csv,dt_reg,nnnnnnnn,6
+신용등급.csv,yn_abd,A,6
+신용등급.csv,처리자사번,nnnnnnn,6
+신용등급.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,6
+신용등급.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,6
+신용등급.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,6
+영업소.csv,영업소코드,nnn,145
+영업소.csv,영업소코드,Ann,1
+영업소.csv,영업소명,KK,62
+영업소.csv,영업소명,KKKK,18
+영업소.csv,영업소명,An,17
+영업소.csv,영업소명,KKK,16
+영업소.csv,영업소명,KKSKKS,6
+영업소.csv,영업소명,KKSKKKKS,3
+영업소.csv,영업소명,KKSKKKKKS,3
+영업소.csv,영업소명,KKSKKKS,2
+영업소.csv,영업소명,Ann,2
+영업소.csv,영업소명,nAASKKS,2
+영업소.csv,영업소명,KKn,2
+영업소.csv,영업소명,KKAASAAAS,1
+영업소.csv,영업소명,KKKKK,1
+영업소.csv,영업소명,KKKSKKS,1
+영업소.csv,영업소명,KKKnSKKS,1
+영업소.csv,영업소명,KKKSKKKS,1
+영업소.csv,영업소명,AAA,1
+영업소.csv,영업소명,KKSAAAKKS,1
+영업소.csv,영업소명,KKSKK KKS,1
+영업소.csv,영업소명,KKSKKKKK KKS,1
+영업소.csv,영업소약명,KK,85
+영업소.csv,영업소약명,KKK,21
+영업소.csv,영업소약명,An,17
+영업소.csv,영업소약명,KKSKKS,4
+영업소.csv,영업소약명,KKKK,3
+영업소.csv,영업소약명,AAA,2
+영업소.csv,영업소약명,KKSKKKS,2
+영업소.csv,영업소약명,KKSKKKKS,2
+영업소.csv,영업소약명,KKn,2
+영업소.csv,영업소약명,Ann,2
+영업소.csv,영업소약명,AAKK,1
+영업소.csv,영업소약명,KKSAAS,1
+영업소.csv,영업소약명,AAAKK,1
+영업소.csv,영업소약명,KKSKKKKKS,1
+영업소.csv,영업소약명,KK/KK,1
+영업소.csv,영업소약명,KKAA,1
+영업소.csv,건평,nnn,99
+영업소.csv,건평,n,46
+영업소.csv,건평,nn,1
+영업소.csv,우편번호,nnnnnn,134
+영업소.csv,우편번호,n,12
+영업소.csv,주소,KK KKK KKK KKK KKK AAAAAA KKKKKK  AAK,13
+영업소.csv,주소,KK KKK KKK KKK KKK AAAAAA KKKKKK,7
+영업소.csv,주소,KK KKK KKK KKK KKK AAAAAA KKKKKK  nnn-n,7
+영업소.csv,주소,KK KKK KKK KKK  nnn-n,2
+영업소.csv,주소,KK KKK KKK   nnn-nn,2
+영업소.csv,주소,KKK KKK KKK   KKKKK nnnn-n,2
+영업소.csv,주소,KKK KKK KKK KK   nnn,2
+영업소.csv,주소,KK KKK KKK KKK  nnn-nnKK,2
+영업소.csv,주소,KKKK KKK KKK   KKK nnS KKKKKK nnnK nnnK,2
+영업소.csv,주소,KKK KKK KKK   nnnS KKKKKK,2
+영업소.csv,주소,KKK KKK KKK   nnnS KKKKKK AAAAA,2
+영업소.csv,주소,KKK KKK KKK KKK KKK  nnn-nn,2
+영업소.csv,주소,KK KKK KKK KKK KKK AAAAAA KKKKKK  nnn-nK,2
+영업소.csv,주소,KKK KKK KKK   KKKK nnnKK nn-nn,2
+영업소.csv,주소,KKKKK KK KKK   KKKnnnKKK nn,2
+영업소.csv,주소,KKK KKK KKKK   nn-nn KK,2
+영업소.csv,주소,KKK KKK KKK KKK   KKK nnSKKKKS,2
+영업소.csv,주소,KKKKK KK KKK   nnn-nn,1
+영업소.csv,주소,KKKK KKK KKK   KKK,1
+영업소.csv,주소,KKKKK KK KKK   nn-n,1
+영업소.csv,영업소등급,n,146
+영업소.csv,업무개시일,nnnnnnnn,146
+영업소.csv,업무중지일,nnnnnnnn,146
+영업소.csv,업무종료일,nnnnnnnn,146
+영업소.csv,설립일자,nnnnnnnn.n,145
+영업소.csv,사업자등록번호,nnnnnnnnnn,146
+영업소.csv,업태,KKK,43
+영업소.csv,업태,nnn,37
+영업소.csv,업태,KK,27
+영업소.csv,업태,KKKK,10
+영업소.csv,업태,KKKKKKK,7
+영업소.csv,업태,KK/KKK,3
+영업소.csv,업태,KKKKK,3
+영업소.csv,업태,KKKK KKKKKK,2
+영업소.csv,업태,KKSKKK,1
+영업소.csv,업태,KKKSKKKKSS KKK,1
+영업소.csv,업태,KK/KK/KKK/KKK,1
+영업소.csv,업태,KKKSKKKKSSKKK,1
+영업소.csv,업태,KKKK KKK,1
+영업소.csv,업태,KKKKKKKSKKK,1
+영업소.csv,업태,KKKKKKKS KKK,1
+영업소.csv,업태,KKKKSKKS,1
+영업소.csv,업태,KKKSKKKK,1
+영업소.csv,업태,KK K KKK,1
+영업소.csv,업태,KKKSKKKKSK,1
+영업소.csv,업태,KKKKKK,1
+영업소.csv,업종,KK,33
+영업소.csv,업종,KKKKKK,30
+영업소.csv,업종,nnn,26
+영업소.csv,업종,KKKK,24
+영업소.csv,업종,KKK,7
+영업소.csv,업종,KKS KKS KKKKKKK,3
+영업소.csv,업종,KKKSKKKKS,3
+영업소.csv,업종,KKKKKKKKK,2
+영업소.csv,업종,KKKKKS KKKKK,2
+영업소.csv,업종,KK K KKK,2
+영업소.csv,업종,KKKKK,2
+영업소.csv,업종,KKS KK,1
+영업소.csv,업종,KKKKKKK,1
+영업소.csv,업종,KK KKK,1
+영업소.csv,업종,KKKKSKKKKSSKK,1
+영업소.csv,업종,KKKKKKKK,1
+영업소.csv,업종,KKSKK,1
+영업소.csv,업종,KK.KKSKKKKKKK,1
+영업소.csv,업종,KKKKSKKKKKKSKKS,1
+영업소.csv,업종,KKS KKKKS KKKKS KKKKK,1
+영업소.csv,계약영업소코드,nnn.n,76
+영업소.csv,계약구분,n,146
+영업소.csv,보증금,n,139
+영업소.csv,보증금,nnnnnnnn,5
+영업소.csv,보증금,nnnnnnn,1
+영업소.csv,보증금,nnn,1
+영업소.csv,유효기간,nnnnnnnn,146
+영업소.csv,보험증권번호,n.n,44
+영업소.csv,보험증권번호,nnnnnnnnn.n,1
+영업소.csv,보험증권번호,nn.n,1
+영업소.csv,직영가맹여부,n,146
+영업소.csv,상위영업소코드,nnn,146
+영업소.csv,집하센터코드,nnn.n,145
+영업소.csv,지역구분,nn,146
+영업소.csv,분류터미널구분,n,146
+영업소.csv,구동분류기구분값,A,95
+영업소.csv,반품송장권역ZONE,n.n,122
+영업소.csv,최종변경일시,nn:nn.n,146
+영업소.csv,ETL일시,nn:nn.n,146
+영업소.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,146
+원가인명정보.csv,적용년월,nnnnnn,67463
+원가인명정보.csv,직원번호,nnnnnnn,51449
+원가인명정보.csv,직원번호,nnnnnn,12384
+원가인명정보.csv,직원번호,nnnnn,2418
+원가인명정보.csv,직원번호,nnnnnnnn,1212
+원가인명정보.csv,직원명,KKK,62327
+원가인명정보.csv,직원명,KK,738
+원가인명정보.csv,직원명,KKKK,56
+원가인명정보.csv,등록상태명,KK,2183
+원가인명정보.csv,전월급여조직코드,AAAAAA,38203
+원가인명정보.csv,전월급여조직코드,AAAAA,23172
+원가인명정보.csv,전월급여조직코드,AAAAAAA,3673
+원가인명정보.csv,전월급여조직코드,AAAAAAn,298
+원가인명정보.csv,전월급여조직코드,AAAAAAAA,7
+원가인명정보.csv,급여조직코드,AAAAAA,39437
+원가인명정보.csv,급여조직코드,AAAAA,23911
+원가인명정보.csv,급여조직코드,AAAAAAA,3802
+원가인명정보.csv,급여조직코드,AAAAAAn,306
+원가인명정보.csv,급여조직코드,AAAAAAAA,7
+원가인명정보.csv,귀속부서조직코드,AAAAAA,42508
+원가인명정보.csv,귀속부서조직코드,AAAAA,22098
+원가인명정보.csv,귀속부서조직코드,AAAAAAA,2681
+원가인명정보.csv,귀속부서조직코드,AAAnnn,134
+원가인명정보.csv,귀속부서조직코드,AAAAAAn,42
+원가인명정보.csv,호봉제여부,A,67463
+원가인명정보.csv,퇴직급여충당금여부,A,67463
+원가인명정보.csv,산업재해보험여부,A,67463
+원가인명정보.csv,고용보험여부,A,67463
+원가인명정보.csv,임금인상충당금여부,A,67463
+원가인명정보.csv,임원여부,A,67463
+원가인명정보.csv,최초생성자ID,aaaaa,51369
+원가인명정보.csv,최초생성자ID,aaaa.aaa,10286
+원가인명정보.csv,최초생성자ID,AAAA,1452
+원가인명정보.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,63107
+원가인명정보.csv,최종갱신자ID,aaaaa,51368
+원가인명정보.csv,최종갱신자ID,aaaa.aaa,10287
+원가인명정보.csv,최종갱신자ID,AAAA,1452
+원가인명정보.csv,최종갱신자ID,aaaaaa,14
+원가인명정보.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,63121
+원가인명정보.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,67463
+원가인명정보.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,67463
+작업코드.csv,작업구분코드,nn,49
+작업코드.csv,작업구분코드,AA,22
+작업코드.csv,작업구분코드,An,8
+작업코드.csv,작업명,KKKK,19
+작업코드.csv,작업명,KKKKKK,11
+작업코드.csv,작업명,KKKKK,5
+작업코드.csv,작업명,KK,5
+작업코드.csv,작업명,KKK,4
+작업코드.csv,작업명,A/A AA KK,3
+작업코드.csv,작업명,KKKKKKKKKK,3
+작업코드.csv,작업명,K A/A KK KK,2
+작업코드.csv,작업명,AAAA KK,2
+작업코드.csv,작업명,KK-nKKKKK,2
+작업코드.csv,작업명,SKKSKKKK,2
+작업코드.csv,작업명,KKKKKKKK,2
+작업코드.csv,작업명,KKKKSKKS,2
+작업코드.csv,작업명,nK KKKK,1
+작업코드.csv,작업명,KKKKKKK KK,1
+작업코드.csv,작업명,AAKKKK,1
+작업코드.csv,작업명,AAKKSKKS,1
+작업코드.csv,작업명,KKKKKKK KKKK,1
+작업코드.csv,작업명,KKKK K KKKK,1
+작업코드.csv,작업명,KK K KKKK,1
+작업코드.csv,작업설명,KKKK,16
+작업코드.csv,작업설명,KKKKKK,12
+작업코드.csv,작업설명,KKKKK,9
+작업코드.csv,작업설명,A/A AA KK,3
+작업코드.csv,작업설명,KKKKKKK,3
+작업코드.csv,작업설명,K A/A KK KK,2
+작업코드.csv,작업설명,AAAA KK,2
+작업코드.csv,작업설명,A/AKK,2
+작업코드.csv,작업설명,KKK,2
+작업코드.csv,작업설명,SKKSKKKK,2
+작업코드.csv,작업설명,KKKKKKKKKK,2
+작업코드.csv,작업설명,KKKKKKKK,2
+작업코드.csv,작업설명,KKKKKSKKKKKKS,2
+작업코드.csv,작업설명,KKKKKKK KK,1
+작업코드.csv,작업설명,AAAKK,1
+작업코드.csv,작업설명,A-Aaa KKKKKK,1
+작업코드.csv,작업설명,KKKKKKK KKKK,1
+작업코드.csv,작업설명,KK KKKK KKK,1
+작업코드.csv,작업설명,KKKKKKKKK,1
+작업코드.csv,작업설명,KKKKSAAKKS,1
+작업코드.csv,작업설명(영문),Aaaaaaaa aa Aaaaaaa,4
+작업코드.csv,작업설명(영문),Aaaaaaaa Aaaaaaaaa,3
+작업코드.csv,작업설명(영문),Aaaaaa aa Aaaaaa,2
+작업코드.csv,작업설명(영문),Aaaaaaaa A Aaaa Aa A.A,2
+작업코드.csv,작업설명(영문),Aaa aaa Aaaaaaaa,2
+작업코드.csv,작업설명(영문),Aaaa Aaaa aa naa Aaaaa,2
+작업코드.csv,작업설명(영문),Aaaaaa Aaaaaaa Aaaaaaa,2
+작업코드.csv,작업설명(영문),Aaaaaa Aaaaaaaaaaa,2
+작업코드.csv,작업설명(영문),AAAAAAA AAAAAAA,1
+작업코드.csv,작업설명(영문),AAA Aaaaaaaaaa,1
+작업코드.csv,작업설명(영문),Aaaaaaaaaaa AaaaaaaaSAaaaaaaaS,1
+작업코드.csv,작업설명(영문),Aaaaa Aaaaaaa Aaaaaaaaa,1
+작업코드.csv,작업설명(영문),Aaaaaaaaa aa Aaaaaa Aaaaaaa,1
+작업코드.csv,작업설명(영문),Aaaaaaa aa Aaaaaaaaaaa Aaaaaaa,1
+작업코드.csv,작업설명(영문),Aaaaaaa aa Aaaaaaaa Aaaaaaa,1
+작업코드.csv,작업설명(영문),Aaaaaaaa Aaaaaaaaaaa,1
+작업코드.csv,작업설명(영문),AA Aaaaaaaa Aaaa Aaaaaaaaa,1
+작업코드.csv,작업설명(영문),Aaaaa Aa-Aaaaaaaa,1
+작업코드.csv,작업설명(영문),Aaaaaa aaaa Aaaaaa,1
+작업코드.csv,작업설명(영문),A-AAA Aaaa Aaaaaaaaa,1
+작업코드.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,79
+작업코드.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,79
+작업코드.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,79
+조직_수입관리.csv,OIO_ORG_COD,AAAAA,188
+조직_수입관리.csv,OIO_ORG_COD,AAAAn,5
+조직_수입관리.csv,OIO_ORG_COD,AAAA,1
+조직_수입관리.csv,OIO_ORG_COD,A/A,1
+조직_수입관리.csv,OIO_ORG_COD,AAAnn,1
+조직_수입관리.csv,OIO_ORG_NAM,KKKKKK,73
+조직_수입관리.csv,OIO_ORG_NAM,KKKK,18
+조직_수입관리.csv,OIO_ORG_NAM,KKKKK,16
+조직_수입관리.csv,OIO_ORG_NAM,SKSKKKKKKK,14
+조직_수입관리.csv,OIO_ORG_NAM,SKSKKKKKK,13
+조직_수입관리.csv,OIO_ORG_NAM,KKKKKKK,13
+조직_수입관리.csv,OIO_ORG_NAM,KKKKKKKK,10
+조직_수입관리.csv,OIO_ORG_NAM,KKK,5
+조직_수입관리.csv,OIO_ORG_NAM,KKKK KKK,4
+조직_수입관리.csv,OIO_ORG_NAM,SKSKKKKKKKK,3
+조직_수입관리.csv,OIO_ORG_NAM,nAAKKK,3
+조직_수입관리.csv,OIO_ORG_NAM,KKAAK,2
+조직_수입관리.csv,OIO_ORG_NAM,AnAKKK,2
+조직_수입관리.csv,OIO_ORG_NAM,KSKKKKKK,2
+조직_수입관리.csv,OIO_ORG_NAM,KKKKnK,2
+조직_수입관리.csv,OIO_ORG_NAM,SKSKKKKK,2
+조직_수입관리.csv,OIO_ORG_NAM,KKKSKKS,1
+조직_수입관리.csv,OIO_ORG_NAM,SKSKKKK,1
+조직_수입관리.csv,OIO_ORG_NAM,KKAAA SKKKKS,1
+조직_수입관리.csv,OIO_ORG_NAM,SKSKKKKSKS,1
+조직_수입관리.csv,OIO_ORG_NCD,nnnn.n,192
+조직_수입관리.csv,OIO_PIN_COD,AAAAAAA,119
+조직_수입관리.csv,OIO_PIN_COD,AAAAAAAA,50
+조직_수입관리.csv,OIO_PIN_COD,AAAAAA,4
+조직_수입관리.csv,OIO_PIN_COD,AAAAA,3
+조직_수입관리.csv,OIO_CHG_ENO,nnnnnnn.n,61
+조직_수입관리.csv,OIO_CHG_MDH,nnnn-nn-nn nn:nn:nn.nnnnnn,61
+조직_수입관리.csv,OIO_END_YMD,nnnnnnnn.n,60
+조직_수입관리.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,196
+조직_수입관리.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,196
+조직_수입관리.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,196
+조직코드관리.csv,회사코드,A,420
+조직코드관리.csv,회사명,KK,420
+조직코드관리.csv,본부코드,AAAAA,357
+조직코드관리.csv,본부코드,AAAnnn,63
+조직코드관리.csv,본부명,KKKKKK,235
+조직코드관리.csv,본부명,KKKK,89
+조직코드관리.csv,본부명,KKKKKKK,84
+조직코드관리.csv,본부명,KKKKKKKKKK,12
+조직코드관리.csv,지부코드,AAAAA,405
+조직코드관리.csv,지부코드,AAAAAA,12
+조직코드관리.csv,지부코드,AAAnnn,2
+조직코드관리.csv,지부코드,AAAA,1
+조직코드관리.csv,지부명,KKKKK,159
+조직코드관리.csv,지부명,KKKK,96
+조직코드관리.csv,지부명,KKKKKK,57
+조직코드관리.csv,지부명,KKKKKKK,49
+조직코드관리.csv,지부명,AAKKK,18
+조직코드관리.csv,지부명,KKKKKKKKKK,12
+조직코드관리.csv,지부명,ASAKKK,12
+조직코드관리.csv,지부명,KKK,11
+조직코드관리.csv,지부명,KKK KK,3
+조직코드관리.csv,지부명,aaaaa-A KKK,1
+조직코드관리.csv,지부명,KKKK KKK AAK,1
+조직코드관리.csv,지부명,KKKKSKKS,1
+조직코드관리.csv,지점코드,AAAAAA,221
+조직코드관리.csv,지점코드,AAAAA,190
+조직코드관리.csv,지점코드,AAAAAAA,6
+조직코드관리.csv,지점코드,AAAnnn,2
+조직코드관리.csv,지점코드,AAAA,1
+조직코드관리.csv,지점명,KKKKKK,101
+조직코드관리.csv,지점명,KKKKK,88
+조직코드관리.csv,지점명,KKKKKKK,32
+조직코드관리.csv,지점명,KKKK,30
+조직코드관리.csv,지점명,KKKK KKKKK,23
+조직코드관리.csv,지점명,KKKKKKKKKK,17
+조직코드관리.csv,지점명,SKSKKKKK,16
+조직코드관리.csv,지점명,KKK,13
+조직코드관리.csv,지점명,AAKKK,9
+조직코드관리.csv,지점명,SKSKKKKKKK,6
+조직코드관리.csv,지점명,SKSKKK,6
+조직코드관리.csv,지점명,ASAKKK,5
+조직코드관리.csv,지점명,SKSKKKKKK,4
+조직코드관리.csv,지점명,KKKKKKKK,4
+조직코드관리.csv,지점명,KKKK KKK,4
+조직코드관리.csv,지점명,KK AAAAA Aaaa-Aaa KK A/A,4
+조직코드관리.csv,지점명,KKKKKKKKK,4
+조직코드관리.csv,지점명,SKSKKKKKKKKK,3
+조직코드관리.csv,지점명,AAK,3
+조직코드관리.csv,지점명,KKK KK,3
+조직코드관리.csv,팀센터코드,AAAAAA,201
+조직코드관리.csv,팀센터코드,AAAAA,164
+조직코드관리.csv,팀센터코드,AAAAAAA,47
+조직코드관리.csv,팀센터코드,AAAAAAn,3
+조직코드관리.csv,팀센터코드,AAAnnnn,2
+조직코드관리.csv,팀센터코드,AAAnnn,2
+조직코드관리.csv,팀센터코드,AAAA,1
+조직코드관리.csv,팀센터명,KKKKKK,87
+조직코드관리.csv,팀센터명,KKKKK,69
+조직코드관리.csv,팀센터명,KKKKKKK,36
+조직코드관리.csv,팀센터명,KKKK,33
+조직코드관리.csv,팀센터명,KKKK KKKKK,21
+조직코드관리.csv,팀센터명,SKSKKKKK,19
+조직코드관리.csv,팀센터명,SKSKKKKKK,12
+조직코드관리.csv,팀센터명,KKK,11
+조직코드관리.csv,팀센터명,SKSKKKKKKK,9
+조직코드관리.csv,팀센터명,KKKKKKKKKK,8
+조직코드관리.csv,팀센터명,KKKKKKKK,6
+조직코드관리.csv,팀센터명,SKSKKK,5
+조직코드관리.csv,팀센터명,ASAKKK,5
+조직코드관리.csv,팀센터명,KKKKKKKKK,4
+조직코드관리.csv,팀센터명,AAKKK,4
+조직코드관리.csv,팀센터명,KKKK KKK,4
+조직코드관리.csv,팀센터명,SKSKKKKKKKKK,3
+조직코드관리.csv,팀센터명,SKSKKKKKKn,3
+조직코드관리.csv,팀센터명,KKnAAK,3
+조직코드관리.csv,팀센터명,KKKKKK KKK,3
+조직코드관리.csv,정렬순서,nnnn,321
+조직코드관리.csv,정렬순서,nnn,90
+조직코드관리.csv,정렬순서,nn,9
+조직코드관리.csv,최초생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,420
+조직코드관리.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,420
+조직코드관리.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,420
+조직코드관리.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,420
+조직터미널마스터.csv,터미널조직코드,nnn,520
+조직터미널마스터.csv,터미널조직코드,nn,27
+조직터미널마스터.csv,터미널조직코드,n,10
+조직터미널마스터.csv,터미널구분코드,AAA,260
+조직터미널마스터.csv,터미널구분코드,AAASAAAA,130
+조직터미널마스터.csv,터미널구분코드,AnASAAA,94
+조직터미널마스터.csv,터미널구분코드,AAAASAA,67
+조직터미널마스터.csv,터미널구분코드,AAASAAAAA,6
+조직터미널마스터.csv,실제터미널조직코드,nnn.n,519
+조직터미널마스터.csv,실제터미널조직코드,nn.n,27
+조직터미널마스터.csv,실제터미널조직코드,n.n,10
+조직터미널마스터.csv,unitiz_goal,n.n,470
+조직터미널마스터.csv,unitiz_goal,nn.n,79
+조직터미널마스터.csv,unitiz_goal,nnn.n,7
+조직터미널마스터.csv,종료목표작업시분,nnn.n,27
+조직터미널마스터.csv,터미널영문코드,AA,264
+조직터미널마스터.csv,load_chute_cnt,n.n,509
+조직터미널마스터.csv,load_chute_cnt,nn.n,28
+조직터미널마스터.csv,load_chute_cnt,nnn.n,19
+조직터미널마스터.csv,unload_chute_cnt,n.n,497
+조직터미널마스터.csv,unload_chute_cnt,nn.n,20
+조직터미널마스터.csv,wheel_sorter_install_yn,A,557
+조직터미널마스터.csv,usage_cat_cd,AAAAA,167
+조직터미널마스터.csv,usage_cat_cd,AAAA,83
+조직터미널마스터.csv,usage_cat_cd,AAAAAAA,60
+조직터미널마스터.csv,등록일시,nnnn-nn-nn nn:nn:nn.nnnnnn,27
+조직터미널마스터.csv,등록사원번호,nnnnnnn.n,27
+조직터미널마스터.csv,최종사원업데이트일시,nnnn-nn-nn nn:nn:nn.nnnnnn,556
+조직터미널마스터.csv,최종업데이트사원번호,nnnnnnn.n,506
+조직터미널마스터.csv,최종업데이트사원번호,nnnnnn.n,29
+조직터미널마스터.csv,최종업데이트사원번호,nnnnn.n,21
+조직터미널마스터.csv,생성일시,nnnn-nn-nn nn:nn:nn.nnnnnn,122
+조직터미널마스터.csv,생성시스템ID,aaa,95
+조직터미널마스터.csv,생성시스템ID,nnnnnnn,27
+조직터미널마스터.csv,최종업데이트시스템ID,AAAAA,557
+조직터미널마스터.csv,최종업데이트일시,nnnn-nn-nn nn:nn:nn.nnnnnn,557
+조직터미널마스터.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,557
+조직터미널마스터.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,557
+지점코드.csv,OIO_ORG_COD,AAAAA,188
+지점코드.csv,OIO_ORG_COD,AAAAn,5
+지점코드.csv,OIO_ORG_COD,AAAA,1
+지점코드.csv,OIO_ORG_COD,A/A,1
+지점코드.csv,OIO_ORG_COD,AAAnn,1
+지점코드.csv,OIO_ORG_NAM,KKKKKK,73
+지점코드.csv,OIO_ORG_NAM,KKKK,18
+지점코드.csv,OIO_ORG_NAM,KKKKK,16
+지점코드.csv,OIO_ORG_NAM,SKSKKKKKKK,14
+지점코드.csv,OIO_ORG_NAM,SKSKKKKKK,13
+지점코드.csv,OIO_ORG_NAM,KKKKKKK,13
+지점코드.csv,OIO_ORG_NAM,KKKKKKKK,10
+지점코드.csv,OIO_ORG_NAM,KKK,5
+지점코드.csv,OIO_ORG_NAM,KKKK KKK,4
+지점코드.csv,OIO_ORG_NAM,SKSKKKKKKKK,3
+지점코드.csv,OIO_ORG_NAM,nAAKKK,3
+지점코드.csv,OIO_ORG_NAM,KKAAK,2
+지점코드.csv,OIO_ORG_NAM,AnAKKK,2
+지점코드.csv,OIO_ORG_NAM,KSKKKKKK,2
+지점코드.csv,OIO_ORG_NAM,KKKKnK,2
+지점코드.csv,OIO_ORG_NAM,SKSKKKKK,2
+지점코드.csv,OIO_ORG_NAM,KKKSKKS,1
+지점코드.csv,OIO_ORG_NAM,SKSKKKK,1
+지점코드.csv,OIO_ORG_NAM,KKAAA SKKKKS,1
+지점코드.csv,OIO_ORG_NAM,SKSKKKKSKS,1
+지점코드.csv,OIO_ORG_NCD,nnnn.n,192
+지점코드.csv,OIO_PIN_COD,AAAAAAA,119
+지점코드.csv,OIO_PIN_COD,AAAAAAAA,50
+지점코드.csv,OIO_PIN_COD,AAAAAA,4
+지점코드.csv,OIO_PIN_COD,AAAAA,3
+지점코드.csv,최종변경일시,nn:nn.n,196
+지점코드.csv,ETL일시,nn:nn.n,196
+지점코드.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,196
+택배BI_조직.csv,사업본부코드,AAAAA,2670
+택배BI_조직.csv,사업본부코드,AAAAAAA,4
+택배BI_조직.csv,사업본부명,KKKKKK,2670
+택배BI_조직.csv,사업본부명,KKKKKKK,2
+택배BI_조직.csv,지부코드,AAAAA,2674
+택배BI_조직.csv,지부코드,AAAAAAA,7
+택배BI_조직.csv,지부코드,AAA,1
+택배BI_조직.csv,지부명,KKKKKKK,1678
+택배BI_조직.csv,지부명,KKKK,934
+택배BI_조직.csv,지부명,KKKKKK,65
+택배BI_조직.csv,지부명,KKK,2
+택배BI_조직.csv,지부명,KK,2
+택배BI_조직.csv,지부명,AAAKKKK,1
+택배BI_조직.csv,지점코드,AAAAAAA,2608
+택배BI_조직.csv,지점코드,AAAAAA,47
+택배BI_조직.csv,지점코드,AAAAA,36
+택배BI_조직.csv,지점명,KK,2360
+택배BI_조직.csv,지점명,KKK,290
+택배BI_조직.csv,지점명,KKKK,23
+택배BI_조직.csv,지점명,KKKKKK,5
+택배BI_조직.csv,지점명,AAAKK,1
+택배BI_조직.csv,지점명,KKKKK,1
+택배BI_조직.csv,지점명,KKKKKKK,1
+택배BI_조직.csv,터미널코드,nnn.n,2521
+택배BI_조직.csv,터미널코드,nn.n,153
+택배BI_조직.csv,터미널코드,n.n,15
+택배BI_조직.csv,터미널명,KK,1714
+택배BI_조직.csv,터미널명,KKK,411
+택배BI_조직.csv,터미널명,KKKK,109
+택배BI_조직.csv,터미널명,AAKKKKK,73
+택배BI_조직.csv,터미널명,KKAAAAA,56
+택배BI_조직.csv,터미널명,KKa,54
+택배BI_조직.csv,터미널명,SKKSKK,54
+택배BI_조직.csv,터미널명,KKA,43
+택배BI_조직.csv,터미널명,KKKKn,41
+택배BI_조직.csv,터미널명,KKAA,32
+택배BI_조직.csv,터미널명,KKn,13
+택배BI_조직.csv,터미널명,KKKn,11
+택배BI_조직.csv,터미널명,SKKSKKK,8
+택배BI_조직.csv,터미널명,AAAAA,7
+택배BI_조직.csv,터미널명,KKKKKK,6
+택배BI_조직.csv,터미널명,KKKKAAA,6
+택배BI_조직.csv,터미널명,nnKKKKn,5
+택배BI_조직.csv,터미널명,KKKKK,5
+택배BI_조직.csv,터미널명,KKKKnn,5
+택배BI_조직.csv,터미널명,KKKAAAAA,4
+택배BI_조직.csv,집배점코드,nnnn.n,2387
+택배BI_조직.csv,집배점코드,nnn.n,200
+택배BI_조직.csv,집배점코드,nn.n,44
+택배BI_조직.csv,집배점명,KKSKS,895
+택배BI_조직.csv,집배점명,KKKKSKS,348
+택배BI_조직.csv,집배점명,KKKSKS,258
+택배BI_조직.csv,집배점명,KKSKKS,89
+택배BI_조직.csv,집배점명,KKAAKK,60
+택배BI_조직.csv,집배점명,KKKKKKSKS,51
+택배BI_조직.csv,집배점명,KKnSKS,48
+택배BI_조직.csv,집배점명,KK KKK,42
+택배BI_조직.csv,집배점명,AAKK,40
+택배BI_조직.csv,집배점명,KKKKSKKS,38
+택배BI_조직.csv,집배점명,AAAAA KKSKS,36
+택배BI_조직.csv,집배점명,KKKKKK,36
+택배BI_조직.csv,집배점명,KKKKKSKS,35
+택배BI_조직.csv,집배점명,KKKKnSKS,28
+택배BI_조직.csv,집배점명,KKKK,25
+택배BI_조직.csv,집배점명,KK KKKK,23
+택배BI_조직.csv,집배점명,AAKKKK,21
+택배BI_조직.csv,집배점명,KK KKSKKS,20
+택배BI_조직.csv,집배점명,KKKKK,20
+택배BI_조직.csv,집배점명,AAAAA KKKKSKS,19
+택배BI_조직.csv,최종변경일시,nnnn-nn-nn nn:nn:nn.nnnnnn,2631
+택배BI_조직.csv,ETL일시,nnnn-nn-nn nn:nn:nn.nnnnnn,2631
+택배BI_조직.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,2692
+택배_고객.csv,고객번호,nnnnnnn,67304
+택배_고객.csv,고객번호,nnnnnn,17790
+택배_고객.csv,고객번호,nnnnn,981
+택배_고객.csv,고객번호,nnnn,181
+택배_고객.csv,고객번호,nnn,17
+택배_고객.csv,고객번호,Annnnnn,2
+택배_고객.csv,고객번호,UK,1
+택배_고객.csv,고객번호,n,1
+택배_고객.csv,개인기업고객구분,A,85887
+택배_고객.csv,사업구분,A,85940
+택배_고객.csv,한글고객명,KKKK,13982
+택배_고객.csv,한글고객명,KKKKK,8493
+택배_고객.csv,한글고객명,KKK,5930
+택배_고객.csv,한글고객명,KKKKKK,4875
+택배_고객.csv,한글고객명,SKSKKKK,3682
+택배_고객.csv,한글고객명,SKSKKKKK,3545
+택배_고객.csv,한글고객명,KKKKKKK,2781
+택배_고객.csv,한글고객명,KK,2661
+택배_고객.csv,한글고객명,SKSKKKKKK,2365
+택배_고객.csv,한글고객명,KKKKKKKK,2221
+택배_고객.csv,한글고객명,SKSKKK,1878
+택배_고객.csv,한글고객명,KKKKSKS,1680
+택배_고객.csv,한글고객명,KKKKKKSKS,1667
+택배_고객.csv,한글고객명,KKKKKKKKK,1462
+택배_고객.csv,한글고객명,SKSKKKKKKK,1412
+택배_고객.csv,한글고객명,SKSKK,1179
+택배_고객.csv,한글고객명,KKKKKSKS,1028
+택배_고객.csv,한글고객명,KKKKKKKKKK,1020
+택배_고객.csv,한글고객명,KKKK KKKK,972
+택배_고객.csv,한글고객명,SKSKKKKKKKK,957
+택배_고객.csv,영문고객명,A,438
+택배_고객.csv,영문고객명,AAAAAA,165
+택배_고객.csv,영문고객명,AAAAAAA,128
+택배_고객.csv,영문고객명,AAA,120
+택배_고객.csv,영문고객명,AA,111
+택배_고객.csv,영문고객명,AAAAA,100
+택배_고객.csv,영문고객명,AAAA,79
+택배_고객.csv,영문고객명,AAAAAAAA,69
+택배_고객.csv,영문고객명,AAAAAAAAA,42
+택배_고객.csv,영문고객명,aa,42
+택배_고객.csv,영문고객명,AAAAA AAAAAAA,38
+택배_고객.csv,영문고객명,AAAAAA AAA,37
+택배_고객.csv,영문고객명,AAAAAA AAAAA,34
+택배_고객.csv,영문고객명,AAA AAAAA,32
+택배_고객.csv,영문고객명,a,32
+택배_고객.csv,영문고객명,AAAAA AAAAA,31
+택배_고객.csv,영문고객명,AAAA AAAAA,30
+택배_고객.csv,영문고객명,AAAAAA AAAAAAA,28
+택배_고객.csv,영문고객명,AAAA AAAA,27
+택배_고객.csv,영문고객명,AAAAAAA AAAA,27
+택배_고객.csv,국가코드,AA,73486
+택배_고객.csv,주민_사업자등록번호,nnnnnnnnnn,85803
+택배_고객.csv,주민_사업자등록번호,nnnnn-nnnn,4
+택배_고객.csv,주민_사업자등록번호,nnnnnnnnn,3
+택배_고객.csv,주민_사업자등록번호,nnnnnnnn,3
+택배_고객.csv,주민_사업자등록번호,nnn,1
+택배_고객.csv,주민_사업자등록번호,KKKK,1
+택배_고객.csv,사업자등록우편번호,nnnnnn.n,62456
+택배_고객.csv,사업자등록우편번호,nnnnnn,19872
+택배_고객.csv,사업자등록우편번호,nnnn.n,935
+택배_고객.csv,사업자등록우편번호,nnnnn.n,823
+택배_고객.csv,사업자등록우편번호,nnnnn,542
+택배_고객.csv,사업자등록우편번호,nnn-n,1
+택배_고객.csv,고객 청구부서,KK,23055
+택배_고객.csv,고객 청구부서,KKK,19684
+택배_고객.csv,고객 청구부서,.,4476
+택배_고객.csv,고객 청구부서,KKKKK,1864
+택배_고객.csv,고객 청구부서,KKKK,1551
+택배_고객.csv,고객 청구부서,S,749
+택배_고객.csv,고객 청구부서,..,675
+택배_고객.csv,고객 청구부서,KKKKKK,566
+택배_고객.csv,고객 청구부서,KKAAK,279
+택배_고객.csv,고객 청구부서,-,240
+택배_고객.csv,고객 청구부서,KKKKKKK,232
+택배_고객.csv,고객 청구부서,AAKKKKK,130
+택배_고객.csv,고객 청구부서,AAKKK,103
+택배_고객.csv,고객 청구부서,nnn,92
+택배_고객.csv,고객 청구부서,KKaaa,70
+택배_고객.csv,고객 청구부서,/,60
+택배_고객.csv,고객 청구부서,KKnK,45
+택배_고객.csv,고객 청구부서,n,42
+택배_고객.csv,고객 청구부서,//,37
+택배_고객.csv,고객 청구부서,AAA,36
+택배_고객.csv,고객 청구지우편번호,nnnnnn.n,83924
+택배_고객.csv,고객 청구지우편번호,nnnnn.n,877
+택배_고객.csv,고객 청구지우편번호,nnnn.n,387
+택배_고객.csv,고객 청구지우편번호,nnn.n,8
+택배_고객.csv,고객청구지주소,nnn-n,8520
+택배_고객.csv,고객청구지주소,nnn-nn,4973
+택배_고객.csv,고객청구지주소,nnn,4456
+택배_고객.csv,고객청구지주소,Aaa-nn,1796
+택배_고객.csv,고객청구지주소,nn,1471
+택배_고객.csv,고객청구지주소,nnnn-n,1341
+택배_고객.csv,고객청구지주소,nnK nnK,1322
+택배_고객.csv,고객청구지주소,nnnn,1098
+택배_고객.csv,고객청구지주소,nn-nn,1061
+택배_고객.csv,고객청구지주소,.,753
+택배_고객.csv,고객청구지주소,n,738
+택배_고객.csv,고객청구지주소,KKK nnn-n,720
+택배_고객.csv,고객청구지주소,nnn-n nK,714
+택배_고객.csv,고객청구지주소,nnnn-nn,662
+택배_고객.csv,고객청구지주소,nnn-nn nK,636
+택배_고객.csv,고객청구지주소,nnn-nnn,620
+택배_고객.csv,고객청구지주소,SKKKS,418
+택배_고객.csv,고객청구지주소,nnnKK,404
+택배_고객.csv,고객청구지주소,KKK nnn,401
+택배_고객.csv,고객청구지주소,nnn-n KKKK nK,398
+택배_고객.csv,판매일,nnnnnnnn.n,85767
+택배_고객.csv,판매점소,AAAAA,83543
+택배_고객.csv,판매점소,AAAAAAA,1678
+택배_고객.csv,판매점소,AAAAAA,256
+택배_고객.csv,판매점소,AA,65
+택배_고객.csv,판매원사번,nnnnnnn,84594
+택배_고객.csv,판매원사번,AAAnnnn,41
+택배_고객.csv,판매원사번,Annnnnn,1
+택배_고객.csv,담당부서,KK,33518
+택배_고객.csv,담당부서,KKK,26189
+택배_고객.csv,담당부서,.,5557
+택배_고객.csv,담당부서,KKKKK,2476
+택배_고객.csv,담당부서,KKKK,1988
+택배_고객.csv,담당부서,KKKKKK,1009
+택배_고객.csv,담당부서,S,887
+택배_고객.csv,담당부서,KKKKKKK,561
+택배_고객.csv,담당부서,..,470
+택배_고객.csv,담당부서,-,459
+택배_고객.csv,담당부서,KKAAK,281
+택배_고객.csv,담당부서,AAKKKKK,205
+택배_고객.csv,담당부서,AAKKKKKKK,144
+택배_고객.csv,담당부서,AAKKK,129
+택배_고객.csv,담당부서,AAAKK KKKK,105
+택배_고객.csv,담당부서,KKKKKKKK,99
+택배_고객.csv,담당부서,nnn,97
+택배_고객.csv,담당부서,KKK KKK,84
+택배_고객.csv,담당부서,KKaaa,70
+택배_고객.csv,담당부서,/,67
+택배_고객.csv,집하지우편번호,nnnnnn.n,51813
+택배_고객.csv,집하지우편번호,nnnnnn,31580
+택배_고객.csv,집하지우편번호,nnnnn.n,331
+택배_고객.csv,집하지우편번호,nnnnn,300
+택배_고객.csv,집하지우편번호,nnnn.n,96
+택배_고객.csv,집하지우편번호,nnn.n,1
+택배_고객.csv,집하지우편번호,nnn,1
+택배_고객.csv,집하지우편번호,AAnnAA,1
+택배_고객.csv,집하지대번지,nnn,31488
+택배_고객.csv,집하지대번지,nn,9183
+택배_고객.csv,집하지대번지,nnnn,6011
+택배_고객.csv,집하지대번지,n,3251
+택배_고객.csv,집하지대번지,nnn-n,2291
+택배_고객.csv,집하지대번지,nnn-nn,1421
+택배_고객.csv,집하지대번지,KKK,1286
+택배_고객.csv,집하지대번지,Aaa-nn,627
+택배_고객.csv,집하지대번지,nnK nnK,588
+택배_고객.csv,집하지대번지,nnnn-n,434
+택배_고객.csv,집하지대번지,.,376
+택배_고객.csv,집하지대번지,nn-nn,328
+택배_고객.csv,집하지대번지,KK,220
+택배_고객.csv,집하지대번지,/,52
+택배_고객.csv,집하지대번지,nnnK,51
+택배_고객.csv,집하지대번지,nn-nnn,47
+택배_고객.csv,집하지대번지,nnn-,44
+택배_고객.csv,집하지대번지,n-nnn,38
+택배_고객.csv,집하지대번지,nnKK,33
+택배_고객.csv,집하지대번지,n-nn,32
+택배_고객.csv,집하지소번지,n,21968
+택배_고객.csv,집하지소번지,nn,11922
+택배_고객.csv,집하지소번지,nnn,2260
+택배_고객.csv,집하지소번지,KK,354
+택배_고객.csv,집하지소번지,nK,253
+택배_고객.csv,집하지소번지,nnnn,117
+택배_고객.csv,집하지소번지,nnn-,67
+택배_고객.csv,집하지소번지,-,54
+택배_고객.csv,집하지소번지,nnK nnK,51
+택배_고객.csv,집하지소번지,/,41
+택배_고객.csv,집하지소번지,Aaa-nn,40
+택배_고객.csv,집하지소번지,.,35
+택배_고객.csv,집하지소번지,AK,14
+택배_고객.csv,집하지소번지,nnK,14
+택배_고객.csv,집하지소번지,K,12
+택배_고객.csv,집하지소번지,//,7
+택배_고객.csv,집하지소번지,--,6
+택배_고객.csv,집하지소번지,Knn,4
+택배_고객.csv,집하지소번지,-nn,3
+택배_고객.csv,집하지소번지,An,3
+택배_고객.csv,수입조직,nnnn.n,85452
+택배_고객.csv,화주구분,n.n,80567
+택배_고객.csv,업종구분,n.n,38484
+택배_고객.csv,업종구분,nn.n,34118
+택배_고객.csv,업종상세내역,KK,25228
+택배_고객.csv,업종상세내역,KKKK,17203
+택배_고객.csv,업종상세내역,KKK,13635
+택배_고객.csv,업종상세내역,KKKKK,3877
+택배_고객.csv,업종상세내역,KKKKKK,1515
+택배_고객.csv,업종상세내역,.,1181
+택배_고객.csv,업종상세내역,KKSKK,970
+택배_고객.csv,업종상세내역,KKKKKKK,848
+택배_고객.csv,업종상세내역,K,674
+택배_고객.csv,업종상세내역,KK KK,486
+택배_고객.csv,업종상세내역,KKK KK,455
+택배_고객.csv,업종상세내역,KKSKKK,405
+택배_고객.csv,업종상세내역,KKKKKKKK,374
+택배_고객.csv,업종상세내역,KKK KKKK,325
+택배_고객.csv,업종상세내역,KKSKKKK,284
+택배_고객.csv,업종상세내역,KKS KK,252
+택배_고객.csv,업종상세내역,KKK KKK,236
+택배_고객.csv,업종상세내역,KKKK KK,232
+택배_고객.csv,업종상세내역,KK KK KK,222
+택배_고객.csv,업종상세내역,KK KKK,212
+택배_고객.csv,반품일,n.n,1832
+택배_고객.csv,반품일,nn.n,82
+택배_고객.csv,행낭이용여부,n.n,73463
+택배_고객.csv,계약단가,nnnn.n,66352
+택배_고객.csv,계약단가,n.n,5205
+택배_고객.csv,계약단가,nnnnn.n,1457
+택배_고객.csv,계약단가,nnn.n,106
+택배_고객.csv,계약단가,nn.n,26
+택배_고객.csv,월예상물량,nnn.n,40975
+택배_고객.csv,월예상물량,nnnn.n,21688
+택배_고객.csv,월예상물량,nnnnn.n,4028
+택배_고객.csv,월예상물량,nn.n,3133
+택배_고객.csv,월예상물량,n.n,2978
+택배_고객.csv,월예상물량,nnnnnn.n,73
+택배_고객.csv,월예상물량,nnnnnnn.n,57
+택배_고객.csv,포커스사용여부,n,85446
+택배_고객.csv,포커스사용여부,A,53
+택배_고객.csv,최종변경일시,nn:nn.n,86277
+택배_고객.csv,ETL일시,nn:nn.n,86277
+택배_고객.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,86277
+택배_조직도.csv,조직코드,nnnn,3029
+택배_조직도.csv,조직코드,nnn,557
+택배_조직도.csv,조직코드,AAAAA,92
+택배_조직도.csv,조직코드,AAAAAAA,92
+택배_조직도.csv,조직코드,nnnnnn,39
+택배_조직도.csv,조직코드,AAAA,16
+택배_조직도.csv,조직코드,AA,5
+택배_조직도.csv,조직코드,nnnnnnn,2
+택배_조직도.csv,조직코드,nnnnn,2
+택배_조직도.csv,조직코드,AAA,1
+택배_조직도.csv,조직코드,AAAAAA,1
+택배_조직도.csv,상위조직코드,nnn,3047
+택배_조직도.csv,상위조직코드,AAAAAAA,474
+택배_조직도.csv,상위조직코드,AAAAA,236
+택배_조직도.csv,상위조직코드,nnnn,40
+택배_조직도.csv,상위조직코드,AAAAAA,9
+택배_조직도.csv,상위조직코드,AAA,1
+택배_조직도.csv,조직명,KKSKS,888
+택배_조직도.csv,조직명,KKKKSKS,347
+택배_조직도.csv,조직명,KK,255
+택배_조직도.csv,조직명,KKKSKS,253
+택배_조직도.csv,조직명,KKKKSKKS,241
+택배_조직도.csv,조직명,KKKK,155
+택배_조직도.csv,조직명,KKSKKS,148
+택배_조직도.csv,조직명,KKKKKK,83
+택배_조직도.csv,조직명,KKK,79
+택배_조직도.csv,조직명,AKK,67
+택배_조직도.csv,조직명,KKAAKK,59
+택배_조직도.csv,조직명,AnAKK,57
+택배_조직도.csv,조직명,KKKKKKSKS,51
+택배_조직도.csv,조직명,KKnSKS,49
+택배_조직도.csv,조직명,KKKKK,47
+택배_조직도.csv,조직명,KK KKK,43
+택배_조직도.csv,조직명,AAKK,38
+택배_조직도.csv,조직명,KKKKn,35
+택배_조직도.csv,조직명,SKKSKK,33
+택배_조직도.csv,조직명,KKKKKSKS,33
+택배_조직도.csv,조직구분코드,AAAAAAA,2303
+택배_조직도.csv,조직구분코드,AAA,680
+택배_조직도.csv,조직구분코드,AAAAAA,467
+택배_조직도.csv,조직구분코드,AAAASAAAA,227
+택배_조직도.csv,조직구분코드,AAASAAAA,58
+택배_조직도.csv,조직구분코드,AAAA,48
+택배_조직도.csv,조직구분코드,AA,35
+택배_조직도.csv,조직구분코드,AAAAA,16
+택배_조직도.csv,조직구분코드,AAASAAASAA,1
+택배_조직도.csv,조직구분코드,AAAAAAAA,1
+택배_조직도.csv,조직관리유형코드,AAASAAAAAA,2482
+택배_조직도.csv,조직관리유형코드,AAAAAA,1353
+택배_조직도.csv,조직권역구분코드,AA,3822
+택배_조직도.csv,조직권역구분상세코드,AA,2
+택배_조직도.csv,조직계약시작일자,nnnnnnnn.n,1998
+택배_조직도.csv,조직계약시작일자,nnnnnn.n,3
+택배_조직도.csv,조직계약시작일자,nnnnnnn.n,2
+택배_조직도.csv,조직계약종료일자,nnnnnnnn.n,938
+택배_조직도.csv,조직폐쇄일자,nnnnnnnn.n,1068
+택배_조직도.csv,영문조직명,AAAAAA AAAAA,217
+택배_조직도.csv,영문조직명,AAAAAAA AAAAA,199
+택배_조직도.csv,영문조직명,AnA AAASAA,145
+택배_조직도.csv,영문조직명,AAAAA AAAAA,140
+택배_조직도.csv,영문조직명,AAAAAAAA AAAAA,138
+택배_조직도.csv,영문조직명,AnA AAA AAASAA,97
+택배_조직도.csv,영문조직명,AAAAAAAAA AAAAA,95
+택배_조직도.csv,영문조직명,AAAA AAAAA,79
+택배_조직도.csv,영문조직명,AAAAAAAAAA AAAAA,67
+택배_조직도.csv,영문조직명,AAAAAAAAAAA AAAAA,65
+택배_조직도.csv,영문조직명,AA AAAAA,59
+택배_조직도.csv,영문조직명,aaaaaaaaa,57
+택배_조직도.csv,영문조직명,AAAAAAAAAAAA AAAAA,45
+택배_조직도.csv,영문조직명,AAAAAAA AAAAAAAA,45
+택배_조직도.csv,영문조직명,AAAAAAAA AAAAAAAA,40
+택배_조직도.csv,영문조직명,AAAAAAAA,35
+택배_조직도.csv,영문조직명,AAAAAA AAAAAAAA,35
+택배_조직도.csv,영문조직명,AAAAA AAAAAAAA,34
+택배_조직도.csv,영문조직명,AAAAAAAAAAAAA AAAAA,34
+택배_조직도.csv,영문조직명,AAAAAAAAAAAAAA AAAAA,33
+택배_조직도.csv,팩스번호,nnnnnnnnnn,721
+택배_조직도.csv,팩스번호,nnn-nnn-nnnn,227
+택배_조직도.csv,팩스번호,nnnnnnnnnnn,84
+택배_조직도.csv,팩스번호,nn-nnn-nnnn,66
+택배_조직도.csv,팩스번호,nnnSnnn-nnnn,60
+택배_조직도.csv,팩스번호,nn,49
+택배_조직도.csv,팩스번호,nnnnnnnnn,46
+택배_조직도.csv,팩스번호,nn-nnnn-nnnn,35
+택배_조직도.csv,팩스번호,nnn,23
+택배_조직도.csv,팩스번호,nnn-nnnn-nnnn,8
+택배_조직도.csv,팩스번호,n,6
+택배_조직도.csv,팩스번호,nnnnnnnn,3
+택배_조직도.csv,팩스번호,nnnn-nnnn-nnnn,3
+택배_조직도.csv,팩스번호,nnn-nnn-nnn,3
+택배_조직도.csv,팩스번호,nnnn-nnn-nnnn,2
+택배_조직도.csv,팩스번호,nn-nnnn,1
+택배_조직도.csv,팩스번호,KKKnSnSnKK,1
+택배_조직도.csv,팩스번호,nnnnnnnnnnnn,1
+택배_조직도.csv,팩스번호,nnn-,1
+택배_조직도.csv,팩스번호,nnnn-nnnn-nnn,1
+택배_조직도.csv,우편번호,nnnnnn.n,1968
+택배_조직도.csv,우편번호,nnnnn.n,1218
+택배_조직도.csv,우편번호,nnnn.n,295
+택배_조직도.csv,기본주소,KK KK KK,149
+택배_조직도.csv,기본주소,KKKK KKK KKK KKK,104
+택배_조직도.csv,기본주소,KK KKK  KKKK,97
+택배_조직도.csv,기본주소,KKK KKK KKK KKK,73
+택배_조직도.csv,기본주소,KK  KK,68
+택배_조직도.csv,기본주소,KKKKK KKK KKK,48
+택배_조직도.csv,기본주소,KK KK KKn,40
+택배_조직도.csv,기본주소,KKKKK KK KKK,39
+택배_조직도.csv,기본주소,KKKKK KKK KKKK,35
+택배_조직도.csv,기본주소,KKKK KKK KKK,34
+택배_조직도.csv,기본주소,KKKK KKK KKK KKKK,34
+택배_조직도.csv,기본주소,KKKKK KKK KKKK nnSKKKS,32
+택배_조직도.csv,기본주소,KK KK,30
+택배_조직도.csv,기본주소,KKKK KKK KKK KKKKK,27
+택배_조직도.csv,기본주소,KKK KKK KKK,26
+택배_조직도.csv,기본주소,KK KKK  KKK,25
+택배_조직도.csv,기본주소,KK,23
+택배_조직도.csv,기본주소,KK KK KKK,23
+택배_조직도.csv,기본주소,KK KK  KKK,23
+택배_조직도.csv,기본주소,KKKK KKK KKK KKnK,22
+택배_조직도.csv,상세주소,nnn-n,237
+택배_조직도.csv,상세주소,nnn,219
+택배_조직도.csv,상세주소,nn SKKKS,206
+택배_조직도.csv,상세주소,nn,190
+택배_조직도.csv,상세주소,nnn SKKKS,106
+택배_조직도.csv,상세주소,nnn-nn,97
+택배_조직도.csv,상세주소,.,71
+택배_조직도.csv,상세주소,KKKKKK,62
+택배_조직도.csv,상세주소,nn-n,59
+택배_조직도.csv,상세주소,KKK nnn-n,50
+택배_조직도.csv,상세주소,KKK,45
+택배_조직도.csv,상세주소,nK,41
+택배_조직도.csv,상세주소,nnnn-n,39
+택배_조직도.csv,상세주소,n,37
+택배_조직도.csv,상세주소,nn-nn,36
+택배_조직도.csv,상세주소,nnnn,35
+택배_조직도.csv,상세주소,U,33
+택배_조직도.csv,상세주소,KKKKK,30
+택배_조직도.csv,상세주소,nnnn-nn,20
+택배_조직도.csv,상세주소,n SKKKS,19
+택배_조직도.csv,수입조직코드,AAAAA,3000
+택배_조직도.csv,수입신규조직코드,nnnn.n,3000
+택배_조직도.csv,좌표구분코드,AAAAAA,687
+택배_조직도.csv,좌표구분코드,AAAnn,523
+택배_조직도.csv,X좌표,nnnnnn.n,685
+택배_조직도.csv,X좌표,nnn.nnnnn,472
+택배_조직도.csv,X좌표,nnn.nnnn,48
+택배_조직도.csv,X좌표,nnn.nnn,3
+택배_조직도.csv,X좌표,n.n,2
+택배_조직도.csv,Y좌표,nnnnnn.n,681
+택배_조직도.csv,Y좌표,nn.nnnnn,476
+택배_조직도.csv,Y좌표,nn.nnnn,35
+택배_조직도.csv,Y좌표,nn.nnn,10
+택배_조직도.csv,Y좌표,nnnnn.n,4
+택배_조직도.csv,Y좌표,nn.nn,2
+택배_조직도.csv,Y좌표,n.n,2
+택배_조직도.csv,사업자등록번호,nnnnnnnnnn.n,1925
+택배_조직도.csv,정렬순서,n.n,79
+택배_조직도.csv,정렬순서,nn.n,4
+택배_조직도.csv,ERP코드,AAAAA,46
+택배_조직도.csv,ERP코드,AAAAAA,2
+택배_조직도.csv,예약접수마감시분,nnnn.n,3387
+택배_조직도.csv,예약접수마감시분,nnn.n,38
+택배_조직도.csv,조직중구분코드,A,1750
+택배_조직도.csv,조직중구분코드,AA,146
+택배_조직도.csv,조직중구분코드,nA,91
+택배_조직도.csv,조직상태,AAAA,2768
+택배_조직도.csv,조직상태,AAAAA,1068
+택배_조직도.csv,등록일시,nnnn-nn-nn nn:nn:nn.nnnnnn,110
+택배_조직도.csv,등록사원번호,nnnnnnn.n,108
+택배_조직도.csv,등록사원번호,nnnnnn.n,2
+택배_조직도.csv,사원최종업데이트일시,nnnn-nn-nn nn:nn:nn.nnnnnn,3528
+택배_조직도.csv,최종업데이트사원번호,nnnnnnn.n,2272
+택배_조직도.csv,최종업데이트사원번호,nnnnnn.n,788
+택배_조직도.csv,최종업데이트사원번호,nnnnn.n,460
+택배_조직도.csv,오전배송가능여부,A,3494
+택배_조직도.csv,create_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,3836
+택배_조직도.csv,등록사용자ID,AAA,3484
+택배_조직도.csv,등록사용자ID,aaa,242
+택배_조직도.csv,등록사용자ID,nnnnnnn,110
+택배_조직도.csv,최종변경사용자ID,AAA,2309
+택배_조직도.csv,최종변경사용자ID,nnnnnnn,1006
+택배_조직도.csv,최종변경사용자ID,aaa,61
+택배_조직도.csv,최종변경사용자ID,aaaaa,8
+택배_조직도.csv,last_update_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,3836
+택배_조직도.csv,etl_dtm,nnnn-nn-nn nn:nn:nn.nnnnnn,3836
+택배_조직도.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,3836
+택배관리회계조직매핑.csv,택배영업_지점코드,AAAAAAA,45
+택배관리회계조직매핑.csv,택배영업_지점코드,AAAAA,2
+택배관리회계조직매핑.csv,택배영업_지점코드,AAAAAA,1
+택배관리회계조직매핑.csv,관리회계_지점코드,AAAAA,46
+택배관리회계조직매핑.csv,관리회계_지점코드,AAAAAA,2
+택배관리회계조직매핑.csv,최종변경일시,nn:nn.n,48
+택배관리회계조직매핑.csv,ETL일시,nn:nn.n,48
+택배관리회계조직매핑.csv,GEN_TIMESTAMP,nnnn-nn-nn nn:nn:nn.nnnnnn,48

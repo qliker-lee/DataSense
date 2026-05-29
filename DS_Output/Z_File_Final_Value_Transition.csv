@@ -1,0 +1,8 @@
+﻿FileName,ColumnName,BeforeValue,AfterValue,BeforeFormat,AfterFormat,IsTimestampCol,Timestamp
+Z검증용데이터.csv,판매점소,SESBR,,A,EMPTY,True,2026-02-06 04:24:56
+Z검증용데이터.csv,판매점소,,KWJBR,EMPTY,A,True,2026-02-06 04:25:26
+Z검증용데이터.csv,ID,6001547,S180996,n,An,True,2026-02-06 04:58:26
+Z검증용데이터.csv,ID,S180996,6009966,An,n,True,2026-02-06 04:58:56
+Z사용자.csv,권한코드,9,A,n,A,True,2026-02-06 06:58:56
+Z사용자.csv,권한코드,A,5,A,n,True,2026-02-06 06:59:26
+Z코드변동성예제.csv,코드,514721,A12831,n,An,True,2026-02-05 13:16:56
